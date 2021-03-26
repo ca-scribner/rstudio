@@ -116,6 +116,13 @@ class CommandBundleGeneratorHelper
          factory.addImport("org.rstudio.core.client.command.MenuCallback");
          factory.addImport("org.rstudio.core.client.command.ShortcutManager");
          factory.addImport("org.rstudio.core.client.resources.ImageResource2x");
+         // Trying out adding some i18n versions of this code
+         if (addI18n) {
+            factory.addImport("com.google.gwt.core.client.GWT");
+            factory.addImport("org.rstudio.studio.client.workbench.commands.CommandConstants");
+
+         }
+
          SourceWriter writer = factory.createSourceWriter(context_, printWriter);
 
          emitConstructor(writer, images);
@@ -123,6 +130,9 @@ class CommandBundleGeneratorHelper
          emitMenus(writer);
          emitShortcuts(writer);
          emitCommandAccessors(writer);
+         if (addI18n) {
+            emitConstants(writer);
+         }
 
          // Close the class and commit it
          writer.outdent();
@@ -130,6 +140,11 @@ class CommandBundleGeneratorHelper
          context_.commit(logger_, printWriter);
       }
       return packageName_ + "." + simpleName_;
+   }
+
+   private void emitConstants(SourceWriter writer)
+   {
+      writer.println("private CommandConstants " + constants_name + " = GWT.create(CommandConstants.class);");
    }
 
    private void emitConstructor(SourceWriter writer, ImageResourceInfo images)
@@ -161,6 +176,8 @@ class CommandBundleGeneratorHelper
       for (JMethod method : menuMethods_)
       {
          String name = method.getName();
+         System.out.println("in emitMenus.getConfigDoc()!"); // DEBUG
+         logger_.log(TreeLogger.ERROR, "in emitMenus.getConfigDoc():"); // DEBUG
          NodeList nodes = getConfigDoc("/commands/menu[@id='" + name + "']");
          if (nodes.getLength() == 0)
          {
@@ -314,10 +331,20 @@ class CommandBundleGeneratorHelper
       writer.println(name + "_ = new AppCommand();");
 
       setProperty(writer, name, commandProps_.get(name), "id");
-      setProperty(writer, name, commandProps_.get(name), "desc");
-      setProperty(writer, name, commandProps_.get(name), "label");
-      setProperty(writer, name, commandProps_.get(name), "buttonLabel");
-      setProperty(writer, name, commandProps_.get(name), "menuLabel");
+      // DEG: Add i18n only for newPythonDoc
+      if (addI18n && name.equals("newPythonDoc"))
+      {
+         setProperty(writer, name, commandProps_.get(name), "desc", true);
+         setProperty(writer, name, commandProps_.get(name), "label", true);
+         setProperty(writer, name, commandProps_.get(name), "buttonLabel", true);
+         setProperty(writer, name, commandProps_.get(name), "menuLabel", true);
+      } else
+      {
+         setProperty(writer, name, commandProps_.get(name), "desc");
+         setProperty(writer, name, commandProps_.get(name), "label");
+         setProperty(writer, name, commandProps_.get(name), "buttonLabel");
+         setProperty(writer, name, commandProps_.get(name), "menuLabel");
+      }
       setProperty(writer, name, commandProps_.get(name), "windowMode");
       setProperty(writer, name, commandProps_.get(name), "context");
       // Any additional textual properties would be added here...
@@ -358,22 +385,76 @@ class CommandBundleGeneratorHelper
    private void setProperty(SourceWriter writer,
                             String name,
                             Element props,
+                            String propertyName,
+                            boolean i18n)
+   {
+      if (!isPropertySet(props, propertyName)) {
+         return;
+      }
+
+      String value;
+      if (i18n)
+      {
+         // Set as an i18n-managed string property
+         String propertyCapitalized = Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
+         value = constants_name + "." + name + propertyCapitalized + "()";
+         System.out.println("Hello, world!"); // DEBUG: Testing if things print to builder from here.  They do!
+      } else {
+         // Set as a hard-coded string property
+         value = "\"" + Generator.escape(props.getAttribute(propertyName)) + "\"";
+      }
+
+      String setter = "set" + Character.toUpperCase(propertyName.charAt(0))
+            + propertyName.substring(1);
+      writer.println(name + "_." + setter + "(" + value + ");");
+   }
+
+   private void setProperty(SourceWriter writer,
+                            String name,
+                            Element props,
                             String propertyName)
    {
+      setProperty(writer, name, props, propertyName, false);
+   }
+
+// DEBUG: Remove this!
+   //      private void setPropertyI18n(SourceWriter writer,
+//                                String name,
+//                                Element props,
+//                                String propertyName,
+//                                boolean i18n)
+//   {
+//      if (!isPropertySet(props, propertyName)) {
+//         return;
+//      }
+//
+//      String propertyCapitalized = Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
+//      String value = constants_name + "." + name + propertyCapitalized;
+//
+//      String setter = "set" + Character.toUpperCase(propertyName.charAt(0))
+//              + propertyName.substring(1);
+//      writer.println(name + "_." + setter
+//              + "(" + Generator.escape(value) + ");");
+//   }
+
+   /**
+    * Tests if a property is set, returning true if propertyName exists in props else false
+    *
+    * A property set to an empty string is considered set and returns true.  If the element
+    * is unset (hasAttribute != true) this returns false
+    */
+   private boolean isPropertySet(Element props, String propertyName)
+   {
       if (props == null)
-         return;
+         return false;
       // This check is important because getAttribute() returns empty string
       // even if the attribute isn't present, which is not what we want. In
       // the command system, empty string is distinct from null.
       if (!props.hasAttribute(propertyName))
-         return;
+         return false;
 
-      String value = props.getAttribute(propertyName);
+      return true;
 
-      String setter = "set" + Character.toUpperCase(propertyName.charAt(0))
-            + propertyName.substring(1);
-      writer.println(name + "_." + setter
-                                   + "(\"" + Generator.escape(value) + "\");"); 
    }
 
    private void setPropertyBool(SourceWriter writer,
@@ -469,8 +550,14 @@ class CommandBundleGeneratorHelper
    {
       try
       {
+//         DEBUG: This resolves to the Commands.cmd.xml file we want (I think that's the only file it could match?
+//         So we're always called from Commands in the same dir as the xml?  Think so.
+//         Why is there a resource created already with this name?  Is that just something it does?  But how would it
+//         know the .cmd.xml part?
+         System.out.println("We are in getConfigDoc()!"); // DEBUG
          String resourceName =
                bundleType_.getQualifiedSourceName().replace('.', '/') + ".cmd.xml";
+         System.out.println("resourceName = " + resourceName); // DEBUG
          Resource resource = context_.getResourcesOracle().getResource(resourceName);
          if (resource == null)
             return null;
@@ -498,6 +585,9 @@ class CommandBundleGeneratorHelper
    private final String packageName_;
    private final Map<String, Element> commandProps_;
    private String simpleName_;
+   // Trying out some local i18n debugging
+   private final boolean addI18n = true;
+   private final String constants_name = "_constants";
 }
 
 class ImageResourceInfo
