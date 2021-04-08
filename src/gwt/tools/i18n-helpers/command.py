@@ -63,7 +63,7 @@ class Command:
         if include_header:
             constants.append(Text(f"// Command: {self.id}"))
         for field_name in self.translatable_fields:
-            constant_name = generate_name(self.id, field_name.capitalize())
+            constant_name = generate_name(self.id, field_name)
             default_value = getattr(self, field_name)
             constants.append(Constant(constant_name, prefix + default_value))
         return constants
@@ -73,14 +73,19 @@ class Command:
         if include_header:
             properties.append(Text(f"# Command: {self.id}"))
         for field_name in self.translatable_fields:
-            full_field_name = generate_name(self.id, field_name.capitalize())
+            full_field_name = generate_name(self.id, field_name)
             properties.append(Property(name=full_field_name, value=prefix + getattr(self, field_name)))
         return properties
 
 
 def generate_name(this_id, field_name):
     """Helper to generate a name from id and field_name"""
-    return f"{this_id}{field_name.capitalize()}"
+    return f"{this_id}{capitalize_first(field_name)}"
+
+
+def capitalize_first(s: str):
+    """Returns the string s with the first character as uppercase"""
+    return s[0].upper() + s[1:]
 
 
 
