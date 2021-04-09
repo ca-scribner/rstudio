@@ -1,6 +1,6 @@
 import pytest
 import xml.etree.ElementTree as ET
-from command import Command, TRANSLATABLE_FIELDS
+from element_parsers import Command
 
 
 # @pytest.fixture()
@@ -30,6 +30,6 @@ def sample_command():
 def test_Command_parse(sample_command):
     c = Command(sample_command)
 
-    fields_to_compare = ['id'] + TRANSLATABLE_FIELDS
+    fields_to_compare = ['id'] + c.translatable_fields
     for fieldname in fields_to_compare:
         assert getattr(c, fieldname) == sample_command.get(fieldname)

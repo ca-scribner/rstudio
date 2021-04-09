@@ -1,10 +1,12 @@
 import xml.etree.ElementTree as ET
 import argparse
-from command import xml_to_commands_interface, xml_to_commands_properties
+from xml_to_i18n import xml_to_interface, xml_to_properties
 
 ELEM_PARSERS = {}
 COMMAND_CONSTANTS_DEFAULT_FILENAME = None
 COMMAND_PROPERTIES_DEFAULT_FILENAME = None
+COMMAND_INTERFACE_NAME = "CommandConstants"
+COMMAND_ELEMENT_TYPE = "cmd"
 
 
 def parse_args():
@@ -49,30 +51,11 @@ if __name__ == "__main__":
     root = tree.getroot()
 
     if args.command_constant_file is not None:
-        constants = xml_to_commands_interface(root, args.command_constant_prefix)
+        constants = xml_to_interface(COMMAND_INTERFACE_NAME, root, element_type=COMMAND_ELEMENT_TYPE, prefix=args.command_constant_prefix)
         for package in args.packages:
             constants.add_package(package)
         constants.write(args.command_constant_file)
 
     if args.command_properties_file is not None:
-        properties = xml_to_commands_properties(root, args.command_properties_prefix)
+        properties = xml_to_properties(root, element_type=COMMAND_ELEMENT_TYPE, prefix=args.command_properties_prefix)
         properties.write(args.command_properties_file)
-
-#
-#     # for elem in tree.iter():
-#     #     print(elem)
-#
-#     for elem in root.getchildren():
-#         print(elem)
-#         print(elem.tag)
-#         print(elem.get('id'))
-#
-#
-#         if elem.tag in ELEM_PARSERS:
-#             # Parse and return text
-#             print(elem.get(id))
-#             pass
-#
-#
-#
-# def process_cmds
