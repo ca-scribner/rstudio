@@ -140,11 +140,17 @@ public class MenuEmitter
             new ClassSourceFileComposerFactory(packageName_, className);
       factory.addImport("org.rstudio.core.client.Debug");
       factory.addImport("org.rstudio.core.client.command.MenuCallback");
+      if (addI18n) {
+         factory.addImport("com.google.gwt.core.client.GWT");
+         factory.addImport("org.rstudio.studio.client.workbench.commands.CmdConstants");
+      }
+
       SourceWriter writer = factory.createSourceWriter(context_, printWriter);
 
       emitFields(writer);
       emitConstructor(writer, className);
       emitMethod(writer);
+      emitConstants(writer);
       writer.outdent();
       writer.println("}");
       context_.commit(logger_, printWriter);
@@ -157,6 +163,11 @@ public class MenuEmitter
       writer.println("private "
                      + bundleType_.getQualifiedSourceName()
                      + " cmds;");
+   }
+
+   private void emitConstants(SourceWriter writer)
+   {
+      writer.println("private MenuConstants " + i18n_constants_name + " = GWT.create(MenuConstants.class);");
    }
 
    private void emitConstructor(SourceWriter writer, String className)
@@ -191,6 +202,14 @@ public class MenuEmitter
 
          Element child = (Element)n;
 
+//         logger_.log(TreeLogger.INFO, "in emitMenu with menuName = " + menuName);  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()));  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()).getNodeName());  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()).getBaseURI());  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()).getLocalName());  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()).getAttribute("label"));  // DEBUG
+//         logger_.log(TreeLogger.INFO, "working on child with parent of " + ((Element)child.getParentNode()).toString());  // DEBUG
+
          if (child.getTagName().equals("cmd"))
          {
             String cmdId = child.getAttribute("refid");
@@ -205,10 +224,17 @@ public class MenuEmitter
          }
          else if (child.getTagName().equals("menu"))
          {
-            String label = child.getAttribute("label");
-            writer.println("callback.beginMenu(\"" +
-                           Generator.escape(label) +
-                           "\");");
+            String localLabel = child.getAttribute("label");
+            String label = menuName + "$" + localLabel;
+            String label_for_emit;
+            if (addI18n) { // DEBUG
+               // DEBUG: Add an i18n-ified menu
+               label_for_emit = this.i18n_constants_name + "." + parse_label_for_i18n(label) + "Label()";
+            } else {
+               label_for_emit = "\"" + Generator.escape(label) + "\"";
+            }
+
+            writer.println("callback.beginMenu(" + label_for_emit + ");");
             emitMenu(writer, child, label);
             writer.println("callback.endMenu();");
             accessKeys.processMenu(label);
@@ -228,6 +254,10 @@ public class MenuEmitter
       accessKeys.report();
    }
 
+   private String parse_label_for_i18n(String label) {
+      return label.replaceAll("[^0-9a-zA-Z_$]", "_");
+   }
+
    private final TreeLogger logger_;
    private final GeneratorContext context_;
    private final JClassType bundleType_;
@@ -235,4 +265,7 @@ public class MenuEmitter
    private final Element menuEl_;
    private final String packageName_;
    private final Map<String, Element> commandProps_;
+   // DEBUG: For local i18n debugging
+   private final boolean addI18n = true;
+   private final String i18n_constants_name = "_constants";
 }

@@ -119,7 +119,7 @@ class CommandBundleGeneratorHelper
          // Trying out adding some i18n versions of this code
          if (addI18n) {
             factory.addImport("com.google.gwt.core.client.GWT");
-            factory.addImport("org.rstudio.studio.client.workbench.commands.CommandConstants");
+            factory.addImport("org.rstudio.studio.client.workbench.commands.CmdConstants");
 
          }
 
@@ -144,7 +144,7 @@ class CommandBundleGeneratorHelper
 
    private void emitConstants(SourceWriter writer)
    {
-      writer.println("private CommandConstants " + constants_name + " = GWT.create(CommandConstants.class);");
+      writer.println("private CmdConstants " + i18n_constants_name + " = GWT.create(CmdConstants.class);");
    }
 
    private void emitConstructor(SourceWriter writer, ImageResourceInfo images)
@@ -177,7 +177,7 @@ class CommandBundleGeneratorHelper
       {
          String name = method.getName();
          System.out.println("in emitMenus.getConfigDoc()!"); // DEBUG
-         logger_.log(TreeLogger.ERROR, "in emitMenus.getConfigDoc():"); // DEBUG
+         logger_.log(TreeLogger.ERROR, "(not really an error) in emitMenus.getConfigDoc():"); // DEBUG
          NodeList nodes = getConfigDoc("/commands/menu[@id='" + name + "']");
          if (nodes.getLength() == 0)
          {
@@ -331,8 +331,8 @@ class CommandBundleGeneratorHelper
       writer.println(name + "_ = new AppCommand();");
 
       setProperty(writer, name, commandProps_.get(name), "id");
-      // DEG: Add i18n only for newPythonDoc
-      if (addI18n && name.equals("newPythonDoc"))
+      // DEBUG: Add i18n
+      if (addI18n)
       {
          setProperty(writer, name, commandProps_.get(name), "desc", true);
          setProperty(writer, name, commandProps_.get(name), "label", true);
@@ -397,8 +397,7 @@ class CommandBundleGeneratorHelper
       {
          // Set as an i18n-managed string property
          String propertyCapitalized = Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
-         value = constants_name + "." + name + propertyCapitalized + "()";
-         System.out.println("Hello, world!"); // DEBUG: Testing if things print to builder from here.  They do!
+         value = i18n_constants_name + "." + name + propertyCapitalized + "()";
       } else {
          // Set as a hard-coded string property
          value = "\"" + Generator.escape(props.getAttribute(propertyName)) + "\"";
@@ -585,9 +584,9 @@ class CommandBundleGeneratorHelper
    private final String packageName_;
    private final Map<String, Element> commandProps_;
    private String simpleName_;
-   // Trying out some local i18n debugging
+   // DEBUG: Trying out some local i18n debugging
    private final boolean addI18n = true;
-   private final String constants_name = "_constants";
+   private final String i18n_constants_name = "_constants";
 }
 
 class ImageResourceInfo
