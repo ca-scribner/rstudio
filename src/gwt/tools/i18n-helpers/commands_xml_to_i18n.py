@@ -1,12 +1,8 @@
-import xml.etree.ElementTree as ET
+from lxml import etree
 import argparse
 from xml_to_i18n import xml_to_interface, xml_to_properties
 from xml_to_i18n import DEFAULT_PARSERS as SUPPORTED_TYPES_TO_PARSE
 
-ELEM_PARSERS = {}
-COMMAND_CONSTANTS_DEFAULT_FILENAME = None
-COMMAND_PROPERTIES_DEFAULT_FILENAME = None
-COMMAND_ELEMENT_TYPE = "cmd"
 OUTPUT_TYPES = ["constant", "properties"]
 
 
@@ -71,7 +67,7 @@ def generate_properties(root, element_type, output_path, prefix=""):
 if __name__ == "__main__":
     args = parse_args()
 
-    tree = ET.parse(args.xmlfile)
+    tree = etree.parse(args.xmlfile)
     root = tree.getroot()
 
     if args.output_type == 'constant':

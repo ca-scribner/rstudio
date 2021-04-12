@@ -1,6 +1,6 @@
 from i18n_gwt_interface import I18NGwtConstantsInterfaceGenerator, \
     I18NGwtPropertiesGenerator, Constant, Property, Text
-import xml.etree.ElementTree as ElementTree
+from lxml.etree import ElementTree
 import re
 
 
@@ -9,10 +9,21 @@ class ElementParser:
         self.non_translatable_fields = []
         self.translatable_fields = []
         self._xml_element = xml_element
+        self._lineage = None
 
     def parse(self):
         for field_name in self.non_translatable_fields + self.translatable_fields:
             setattr(self, field_name, self._xml_element.get(field_name, None))
+
+
+    @property
+    def lineage(self):
+        if self._lineage is None:
+            self._lineage = get_lineage(self._xml_element)
+        return self._lineage
+
+    def _set_lineage_from_xml(self):
+        get_lineage(self._xml_element)
 
     @property
     def populated_translatable_fields(self):
@@ -59,6 +70,11 @@ class ElementParser:
             properties.append(Property(name=full_field_name, value=prefix + getattr(self, field_name)))
         return properties
 
+    @staticmethod
+    def grep_from_element_tree(element: ElementTree):
+        """Returns a collection of elements of this type from an ElementTree"""
+        raise NotImplementedError()
+
     @property
     def name(self):
         raise NotImplementedError()
@@ -99,6 +115,14 @@ class Command(ElementParser):
 
         self.parse()
 
+    @staticmethod
+    def grep_from_element_tree(element: ElementTree):
+        """Returns a list of all elements of this type from an ElementTree and a map of their lineage"""
+
+        parent_map = {c: p for p in element.iter() for c in p}
+
+        return element.findall("cmd")
+
     @property
     def name(self):
         return self.id
@@ -124,8 +148,44 @@ class Menu(ElementParser):
         self.parse()
 
     @property
-    def name(self):
-        return self.label
+    def lineage(self, path_delimiter: str = '/'):
+        """Custom lineage for menu elements which roots at 'main'"""
+        if self._lineage is None:
+            self._lineage = f"main{path_delimiter}" + get_lineage(self._xml_element)
+
+            # Remove trailing delimiters (can happen if this is straight off 'main'
+            self._lineage = self._lineage.rstrip(path_delimiter)
+        return self._lineage
+
+
+    @staticmethod
+    def grep_from_element_tree(element: ElementTree):
+        """
+        Returns a collection of elements that apply to this type from an ElementTree
+
+        Returned are all "menu" elements in the top-level "mainMenu" element, including nested menus
+        """
+        # Get all "menu" elements that are the direct children of element
+        menus = element.findall("menu")
+
+        # Assert that there's only one (mainMenu)
+        if len(menus) != 1:
+            raise ValueError("Structure of ElementTree not as expected.  Has Commands.cmd.xml changed?")
+        mainmenu = menus[0]
+
+        # Return all descendents (not just direct children) of mainMenu that are a menu element.
+        # iter returns an iterable with this element first followed by all descendents.  Remove this element by
+        # consuming the first before returning
+        menu_iter = mainmenu.iter("menu")
+        next(menu_iter)
+        return menu_iter
+
+    @property
+    def name(self, lineage_delimiter: str = '$'):
+        lineage = re.sub(r'/', lineage_delimiter, self.lineage)
+        if lineage:
+            lineage += lineage_delimiter
+        return lineage + self.label
 
     @property
     def label(self):
@@ -134,7 +194,7 @@ class Menu(ElementParser):
     @label.setter
     def label(self, value):
         # Replace any characters that cannot be in a java attribute name with underscores
-        self._label = re.sub(r"[^0-9a-zA-Z_-]", "_", value)
+        self._label = re.sub(r"[^0-9a-zA-Z_$]", "_", value)
 
     def _field_name_parser(self, field_name):
         return generate_name(self.name, field_name)
@@ -151,4 +211,14 @@ def capitalize_first(s: str):
     """Returns the string s with the first character as uppercase"""
     return s[0].upper() + s[1:]
 
+
+def get_lineage(e: ElementTree):
+    parent = e.getparent()
+    if parent is None:
+        return ""
+    else:
+        grandparents = get_lineage(parent)
+        if grandparents:
+            grandparents += "/"
+        return grandparents + parent.attrib.get('label', "")
 

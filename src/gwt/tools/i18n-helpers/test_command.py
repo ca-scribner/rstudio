@@ -1,5 +1,5 @@
 import pytest
-import xml.etree.ElementTree as ET
+from lxml import etree
 from element_parsers import Command
 
 
@@ -24,7 +24,7 @@ def sample_command():
      windowMode="main"
      rebindable="false"/>
     """
-    return ET.fromstring(cmd_xml)
+    return etree.fromstring(cmd_xml)
 
 
 def test_Command_parse(sample_command):
