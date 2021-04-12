@@ -5,16 +5,19 @@ import re
 
 
 class ElementParser:
+    tag = None
+
     def __init__(self, xml_element: ElementTree):
         self.non_translatable_fields = []
         self.translatable_fields = []
         self._xml_element = xml_element
         self._lineage = None
+        self.tag = None
 
     def parse(self):
+        self.tag = self._xml_element.get("tag", None)
         for field_name in self.non_translatable_fields + self.translatable_fields:
             setattr(self, field_name, self._xml_element.get(field_name, None))
-
 
     @property
     def lineage(self):
@@ -34,8 +37,9 @@ class ElementParser:
     def _ensure_translatable_fields_exist(self):
         for field_name in self.translatable_fields:
             if not hasattr(self, field_name):
-                raise ValueError("Object missing attribute '{f}' that is called as required translatable field.  "
-                                 "Did you add a field to self.translatable_fields without adding the attribute?")
+                raise ValueError(f"Object missing attribute '{field_name}' that is called as required translatable "
+                                 f"field.  Did you add a field to self.translatable_fields without adding the "
+                                 f"attribute?")
 
     def to_constants(self, prefix: str = "", include_header=True):
         """
@@ -70,10 +74,16 @@ class ElementParser:
             properties.append(Property(name=full_field_name, value=prefix + getattr(self, field_name)))
         return properties
 
-    @staticmethod
-    def grep_from_element_tree(element: ElementTree):
-        """Returns a collection of elements of this type from an ElementTree"""
-        raise NotImplementedError()
+    @classmethod
+    def grep_from_element_tree(cls, element: ElementTree):
+        """
+        Returns a collection of elements of this type from an ElementTree
+
+        Default grepper behaviour is to return all elements of tag that are
+        direct children of the parsed element (does not return nested elements.
+        Nested elements need to be found using element.iter())
+        """
+        return element.findall(cls.tag)
 
     @property
     def name(self):
@@ -91,6 +101,8 @@ COMMAND_NON_TRANSLATABLE_FIELDS = ["id"]
 
 
 class Command(ElementParser):
+    tag = "cmd"
+
     def __init__(self, xml_element: ElementTree):
         """
         Parsing structure to convert a Command in Commands.cmd.xml format to translatable Java constant statements
@@ -115,14 +127,6 @@ class Command(ElementParser):
 
         self.parse()
 
-    @staticmethod
-    def grep_from_element_tree(element: ElementTree):
-        """Returns a list of all elements of this type from an ElementTree and a map of their lineage"""
-
-        parent_map = {c: p for p in element.iter() for c in p}
-
-        return element.findall("cmd")
-
     @property
     def name(self):
         return self.id
@@ -135,6 +139,8 @@ MENU_TRANSLATABLE_FIELDS = ["label"]
 
 
 class Menu(ElementParser):
+    tag = "menu"
+
     def __init__(self, xml_element):
         super().__init__(xml_element)
 
@@ -157,16 +163,15 @@ class Menu(ElementParser):
             self._lineage = self._lineage.rstrip(path_delimiter)
         return self._lineage
 
-
-    @staticmethod
-    def grep_from_element_tree(element: ElementTree):
+    @classmethod
+    def grep_from_element_tree(cls, element: ElementTree):
         """
         Returns a collection of elements that apply to this type from an ElementTree
 
         Returned are all "menu" elements in the top-level "mainMenu" element, including nested menus
         """
         # Get all "menu" elements that are the direct children of element
-        menus = element.findall("menu")
+        menus = element.findall(cls.tag)
 
         # Assert that there's only one (mainMenu)
         if len(menus) != 1:
@@ -176,7 +181,7 @@ class Menu(ElementParser):
         # Return all descendents (not just direct children) of mainMenu that are a menu element.
         # iter returns an iterable with this element first followed by all descendents.  Remove this element by
         # consuming the first before returning
-        menu_iter = mainmenu.iter("menu")
+        menu_iter = mainmenu.iter(cls.tag)
         next(menu_iter)
         return menu_iter
 
@@ -195,6 +200,47 @@ class Menu(ElementParser):
     def label(self, value):
         # Replace any characters that cannot be in a java attribute name with underscores
         self._label = re.sub(r"[^0-9a-zA-Z_$]", "_", value)
+
+    def _field_name_parser(self, field_name):
+        return generate_name(self.name, field_name)
+
+
+SHORTCUT_TRANSLATABLE_FIELDS = ["value", "title"]
+SHORTCUT_NON_TRANSLATABLE_FIELDS = ["refid"]
+
+
+class Shortcut(ElementParser):
+    tag = "shortcut"
+
+    def __init__(self, xml_element: ElementTree):
+        """
+        Parsing structure to convert a Command in Commands.cmd.xml format to translatable Java constant statements
+
+        :param xml_element: XML ElementTree describing a Command
+        """
+        super().__init__(xml_element)
+        self.non_translatable_fields = SHORTCUT_NON_TRANSLATABLE_FIELDS
+        self.refid = None
+
+        # Fields that could be translated
+        self.translatable_fields = SHORTCUT_TRANSLATABLE_FIELDS
+        self.value = None
+        self.title = None
+
+        # Ensure these match the fields in TRANSLATABLE_FIELDS
+        # (these could instead be defined dynamically from TRANSLATABLE_FIELDS,
+        # but that feels more opaque...)
+        self._ensure_translatable_fields_exist()
+
+        self.parse()
+
+    @classmethod
+    def grep_from_element_tree(cls, element: ElementTree):
+        return element.iter(cls.tag)
+
+    @property
+    def name(self):
+        return self.refid
 
     def _field_name_parser(self, field_name):
         return generate_name(self.name, field_name)

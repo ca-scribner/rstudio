@@ -1,11 +1,12 @@
-from element_parsers import Command, Menu, Text
+from element_parsers import Command, Menu, Shortcut, Text
 from i18n_gwt_interface import I18NGwtConstantsInterfaceGenerator, I18NGwtPropertiesGenerator
 from lxml.etree import ElementTree
 
 
 DEFAULT_PARSERS = {
     'cmd': Command,
-    'menu': Menu
+    'menu': Menu,
+    'shortcut': Shortcut,
 }
 
 
