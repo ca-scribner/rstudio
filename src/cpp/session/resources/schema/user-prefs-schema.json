@@ -232,7 +232,7 @@
             "type": "boolean",
             "default": true,
             "title": "Autodetect indentation in files",
-            "description": "Whether to automatically detect indentation settings from file contents."
+            "description": "When enabled, the indentation for documents not part of an RStudio project will be automatically detected."
         },
         "show_margin": {
             "type": "boolean",
@@ -268,12 +268,12 @@
             "type": "boolean",
             "default": false,
             "title": "Continue comments after adding new line",
-            "description": "Whether continue comments (by inserting the comment character) after adding a new line."
+            "description": "Whether to continue comments (by inserting the comment character) after adding a new line.  Press Shift + Enter to exit a comment."
         },
         "highlight_web_link": {
             "type": "boolean",
             "default": true,
-            "description": "Whether web links in comments are clickable."
+            "title": "Hyperlinks in comments will be underlined and clickable",
         },
         "editor_keybindings": {
             "type": "string",
