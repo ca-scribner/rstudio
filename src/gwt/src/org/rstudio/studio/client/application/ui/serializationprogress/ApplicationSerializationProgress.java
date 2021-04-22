@@ -115,7 +115,7 @@ public class ApplicationSerializationProgress extends PopupPanel
       RESOURCES.styles().ensureInjected();
             StyleInjector.inject(
             "." + RESOURCES.styles().glass() +
-            " {filter: alpha(opacity = 0) !important;}");
+            " {filter: alpha(opacity = 0) !important;}"); //$NON-NLS-1$
    }
  
 }

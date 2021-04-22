@@ -1,0 +1,8 @@
+<root>
+    <item name='org.rstudio.studio.client.common.GlobalDisplay void openRStudioLink(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.GlobalDisplay.NewWindowOptions void setName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

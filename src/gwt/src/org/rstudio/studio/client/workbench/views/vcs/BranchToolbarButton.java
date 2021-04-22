@@ -220,7 +220,7 @@ public class BranchToolbarButton extends ToolbarMenuButton
       branchMap.put(LOCAL_BRANCHES, localBranches);
       for (String branch : JsUtil.asIterable(branches))
       {
-         if (branch.startsWith("remotes/"))
+         if (branch.startsWith("remotes/")) //$NON-NLS-1$
          {
             JsArrayString parts = StringUtil.split(branch, "/");
             if (parts.length() > 2)
@@ -260,6 +260,8 @@ public class BranchToolbarButton extends ToolbarMenuButton
       });
    }
 
+   // TODO: i18n: Does the logic below where we interpret branch names/other git things work for other
+   //  locales?  Will these ever be returned in other languages, or is that controlled?
    private void populateMenu(final ToolbarPopupMenu menu, final Map<String, List<String>> branchMap)
    {
       if (branchMap.isEmpty())
@@ -306,7 +308,7 @@ public class BranchToolbarButton extends ToolbarMenuButton
                {
                   String branchLabel = caption == LOCAL_BRANCHES
                         ? LOCAL_BRANCHES
-                        : "(Remote: " + caption + ")";
+                        : "(Remote: " + caption + ")"; //$NON-NLS-1$
                   Label label = new Label(branchLabel);
                   label.addStyleName(ThemeStyles.INSTANCE.menuSubheader());
                   label.getElement().getStyle().setPaddingLeft(2, Unit.PX);
@@ -328,11 +330,11 @@ public class BranchToolbarButton extends ToolbarMenuButton
             for (String branch : branches)
             {
                // skip detached branches
-               if (branch.contains("HEAD detached at"))
+               if (branch.contains("HEAD detached at")) //$NON-NLS-1$
                   continue;
 
                // skip HEAD branches
-               if (branch.contains("HEAD ->"))
+               if (branch.contains("HEAD ->")) //$NON-NLS-1$
                   continue;
 
                // construct branch label without remotes prefix
@@ -498,6 +500,7 @@ public class BranchToolbarButton extends ToolbarMenuButton
 
    private static final int MAX_BRANCHES = 100;
 
+   // TODO: i18n: Are these to be translated?  Or are they used as enumerators?
    private static final String NO_BRANCH = "(no branch)";
    private static final String NO_BRANCHES_AVAILABLE = "(no branches available)";
    private static final String LOCAL_BRANCHES = "(local branches)";

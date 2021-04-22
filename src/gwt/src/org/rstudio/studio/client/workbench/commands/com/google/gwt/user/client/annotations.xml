@@ -1,0 +1,8 @@
+<root>
+    <item name='com.google.gwt.user.client.DOM com.google.gwt.user.client.Element createElement(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.Window void setMargin(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

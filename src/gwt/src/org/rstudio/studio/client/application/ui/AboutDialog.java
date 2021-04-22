@@ -37,6 +37,7 @@ public class AboutDialog extends ModalDialogBase
       super(Roles.getDialogRole());
       RStudioGinjector.INSTANCE.injectMembers(this);
 
+      // DEBUG: TODO: Fix this for real
 //      Modified to test i18n
 //      setText("About " + editionInfo_.editionName());
       setText(messages.title(editionInfo_.editionName()));

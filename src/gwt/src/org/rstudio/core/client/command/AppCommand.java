@@ -334,7 +334,7 @@ public class AppCommand implements Command, ClickHandler, ImageResourceProvider
       public String toString()
       {
          if (this == Cpp)
-            return "C / C++";
+            return "C / C++"; //$NON-NLS-1$
 
          return StringUtil.prettyCamel(super.toString());
       }
@@ -348,7 +348,7 @@ public class AppCommand implements Command, ClickHandler, ImageResourceProvider
    public void setContext(String context)
    {
       String lower = context.toLowerCase();
-      if (lower.equals("workbench"))
+      if (lower.equals("workbench")) //$NON-NLS-1$
          context_ = Context.Workbench;
       else if (lower.equals("editor"))
          context_ = Context.Editor;
@@ -749,6 +749,7 @@ public class AppCommand implements Command, ClickHandler, ImageResourceProvider
       else if (!StringUtil.isNullOrEmpty(getDesc()))
          return getDesc();
       else
+         // TODO: i18n-ify this
          return "(no description)";
    }
 

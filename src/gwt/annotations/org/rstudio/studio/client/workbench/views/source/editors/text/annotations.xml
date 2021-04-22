@@ -1,0 +1,27 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditor'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorMixins'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void addEventListener(com.google.gwt.dom.client.Element, java.lang.String, com.google.gwt.event.shared.HasHandlers) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void remapForEditImpl(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void remapForEditImpl(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void unmapForEditImpl(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void unmapForEditImpl(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

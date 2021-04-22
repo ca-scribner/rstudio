@@ -586,13 +586,13 @@ public abstract class ChunkOptionsPopupPanel extends MiniPopupPanel
    
    private int getPriority(String key)
    {
-      if (key == "eval")
+      if (key == "eval") //$NON-NLS-1$
          return 10;
       else if (key == "echo")
          return 9;
-      else if (key == "warning" || key == "error" || key == "message")
+      else if (key == "warning" || key == "error" || key == "message") //$NON-NLS-1$
          return 8;
-      else if (key.startsWith("fig."))
+      else if (key.startsWith("fig.")) //$NON-NLS-1$
          return 8;
       return 0;
    }

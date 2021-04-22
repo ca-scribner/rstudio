@@ -1,0 +1,23 @@
+<root>
+    <item name='org.rstudio.studio.client.application.Application java.lang.String absoluteUrl(java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.application.Application void navigateWindowTo(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.application.ApplicationAction'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.application.ApplicationCsrfToken'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.application.ApplicationTutorialEvent'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

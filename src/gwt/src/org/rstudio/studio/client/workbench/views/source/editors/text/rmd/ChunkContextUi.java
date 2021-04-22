@@ -197,8 +197,8 @@ public abstract class ChunkContextUi implements ChunkContextToolbar.Host
             String firstLine = chunkLines.get(0);
             Position linedEnd = Position.create(start.getRow(),firstLine.length());
             
-            String newFirstLine = firstLine.replaceFirst("[, ]*engine='[a-zA-Z]+'", "");
-            newFirstLine = newFirstLine.replaceFirst("{[a-zA-Z]+", "{" + chunkType);
+            String newFirstLine = firstLine.replaceFirst("[, ]*engine='[a-zA-Z]+'", ""); //$NON-NLS-1$
+            newFirstLine = newFirstLine.replaceFirst("{[a-zA-Z]+", "{" + chunkType); //$NON-NLS-1$
 
             docDisplay.replaceRange(Range.fromPoints(start, linedEnd), newFirstLine);
             
@@ -240,14 +240,14 @@ public abstract class ChunkContextUi implements ChunkContextToolbar.Host
    private boolean isSetupChunk(int row)
    {
       String line = outerEditor_.getDocDisplay().getLine(row);
-      return line.contains("r setup");
+      return line.contains("r setup"); //$NON-NLS-1$
    }
 
    private String getEngine(int row)
    {
       String line = outerEditor_.getDocDisplay().getLine(row);
       Map<String, String> options = RChunkHeaderParser.parse(line);
-      String engine = StringUtil.stringValue(options.get("engine"));
+      String engine = StringUtil.stringValue(options.get("engine")); //$NON-NLS-1$
       return engine;
    }
    
@@ -264,8 +264,8 @@ public abstract class ChunkContextUi implements ChunkContextToolbar.Host
          return new SetupChunkOptionsPopupPanel();
       
       String engine = getEngine(row);
-      if (!engine.toLowerCase().equals("r") &&
-          !engine.toLowerCase().equals("d3"))
+      if (!engine.toLowerCase().equals("r") && //$NON-NLS-1$
+          !engine.toLowerCase().equals("d3")) //$NON-NLS-1$
          return new CustomEngineChunkOptionsPopupPanel(engine_);
       
       return new DefaultChunkOptionsPopupPanel(engine_);

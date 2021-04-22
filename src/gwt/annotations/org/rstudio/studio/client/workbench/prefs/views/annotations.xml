@@ -1,0 +1,15 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.prefs.views.AceEditorPreview void setFont(java.lang.String, boolean)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.prefs.views.AppearancePreferencesPane CODE_SAMPLE'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.prefs.views.AppearancePreferencesPane void setPaneVisible(boolean)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

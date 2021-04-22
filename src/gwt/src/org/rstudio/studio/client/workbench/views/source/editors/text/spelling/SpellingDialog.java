@@ -36,7 +36,7 @@ public class SpellingDialog extends ModalDialogBase implements CheckSpelling.Dis
 {
    interface Binder extends UiBinder<Widget, SpellingDialog>
    {}
-
+   // TODO: i18n: Dictionary for other languages?  Disable?
    public SpellingDialog()
    {
       super(Roles.getDialogRole());

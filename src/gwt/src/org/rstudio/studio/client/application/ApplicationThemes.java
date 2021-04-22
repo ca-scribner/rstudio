@@ -73,8 +73,8 @@ public class ApplicationThemes implements ThemeChangedEvent.Handler,
    public void onComputeThemeColors(ComputeThemeColorsEvent event)
    {
       // Establish defaults
-      String foreground = "#000000";
-      String background = "#FFFFFF";
+      String foreground = "#000000"; //$NON-NLS-1$
+      String background = "#FFFFFF"; //$NON-NLS-1$
 
       // We're very exception sensitive here since this code runs in a
       // WaitForMethod (and therefore can hold the server while we wait for it
@@ -83,8 +83,8 @@ public class ApplicationThemes implements ThemeChangedEvent.Handler,
       {
          // Create a sampler element to read runtime styles; hide it and position
          // it offscreen to ensure it doesn't flicker.
-         Element sampler = Document.get().createElement("div");
-         sampler.addClassName("ace_editor ace_content");
+         Element sampler = Document.get().createElement("div"); //$NON-NLS-1$
+         sampler.addClassName("ace_editor ace_content"); //$NON-NLS-1$
          sampler.getStyle().setVisibility(Visibility.HIDDEN);
          sampler.getStyle().setPosition(Position.ABSOLUTE);
          sampler.getStyle().setTop(-10000, Unit.PX);

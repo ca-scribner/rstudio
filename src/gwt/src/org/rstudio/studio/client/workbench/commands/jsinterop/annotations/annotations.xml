@@ -1,0 +1,8 @@
+<root>
+    <item name='jsinterop.annotations.JsType java.lang.String name()'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='jsinterop.annotations.JsType java.lang.String namespace()'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

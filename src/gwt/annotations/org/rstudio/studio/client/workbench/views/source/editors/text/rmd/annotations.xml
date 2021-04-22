@@ -1,0 +1,12 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.rmd.ChunkContextToolbar$6 void onBrowserEvent(com.google.gwt.user.client.Event)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.rmd.ChunkContextUiTests'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

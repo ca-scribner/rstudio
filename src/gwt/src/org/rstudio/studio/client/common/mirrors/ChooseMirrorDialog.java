@@ -198,7 +198,7 @@ public class ChooseMirrorDialog extends ModalDialog<CRANMirror>
                for(int i=0; i<mirrors.length(); i++)
                {
                   CRANMirror mirror = mirrors.get(i);
-                  if (mirrorSource_.getLabel(mirror).startsWith("0-Cloud"))
+                  if (mirrorSource_.getLabel(mirror).startsWith("0-Cloud")) //$NON-NLS-1$
                      continue;
                   mirrors_.add(mirror);
                   String item = mirrorSource_.getLabel(mirror);

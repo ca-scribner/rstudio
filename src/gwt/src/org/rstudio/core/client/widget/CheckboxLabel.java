@@ -36,7 +36,7 @@ public class CheckboxLabel implements IsWidget
       Element blankLabel = DOM.getChild(checkbox.getElement(), 1);
       if (blankLabel != null)
       {
-         blankLabel.removeAttribute("for");
+         blankLabel.removeAttribute("for"); //$NON-NLS-1$ // i18n?
       }
       label_.getElement().getStyle().setCursor(Cursor.DEFAULT);
       label_.addClickHandler(new ClickHandler()

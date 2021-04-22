@@ -1,0 +1,22 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.AceBackgroundHighlighter.HighlightPattern HighlightPattern(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.AceBackgroundHighlighter.HighlightPattern HighlightPattern(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.AceEditorBackgroundLinkHighlighter void navigateToUrl(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.AceEditorNative'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.AceEditorNative com.google.gwt.event.shared.HandlerRegistration addEventListener(com.google.gwt.core.client.JavaScriptObject, java.lang.String, org.rstudio.core.client.CommandWithArg&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ace.Token boolean hasType(java.lang.String...) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

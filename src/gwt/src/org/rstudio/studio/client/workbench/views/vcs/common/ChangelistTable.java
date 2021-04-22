@@ -254,7 +254,7 @@ public abstract class ChangelistTable extends Composite
       };
       statusColumn.setSortable(true);
       statusColumn.setHorizontalAlignment(Column.ALIGN_CENTER);
-      table_.addColumn(statusColumn, "Status");
+      table_.addColumn(statusColumn, "Status"); //$NON-NLS-1$
       table_.setColumnWidth(statusColumn, "56px");
       sortHandler_.setComparator(statusColumn, new Comparator<StatusAndPath>()
       {
@@ -279,7 +279,7 @@ public abstract class ChangelistTable extends Composite
       };
       pathColumn.setSortable(true);
       sortHandler_.setComparator(pathColumn, new StatusAndPath.PathComparator());
-      table_.addColumn(pathColumn, "Path");
+      table_.addColumn(pathColumn, "Path"); //$NON-NLS-1$
 
       table_.getColumnSortList().push(pathColumn);
    }

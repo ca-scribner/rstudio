@@ -107,9 +107,9 @@ public class CallFrame extends JavaScriptObject
    {
       if (fileName.length() > 0 &&
           !fileName.equalsIgnoreCase("NULL") &&
-          !fileName.equalsIgnoreCase("<tmp>") &&
-          !fileName.equalsIgnoreCase("<text>") &&
-          !fileName.equalsIgnoreCase("~/.active-rstudio-document"))
+          !fileName.equalsIgnoreCase("<tmp>") && //$NON-NLS-1$
+          !fileName.equalsIgnoreCase("<text>") && //$NON-NLS-1$
+          !fileName.equalsIgnoreCase("~/.active-rstudio-document")) //$NON-NLS-1$
       {
          return true;
       }

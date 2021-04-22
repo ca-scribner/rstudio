@@ -1,0 +1,44 @@
+<root>
+    <item name='com.google.gwt.dom.client.Document com.google.gwt.dom.client.Element getElementById(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element boolean addClassName(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element boolean hasClassName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element com.google.gwt.dom.client.NodeList&lt;com.google.gwt.dom.client.Element&gt; getElementsByTagName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element java.lang.String getAttribute(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element void setAttribute(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element void setAttribute(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element void setId(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.LinkElement void setRel(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.LinkElement void setType(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Style void setBackgroundColor(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Style void setBorderColor(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Style void setProperty(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.StyleElement void setType(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

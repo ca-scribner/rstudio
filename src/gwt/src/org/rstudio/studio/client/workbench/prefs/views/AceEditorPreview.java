@@ -96,8 +96,8 @@ public class AceEditorPreview extends DynamicIFrame
                         StyleElement style = doc.createStyleElement();
                         style.setType("text/css");
                         style.setInnerText(
-                              ".ace_editor {\n" +
-                                    "border: none !important;\n" +
+                              ".ace_editor {\n" + //$NON-NLS-1$
+                                    "border: none !important;\n" + //$NON-NLS-1$
                               "}");
                         if (Desktop.isDesktop())
                            setFont(ThemeFonts.getFixedWidthFont(), false);

@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.gwt.aria.client.Role void setAriaLabelProperty(com.google.gwt.dom.client.Element, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

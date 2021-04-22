@@ -220,8 +220,8 @@ public class BuildPresenter extends BasePresenter
          CodeNavigationTarget target = event.getSelectedItem();
          FileSystemItem fsi = FileSystemItem.createFile(target.getFile());
 
-         if (view_.errorsBuildType() == "test-file" ||
-             view_.errorsBuildType() == "test-shiny-file")
+         if (view_.errorsBuildType() == "test-file" || //$NON-NLS-1$
+             view_.errorsBuildType() == "test-shiny-file") //$NON-NLS-1$
          {
             // for test files, we want to avoid throwing errors when the file is missing
             fileServer_.stat(target.getFile(), new ServerRequestCallback<FileSystemItem>()
@@ -301,9 +301,9 @@ public class BuildPresenter extends BasePresenter
       {
          withDevtoolsLoadAllPath(loadAllPath ->
          {
-            sendLoadCommandToConsole("devtools::load_all(\"" + loadAllPath + "\")");
+            sendLoadCommandToConsole("devtools::load_all(\"" + loadAllPath + "\")"); //$NON-NLS-1$
          });
-      }, () -> {}, "Build");
+      }, () -> {}, "Build"); //$NON-NLS-1$
    }
 
    void onBuildSourcePackage()
@@ -377,7 +377,7 @@ public class BuildPresenter extends BasePresenter
 
    private void executeBuild(final String type, final String subType)
    {
-      if (type != "build-all" && type != "rebuild-all")
+      if (type != "build-all" && type != "rebuild-all") //$NON-NLS-1$
       {
          executeBuildNoBusyCheck(type, subType);
          return;

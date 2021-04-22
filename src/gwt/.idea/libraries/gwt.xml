@@ -1,5 +1,8 @@
 <component name="libraryTable">
   <library name="gwt">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/src/org/rstudio/studio/client/workbench/commands" />
+    </ANNOTATIONS>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/lib/gwt/gwt-rstudio" />
     </CLASSES>

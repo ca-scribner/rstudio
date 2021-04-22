@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.gwt.safehtml.shared.SafeHtmlBuilder com.google.gwt.safehtml.shared.SafeHtmlBuilder appendHtmlConstant(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

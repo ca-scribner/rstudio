@@ -1,0 +1,11 @@
+<root>
+    <item name='org.rstudio.core.client.widget.AutocompleteSuggestionDisplay void setPopupWidth(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.widget.TextBoxWithButton void setTextWidth(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.widget.VerticalSpacer VerticalSpacer(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

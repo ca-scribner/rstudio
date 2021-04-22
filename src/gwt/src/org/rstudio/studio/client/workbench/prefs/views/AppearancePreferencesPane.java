@@ -83,7 +83,7 @@ public class AppearancePreferencesPane extends PreferencesPane
       relaunchRequired_ = false;
 
       // dark-grey theme used to be derived from default, now also applies to sky
-      if (StringUtil.equals(userPrefs_.globalTheme().getValue(), "dark-grey"))
+      if (StringUtil.equals(userPrefs_.globalTheme().getValue(), "dark-grey")) //$NON-NLS-1$
         userPrefs_.globalTheme().setGlobalValue(UserPrefs.GLOBAL_THEME_DEFAULT);
 
       final String originalTheme = userPrefs_.globalTheme().getValue();
@@ -98,6 +98,7 @@ public class AppearancePreferencesPane extends PreferencesPane
                                 false);
       flatTheme_.addStyleName(res.styles().themeChooser());
       flatTheme_.getListBox().setWidth("95%");
+      // TODO: This needs(?) to be updated to use the above enums?
       flatTheme_.getListBox().addChangeHandler(event ->
          relaunchRequired_ = (StringUtil.equals(originalTheme, "classic") && !StringUtil.equals(flatTheme_.getValue(), "classic")) ||
             (StringUtil.equals(flatTheme_.getValue(), "classic") && !StringUtil.equals(originalTheme, "classic")));
@@ -156,7 +157,7 @@ public class AppearancePreferencesPane extends PreferencesPane
          if (fontList.isEmpty())
             registerFontListReadyCallback();
          else
-            fonts = fontList.split("\\n");
+            fonts = fontList.split("\\n"); //$NON-NLS-1$
       }
       else
       {
@@ -445,7 +446,7 @@ public class AppearancePreferencesPane extends PreferencesPane
                warningMsg.append("The active theme \"")
                   .append(currentTheme.getName())
                   .append("\" could not be found. It's possible it was removed outside the context of RStudio. Switching to the ")
-                  .append(currentTheme.isDark() ? "dark " : "light ")
+                  .append(currentTheme.isDark() ? "dark " : "light ") // TODO: How to handle this in i18n?  Are these human-namable, or enums?  I think they're human, so maybe it is just whatever it is?
                   .append("default theme: \"");
 
                currentTheme = AceTheme.createDefault(currentTheme.isDark());
@@ -669,7 +670,7 @@ public class AppearancePreferencesPane extends PreferencesPane
    @Override
    public String getName()
    {
-      return "Appearance";
+      return "Appearance"; //$NON-NLS-1$
    }
 
    private final native void registerFontListReadyCallback()
@@ -701,7 +702,7 @@ public class AppearancePreferencesPane extends PreferencesPane
             if (fonts.isEmpty())
                return true;
 
-            String[] fontList = fonts.split("\\n");
+            String[] fontList = fonts.split("\\n"); //$NON-NLS-1$
             populateFontList(fontList);
             return false;
          }
@@ -789,15 +790,15 @@ public class AppearancePreferencesPane extends PreferencesPane
    private String initialZoomLevel_;
    private final SelectWidget flatTheme_;
    private Boolean relaunchRequired_;
-   private static String previewDefaultHeight_ = "533px";
+   private static String previewDefaultHeight_ = "533px"; //$NON-NLS-1$
    private HashMap<String, AceTheme> themeList_;
    private final GlobalDisplay globalDisplay_;
    private final DependencyManager dependencyManager_;
    private final ThemeServerOperations server_;
    private int renderPass_ = 1;
 
-   private final static String DEFAULT_FONT_NAME = "(Default)";
-   private final static String DEFAULT_FONT_VALUE = "__default__";
+   private final static String DEFAULT_FONT_NAME = "(Default)"; //$NON-NLS-1$
+   private final static String DEFAULT_FONT_VALUE = "__default__"; //$NON-NLS-1$
 
    private static final String CODE_SAMPLE =
          "# plotting of R objects\n" +

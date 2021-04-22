@@ -445,8 +445,8 @@ public class AceBackgroundHighlighter
    
    private final Worker worker_;
    
-   private static final String MARKER_CLASS = "ace_foreign_line background_highlight";
-   private static final String MARKER_TYPE = "fullLine";
+   private static final String MARKER_CLASS = "ace_foreign_line background_highlight"; //$NON-NLS-1$
+   private static final String MARKER_TYPE = "fullLine"; //$NON-NLS-1$
    private static final Map<String, List<HighlightPattern>> HIGHLIGHT_PATTERN_REGISTRY;
    
    // Injected ----
@@ -456,10 +456,10 @@ public class AceBackgroundHighlighter
    
    static {
       HIGHLIGHT_PATTERN_REGISTRY = new HashMap<>();
-      HIGHLIGHT_PATTERN_REGISTRY.put("mode/rmarkdown", rMarkdownHighlightPatterns());
-      HIGHLIGHT_PATTERN_REGISTRY.put("mode/c_cpp", cStyleHighlightPatterns());
-      HIGHLIGHT_PATTERN_REGISTRY.put("mode/sweave", sweaveHighlightPatterns());
-      HIGHLIGHT_PATTERN_REGISTRY.put("mode/rhtml", htmlStyleHighlightPatterns());
+      HIGHLIGHT_PATTERN_REGISTRY.put("mode/rmarkdown", rMarkdownHighlightPatterns()); //$NON-NLS-1$
+      HIGHLIGHT_PATTERN_REGISTRY.put("mode/c_cpp", cStyleHighlightPatterns()); //$NON-NLS-1$
+      HIGHLIGHT_PATTERN_REGISTRY.put("mode/sweave", sweaveHighlightPatterns()); //$NON-NLS-1$
+      HIGHLIGHT_PATTERN_REGISTRY.put("mode/rhtml", htmlStyleHighlightPatterns()); //$NON-NLS-1$
    }
    
    private static final int STATE_TEXT         = 1;

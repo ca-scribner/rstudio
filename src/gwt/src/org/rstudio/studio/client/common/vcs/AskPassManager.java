@@ -81,6 +81,7 @@ public class AskPassManager
             String prompt = e.getPrompt();
             
             // default to password prompt
+            // TODO: i18n: Is this something that should be handled for i18n?  Or is it ok to be English-only?
             String title = "Password";
             int dialogType = MessageDisplay.INPUT_PASSWORD;
 

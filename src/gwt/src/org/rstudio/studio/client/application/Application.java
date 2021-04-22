@@ -539,7 +539,7 @@ public class Application implements ApplicationEventHandlers
    public void onLogFocusedElement()
    {
       Element el = DomUtils.getActiveElement();
-      DomUtils.dump(el, "Focused Element: ");
+      DomUtils.dump(el, "Focused Element: "); //$NON-NLS-1$
    }
 
    @Handler
@@ -832,8 +832,8 @@ public class Application implements ApplicationEventHandlers
       else
       {
          // add the scope info to the query string
-         baseURL += "?project="
-               + URL.encodeQueryString(info.getSessionProject()) + "&id="
+         baseURL += "?project=" //$NON-NLS-1$
+               + URL.encodeQueryString(info.getSessionProject()) + "&id=" //$NON-NLS-1$
                + URL.encodeQueryString(info.getSessionProjectId());
       }
       navigateWindowWithDelay(baseURL);
@@ -1322,7 +1322,7 @@ public class Application implements ApplicationEventHandlers
 
    private boolean fileUploadInProgress_ = false;
 
-   private final String CSRF_TOKEN_FIELD = "csrf-token";
+   private final String CSRF_TOKEN_FIELD = "csrf-token"; //$NON-NLS-1$
 
    private ClientStateUpdater clientStateUpdaterInstance_;
    private RootLayoutPanel rootPanel_;

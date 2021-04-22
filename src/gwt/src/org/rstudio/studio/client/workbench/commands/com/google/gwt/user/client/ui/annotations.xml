@@ -1,0 +1,38 @@
+<root>
+    <item name='com.google.gwt.i18n.client.Constants.DefaultStringValue java.lang.String value()'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.CellPanel void setCellWidth(com.google.gwt.user.client.ui.Widget, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.PopupPanel void setWidth(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void addStyleDependentName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void addStyleName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void removeStyleDependentName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void setHeight(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void setSize(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void setSize(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void setStylePrimaryName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.UIObject void setWidth(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.regex.Pattern int search(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

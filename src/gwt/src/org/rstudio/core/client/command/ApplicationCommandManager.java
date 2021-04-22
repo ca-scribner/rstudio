@@ -113,8 +113,8 @@ public class ApplicationCommandManager
          AppCommand command = commands_.getCommandById(evt.getData().command());
          if (command == null && !evt.getData().quiet())
          {
-            RStudioGinjector.INSTANCE.getGlobalDisplay().showErrorMessage("Invalid Command",
-                  "The command '" + evt.getData().command() + "' does not exist.");
+            RStudioGinjector.INSTANCE.getGlobalDisplay().showErrorMessage("Invalid Command", //$NON-NLS-1$
+                  "The command '" + evt.getData().command() + "' does not exist."); //$NON-NLS-1$
             return;
          }
          if (Satellite.isCurrentWindowSatellite() &&
@@ -234,7 +234,7 @@ public class ApplicationCommandManager
    private List<String> commandsWithCallbacks_;
 
    public static final String KEYBINDINGS_PATH =
-         "keybindings/rstudio_bindings.json";
+         "keybindings/rstudio_bindings.json"; //$NON-NLS-1$
 
    // Injected ----
    private EventBus events_;

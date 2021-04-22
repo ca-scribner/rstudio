@@ -139,13 +139,13 @@ public class AriaLabeledCheckboxCell extends AbstractEditableCell<LabeledBoolean
       }
 
       sb.append(SafeHtmlUtils.fromTrustedString(
-            "<input type=\"checkbox\" tabindex=\"-1\" aria-label=\"" +
+            "<input type=\"checkbox\" tabindex=\"-1\" aria-label=\"" + //$NON-NLS-1$
             SafeHtmlUtils.htmlEscape(label) +
             "\""));
 
       if (isChecked)
       {
-         sb.append(SafeHtmlUtils.fromTrustedString(" checked"));
+         sb.append(SafeHtmlUtils.fromTrustedString(" checked")); //$NON-NLS-1$
       }
       sb.append(SafeHtmlUtils.fromTrustedString("/>"));
    }

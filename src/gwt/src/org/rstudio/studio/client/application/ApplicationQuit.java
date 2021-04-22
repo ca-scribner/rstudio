@@ -579,7 +579,7 @@ public class ApplicationQuit implements SaveActionChangedEvent.Handler,
       @Override
       public String getId()
       {
-         return "F59C8727-3C63-41F4-989C-B1E1D47760E3";
+         return "F59C8727-3C63-41F4-989C-B1E1D47760E3"; //$NON-NLS-1$
       }
 
       @Override
@@ -604,7 +604,7 @@ public class ApplicationQuit implements SaveActionChangedEvent.Handler,
    
    private String buildSwitchMessage(String switchToProject)
    {
-      String msg = switchToProject != "none" ?
+      String msg = switchToProject != "none" ? //$NON-NLS-1$
         "Switching to project " + 
            FileSystemItem.createFile(switchToProject).getParentPathString() :
         "Closing project";

@@ -410,8 +410,8 @@ public class AceEditorBackgroundLinkHighlighter
       }
 
       // create an anchored range and add a marker for it
-      final String id = "ace_marker-" + StringUtil.makeRandomId(16);
-      final String styles = RES.styles().highlight() + " ace_marker " + id;
+      final String id = "ace_marker-" + StringUtil.makeRandomId(16); //$NON-NLS-1$
+      final String styles = RES.styles().highlight() + " ace_marker " + id;  //$NON-NLS-1$
       AnchoredRange anchoredRange = editor.getSession().createAnchoredRange(start, end, true);
 
       final String title = BrowseCap.isMacintosh()
@@ -467,7 +467,7 @@ public class AceEditorBackgroundLinkHighlighter
 
          // trim off trailing punctuation (characters unlikely
          // to be found at the end of a url)
-         String trimmed = url.replaceAll("[,.?!@#$%^&*;:-]+$", "");
+         String trimmed = url.replaceAll("[,.?!@#$%^&*;:-]+$", ""); //$NON-NLS-1$
          endIdx -= (url.length() - trimmed.length());
          url = trimmed;
 
@@ -478,7 +478,7 @@ public class AceEditorBackgroundLinkHighlighter
 
    private static String reWebLink()
    {
-      return "(?:\\w+://|www\\.)\\S+";
+      return "(?:\\w+://|www\\.)\\S+"; //$NON-NLS-1$
    }
 
    private static Pattern createWebLinkPattern()

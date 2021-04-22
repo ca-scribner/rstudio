@@ -172,7 +172,7 @@ public class AceEditorWidget extends Composite
 
       // don't show gutter tooltips for spelling warnings
       editor_.onShowGutterTooltip((Tooltip tooltip) -> {
-         if (tooltip.getTextContent().toLowerCase().contains("spellcheck"))
+         if (tooltip.getTextContent().toLowerCase().contains("spellcheck")) //$NON-NLS-1$
             tooltip.hide();
       });
 
@@ -184,7 +184,7 @@ public class AceEditorWidget extends Composite
            // make sure the click is actually intended for the gutter
            com.google.gwt.dom.client.Element targetElement =
                  Element.as(arg.getNativeEvent().getEventTarget());
-           if (targetElement.getClassName().indexOf("ace_gutter-cell") < 0)
+           if (targetElement.getClassName().indexOf("ace_gutter-cell") < 0) //$NON-NLS-1$
            {
               return;
            }
@@ -510,7 +510,7 @@ public class AceEditorWidget extends Composite
          {
             if (isAttached())
                onResize();
-            removeStyleName("loading");
+            removeStyleName("loading"); //$NON-NLS-1$
             return false;
          }
       }, delayMs);

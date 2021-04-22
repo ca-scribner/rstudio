@@ -22,7 +22,7 @@ public class BrowserType extends FileType
 {
    public BrowserType()
    {
-      super("browser");
+      super("browser"); //$NON-NLS-1$
    }
 
    @Override

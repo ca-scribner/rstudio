@@ -105,10 +105,10 @@ public class AceCommandManager extends JavaScriptObject
    {
       StringBuilder builder = new StringBuilder();
       
-      if (keys.isCtrlPressed()) builder.append("ctrl-");
-      if (keys.isMetaPressed()) builder.append("cmd-");
-      if (keys.isAltPressed()) builder.append("alt-");
-      if (keys.isShiftPressed()) builder.append("shift-");
+      if (keys.isCtrlPressed()) builder.append("ctrl-"); //$NON-NLS-1$
+      if (keys.isMetaPressed()) builder.append("cmd-"); //$NON-NLS-1$
+      if (keys.isAltPressed()) builder.append("alt-"); //$NON-NLS-1$
+      if (keys.isShiftPressed()) builder.append("shift-"); //$NON-NLS-1$
       
       String keyName =
             KeyboardHelper.keyNameFromKeyCode(keys.getKeyCode());
