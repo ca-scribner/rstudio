@@ -51,5 +51,5 @@ public interface ConsoleResources extends ClientBundle
       String truncatedLabel();
    }
 
-   public static final String KEYWORD_CLASS_NAME = " ace_keyword";
+   public static final String KEYWORD_CLASS_NAME = " ace_keyword"; //$NON-NLS-1$
 }

@@ -217,8 +217,8 @@ class CodeSearchSuggestion implements Suggestion
       sb.append(SafeHtmlUtil.createOpenTag("div", "class", imageStyle));
       sb.append(SafeHtmlUtil.createOpenTag("img",
             "src", image.getSafeUri().asString(),
-            "width", Integer.toString(image.getWidth()),
-            "height", Integer.toString(image.getHeight())));
+            "width", Integer.toString(image.getWidth()), //$NON-NLS-1$
+            "height", Integer.toString(image.getHeight()))); //$NON-NLS-1$
       sb.appendHtmlConstant("</img>");
       sb.appendHtmlConstant("</div>");
       

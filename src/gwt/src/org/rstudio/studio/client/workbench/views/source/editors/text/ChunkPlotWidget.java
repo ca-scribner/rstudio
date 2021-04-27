@@ -191,7 +191,7 @@ public class ChunkPlotWidget extends Composite
 
    public static boolean isFixedSizePlotUrl(String url)
    {
-      return url.contains("fixed_size=1");
+      return url.contains("fixed_size=1"); //$NON-NLS-1$
    }
    
    public void updateImageUrl(String plotUrl, String pendingStyle)
@@ -215,7 +215,7 @@ public class ChunkPlotWidget extends Composite
       // the only purpose of this resize counter is to ensure that the
       // plot URL changes when its geometry does (it's not consumed by
       // the server)
-      String plotUrlRefresh = plotUrl + "?resize=" + resizeCounter_++;
+      String plotUrlRefresh = plotUrl + "?resize=" + resizeCounter_++; //$NON-NLS-1$
 
       plot_.setUrl(plotUrlRefresh);
 

@@ -19,4 +19,7 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.core.client.command.KeyCombination KeyCombination(java.lang.String, int, int) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
 </root>

@@ -64,7 +64,7 @@ public class CppCompletionUtils
       String line = docDisplay.getCurrentLine();
       
       // is this an '#include' line?
-      Pattern reInclude = Pattern.create("^\\s*#+\\s*include", "");
+      Pattern reInclude = Pattern.create("^\\s*#+\\s*include", ""); //$NON-NLS-1$
       boolean isInclude = reInclude.test(line);
       
       // get the cursor position

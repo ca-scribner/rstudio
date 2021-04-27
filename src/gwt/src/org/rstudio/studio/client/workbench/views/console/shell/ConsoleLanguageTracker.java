@@ -107,8 +107,8 @@ public class ConsoleLanguageTracker
       }
    }
 
-   public static final String LANGUAGE_R      = "R";
-   public static final String LANGUAGE_PYTHON = "Python";
+   public static final String LANGUAGE_R      = "R"; //$NON-NLS-1$
+   public static final String LANGUAGE_PYTHON = "Python"; //$NON-NLS-1$
 
    private String language_;
 

@@ -94,7 +94,7 @@ public abstract class EnvironmentObjectDisplay
             
             if (isClickable)
                observer_.viewObject(object.isPromise() ?
-                  "force" : "View", object.rObject.getName());
+                  "force" : "View", object.rObject.getName()); // i18n: Is force an enumerator or something the user sees?
          }
       });
    }

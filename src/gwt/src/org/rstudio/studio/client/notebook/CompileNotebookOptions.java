@@ -18,9 +18,9 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class CompileNotebookOptions extends JavaScriptObject
 {
-   public static final String TYPE_DEFAULT = "default";
-   public static final String TYPE_STITCH = "stitch";
-   public static final String TYPE_SPIN = "spin";
+   public static final String TYPE_DEFAULT = "default"; //$NON-NLS-1$
+   public static final String TYPE_STITCH = "stitch"; //$NON-NLS-1$
+   public static final String TYPE_SPIN = "spin"; //$NON-NLS-1$
    
    public static native CompileNotebookOptions create(String id,
                                                       String prefix,

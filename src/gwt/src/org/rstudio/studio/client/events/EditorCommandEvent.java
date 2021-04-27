@@ -57,9 +57,9 @@ public class EditorCommandEvent extends CrossWindowEvent<EditorCommandEvent.Hand
    private final String type_;
    private final JavaScriptObject data_;
 
-   public static final String TYPE_REPLACE_RANGES = "replace_ranges";
-   public static final String TYPE_SET_SELECTION_RANGES = "set_selection_ranges";
-   public static final String TYPE_EDITOR_CONTEXT = "editor_context";
+   public static final String TYPE_REPLACE_RANGES = "replace_ranges"; //$NON-NLS-1$
+   public static final String TYPE_SET_SELECTION_RANGES = "set_selection_ranges"; //$NON-NLS-1$
+   public static final String TYPE_EDITOR_CONTEXT = "editor_context"; //$NON-NLS-1$
 
    // Boilerplate ----
 

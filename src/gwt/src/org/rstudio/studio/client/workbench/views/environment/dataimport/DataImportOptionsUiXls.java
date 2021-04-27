@@ -51,7 +51,7 @@ public class DataImportOptionsUiXls extends DataImportOptionsUi
       initDefaults();
       initEvents();
 
-      DomUtils.setPlaceholder(rangeTextBox_, "A1:D10");
+      DomUtils.setPlaceholder(rangeTextBox_, "A1:D10"); //$NON-NLS-1$
    }
    
    @Override

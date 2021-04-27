@@ -18,10 +18,10 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class CompileNotebookv2Options extends JavaScriptObject
 {
-   public static final String FORMAT_DEFAULT = "html_document";
-   public static final String FORMAT_HTML = "html_document";
-   public static final String FORMAT_PDF = "pdf_document";
-   public static final String FORMAT_WORD = "word_document";
+   public static final String FORMAT_DEFAULT = "html_document"; //$NON-NLS-1$
+   public static final String FORMAT_HTML = "html_document"; //$NON-NLS-1$
+   public static final String FORMAT_PDF = "pdf_document"; //$NON-NLS-1$
+   public static final String FORMAT_WORD = "word_document"; //$NON-NLS-1$
   
    public static native CompileNotebookv2Options create(String format)
    /*-{

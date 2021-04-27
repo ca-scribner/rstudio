@@ -25,7 +25,7 @@ import com.google.gwt.dom.client.Text;
 import com.google.gwt.junit.client.GWTTestCase;
 
 import junit.framework.Assert;
-
+// i18n: These are tests - do we need anything i18n'd in here?
 public class ConsoleOutputWriterTests extends GWTTestCase
 {
    private final String nullClazz = null;
@@ -36,7 +36,7 @@ public class ConsoleOutputWriterTests extends GWTTestCase
    private final String myClass = "myClass";
    private final String myErrorClass = "myErrorClass";
 
-   private final String newlineErrorSpan = "<span class=\"myErrorClass\">\n</span>";
+   private final String newlineErrorSpan = "<span class=\"myErrorClass\">\n</span>"; //$NON-NLS-1$
 
    private String numberedLine(int i)
    {

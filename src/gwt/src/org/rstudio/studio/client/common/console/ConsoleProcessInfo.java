@@ -102,7 +102,7 @@ public class ConsoleProcessInfo extends JavaScriptObject
    public final Integer getExitCode()
    {
       JsObject self = this.cast();
-      return self.getInteger("exit_code");
+      return self.getInteger("exit_code"); //$NON-NLS-1$
    }
 
    public final native int getTerminalSequence() /*-{

@@ -151,12 +151,12 @@ public class CommitListTable extends MultiSelectCellTable<CommitInfo>
          for (String ref : JsUtil.asIterable(commit.getRefs()))
          {
             String style = styles_.ref();
-            if (ref.startsWith("refs/heads/"))
+            if (ref.startsWith("refs/heads/")) //$NON-NLS-1$
             {
                ref = ref.substring("refs/heads/".length());
                style += " " + styles_.branch();
             }
-            else if (ref.startsWith("refs/remotes/"))
+            else if (ref.startsWith("refs/remotes/")) //$NON-NLS-1$
             {
                ref = ref.substring("refs/remotes/".length());
                style += " " + styles_.remote();
@@ -170,7 +170,7 @@ public class CommitListTable extends MultiSelectCellTable<CommitInfo>
          }
          for (String tag : JsUtil.asIterable(commit.getTags()))
          {
-            if (tag.startsWith("refs/tags/"))
+            if (tag.startsWith("refs/tags/")) //$NON-NLS-1$
                tag = tag.substring("refs/tags/".length());
             SafeHtmlUtil.appendSpan(builder, styles_.tag(), tag);
          }

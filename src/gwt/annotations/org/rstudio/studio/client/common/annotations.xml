@@ -1,8 +1,19 @@
 <root>
+    <item name='org.rstudio.studio.client.common.ConsoleDispatcher'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
     <item name='org.rstudio.studio.client.common.GlobalDisplay void openRStudioLink(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='org.rstudio.studio.client.common.GlobalDisplay.NewWindowOptions void setName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.HelpLink HelpLink(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.HelpLink HelpLink(java.lang.String, java.lang.String, boolean, boolean) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
 </root>

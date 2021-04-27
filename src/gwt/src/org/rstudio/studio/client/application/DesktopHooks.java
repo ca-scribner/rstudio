@@ -55,7 +55,7 @@ import org.rstudio.studio.client.workbench.views.console.events.SendToConsoleEve
  */
 public class DesktopHooks
 {
-   @BaseExpression("$wnd.desktopHooks")
+   @BaseExpression("$wnd.desktopHooks") //$NON-NLS-1$
    interface DesktopHooksInjector extends JsObjectInjector<DesktopHooks> {}
    private static final DesktopHooksInjector injector =
          GWT.create(DesktopHooksInjector.class);

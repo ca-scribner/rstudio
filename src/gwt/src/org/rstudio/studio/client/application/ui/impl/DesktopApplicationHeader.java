@@ -327,13 +327,13 @@ public class DesktopApplicationHeader implements ApplicationHeader,
    void onDiagnosticsReport()
    {
       eventBus_.fireEvent(
-         new SendToConsoleEvent("rstudioDiagnosticsReport()", true));
+         new SendToConsoleEvent("rstudioDiagnosticsReport()", true)); //$NON-NLS-1$
 
       new Timer() {
          @Override
          public void run()
          {
-            Desktop.getFrame().showFolder("~/rstudio-diagnostics");
+            Desktop.getFrame().showFolder("~/rstudio-diagnostics"); //$NON-NLS-1$
          }
       }.schedule(1000);
 
@@ -361,7 +361,7 @@ public class DesktopApplicationHeader implements ApplicationHeader,
    @Handler
    void onShowGpuDiagnostics()
    {
-      globalDisplay_.openMinimalWindow("chrome://gpu", 500, 400);
+      globalDisplay_.openMinimalWindow("chrome://gpu", 500, 400); //$NON-NLS-1$
    }
 
    @Handler

@@ -91,9 +91,9 @@ public class DataOutputPane extends WorkbenchPane
             }
             else
             {
-               gridViewer_.setOption("nullsAsNAs", "true");
-               gridViewer_.setOption("ordering", "false");
-               gridViewer_.setOption("rowNumbers", "false");
+               gridViewer_.setOption("nullsAsNAs", "true"); //$NON-NLS-1$
+               gridViewer_.setOption("ordering", "false"); //$NON-NLS-1$
+               gridViewer_.setOption("rowNumbers", "false"); //$NON-NLS-1$
                gridViewer_.setData(response.getData());
             }
          }

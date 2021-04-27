@@ -24,4 +24,9 @@
     <item name='org.rstudio.studio.client.workbench.views.source.editors.text.AceEditorWidget void unmapForEditImpl(java.lang.String, java.lang.String) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.text.ChunkOutputWidget void cacheEditorStyle(java.lang.String, java.lang.String, java.lang.String)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
 </root>

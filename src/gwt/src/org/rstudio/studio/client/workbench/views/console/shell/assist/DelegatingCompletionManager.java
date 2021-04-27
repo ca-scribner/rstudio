@@ -157,7 +157,7 @@ public abstract class DelegatingCompletionManager implements CompletionManager
       String line = docDisplay_.getCurrentLineUpToCursor();
       
       // check for an unclosed '`r' at the cursor position
-      int startIndex = line.lastIndexOf("`r");
+      int startIndex = line.lastIndexOf("`r"); //$NON-NLS-1$
       if (startIndex == -1)
          return false;
       

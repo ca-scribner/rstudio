@@ -117,7 +117,7 @@ public class CommandPalette extends Composite
       Roles.getComboboxRole().set(searchBox);
       Roles.getComboboxRole().setAriaLabelProperty(searchBox, "Search for commands and settings");
       Roles.getComboboxRole().setAriaExpandedState(searchBox, ExpandedValue.TRUE);
-      A11y.setARIAAutocomplete(searchBox_, "list");
+      A11y.setARIAAutocomplete(searchBox_, "list"); //$NON-NLS-1$
       
       // Populate the palette on a deferred callback so that it appears immediately
       Scheduler.get().scheduleDeferred(() ->

@@ -52,11 +52,11 @@ public class DataImportOptionsUiSav extends DataImportOptionsUi
    
    void initDefaults(DataImportModes mode)
    {
-      formatListBox_.addItem("SAV", "sav");
-      formatListBox_.addItem("DTA", "dta");
-      formatListBox_.addItem("POR", "por");
-      formatListBox_.addItem("SAS", "sas");
-      formatListBox_.addItem("Stata", "stata");
+      formatListBox_.addItem("SAV", "sav"); //$NON-NLS-1$
+      formatListBox_.addItem("DTA", "dta"); //$NON-NLS-1$
+      formatListBox_.addItem("POR", "por"); //$NON-NLS-1$
+      formatListBox_.addItem("SAS", "sas"); //$NON-NLS-1$
+      formatListBox_.addItem("Stata", "stata"); //$NON-NLS-1$
       
       switch(mode)
       {
@@ -188,7 +188,7 @@ public class DataImportOptionsUiSav extends DataImportOptionsUi
    
    void updateEnabled()
    {
-      if (formatListBox_.getSelectedValue() == "sas")
+      if (formatListBox_.getSelectedValue() == "sas") //$NON-NLS-1$
       {
          fileChooser_.setEnabled(true);    
       }

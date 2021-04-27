@@ -41,9 +41,9 @@ public class DocumentEx extends Document
       return this.elementsFromPoint(x, y);
    }-*/;
 
-   public static final String STATE_UNINITIALIZED = "uninitialized";
-   public static final String STATE_LOADING       = "loading";
-   public static final String STATE_LOADED        = "loaded";
-   public static final String STATE_INTERACTIVE   = "interactive";
-   public static final String STATE_COMPLETE      = "complete";
+   public static final String STATE_UNINITIALIZED = "uninitialized"; //$NON-NLS-1$
+   public static final String STATE_LOADING       = "loading"; //$NON-NLS-1$
+   public static final String STATE_LOADED        = "loaded"; //$NON-NLS-1$
+   public static final String STATE_INTERACTIVE   = "interactive"; //$NON-NLS-1$
+   public static final String STATE_COMPLETE      = "complete"; //$NON-NLS-1$
 }

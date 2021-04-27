@@ -444,12 +444,12 @@ public class DocUpdateSentinel
             if (docDisplay_.isVimModeOn())
             {
                String oldMarksSpec = "";
-               if (hasProperty("marks"))
-                  oldMarksSpec = getProperty("marks");
+               if (hasProperty("marks")) //$NON-NLS-1$
+                  oldMarksSpec = getProperty("marks"); //$NON-NLS-1$
 
                String newMarksSpec = VimMarks.encode(docDisplay_.getMarks());
                if (oldMarksSpec != newMarksSpec)
-                  setProperty("marks", newMarksSpec);
+                  setProperty("marks", newMarksSpec); //$NON-NLS-1$
             }
          }
       });
@@ -951,8 +951,8 @@ public class DocUpdateSentinel
    private final ChunkDefinition.Provider chunkDefProvider_;
    private boolean loggedAutosaveError_ = false;
 
-   public final static String PROPERTY_TRUE = "true";
-   public final static String PROPERTY_FALSE = "false";
+   public final static String PROPERTY_TRUE = "true"; //$NON-NLS-1$
+   public final static String PROPERTY_FALSE = "false"; //$NON-NLS-1$
 
 
 }

@@ -379,9 +379,9 @@ public class DataTable
    private boolean filtered_ = false;
 
    private static String COLUMN_VIEW_BUTTONS[] = {
-      "<i class=\"icon-angle-double-left \"></i>",
-      "<i class=\"icon-angle-left \"></i>",
-      "<i class=\"icon-angle-right \"></i>",
-      "<i class=\"icon-angle-double-right \"></i>"
+      "<i class=\"icon-angle-double-left \"></i>", //$NON-NLS-1$
+      "<i class=\"icon-angle-left \"></i>", //$NON-NLS-1$
+      "<i class=\"icon-angle-right \"></i>", //$NON-NLS-1$
+      "<i class=\"icon-angle-double-right \"></i>" //$NON-NLS-1$
    };
 }

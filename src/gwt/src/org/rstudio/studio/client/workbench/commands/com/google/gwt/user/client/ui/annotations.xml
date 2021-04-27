@@ -5,6 +5,9 @@
     <item name='com.google.gwt.user.client.ui.CellPanel void setCellWidth(com.google.gwt.user.client.ui.Widget, java.lang.String) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.user.client.ui.ListBox void addItem(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.user.client.ui.PopupPanel void setWidth(java.lang.String)'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>

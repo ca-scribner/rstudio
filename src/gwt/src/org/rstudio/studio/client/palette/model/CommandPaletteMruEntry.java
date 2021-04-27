@@ -67,7 +67,7 @@ public class CommandPaletteMruEntry
       JsArrayString parts = StringUtil.split(entry, CommandPalette.SCOPE_MRU_DELIMITER);
       if (parts.length() != 2)
       {
-         Debug.logWarning("Unexpected Command Palette MRU entry format: '" + entry + "'");
+         Debug.logWarning("Unexpected Command Palette MRU entry format: '" + entry + "'"); //$NON-NLS-1$
          return null;
       }
 

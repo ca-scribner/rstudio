@@ -71,7 +71,9 @@ public class CompileNotebookOptionsDialog extends ModalDialog<CompileNotebookOpt
                                        lblType_, 
                                        HasVerticalAlignment.ALIGN_MIDDLE);
          
-         HelpButton helpButton = HelpButton.createHelpButton("notebook_types", "Help on report types");
+         HelpButton helpButton = HelpButton.createHelpButton(
+            "notebook_types",
+            "Help on report types");
          typeLabelPanel_.add(helpButton);
          typeLabelPanel_.setCellVerticalAlignment(
                                        helpButton, 

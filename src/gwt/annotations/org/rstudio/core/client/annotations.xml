@@ -4,10 +4,28 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.core.client.ClassIds'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.core.client.ColorUtil.RGBColor'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
     <item name='org.rstudio.core.client.Debug void log(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.core.client.ElementIds'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
     <item name='org.rstudio.core.client.ElementIds void assignElementId(com.google.gwt.dom.client.Element, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.SafeHtmlUtil com.google.gwt.safehtml.shared.SafeHtml createOpenTag(java.lang.String, java.lang.String...) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
 </root>

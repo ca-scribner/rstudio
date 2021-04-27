@@ -1,0 +1,5 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.source.editors.EditingTargetCodeExecution void executeSelection(boolean, boolean, java.lang.String, boolean) 2'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

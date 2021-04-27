@@ -85,9 +85,9 @@ public class DeploymentMenuItem extends CheckableMenuItem
          subtitle += record.getServer();
       
       String label = 
-            "<div>" + SafeHtmlUtils.htmlEscape(title) + "</div>" +
-            "<div class=\"" + ThemeStyles.INSTANCE.menuItemSubtitle() + "\">" + 
-                  SafeHtmlUtils.htmlEscape(subtitle) + "</div>";
+            "<div>" + SafeHtmlUtils.htmlEscape(title) + "</div>" + //$NON-NLS-1$
+            "<div class=\"" + ThemeStyles.INSTANCE.menuItemSubtitle() + "\">" + //$NON-NLS-1$
+                  SafeHtmlUtils.htmlEscape(subtitle) + "</div>"; //$NON-NLS-1$
 
       return AppCommand.formatMenuLabel(
             // icon

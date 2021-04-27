@@ -474,7 +474,7 @@ public class ChunkOutputWidget extends Composite
    {
       // consider: less obtrusive error message 
       RStudioGinjector.INSTANCE.getGlobalDisplay().showErrorMessage(
-            "Chunk Execution Error", error.getMessage());
+            "Chunk Execution Error", error.getMessage()); // i18n: Does this reach users?  Or just internal? //$NON-NLS-1$
       
       // treat as an interrupt (don't clear output)
       completeInterrupt();

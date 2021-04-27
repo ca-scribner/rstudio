@@ -31,8 +31,8 @@ public class ConnectionOptions extends JavaScriptObject
    public final native void setIntermediateInstallPath(String path) /*-{ this.intermediateInstallPath = path; }-*/;
    public final native String getIntermediateInstallPath() /*-{ return this.intermediateInstallPath; }-*/;
    
-   public static String CONNECT_R_CONSOLE = "connect-r-console";
-   public static String CONNECT_NEW_R_SCRIPT = "connect-new-r-script";
-   public static String CONNECT_NEW_R_NOTEBOOK = "connect-new-r-notebook";
-   public static String CONNECT_COPY_TO_CLIPBOARD = "connect-copy-to-clipboard";
+   public static String CONNECT_R_CONSOLE = "connect-r-console"; //$NON-NLS-1$
+   public static String CONNECT_NEW_R_SCRIPT = "connect-new-r-script"; //$NON-NLS-1$
+   public static String CONNECT_NEW_R_NOTEBOOK = "connect-new-r-notebook"; //$NON-NLS-1$
+   public static String CONNECT_COPY_TO_CLIPBOARD = "connect-copy-to-clipboard"; //$NON-NLS-1$
 }

@@ -278,7 +278,7 @@ public class EditingTargetCodeExecution
                              boolean onlyUseConsole)
    {
       String code = codeExtractor_.extractCode(docDisplay_, range);
-      String language = "R";
+      String language = "R"; //$NON-NLS-1$
      
       setLastExecuted(range.getStart(), range.getEnd());
       
@@ -291,13 +291,13 @@ public class EditingTargetCodeExecution
       else
       {
          language = "Python";
-      }
+      } //$NON-NLS-1$
       
       // strip roxygen off the beginning of lines
       if (isRoxygenExampleRange(range))
       {
-         code = code.replaceFirst("^[ \\t]*#'[ \\t]?", "");
-         code = code.replaceAll("\n[ \\t]*#'[ \\t]?", "\n");
+         code = code.replaceFirst("^[ \\t]*#'[ \\t]?", ""); //$NON-NLS-1$
+         code = code.replaceAll("\n[ \\t]*#'[ \\t]?", "\n"); //$NON-NLS-1$
       }
       
       // if we're in a chunk with in-line output, execute it there instead

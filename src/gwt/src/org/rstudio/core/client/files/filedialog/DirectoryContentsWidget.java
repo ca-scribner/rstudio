@@ -324,7 +324,7 @@ public class DirectoryContentsWidget
       if (selectedRow_ != null)
       {
          table_.getRowFormatter().removeStyleName(selectedRow_, "gwt-MenuItem-selected");
-         Roles.getOptionRole().removeAriaSelectedState(
+         Roles.getOptionRole().removeAriaSelectedState( //$NON-NLS-1$
                table_.getRowFormatter().getElement(selectedRow_));
          Roles.getListboxRole().removeAriaActivedescendantProperty(table_.getElement());
          selectedRow_ = null;
@@ -334,7 +334,7 @@ public class DirectoryContentsWidget
       if (row != null && row >= 0 && row < table_.getRowCount())
       {
          selectedRow_ = row;
-         table_.getRowFormatter().addStyleName(selectedRow_, "gwt-MenuItem-selected");
+         table_.getRowFormatter().addStyleName(selectedRow_, "gwt-MenuItem-selected"); //$NON-NLS-1$
          Roles.getOptionRole().setAriaSelectedState(
                table_.getRowFormatter().getElement(selectedRow_), SelectedValue.TRUE);
          Roles.getListboxRole().setAriaActivedescendantProperty(

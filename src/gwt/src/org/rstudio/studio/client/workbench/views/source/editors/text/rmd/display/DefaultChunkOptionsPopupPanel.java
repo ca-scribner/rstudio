@@ -47,7 +47,7 @@ public class DefaultChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       for (Map.Entry<String, String> pair : originalChunkOptions_.entrySet())
          chunkOptions_.put(pair.getKey(), pair.getValue());
 
-      if (engine_ == "r") printTableAsTextCb_.setVisible(true);
+      if (engine_ == "r") printTableAsTextCb_.setVisible(true); //$NON-NLS-1$
 
       afterInit.execute();
    }
@@ -110,15 +110,15 @@ public class DefaultChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
 
    private Pair<String, String> getChunkHeaderBounds(String modeId)
    {
-      if (modeId == "mode/rmarkdown")
+      if (modeId == "mode/rmarkdown") //$NON-NLS-1$
          return new Pair<>("```{", "}");
-      else if (modeId == "mode/sweave")
+      else if (modeId == "mode/sweave") //$NON-NLS-1$
          return new Pair<>("<<", ">>=");
-      else if (modeId == "mode/rhtml")
+      else if (modeId == "mode/rhtml") //$NON-NLS-1$
          return new Pair<>("<!--", "");
-      else if (modeId == "mode/c_cpp")
+      else if (modeId == "mode/c_cpp") //$NON-NLS-1$
          return new Pair<>("/***", "");
-      else if (modeId == "mode/r")  // Used in visual mode for embedded chunk editor
+      else if (modeId == "mode/r")  // Used in visual mode for embedded chunk editor //$NON-NLS-1$
          return new Pair<>("{", "}");
 
       return null;
@@ -127,7 +127,7 @@ public class DefaultChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
    private String extractChunkPreamble(String extractedChunkHeader,
                                        String modeId)
    {
-      if (modeId == "mode/sweave")
+      if (modeId == "mode/sweave") //$NON-NLS-1$
          return "";
 
       int firstSpaceIdx = extractedChunkHeader.indexOf(' ');
@@ -149,13 +149,13 @@ public class DefaultChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       String modeId = display_.getModeId();
 
       Pattern pattern = null;
-      if (modeId == "mode/rmarkdown")
+      if (modeId == "mode/rmarkdown") //$NON-NLS-1$
          pattern = RegexUtil.RE_RMARKDOWN_CHUNK_BEGIN;
-      else if (modeId == "mode/sweave")
+      else if (modeId == "mode/sweave") //$NON-NLS-1$
          pattern = RegexUtil.RE_SWEAVE_CHUNK_BEGIN;
-      else if (modeId == "mode/rhtml")
+      else if (modeId == "mode/rhtml") //$NON-NLS-1$
          pattern = RegexUtil.RE_RHTML_CHUNK_BEGIN;
-      else if (modeId == "mode/r")
+      else if (modeId == "mode/r") //$NON-NLS-1$
          pattern = RegexUtil.RE_EMBEDDED_R_CHUNK_BEGIN;
 
       if (pattern == null) return;
@@ -185,7 +185,7 @@ public class DefaultChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       TextCursor cursor = new TextCursor(arguments);
 
       // consume commas and whitespace if needed
-      cursor.consumeUntilRegex("[^\\s,]");
+      cursor.consumeUntilRegex("[^\\s,]"); //$NON-NLS-1$
 
       int startIndex = 0;
       do

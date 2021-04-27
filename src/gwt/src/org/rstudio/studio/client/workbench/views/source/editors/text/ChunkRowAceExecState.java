@@ -114,10 +114,10 @@ public class ChunkRowAceExecState extends ChunkRowExecState
    private final Anchor anchor_;
    private final Command onRemoved_;
 
-   public final static String LINE_QUEUED_CLASS   = "ace_chunk-queued-line";
-   public final static String LINE_EXECUTED_CLASS = "ace_chunk-executed-line";
-   public final static String LINE_RESTING_CLASS  = "ace_chunk-resting-line";
-   public final static String LINE_ERROR_CLASS    = "ace_chunk-error-line";
+   public final static String LINE_QUEUED_CLASS   = "ace_chunk-queued-line"; //$NON-NLS-1$
+   public final static String LINE_EXECUTED_CLASS = "ace_chunk-executed-line"; //$NON-NLS-1$
+   public final static String LINE_RESTING_CLASS  = "ace_chunk-resting-line"; //$NON-NLS-1$
+   public final static String LINE_ERROR_CLASS    = "ace_chunk-error-line"; //$NON-NLS-1$
    
    private int row_;
 }

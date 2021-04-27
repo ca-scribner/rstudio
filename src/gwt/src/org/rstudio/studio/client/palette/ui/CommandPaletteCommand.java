@@ -43,13 +43,13 @@ public abstract class CommandPaletteCommand extends CommandPaletteEntry
             {
                KeyCombination combo = combos.get(i);
                if (combo.isCtrlPressed())
-                  appendKey(b, "Ctrl");
+                  appendKey(b, "Ctrl"); //$NON-NLS-1$
                if (combo.isAltPressed())
-                  appendKey(b, "Alt");
+                  appendKey(b, "Alt"); //$NON-NLS-1$
                if (combo.isShiftPressed())
-                  appendKey(b, "Shift");
+                  appendKey(b, "Shift"); //$NON-NLS-1$
                if (combo.isMetaPressed())
-                  appendKey(b, BrowseCap.hasMetaKey() ? "&#8984;" : "Cmd");
+                  appendKey(b, BrowseCap.hasMetaKey() ? "&#8984;" : "Cmd"); //$NON-NLS-1$
                appendKey(b, combo.key());
                
                // Is this a multi-key sequence?

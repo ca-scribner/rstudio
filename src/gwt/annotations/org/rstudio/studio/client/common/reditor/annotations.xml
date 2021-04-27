@@ -1,0 +1,8 @@
+<root>
+    <item name='org.rstudio.studio.client.common.reditor.EditorLanguage EditorLanguage(java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.reditor.EditorLanguage EditorLanguage(java.lang.String, boolean, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

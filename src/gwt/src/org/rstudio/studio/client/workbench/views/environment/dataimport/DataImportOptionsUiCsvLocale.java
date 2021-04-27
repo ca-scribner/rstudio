@@ -99,7 +99,7 @@ public class DataImportOptionsUiCsvLocale extends ModalDialog<DataImportOptionsC
 
       HelpLink helpLink = new HelpLink(
          "Locales in readr",
-         "readr_locales",
+         "readr_locales", //$NON-NLS-1$
          false);
       addLeftWidget(helpLink);   
    }
@@ -128,18 +128,18 @@ public class DataImportOptionsUiCsvLocale extends ModalDialog<DataImportOptionsC
    private void initializeDefaults()
    {
       // load .rs.iconvcommon()
-      encoding_.addItem("ASCII", "ASCII");
-      encoding_.addItem("UTF-8", "UTF-8");
-      encoding_.addItem("ISO-8859-1", "ISO-8859-1");
-      encoding_.addItem("WINDOWS-1252", "WINDOWS-1252");
-      encoding_.addItem("SHIFT-JIS", "SHIFT-JIS");
-      encoding_.addItem("ISO-2022-JP", "ISO-2022-JP");
-      encoding_.addItem("BIG5", "BIG5");
-      encoding_.addItem("ISO-2022-KR", "ISO-2022-KR");
-      encoding_.addItem("ISO-8859-7", "ISO-8859-7");
-      encoding_.addItem("GB2312", "GB2312");
-      encoding_.addItem("GB18030", "GB18030");
-      encoding_.addItem("ISO-8859-2", "ISO-8859-2");
+      encoding_.addItem("ASCII", "ASCII"); //$NON-NLS-1$
+      encoding_.addItem("UTF-8", "UTF-8"); //$NON-NLS-1$
+      encoding_.addItem("ISO-8859-1", "ISO-8859-1"); //$NON-NLS-1$
+      encoding_.addItem("WINDOWS-1252", "WINDOWS-1252"); //$NON-NLS-1$
+      encoding_.addItem("SHIFT-JIS", "SHIFT-JIS"); //$NON-NLS-1$
+      encoding_.addItem("ISO-2022-JP", "ISO-2022-JP"); //$NON-NLS-1$
+      encoding_.addItem("BIG5", "BIG5"); //$NON-NLS-1$
+      encoding_.addItem("ISO-2022-KR", "ISO-2022-KR"); //$NON-NLS-1$
+      encoding_.addItem("ISO-8859-7", "ISO-8859-7"); //$NON-NLS-1$
+      encoding_.addItem("GB2312", "GB2312"); //$NON-NLS-1$
+      encoding_.addItem("GB18030", "GB18030"); //$NON-NLS-1$
+      encoding_.addItem("ISO-8859-2", "ISO-8859-2"); //$NON-NLS-1$
 
       encoding_.addItem(otherLabel, "");
 

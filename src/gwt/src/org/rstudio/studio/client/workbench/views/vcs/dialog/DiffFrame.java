@@ -41,7 +41,7 @@ public class DiffFrame extends Composite
       @Source("DiffFrame.css")
       Styles styles();
 
-      @Source("images/diffHeaderTile.png")
+      @Source("images/diffHeaderTile.png") //$NON-NLS-1$
       @ImageOptions(repeatStyle = ImageResource.RepeatStyle.Horizontal)
       ImageResource diffHeaderTile();
    }

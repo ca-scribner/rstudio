@@ -151,6 +151,7 @@ public class DocumentOutlineWidget extends Composite
          }
          else if (node.isYaml())
          {
+            // i18n: Is this user text or something in a data structure?
             text = "Title";
          }
          else

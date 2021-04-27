@@ -28,7 +28,7 @@ import com.google.inject.Provider;
 
 public class ChunkSatellite extends SatelliteApplication
 {
-   public static final String NAME_PREFIX = "chunk_window_";
+   public static final String NAME_PREFIX = "chunk_window_"; //$NON-NLS-1$
    
    public ChunkSatellite(String name)
    {

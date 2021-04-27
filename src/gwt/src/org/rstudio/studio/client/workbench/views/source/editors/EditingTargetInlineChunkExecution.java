@@ -67,7 +67,7 @@ public class EditingTargetInlineChunkExecution
    public void execute(Range range)
    {
       // synthesize an identifier for this chunk execution
-      final String chunkId = "i" + StringUtil.makeRandomId(12);
+      final String chunkId = "i" + StringUtil.makeRandomId(12); //$NON-NLS-1$
 
       // check to see if we're already showing a panel for this range; if we
       // are, remove it to make way for the new one

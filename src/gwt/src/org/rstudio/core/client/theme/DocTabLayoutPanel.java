@@ -150,13 +150,13 @@ public class DocTabLayoutPanel
          public void execute()
          {
             Element tabBar = getTabBarElement();
-            DOM.sinkBitlessEvent(tabBar, "dragenter");
-            DOM.sinkBitlessEvent(tabBar, "dragover");
-            DOM.sinkBitlessEvent(tabBar, "dragend");
-            DOM.sinkBitlessEvent(tabBar, "dragleave");
-            DOM.sinkBitlessEvent(tabBar, "drop");
-            DOM.sinkBitlessEvent(tabBar, "mousewheel");
-            DOM.sinkBitlessEvent(tabBar, "wheel");
+            DOM.sinkBitlessEvent(tabBar, "dragenter"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "dragover"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "dragend"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "dragleave"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "drop"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "mousewheel"); //$NON-NLS-1$
+            DOM.sinkBitlessEvent(tabBar, "wheel"); //$NON-NLS-1$
             Event.setEventListener(tabBar, dragManager_);
          }
       });
@@ -354,7 +354,7 @@ public class DocTabLayoutPanel
                   if (n.getNodeType() != Node.ELEMENT_NODE)
                      return false;
                   return ((Element) n).getClassName()
-                        .contains("gwt-TabLayoutPanelTab-selected");
+                        .contains("gwt-TabLayoutPanelTab-selected"); //$NON-NLS-1$
                }
             });
       if (selectedTab == null)
@@ -487,7 +487,7 @@ public class DocTabLayoutPanel
       @Override
       public void onBrowserEvent(Event event)
       {
-         if (event.getType() == "dragenter")
+         if (event.getType() == "dragenter") //$NON-NLS-1$
          {
             if (dropPoint_ != null && event.getClientX() == dropPoint_.getX() &&
                   event.getClientY() == dropPoint_.getY())
@@ -525,13 +525,13 @@ public class DocTabLayoutPanel
             }
             event.preventDefault();
          }
-         else if (event.getType() == "dragover")
+         else if (event.getType() == "dragover") //$NON-NLS-1$
          {
             if (curState_ == STATE_DRAGGING)
                drag(event);
             event.preventDefault();
          }
-         else if (event.getType() == "drop")
+         else if (event.getType() == "drop") //$NON-NLS-1$
          {
             endDrag(event, ACTION_COMMIT);
             event.preventDefault();
@@ -549,7 +549,7 @@ public class DocTabLayoutPanel
                }
             }, 250);
          }
-         else if (event.getType() == "dragend")
+         else if (event.getType() == "dragend") //$NON-NLS-1$
          {
             if (curState_ != STATE_NONE)
             {
@@ -557,7 +557,7 @@ public class DocTabLayoutPanel
             }
             event.preventDefault();
          }
-         else if (event.getType() == "dragleave")
+         else if (event.getType() == "dragleave") //$NON-NLS-1$
          {
             if (curState_ == STATE_NONE)
                return;
@@ -573,7 +573,7 @@ public class DocTabLayoutPanel
                      event.getClientY());
                while (ele != null && ele != Document.get().getBody())
                {
-                  if (ele.getClassName().contains("gwt-TabLayoutPanelTabs"))
+                  if (ele.getClassName().contains("gwt-TabLayoutPanelTabs")) //$NON-NLS-1$
                   {
                      return;
                   }
@@ -592,13 +592,13 @@ public class DocTabLayoutPanel
                endDrag(event, ACTION_CANCEL);
             }
          }
-         else if (event.getType() == "wheel" ||
-                  event.getType() == "mousewheel")
+         else if (event.getType() == "wheel" || //$NON-NLS-1$
+                  event.getType() == "mousewheel") //$NON-NLS-1$
          {
             // extract the delta from the wheel event (note that this could be
             // zero)
             JsObject evt = event.cast();
-            double delta = evt.getDouble(event.getType() == "wheel" ?
+            double delta = evt.getDouble(event.getType() == "wheel" ? //$NON-NLS-1$
                   "deltaY" : "wheelDeltaY");
 
             // translate wheel scroll into tab selection
@@ -876,7 +876,7 @@ public class DocTabLayoutPanel
 
             // skip the element we're dragging and elements that are not tabs
             Element ele = (Element)node;
-            if (ele == dragElement_ || !ele.getClassName().contains("gwt-TabLayoutPanelTab"))
+            if (ele == dragElement_ || !ele.getClassName().contains("gwt-TabLayoutPanelTab")) //$NON-NLS-1$
             {
                continue;
             }
@@ -1031,7 +1031,7 @@ public class DocTabLayoutPanel
             // perform a pop-out.
             if (dragElement_ != null &&
                   evt != null &&
-                  StringUtil.equals(evt.getType(), "dragend"))
+                  StringUtil.equals(evt.getType(), "dragend")) //$NON-NLS-1$
             {
                Desktop.getFrame().doesWindowExistAtCursorPosition((Boolean hasWindow) ->
                {
@@ -1369,7 +1369,7 @@ public class DocTabLayoutPanel
                   if (n.getNodeType() != Node.ELEMENT_NODE)
                      return false;
                   return ((Element) n).getClassName()
-                        .contains("gwt-TabLayoutPanelTabs");
+                        .contains("gwt-TabLayoutPanelTabs"); //$NON-NLS-1$
                }
             });
    }
@@ -1389,7 +1389,7 @@ public class DocTabLayoutPanel
 
    private String getDataTransferFormat()
    {
-      return "application/rstudio-tab";
+      return "application/rstudio-tab"; //$NON-NLS-1$
    }
 
    private DocTab getTabForDocId(String docId)

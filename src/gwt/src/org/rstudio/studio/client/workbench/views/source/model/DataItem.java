@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class DataItem extends JavaScriptObject
 {
-   public static final String URI_PREFIX = "data://";
+   public static final String URI_PREFIX = "data://"; //$NON-NLS-1$
    
    protected DataItem()
    {
@@ -103,29 +103,29 @@ public class DataItem extends JavaScriptObject
       // to strings. Can't be helped without refactoring
       // SourceServerOperations#modifyDocumentProperties to take a less typesafe
       // container type.
-      properties.put("caption", getCaption());
-      properties.put("expression", getExpression());
-      properties.put("totalObservations", getTotalObservations() + "");
-      properties.put("displayedObservations", getDisplayedObservations() + "");
-      properties.put("variables", getVariables() + "");
-      properties.put("contentUrl", getContentUrl());
-      properties.put("cacheKey", getCacheKey());
-      properties.put("object", getObject());
-      properties.put("environment", getEnvironment());
-      properties.put("preview", (isPreview() ? 1 : 0) + "");
+      properties.put("caption", getCaption()); //$NON-NLS-1$
+      properties.put("expression", getExpression()); //$NON-NLS-1$
+      properties.put("totalObservations", getTotalObservations() + ""); //$NON-NLS-1$
+      properties.put("displayedObservations", getDisplayedObservations() + ""); //$NON-NLS-1$
+      properties.put("variables", getVariables() + ""); //$NON-NLS-1$
+      properties.put("contentUrl", getContentUrl()); //$NON-NLS-1$
+      properties.put("cacheKey", getCacheKey()); //$NON-NLS-1$
+      properties.put("object", getObject()); //$NON-NLS-1$
+      properties.put("environment", getEnvironment()); //$NON-NLS-1$
+      properties.put("preview", (isPreview() ? 1 : 0) + ""); //$NON-NLS-1$
    }
 
    public final void fillProperties(JsObject properties)
    {
-      properties.setString("caption", getCaption());
-      properties.setString("expression", getExpression());
-      properties.setInteger("totalObservations", getTotalObservations());
-      properties.setInteger("displayedObservations", getDisplayedObservations());
-      properties.setInteger("variables", getVariables());
-      properties.setString("contentUrl", getContentUrl());
-      properties.setString("cacheKey", getCacheKey());
-      properties.setString("object", getObject());
-      properties.setString("environment", getEnvironment());
-      properties.setInteger("properties", isPreview() ? 1 : 0);
+      properties.setString("caption", getCaption()); //$NON-NLS-1$
+      properties.setString("expression", getExpression()); //$NON-NLS-1$
+      properties.setInteger("totalObservations", getTotalObservations()); //$NON-NLS-1$
+      properties.setInteger("displayedObservations", getDisplayedObservations()); //$NON-NLS-1$
+      properties.setInteger("variables", getVariables()); //$NON-NLS-1$
+      properties.setString("contentUrl", getContentUrl()); //$NON-NLS-1$
+      properties.setString("cacheKey", getCacheKey()); //$NON-NLS-1$
+      properties.setString("object", getObject()); //$NON-NLS-1$
+      properties.setString("environment", getEnvironment()); //$NON-NLS-1$
+      properties.setInteger("properties", isPreview() ? 1 : 0); //$NON-NLS-1$
    }
 }

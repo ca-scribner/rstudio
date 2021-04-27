@@ -234,7 +234,7 @@ public class DebugCommander
    {
       eventBus_.fireEvent(new SendToConsoleEvent(STOP_COMMAND, true, true));
    }
-
+   // i18n: Are these shortcuts (and thus internationalizable) or just enumerators?
    public static final String STOP_COMMAND = "Q";
    public static final String NEXT_COMMAND = "n";
    public static final String CONTINUE_COMMAND = "c";

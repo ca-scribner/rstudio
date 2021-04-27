@@ -182,12 +182,12 @@ public class ConsoleInterpreterVersion
       {
       }
       
-      return "R " + version;
+      return "R " + version; //$NON-NLS-1$
    }
    
    private String pythonVersionLabel(PythonInterpreter info)
    {
-      return "Python " + info.getVersion();
+      return "Python " + info.getVersion(); //$NON-NLS-1$
    }
    
    public int getWidth()

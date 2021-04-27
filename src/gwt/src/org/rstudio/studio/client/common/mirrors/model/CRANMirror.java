@@ -73,7 +73,7 @@ public class CRANMirror extends UserPrefs.CranMirror
       ArrayList<String> entries = new ArrayList<>();
       for (CRANMirror repo : repos)
       {
-         if (!repo.getName().toLowerCase().equals("cran"))
+         if (!repo.getName().toLowerCase().equals("cran")) //$NON-NLS-1$
          {
             entries.add(repo.getName() + "|" + repo.getURL());
          }

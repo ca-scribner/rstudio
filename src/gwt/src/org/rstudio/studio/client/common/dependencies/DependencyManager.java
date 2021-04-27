@@ -177,7 +177,7 @@ public class DependencyManager implements InstallShinyEvent.Handler,
    public void withRPlumber(String userAction, final Command command)
    {
       withDependencies(
-        "Plumber",
+        "Plumber", //$NON-NLS-1$
          userAction,
          getFeatureDescription("plumber"),
          getFeatureDependencies("plumber"),
@@ -197,7 +197,7 @@ public class DependencyManager implements InstallShinyEvent.Handler,
    public void withPackrat(String userAction, final Command command)
    {
       withDependencies(
-         "Packrat",
+         "Packrat", //$NON-NLS-1$
          userAction,
          getFeatureDescription("packrat"),
          getFeatureDependencies("packrat"),
@@ -216,7 +216,7 @@ public class DependencyManager implements InstallShinyEvent.Handler,
    public void withRenv(String userAction, final CommandWithArg<Boolean> onSuccess)
    {
       withDependencies(
-            "renv",
+            "renv", //$NON-NLS-1$
             userAction,
             getFeatureDescription("renv"),
             getFeatureDependencies("renv"),
@@ -230,7 +230,7 @@ public class DependencyManager implements InstallShinyEvent.Handler,
          final CommandWithArg<Boolean> onCompleted)
    {
       // build dependency array
-      List<Dependency> deps = getFeatureDependencies("rsconnect");
+      List<Dependency> deps = getFeatureDependencies("rsconnect"); //$NON-NLS-1$
       if (requiresRmarkdown)
          deps.addAll(getFeatureDependencies("rmarkdown"));
 
@@ -247,7 +247,7 @@ public class DependencyManager implements InstallShinyEvent.Handler,
 
    public void withRMarkdown(String userAction, final Command command)
    {
-      withRMarkdown("R Markdown", userAction, command);
+      withRMarkdown("R Markdown", userAction, command); //$NON-NLS-1$
    }
 
    public void withRMarkdown(String progressCaption, String userAction,

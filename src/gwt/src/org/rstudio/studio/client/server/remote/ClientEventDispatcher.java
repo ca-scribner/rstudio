@@ -1103,12 +1103,12 @@ public class ClientEventDispatcher
          }
          else
          {
-            GWT.log("WARNING: Server event not dispatched: " + type, null);
+            GWT.log("WARNING: Server event not dispatched: " + type, null); //$NON-NLS-1$
          }
       }
       catch(Throwable e)
       {
-         GWT.log("WARNING: Exception occurred dispatching event: " + type, e);
+         GWT.log("WARNING: Exception occurred dispatching event: " + type, e); //$NON-NLS-1$
       }
    }
    

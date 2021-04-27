@@ -31,7 +31,7 @@ import com.google.gwt.user.client.Command;
  * 
  * String arguments must not be null.
  */
-@BaseExpression("$wnd.desktop")
+@BaseExpression("$wnd.desktop") //$NON-NLS-1$
 public interface DesktopFrame extends JavaScriptPassthrough
 {
    void browseUrl(String url);

@@ -28,7 +28,7 @@ import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 public final class DialogHtmlSanitizer implements HtmlSanitizer {
    private static final Set<String> TAG_WHITELIST = new HashSet<>(
       Arrays.asList(
-         "p", "em", "strong", "b", "i", "a"
+         "p", "em", "strong", "b", "i", "a" //$NON-NLS-1$
       )
    );
 
@@ -71,7 +71,7 @@ public final class DialogHtmlSanitizer implements HtmlSanitizer {
                   if (tagName == "a") {
                      
                      if (tag.matches("a href ?= ?\"https?://[^\"]+\"")) {
-                        tag = tag + " target=\"_blank\"";
+                        tag = tag + " target=\"_blank\""; //$NON-NLS-1$
                         isValidTag = true;
                      }
                   }

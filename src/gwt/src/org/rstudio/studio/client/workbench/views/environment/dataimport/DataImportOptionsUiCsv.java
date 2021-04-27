@@ -50,9 +50,9 @@ public class DataImportOptionsUiCsv extends DataImportOptionsUi
    private static DataImportOptionsCsvUiBinder uiBinder = GWT
          .create(DataImportOptionsCsvUiBinder.class);
 
-   private final String escapeBoth_ = "both";
-   private final String escapeBackslash_ = "backslash";
-   private final String escapeDouble_ = "double";
+   private final String escapeBoth_ = "both"; //$NON-NLS-1$
+   private final String escapeBackslash_ = "backslash"; //$NON-NLS-1$
+   private final String escapeDouble_ = "double"; //$NON-NLS-1$
 
    private DataImportOptionsCsvLocale localeInfo_ = null;
    private int lastDelimiterListBoxIndex_ = 0;
@@ -201,7 +201,7 @@ public class DataImportOptionsUiCsv extends DataImportOptionsUi
          @Override
          public void onChange(ChangeEvent arg0)
          {
-            if (delimiterListBox_.getSelectedValue() == "other")
+            if (delimiterListBox_.getSelectedValue() == "other") //$NON-NLS-1$  //i18n: use enum instead?
             {
                globalDisplay_.promptForTextWithOption(
                   "Other Delimiter",
@@ -320,7 +320,7 @@ public class DataImportOptionsUiCsv extends DataImportOptionsUi
       else
       {
          trimSpacesCheckBox_.setEnabled(false);
-         escapeListBox_.getElement().removeAttribute("disabled");
+         escapeListBox_.getElement().removeAttribute("disabled"); // same as above name references.  Needs to be translated?
          quotesListBox_.getElement().removeAttribute("disabled");
       }
    }
@@ -330,7 +330,7 @@ public class DataImportOptionsUiCsv extends DataImportOptionsUi
    {
       return new HelpLink(
          "Reading rectangular data using readr",
-         "import_readr",
+         "import_readr", //$NON-NLS-1$
          false,
          true);
    }

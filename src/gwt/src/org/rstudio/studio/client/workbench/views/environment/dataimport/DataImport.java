@@ -332,7 +332,7 @@ public class DataImport extends Composite
                   first = false;
                }
 
-               importOptions_.setColumnDefinition(columnName, columnType, "c(" + factorsString + ")");
+               importOptions_.setColumnDefinition(columnName, columnType, "c(" + factorsString + ")"); //$NON-NLS-1$
                complete.execute();
             }
          });
@@ -362,7 +362,9 @@ public class DataImport extends Composite
                public void execute(final String input)
                {
                   columnTypesMenu_.hide();
-                  
+                  // i18n: Are these input values enumerations or should they be translated?  I think they're
+                  // enumerations that relate to DataImportColumnTypesMenu's values?  Do we need to make these real
+                  // enumerations and separate their display from their id?
                   if (input == "guess")
                   {
                      importOptions_.setColumnType(column.getName(), null);

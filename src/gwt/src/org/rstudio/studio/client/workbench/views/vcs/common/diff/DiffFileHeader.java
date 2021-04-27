@@ -23,7 +23,7 @@ public class DiffFileHeader
                          String newFile)
    {
       headerLines_ = headerLines;
-      oldFile_ = oldFile.replaceFirst("^a/", "").replaceFirst("\\s\\(revision [0-9]+\\)", "");
+      oldFile_ = oldFile.replaceFirst("^a/", "").replaceFirst("\\s\\(revision [0-9]+\\)", ""); //$NON-NLS-1$ //$NON-NLS-1$
       newFile_ = newFile.replaceFirst("^b/", "").replaceFirst("\\s\\(revision [0-9]+\\)", "");
    }
 
@@ -32,9 +32,9 @@ public class DiffFileHeader
       if (oldFile_ == newFile_)
          return oldFile_;
 
-      if (oldFile_ == "/dev/null")
+      if (oldFile_ == "/dev/null") //$NON-NLS-1$
          return newFile_;
-      if (newFile_ == "/dev/null")
+      if (newFile_ == "/dev/null") //$NON-NLS-1$
          return oldFile_;
       return oldFile_ + " => " + newFile_;
    }

@@ -44,7 +44,7 @@ public class CodeBrowserContents extends JavaScriptObject
    
    public final void fillProperties(HashMap<String, String> properties)
    {
-      properties.put("context", getContext());
+      properties.put("context", getContext()); //$NON-NLS-1$
    }
 
    public final void fillProperties(JsObject properties)

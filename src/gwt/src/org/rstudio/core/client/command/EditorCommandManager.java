@@ -272,7 +272,7 @@ public class EditorCommandManager
 
    private boolean isBindingsLoaded_ = false;
    public static final String KEYBINDINGS_PATH =
-         "keybindings/editor_bindings.json";
+         "keybindings/editor_bindings.json"; //$NON-NLS-1$
 
    // Injected ----
    private EventBus events_;

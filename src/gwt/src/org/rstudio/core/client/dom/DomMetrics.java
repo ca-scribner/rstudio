@@ -26,7 +26,7 @@ public class DomMetrics
    public static Size measureHTML(String html)
    {
       return measureHTML(html, "gwt-Label");
-   }
+   } //$NON-NLS-1$
    public static Size measureHTML(String html, String styleName)
    {
       // create HTML widget which matches the specified style
@@ -51,8 +51,8 @@ public class DomMetrics
    public static Size measureCode(String code)
    {
       return DomMetrics.measureHTML(
-            "<pre>" + DomUtils.textToPreHtml(code) + "</pre>",
-            "ace_editor " + FontSizer.getNormalFontSizeClass());
+            "<pre>" + DomUtils.textToPreHtml(code) + "</pre>", //$NON-NLS-1$
+            "ace_editor " + FontSizer.getNormalFontSizeClass()); //$NON-NLS-1$
    }
 
    public static Size adjustedElementSizeToDefaultMax()

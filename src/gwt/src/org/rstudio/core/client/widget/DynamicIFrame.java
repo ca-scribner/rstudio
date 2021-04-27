@@ -68,7 +68,7 @@ public abstract class DynamicIFrame extends Frame
                return true;
             // if we have a URL, make sure we have a body and the document the
             // URL refers to is fully loaded
-            if (url_ != null && getDocument().getURL() == "about:blank" || 
+            if (url_ != null && getDocument().getURL() == "about:blank" || //$NON-NLS-1$
                     getDocument().getBody() == null ||
                     getDocument().getReadyState() != DocumentEx.STATE_COMPLETE)
                return true;

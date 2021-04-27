@@ -22,5 +22,5 @@ public class DataDefinition extends JavaScriptObject
    {
    }
    
-   public final static String OBJECT_TYPE = "data";
+   public final static String OBJECT_TYPE = "data"; //$NON-NLS-1$
 }
