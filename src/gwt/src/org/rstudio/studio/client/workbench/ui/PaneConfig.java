@@ -59,6 +59,7 @@ public class PaneConfig extends UserPrefsAccessor.Panes
       panes.push(UserPrefsAccessor.Panes.QUADRANTS_TABSET2);
       panes.push(UserPrefsAccessor.Panes.QUADRANTS_HIDDENTABSET);
 
+      // Pane default group 1
       JsArrayString tabSet1 = createArray().cast();
       tabSet1.push("Environment");
       tabSet1.push("History");
@@ -68,6 +69,7 @@ public class PaneConfig extends UserPrefsAccessor.Panes
       tabSet1.push("Tutorial");
       tabSet1.push("Presentation");
 
+      // Pane default group 1
       JsArrayString tabSet2 = createArray().cast();
       tabSet2.push("Files");
       tabSet2.push("Plots");
@@ -104,6 +106,12 @@ public class PaneConfig extends UserPrefsAccessor.Panes
    {
       // A list of all the tabs. Order matters; the Presentation tab must be the
       // last element in this array that's part of the first tabset (ts1)
+      // i18n: These are both the text displayed on screen and must match the key name used for the pane they reference.
+      //       Not sure where this key name is defined though (tried changing the labels set in RStudioGinModule and
+      //       PaneManager but that wasn't enough).  If these are set to something other than a valid pane name, the
+      //       panes will show up initially but will disappear if you try to change the layout (eg: add/remove the
+      //       mis-labeled pane).  Need to figure this out and likely decouple the on-screen text from the internal
+      //       pane labels
       return new String[] {"Environment", "History", "Files", "Plots", "Connections",
                            "Packages", "Help", "Build", "VCS", "Tutorial", "Viewer", "Presentation"};
    }

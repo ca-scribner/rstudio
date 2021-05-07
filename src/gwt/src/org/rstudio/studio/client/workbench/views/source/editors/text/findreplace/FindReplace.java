@@ -356,10 +356,10 @@ public class FindReplace
       String find = display_.getFindValue().getValue();
       boolean wholeWord = display_.getWholeWord().getValue();
 
-      String flags = caseSensitive ? "gm" : "igm";
+      String flags = caseSensitive ? "gm" : "igm"; //$NON-NLS-1$
       String query = regex ? find : Pattern.escape(find);
       if (wholeWord)
-         query = "\\b" + query + "\\b";
+         query = "\\b" + query + "\\b"; //$NON-NLS-1$
 
       return Pattern.create(query, flags);
    }
@@ -547,8 +547,8 @@ public class FindReplace
          clear();
 
          markerId_ = editor_.getSession().addMarker(getRange(),
-                                                   "ace_find_line",
-                                                   "background",
+                                                   "ace_find_line", //$NON-NLS-1$
+                                                   "background", //$NON-NLS-1$
                                                    false);
       }
 

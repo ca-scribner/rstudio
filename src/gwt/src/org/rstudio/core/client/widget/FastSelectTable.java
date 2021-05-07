@@ -607,7 +607,7 @@ public class FastSelectTable<TItemInput, TItemOutput, TItemOutput2> extends Widg
      Element td = DOM.eventGetTarget(event);
      for (; td != null; td = DOM.getParent(td)) {
        // If it's a TD, it might be the one we're looking for.
-       if (td.getPropertyString("tagName").equalsIgnoreCase("td")) {
+       if (td.getPropertyString("tagName").equalsIgnoreCase("td")) { //$NON-NLS-1$
          // Make sure it's directly a part of this table before returning
          // it.
 

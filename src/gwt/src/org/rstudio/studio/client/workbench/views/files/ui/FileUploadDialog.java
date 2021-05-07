@@ -163,6 +163,7 @@ public class FileUploadDialog extends HtmlFormModalDialog<PendingFileUpload>
       panel.add(fileUpload_);
       
       // zip file tip field
+      // i18n: combine below strings when translating
       HTML tip = new HTML("<b>TIP</b>: To upload multiple files or a " +
                           "directory, create a zip file. The zip file will " +
                           "be automatically expanded after upload.");

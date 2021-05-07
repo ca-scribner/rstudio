@@ -83,7 +83,7 @@ public abstract class FileDialog extends FileSystemDialog
          // Targeted fix for "611: Permission denied error when attempting to
          // browse /shared folder in open file dialog". The /shared folder
          // doesn't have list permissions.
-         if (dir.equals("/shared"))
+         if (dir.equals("/shared")) //$NON-NLS-1$
          {
             cd(filename);
             return false;

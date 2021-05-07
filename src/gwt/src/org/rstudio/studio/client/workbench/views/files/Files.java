@@ -684,7 +684,7 @@ public class Files
       }
       else if (ext.equals(".csv") ||
                ext.equals(".xls") || ext.equals(".xlsx") ||
-               ext.equals(".sav") || ext.equals(".dta") || ext.equals("por") ||
+               ext.equals(".sav") || ext.equals(".dta") || ext.equals("por") || //$NON-NLS-1$
                ext.equals(".sas") || ext.equals(".stata"))
       {
          view_.showDataImportFileChoice(
@@ -836,7 +836,7 @@ public class Files
    private final Provider<FilesUpload> pFilesUpload_;
    private final Provider<FileExport> pFileExport_;
    private final Provider<UserPrefs> pPrefs_;
-   private static final String MODULE_FILES = "files-pane";
+   private static final String MODULE_FILES = "files-pane"; //$NON-NLS-1$
    private static final String KEY_PATH = "path";
    private static final String KEY_SORT_ORDER = "sortOrder";
    private JsArray<ColumnSortInfo> columnSortOrder_ = null;

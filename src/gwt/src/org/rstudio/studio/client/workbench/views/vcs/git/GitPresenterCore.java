@@ -143,7 +143,7 @@ public class GitPresenterCore
          @Override
          public String getHelpLinkName()
          {
-            return "git_ignore_help";
+            return "git_ignore_help"; //$NON-NLS-1$
          }
 
          @Override

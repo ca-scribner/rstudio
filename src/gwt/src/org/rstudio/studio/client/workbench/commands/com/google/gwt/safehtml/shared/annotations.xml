@@ -2,4 +2,7 @@
     <item name='com.google.gwt.safehtml.shared.SafeHtmlBuilder com.google.gwt.safehtml.shared.SafeHtmlBuilder appendHtmlConstant(java.lang.String)'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.safehtml.shared.SafeHtmlUtils com.google.gwt.safehtml.shared.SafeHtml fromTrustedString(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
 </root>

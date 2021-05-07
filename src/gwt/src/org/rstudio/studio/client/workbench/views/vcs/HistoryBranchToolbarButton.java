@@ -47,10 +47,10 @@ public class HistoryBranchToolbarButton extends BranchToolbarButton
    protected void onBeforePopulateMenu(ToolbarPopupMenu rootMenu)
    {
       super.onBeforePopulateMenu(rootMenu);
-      
+
       String label = "(all branches)";
       rootMenu.addItem(
-            new MenuItem(label, new SwitchBranchCommand(label, "--all")));
+            new MenuItem(label, new SwitchBranchCommand(label, "--all"))); // $NON-NLS-1$ (git flag syntax to list all branches)
    }
 
    private boolean initialized_ = false;

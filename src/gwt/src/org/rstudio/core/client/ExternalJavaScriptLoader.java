@@ -97,7 +97,7 @@ public class ExternalJavaScriptLoader
       assert state_ == State.Start;
       state_ = State.Loading;
       ScriptElement script = document_.createScriptElement();
-      script.setType("text/javascript");
+      script.setType("text/javascript"); //$NON-NLS-1$
       script.setSrc(url_);
       registerCallback(script);
       Element head = document_.getElementsByTagName("head").getItem(0);

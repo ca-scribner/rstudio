@@ -4,7 +4,22 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.studio.client.common.ConsoleDispatcher void chooseFileThenExecuteCommand(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.ConsoleDispatcher void executeCommand(java.lang.String, org.rstudio.core.client.files.FileSystemItem) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.ConsoleDispatcher void saveFileAsThenExecuteCommand(java.lang.String, java.lang.String, boolean, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.ConsoleDispatcher void saveFileAsThenExecuteCommand(java.lang.String, java.lang.String, boolean, java.lang.String) 3'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='org.rstudio.studio.client.common.GlobalDisplay void openRStudioLink(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.GlobalDisplay void openRStudioLink(java.lang.String, boolean) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='org.rstudio.studio.client.common.GlobalDisplay.NewWindowOptions void setName(java.lang.String) 0'>

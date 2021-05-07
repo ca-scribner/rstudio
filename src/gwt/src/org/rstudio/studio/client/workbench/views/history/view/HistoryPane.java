@@ -86,6 +86,7 @@ public class HistoryPane extends WorkbenchPane
    @Inject
    public HistoryPane(Commands commands, EventBus events)
    {
+      // i18n: See note about HelpTab.java.  What does this title affect (this a key, on screen, both, or neither?)
       super("History", events);
       commands_ = commands;
       ensureWidget();
@@ -139,7 +140,8 @@ public class HistoryPane extends WorkbenchPane
       VerticalPanel vpanel = new VerticalPanel();
       vpanel.setSize("100%", "100%");
 
-      loadMore_ = new Anchor("Load more entries...", "javascript:return false");
+      loadMore_ = new Anchor("Load more entries...",
+         "javascript:return false"); //$NON-NLS-1$
       loadMore_.setWidth("100%");
       loadMore_.setVisible(false);
       loadMore_.setStyleName(styles_.loadMore());

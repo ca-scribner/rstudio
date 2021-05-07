@@ -284,7 +284,7 @@ public class History extends BasePresenter implements SelectionCommitEvent.Handl
                            commands.historyDismissContext(),
                            null));
 
-      new StringStateValue("history", "query", ClientState.TEMPORARY,
+      new StringStateValue("history", "query", ClientState.TEMPORARY, //$NON-NLS-1$
                            session.getSessionInfo().getClientState())
       {
          @Override

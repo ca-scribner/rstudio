@@ -213,20 +213,20 @@ public class EnvironmentPane extends WorkbenchPane
          }
       }, ResizeEvent.getType());
 
-      MenuItem rMenuItem = new MenuItem("R", () -> setActiveLanguage("R", true));
+      MenuItem rMenuItem = new MenuItem("R", () -> setActiveLanguage("R", true)); //$NON-NLS-1$ //$NON-NLS-1$
       languageMenu_.addItem(rMenuItem);
 
-      MenuItem pyMenuItem = new MenuItem("Python", () ->
+      MenuItem pyMenuItem = new MenuItem("Python", () -> //$NON-NLS-1$
       {
          dependencyManager_.withReticulate(
                "Viewing Python Objects",
                "Viewing Python objects",
-               () -> setActiveLanguage("Python", true));
+               () -> setActiveLanguage("Python", true)); //$NON-NLS-1$
       });
       languageMenu_.addItem(pyMenuItem);
 
       languageButton_ = new ToolbarMenuButton(
-            "R",
+            "R", //$NON-NLS-1$
             ToolbarButton.NoTitle,
             (ImageResource) null,
             languageMenu_);
@@ -285,10 +285,10 @@ public class EnvironmentPane extends WorkbenchPane
       objects_ = new EnvironmentObjects(this);
 
       EnvironmentContextData data = session_.getSessionInfo().getEnvironmentState();
-      if (StringUtil.equals(data.language(), "Python"))
+      if (StringUtil.equals(data.language(), "Python")) //$NON-NLS-1$
       {
          setPythonEnabled(true);
-         setActiveLanguage("Python", false);
+         setActiveLanguage("Python", false); //$NON-NLS-1$
       }
 
       return objects_;
@@ -588,21 +588,21 @@ public class EnvironmentPane extends WorkbenchPane
    private String friendlyNameOfEnvironment(String name)
    {
       boolean isGlobalEnv =
-            StringUtil.equals(name, ".GlobalEnv") ||
-            StringUtil.equals(name, "R_GlobalEnv");
+            StringUtil.equals(name, ".GlobalEnv") || //$NON-NLS-1$
+            StringUtil.equals(name, "R_GlobalEnv"); //$NON-NLS-1$
 
       if (isGlobalEnv)
          return GLOBAL_ENVIRONMENT_NAME;
 
       boolean isBase =
-            StringUtil.equals(name, "base");
+            StringUtil.equals(name, "base"); //$NON-NLS-1$
 
       if (isBase)
          return "package:base";
 
       boolean isPythonMain =
-            StringUtil.equals(name, "main") ||
-            StringUtil.equals(name, "__main__");
+            StringUtil.equals(name, "main") || //$NON-NLS-1$
+            StringUtil.equals(name, "__main__"); //$NON-NLS-1$
 
       if (isPythonMain)
          return "Main Module";
@@ -614,10 +614,10 @@ public class EnvironmentPane extends WorkbenchPane
    {
       if (name.endsWith("()"))
          return new ImageResource2x(EnvironmentResources.INSTANCE.functionEnvironment2x());
-      else if (name.equals(".GlobalEnv") || name.equals("R_GlobalEnv"))
+      else if (name.equals(".GlobalEnv") || name.equals("R_GlobalEnv")) //$NON-NLS-1$
          return new ImageResource2x(EnvironmentResources.INSTANCE.globalEnvironment2x());
-      else if (name.startsWith("package:") ||
-               name.equals("base") ||
+      else if (name.startsWith("package:") || //$NON-NLS-1$
+               name.equals("base") || //$NON-NLS-1$
                local)
          return new ImageResource2x(EnvironmentResources.INSTANCE.packageEnvironment2x());
       else
@@ -874,13 +874,16 @@ public class EnvironmentPane extends WorkbenchPane
       {
          setEnvironmentName("R_GlobalEnv", false);
       }
-      else if (StringUtil.equals(language, "Python"))
+      else if (StringUtil.equals(language, "Python")) //$NON-NLS-1$
       {
          setEnvironmentName("__main__", false);
       }
       else
       {
-         Debug.logWarning("Unknown language '" + language + "'");
+         // i18n: Are debug warnings in- or out-of-scope for i18n?  If the Env pane's language dropdown is misconfigured
+         //       and we select a language that has nothing behind it, this text will print to screen... is that
+         //       developer specific, or general public?
+//         Debug.logWarning("Unknown language '" + language + "'");
       }
 
       Scheduler.get().scheduleDeferred(() -> commands_.refreshEnvironment().execute());
@@ -965,5 +968,5 @@ public class EnvironmentPane extends WorkbenchPane
    private JsArray<EnvironmentFrame> environments_;
    private String environmentName_;
    private boolean environmentIsLocal_;
-   private String activeLanguage_ = "R";
+   private String activeLanguage_ = "R"; //$NON-NLS-1$
 }

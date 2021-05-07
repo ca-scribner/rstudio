@@ -122,6 +122,6 @@ public class FindOutputCodec
 
    private final Styles styles_;
 
-   private static final String DATA_FILE = "data-file";
-   private static final String DATA_LINE = "data-line";
+   private static final String DATA_FILE = "data-file"; //$NON-NLS-1$
+   private static final String DATA_LINE = "data-line"; //$NON-NLS-1$
 }

@@ -91,7 +91,7 @@ public class FileExport
          if (files.size() == 1)
             defaultArchiveName = files.get(0).getStem();
          else
-            defaultArchiveName = "rstudio-export";
+            defaultArchiveName = "rstudio-export"; //$NON-NLS-1$
          
          // prompt user
          final String ZIP = ".zip";

@@ -33,7 +33,7 @@ public class FontDetector
       try
       {
          // default font name as a reference point
-         final String defaultFontName = "Arial";
+         final String defaultFontName = "Arial"; //$NON-NLS-1$
          if (defaultFontName.equals(fontName))
             return true;
          

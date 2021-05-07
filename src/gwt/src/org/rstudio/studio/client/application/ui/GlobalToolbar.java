@@ -44,6 +44,9 @@ public class GlobalToolbar extends Toolbar
    public GlobalToolbar(Commands commands,
                         Provider<CodeSearch> pCodeSearch)
    {
+      // i18n: Is this a label enumeration, or a label for users to read?  Capitalized, so feels like something for user
+      //  but unclear if it surfaces at all.  I don't see anywher in the code accessing a "Main" by key, but also don't
+      //  see "Main" pop up anywhere in the UI
       super("Main");
 
       commands_ = commands;

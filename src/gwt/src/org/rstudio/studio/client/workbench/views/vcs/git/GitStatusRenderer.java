@@ -98,6 +98,7 @@ public class GitStatusRenderer implements SafeHtmlRenderer<String>
    {
       switch (c)
       {
+         // i18n: Are these enumerations with special meaning, or are they text for user?  I THINK it is for user, but it is passed directly to html so seemed odd...
          case 'A':
             return "Added";
          case 'M':

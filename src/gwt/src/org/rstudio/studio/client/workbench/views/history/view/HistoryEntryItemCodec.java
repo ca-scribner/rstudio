@@ -157,9 +157,9 @@ public class HistoryEntryItemCodec extends HeaderBreaksItemCodec<HistoryEntry, S
    {
       Element tsRow = Document.get().createElement("tr");
       tsRow.setClassName(timestampClass_);
-      tsRow.setInnerHTML("<td colspan='2'>" +
+      tsRow.setInnerHTML("<td colspan='2'>" + //$NON-NLS-1$
                          DomUtils.textToHtml(formatted) +
-                         "</td>");
+                         "</td>"); //$NON-NLS-1$
       row.getParentElement().insertBefore(tsRow, row);
       return 1;
    }

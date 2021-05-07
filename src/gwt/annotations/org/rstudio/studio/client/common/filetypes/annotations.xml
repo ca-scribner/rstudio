@@ -2,4 +2,14 @@
     <item name='org.rstudio.studio.client.common.filetypes.EditableFileType EditableFileType(java.lang.String, java.lang.String, com.google.gwt.resources.client.ImageResource) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.studio.client.common.filetypes.FileType'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.common.filetypes.FileTypeRegistry FileTypeRegistry(org.rstudio.studio.client.application.events.EventBus, org.rstudio.studio.client.common.satellite.Satellite, org.rstudio.studio.client.workbench.model.Session, org.rstudio.studio.client.common.GlobalDisplay, org.rstudio.studio.client.workbench.views.files.model.FilesServerOperations)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
 </root>

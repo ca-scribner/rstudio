@@ -940,8 +940,8 @@ public class GitReviewPresenter implements ReviewPresenter
    private final UserPrefs uiPrefs_;
    private final VCSFileOpener vcsFileOpener_;
    private boolean initialized_;
-   private static final String MODULE_GIT = "vcs_git";
-   private static final String KEY_CONTEXT_LINES = "context_lines";
+   private static final String MODULE_GIT = "vcs_git"; //$NON-NLS-1$
+   private static final String KEY_CONTEXT_LINES = "context_lines"; //$NON-NLS-1$
    private final int gitCommitLargeFileSize_;
 
    private boolean overrideSizeWarning_ = false;

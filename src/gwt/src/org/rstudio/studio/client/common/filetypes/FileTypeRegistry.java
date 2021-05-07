@@ -493,7 +493,7 @@ public class FileTypeRegistry
                   else
                   {
                      globalDisplay_.showErrorMessage(
-                       "File Download Error",
+                       "File Download Error", //$NON-NLS-1$
                        "Unable to show file because file downloads are " +
                        "restricted on this server.\n");
                   }
@@ -627,7 +627,7 @@ public class FileTypeRegistry
          if (defaultType != null)
          {
             String mimeType = file.mimeType(defaultType);
-            if (mimeType.startsWith("text/"))
+            if (mimeType.startsWith("text/")) //$NON-NLS-1$
                return TEXT;
          }
       }

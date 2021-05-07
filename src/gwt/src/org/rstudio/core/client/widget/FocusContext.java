@@ -42,7 +42,7 @@ public class FocusContext
       try
       {
          if (originallyActiveElement_ != null
-             && !originallyActiveElement_.getTagName().equalsIgnoreCase("body"))
+             && !originallyActiveElement_.getTagName().equalsIgnoreCase("body")) //$NON-NLS-1$
          {
             Document doc = originallyActiveElement_.getOwnerDocument();
             if (doc != null)

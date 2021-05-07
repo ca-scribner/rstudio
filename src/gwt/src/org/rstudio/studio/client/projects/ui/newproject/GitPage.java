@@ -42,7 +42,7 @@ public class GitPage extends VersionControlPage
        */
       while (url.endsWith("/") || url.endsWith(" ") || url.endsWith("\t"))
          url = url.substring(0, url.length() - 1);
-      if (url.endsWith("/.git"))
+      if (url.endsWith("/.git")) //$NON-NLS-1$
       {
          url = url.substring(0, url.length() - 5);
          while (url.endsWith("/"))

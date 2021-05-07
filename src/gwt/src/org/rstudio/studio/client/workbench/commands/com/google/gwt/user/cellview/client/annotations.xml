@@ -2,4 +2,7 @@
     <item name='com.google.gwt.user.cellview.client.AbstractCellTable void setColumnWidth(com.google.gwt.user.cellview.client.Column&lt;T,?&gt;, java.lang.String) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.user.cellview.client.AbstractCellTable void setColumnWidth(int, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
 </root>

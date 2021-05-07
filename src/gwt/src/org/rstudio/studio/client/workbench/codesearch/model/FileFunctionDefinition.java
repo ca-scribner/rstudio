@@ -33,5 +33,5 @@ public class FileFunctionDefinition extends JavaScriptObject
       return this.position;
    }-*/;
    
-   public final static String OBJECT_TYPE = "file_function";
+   public final static String OBJECT_TYPE = "file_function"; //$NON-NLS-1$
 }

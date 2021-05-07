@@ -208,7 +208,7 @@ public class FindResult extends JavaScriptObject
                   out = appendHtmlCloseTag(out, redTag);
                   openRedTags--;
                   if (!StringUtil.isNullOrEmpty(replace))
-                     out = appendHtmlTaggedString(out, "ins", replace);
+                     out = appendHtmlTaggedString(out, "ins", replace); //$NON-NLS-1$
                }
             }
             // when we reach a replaceOn or replaceOff position, apply an ins tag
@@ -236,7 +236,7 @@ public class FindResult extends JavaScriptObject
             openRedTags--;
             out = appendHtmlCloseTag(out, redTag);
             if (!StringUtil.isNullOrEmpty(replace))
-               out = appendHtmlTaggedString(out, "ins", replace);
+               out = appendHtmlTaggedString(out, "ins", replace); //$NON-NLS-1$
          }
          while (openInsTags > 0)
          {
@@ -254,7 +254,7 @@ public class FindResult extends JavaScriptObject
 
       // display any errors highlighted in red
       if (!StringUtil.isNullOrEmpty(getErrors()))
-         out = appendHtmlTaggedString(out, "mark", getErrors());
+         out = appendHtmlTaggedString(out, "mark", getErrors()); //$NON-NLS-1$
       else // display replace values highlighted
       {
          // retrieve match positions

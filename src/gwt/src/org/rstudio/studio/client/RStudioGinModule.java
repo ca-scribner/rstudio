@@ -355,6 +355,8 @@ public class RStudioGinModule extends AbstractGinModule
       bind(EditingTargetSource.class).to(EditingTargetSource.Impl.class);
 
       // Bind workbench views
+      // i18n: I THINK these are internal names and might not surface to users directly, but there are other places
+      //       that refer to these views by name and those usages might also display the name to the user
       bindPane("Console", ConsolePane.class); // eager loaded
       bind(Source.Display.class).to(SourcePane.class);
       bind(TerminalTabPresenter.Display.class).to(TerminalPane.class);

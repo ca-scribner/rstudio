@@ -1,4 +1,7 @@
 <root>
+    <item name='com.google.gwt.dom.client.Document com.google.gwt.dom.client.Element createElement(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.dom.client.Document com.google.gwt.dom.client.Element getElementById(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
@@ -21,6 +24,9 @@
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.Element void setAttribute(java.lang.String, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element void setClassName(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.Element void setDraggable(java.lang.String)'>

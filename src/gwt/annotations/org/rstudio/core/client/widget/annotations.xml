@@ -2,7 +2,13 @@
     <item name='org.rstudio.core.client.widget.AutocompleteSuggestionDisplay void setPopupWidth(java.lang.String)'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.core.client.widget.GridViewerStyles java.lang.String getCustomStyle()'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='org.rstudio.core.client.widget.HelpButton org.rstudio.core.client.widget.HelpButton createHelpButton(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.widget.NineUpBorder void setFillColor(java.lang.String)'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='org.rstudio.core.client.widget.TextBoxWithButton void setTextWidth(java.lang.String) 0'>

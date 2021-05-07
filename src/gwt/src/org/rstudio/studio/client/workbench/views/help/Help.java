@@ -194,12 +194,13 @@ public class Help extends BasePresenter implements ShowHelpEvent.Handler
 
    public void bringToFront()
    {
+      // i18n: Is this an enumeration or something the user will see?
       events_.fireEvent(new ActivatePaneEvent("Help"));
    }
 
    private void home()
    {
-      showHelp("help/doc/home/");
+      showHelp("help/doc/home/"); //$NON-NLS-1$
    }
 
    public Display getDisplay()

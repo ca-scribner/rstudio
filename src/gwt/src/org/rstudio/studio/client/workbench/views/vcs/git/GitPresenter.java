@@ -199,7 +199,7 @@ public class GitPresenter extends BaseVcsPresenter implements IsWidget
                                           items);
 
       // open the window
-      satelliteManager_.openSatellite("review_changes",
+      satelliteManager_.openSatellite("review_changes", //$NON-NLS-1$
                                       params,
                                       new Size(1000,1200));
    }
@@ -330,7 +330,7 @@ public class GitPresenter extends BaseVcsPresenter implements IsWidget
    private void doRevert(final ArrayList<String> revertList,
                          final Command onRevertConfirmed)
    {
-      String noun = revertList.size() == 1 ? "file" : "files";
+      String noun = revertList.size() == 1 ? "file" : "files"; //$NON-NLS-1$
       globalDisplay_.showYesNoMessage(
             GlobalDisplay.MSG_WARNING,
             "Revert Changes",
@@ -358,9 +358,9 @@ public class GitPresenter extends BaseVcsPresenter implements IsWidget
    {
       String view = null;
       if (viewRequest.getViewType() == GitHubViewRequest.VCS_VIEW)
-         view = "blob";
+         view = "blob"; //$NON-NLS-1$
       else if (viewRequest.getViewType() == GitHubViewRequest.VCS_BLAME)
-         view = "blame";
+         view = "blame"; //$NON-NLS-1$
 
       final String path = viewRequest.getFile().getPath();
       server_.gitGithubRemoteUrl(view,
@@ -381,9 +381,9 @@ public class GitPresenter extends BaseVcsPresenter implements IsWidget
             else
             {
                if (viewRequest.getStartLine() != -1)
-                  url += "#L" + viewRequest.getStartLine();
+                  url += "#L" + viewRequest.getStartLine(); //$NON-NLS-1$
                if (viewRequest.getEndLine() != viewRequest.getStartLine())
-                  url += "-L" + viewRequest.getEndLine();
+                  url += "-L" + viewRequest.getEndLine(); //$NON-NLS-1$
 
                globalDisplay_.openWindow(url);
             }

@@ -143,7 +143,7 @@ public class ExportPlotSizeEditor extends Composite
       widthAndHeightPanel.add(widthTextBox_);
      
       // image height
-      widthAndHeightPanel.add(new HTML("&nbsp;&nbsp;"));
+      widthAndHeightPanel.add(new HTML("&nbsp;&nbsp;")); //$NON-NLS-1$
       heightTextBox_ = createImageSizeTextBox();
       FormLabel heightLabel = createImageOptionLabel("Height:", heightTextBox_);
       widthAndHeightPanel.add(heightLabel);

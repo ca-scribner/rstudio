@@ -87,9 +87,9 @@ public class FontSizer
          return;
       style.setAttribute("type", "text/css");
       style.setInnerText("." + styles.normalSize() + ", " +
-                         "." + styles.normalSize() + " td, " +
-                         "." + styles.normalSize() + " pre" +
-                         " {font-size:" + size + "pt !important;}");
+                         "." + styles.normalSize() + " td, " + //$NON-NLS-1$
+                         "." + styles.normalSize() + " pre" + //$NON-NLS-1$
+                         " {font-size:" + size + "pt !important;}"); //$NON-NLS-1$
       BodyElement body = document.getBody();
       if (body == null)
          return;

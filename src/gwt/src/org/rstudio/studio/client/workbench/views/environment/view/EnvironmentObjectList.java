@@ -208,8 +208,8 @@ public class EnvironmentObjectList extends EnvironmentObjectDisplay
                }
                if (imageUri.length() > 0)
                {
-                  return "<input type=\"image\" src=\"" + imageUri + "\" " +
-                         "class=\"" + imageStyle + "\" alt=\"" + imageAlt + "\" />";
+                  return "<input type=\"image\" src=\"" + imageUri + "\" " + //$NON-NLS-1$
+                         "class=\"" + imageStyle + "\" alt=\"" + imageAlt + "\" />"; //$NON-NLS-1$
                }
                return "";
             }
@@ -250,10 +250,10 @@ public class EnvironmentObjectList extends EnvironmentObjectDisplay
             {
                // We don't have ready access to the DOM (still under
                // construction at this point), so we use a window method here.
-               return "<div class=\"" + style_.colResizer() + "\" " +
-                      "onmousedown=\"rstudio_beginResize(this, event, " +
+               return "<div class=\"" + style_.colResizer() + "\" " + //$NON-NLS-1$
+                      "onmousedown=\"rstudio_beginResize(this, event, " + //$NON-NLS-1$
                       "\'" + style_.nameCol() + "'" +
-                      ");\"></div>";
+                      ");\"></div>"; //$NON-NLS-1$
             }
          };
    }
@@ -400,7 +400,7 @@ public class EnvironmentObjectList extends EnvironmentObjectDisplay
 
          }
          String size = rowValue.rObject.getSize() > 0 ?
-                              ", " + rowValue.rObject.getSize() + " bytes" :
+                              ", " + rowValue.rObject.getSize() + " bytes" : //$NON-NLS-1$
                               "";
          nameCol.className(styleName);
          nameCol.title(
@@ -504,7 +504,7 @@ public class EnvironmentObjectList extends EnvironmentObjectDisplay
                     style_.categoryHeaderRow());
             TableCellBuilder objectHeader = leaderRow.startTD();
             objectHeader.colSpan(4)
-                    .className(style_.categoryHeaderText() + " rstudio-themes-background" + " " +
+                    .className(style_.categoryHeaderText() + " rstudio-themes-background" + " " + //$NON-NLS-1$
                        ClassIds.getClassId(categoryClass))
                     .text(categoryTitle)
                     .endTD();

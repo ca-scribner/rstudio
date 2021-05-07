@@ -18,9 +18,9 @@ import org.rstudio.studio.client.workbench.prefs.model.UserPrefs;
 
 public class FoldStyle
 {
-   public static final String FOLD_MARK_MANUAL        = "manual";
-   public static final String FOLD_MARK_BEGIN_ONLY    = "markbegin";
-   public static final String FOLD_MARK_BEGIN_AND_END = "markbeginend";
+   public static final String FOLD_MARK_MANUAL        = "manual"; //$NON-NLS-1$
+   public static final String FOLD_MARK_BEGIN_ONLY    = "markbegin"; //$NON-NLS-1$
+   public static final String FOLD_MARK_BEGIN_AND_END = "markbeginend"; //$NON-NLS-1$
    
    public static String fromPref(String pref)
    {

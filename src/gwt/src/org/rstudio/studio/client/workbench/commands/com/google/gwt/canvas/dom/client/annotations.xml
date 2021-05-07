@@ -1,0 +1,8 @@
+<root>
+    <item name='com.google.gwt.canvas.dom.client.Context2d void setFillStyle(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.canvas.dom.client.Context2d void setFont(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

@@ -79,7 +79,7 @@ public class FilePathToolbar extends Composite
          ArrayList<FileSystemItem> parsedDir = new ArrayList<>(Arrays.asList(super.parseDir(dirPath)));
          if (parsedDir.size() >= 2)
          {
-            if (StringUtil.equals(parsedDir.get(1).getPath(), "/cloud"))
+            if (StringUtil.equals(parsedDir.get(1).getPath(), "/cloud")) //$NON-NLS-1$
             {
                parsedDir.remove(0);
             }
@@ -91,7 +91,7 @@ public class FilePathToolbar extends Composite
       public boolean isCloudRoot(FileSystemItem item)
       {
          if (cloudFolderEnabled_)
-            return item.isDirectory() && item.getPath().equals("/cloud");
+            return item.isDirectory() && item.getPath().equals("/cloud"); //$NON-NLS-1$
          else
             return false;
       }

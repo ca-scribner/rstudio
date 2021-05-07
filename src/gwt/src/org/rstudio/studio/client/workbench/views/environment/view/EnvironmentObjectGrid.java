@@ -264,7 +264,7 @@ public class EnvironmentObjectGrid extends EnvironmentObjectDisplay
          {
             TableCellBuilder selectAll = row.startTH();
             selectAll.className(style_.objectGridHeader() + " " +
-                                "rstudio-themes-background" + " " +
+                                "rstudio-themes-background" + " " + //$NON-NLS-1$
                                 style_.checkColumn());
             renderHeader(selectAll, new Cell.Context(0, 0, null), checkHeader_);
             selectAll.end();
@@ -280,7 +280,7 @@ public class EnvironmentObjectGrid extends EnvironmentObjectDisplay
             ObjectGridColumn col = columns_.get(i);
             TableCellBuilder cell = row.startTH();
             cell.className(style_.objectGridHeader() + " " +
-                           "rstudio-themes-background" + " " +
+                           "rstudio-themes-background" + " " + //$NON-NLS-1$
                            sortClassName);
             Cell.Context context = new Cell.Context(0, i, null);
             renderSortableHeader(cell, context, col.getHeader(),

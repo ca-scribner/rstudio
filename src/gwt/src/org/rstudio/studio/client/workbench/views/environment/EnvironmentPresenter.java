@@ -399,7 +399,7 @@ public class EnvironmentPresenter extends BasePresenter
    @Handler
    void onFreeUnusedMemory()
    {
-      eventBus_.fireEvent(new SendToConsoleEvent("gc()", true, false));
+      eventBus_.fireEvent(new SendToConsoleEvent("gc()", true, false)); //$NON-NLS-1$
    }
 
    @Handler
@@ -481,8 +481,8 @@ public class EnvironmentPresenter extends BasePresenter
                public void onResponseReceived(Boolean isMasked)
                {
                   String code = isMasked
-                        ? "base::save.image"
-                        : "save.image";
+                        ? "base::save.image" //$NON-NLS-1$
+                        : "save.image"; //$NON-NLS-1$
 
                   consoleDispatcher_.saveFileAsThenExecuteCommand(
                         "Save Workspace As",
@@ -608,7 +608,7 @@ public class EnvironmentPresenter extends BasePresenter
    {
       final String dataFilePath = event.getFile().getPath();
 
-      if (Pattern.create("[.]rds$", "i").test(dataFilePath))
+      if (Pattern.create("[.]rds$", "i").test(dataFilePath)) //$NON-NLS-1$
       {
          globalDisplay_.promptForText(
                "Load R Object",
@@ -721,7 +721,7 @@ public class EnvironmentPresenter extends BasePresenter
       if (contextDepth > 0 &&
           contextDepth_ == 0)
       {
-         eventBus_.fireEvent(new ActivatePaneEvent("Environment"));
+         eventBus_.fireEvent(new ActivatePaneEvent("Environment")); // i18n: Should this be an enumerator, or is this referencing a pane by its text display name?
          debugCommander_.enterDebugMode(DebugMode.Function);
          enteringDebugMode = true;
       }
@@ -882,7 +882,7 @@ public class EnvironmentPresenter extends BasePresenter
                   SearchPathFunctionDefinition.create(
                      functionName,
                      StringUtil.isNullOrEmpty(functionEnvName_) ?
-                           "debugging" : functionEnvName_,
+                        "debugging" : functionEnvName_, // i18n: is debugging an enumeration or displayed text?
                      currentBrowseSource_,
                      true);
 
@@ -991,7 +991,7 @@ public class EnvironmentPresenter extends BasePresenter
                             " <- " +
                             makeCommand(input,
                                         result.getDefaultStringsAsFactors()) +
-                            "\n  View(" + var + ")";
+                            "\n  View(" + var + ")"; //$NON-NLS-1$
                     eventBus_.fireEvent(new SendToConsoleEvent(code, true));
                  }
               },
@@ -1034,26 +1034,26 @@ public class EnvironmentPresenter extends BasePresenter
       code.append("(");
       code.append(StringUtil.textToRLiteral(input.getFile().getPath()));
       if (input.getEncoding() != settings.getEncoding())
-         code.append(", encoding=" + StringUtil.textToRLiteral(input.getEncoding()));
+         code.append(", encoding=" + StringUtil.textToRLiteral(input.getEncoding())); //$NON-NLS-1$
       if (input.isHeader() != settings.isHeader())
-         code.append(", header=" + (input.isHeader() ? "TRUE" : "FALSE"));
+         code.append(", header=" + (input.isHeader() ? "TRUE" : "FALSE")); //$NON-NLS-1$
       if (input.getRowNames() != settings.getRowNames())
       {
          // appended literally, since it's the string "1" or the string "NULL"
          code.append(", row.names=" + input.getRowNames());
       }
       if (input.getSep() != settings.getSep())
-         code.append(", sep=" + StringUtil.textToRLiteral(input.getSep()));
+         code.append(", sep=" + StringUtil.textToRLiteral(input.getSep())); //$NON-NLS-1$
       if (input.getDec() != settings.getDec())
-         code.append(", dec=" + StringUtil.textToRLiteral(input.getDec()));
+         code.append(", dec=" + StringUtil.textToRLiteral(input.getDec())); //$NON-NLS-1$
       if (input.getQuote() != settings.getQuote())
-         code.append(", quote=" + StringUtil.textToRLiteral(input.getQuote()));
+         code.append(", quote=" + StringUtil.textToRLiteral(input.getQuote())); //$NON-NLS-1$
       if (input.getComment() != settings.getComment())
-         code.append(", comment.char=" + StringUtil.textToRLiteral(input.getComment()));
+         code.append(", comment.char=" + StringUtil.textToRLiteral(input.getComment())); //$NON-NLS-1$
       if (input.getNAStrings() != settings.getNAStrings())
-         code.append(", na.strings=" + StringUtil.textToRLiteral(input.getNAStrings()));
+         code.append(", na.strings=" + StringUtil.textToRLiteral(input.getNAStrings())); //$NON-NLS-1$
       if (input.getStringsAsFactors() != settings.getStringsAsFactors())
-         code.append(", stringsAsFactors=" + (input.getStringsAsFactors() ? "TRUE" : "FALSE"));
+         code.append(", stringsAsFactors=" + (input.getStringsAsFactors() ? "TRUE" : "FALSE")); //$NON-NLS-1$
 
       code.append(")");
 

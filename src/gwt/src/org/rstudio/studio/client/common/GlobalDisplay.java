@@ -104,7 +104,7 @@ public abstract class GlobalDisplay extends MessageDisplay
       }
 
       private Point position_ = null;
-      private String name_ = "_blank";
+      private String name_ = "_blank"; //$NON-NLS-1$
       private boolean focus_ = true;
       private OperationWithInput<WindowEx> callback_;
       private boolean allowExternalNavigation_ = false;

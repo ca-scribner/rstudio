@@ -51,6 +51,8 @@ import org.rstudio.studio.client.workbench.views.help.model.HelpInfo.ParsedInfo;
 public class CompletionPopupPanel extends ThemedPopupPanel
       implements CompletionPopupDisplay
 {
+   // i18n: This is the text description that is to the right of the auto completion list you see if you partly type
+   //       a command in the console then press tab
    public CompletionPopupPanel()
    {
       super();

@@ -70,7 +70,7 @@ public class FilesCopy
                                    + sourceFile.getStem().length();
       
       // show prompt for new filename
-      final String objectName = sourceFile.isDirectory() ? "Folder" : "File";
+      final String objectName = sourceFile.isDirectory() ? "Folder" : "File"; //$NON-NLS-1$
       globalDisplay_.promptForText(
              "Copy " + objectName, 
              "Enter a name for the copy of '" + sourceFile.getName() + "':",

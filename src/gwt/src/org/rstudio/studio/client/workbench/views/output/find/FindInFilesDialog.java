@@ -286,6 +286,7 @@ public class FindInFilesDialog extends ModalDialog<FindInFilesDialog.State>
       else
       {
          ((Element) listPresetFilePatterns_.getElement().getChild(
+            // i18n: Are these enumerators or should they be i18n'd?
             Include.PackageSource.ordinal())).removeAttribute("disabled");
          ((Element) listPresetFilePatterns_.getElement().getChild(
             Include.PackageTests.ordinal())).removeAttribute("disabled");
@@ -357,6 +358,7 @@ public class FindInFilesDialog extends ModalDialog<FindInFilesDialog.State>
       String includeFilePatterns =
             listPresetFilePatterns_.getValue(
                   listPresetFilePatterns_.getSelectedIndex());
+      // i18n: Are these enumerators or should they be i18n'd?
       if (StringUtil.equals(includeFilePatterns, "custom"))
          includeFilePatterns = txtFilePattern_.getText();
 

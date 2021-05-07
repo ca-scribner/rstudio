@@ -50,7 +50,7 @@ public class FormCheckBox extends CheckBox
          {
             if (node.getNodeName().equalsIgnoreCase("input"))
                ((Element)node).setId(id);
-            else if (node.getNodeName().equalsIgnoreCase("label"))
+            else if (node.getNodeName().equalsIgnoreCase("label")) //$NON-NLS-1$
                ((Element)node).setAttribute("for", id);
          }
       }

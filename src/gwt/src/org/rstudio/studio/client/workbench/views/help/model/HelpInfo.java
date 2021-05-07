@@ -76,7 +76,8 @@ public class HelpInfo extends JavaScriptObject
          {
             Element titleElement = headings.get(0);
             String title = titleElement.getInnerText();
-            values.put("Title", title);
+            // i18n: I THINK the below Title, Arguments, and Slots are enumerations.  Check
+            values.put("Title", title); //$NON-NLS-1$
          }
          
          // iterate through them
@@ -84,19 +85,19 @@ public class HelpInfo extends JavaScriptObject
          {
             Element heading = headings.get(i);
             String name = heading.getInnerText();
-            if (name == "Arguments")
+            if (name == "Arguments") //$NON-NLS-1$
             {
                parseArguments(args, heading);
             }
-            if (name == "Slots")
+            if (name == "Slots") //$NON-NLS-1$
             {
                parseDescriptionList(slots, heading);
             }
             StringBuffer value = new StringBuffer();
             Node sibling = heading.getNextSibling();
             while (sibling != null
-                  && !sibling.getNodeName().toLowerCase().equals("h2")
-                  && !sibling.getNodeName().toLowerCase().equals("h3"))
+                  && !sibling.getNodeName().toLowerCase().equals("h2") //$NON-NLS-1$
+                  && !sibling.getNodeName().toLowerCase().equals("h3")) //$NON-NLS-1$
             {
                value.append(DomUtils.getHtml(sibling));
                sibling = sibling.getNextSibling();
@@ -164,7 +165,7 @@ public class HelpInfo extends JavaScriptObject
             Element el = (Element) n;
             
             return el.getTagName().toUpperCase().equals("TABLE")
-               && "R argblock".equals(el.getAttribute("summary"));
+               && "R argblock".equals(el.getAttribute("summary")); //$NON-NLS-1$
          }
       });
       
@@ -243,8 +244,8 @@ public class HelpInfo extends JavaScriptObject
       {
          // values
          HashMap<String,String> values = new HashMap<>();
-         values.put("Title", getTitle());
-         values.put("Description", getDescription());
+         values.put("Title", getTitle()); //$NON-NLS-1$
+         values.put("Description", getDescription()); //$NON-NLS-1$
          
          // args
          HashMap<String, String> args = null;
@@ -294,7 +295,7 @@ public class HelpInfo extends JavaScriptObject
       
       public String getTitle()
       {
-         return values.get("Title");
+         return values.get("Title"); //$NON-NLS-1$
       }
       
       public String getFunctionSignature()
@@ -304,17 +305,17 @@ public class HelpInfo extends JavaScriptObject
 
       public String getDescription()
       {
-         return values.get("Description");
+         return values.get("Description"); //$NON-NLS-1$
       }
 
       public String getUsage()
       {
-         return values.get("Usage");
+         return values.get("Usage"); //$NON-NLS-1$
       }
 
       public String getDetails()
       {
-         return values.get("Details");
+         return values.get("Details"); //$NON-NLS-1$
       }
 
       /**

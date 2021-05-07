@@ -28,8 +28,8 @@ import java.util.ArrayList;
  */
 public class FocusHelper
 {
-   public static final String firstFocusClass = "__rstudio_modal_first_focus";
-   public static final String lastFocusClass = "__rstudio_modal_last_focus";
+   public static final String firstFocusClass = "__rstudio_modal_first_focus"; //$NON-NLS-1$
+   public static final String lastFocusClass = "__rstudio_modal_last_focus"; //$NON-NLS-1$
 
    /**
     * @param parent top-level element of dialog or control whose focus loop to manage
@@ -140,7 +140,7 @@ public class FocusHelper
       NodeList<Element> current = DomUtils.querySelectorAll(parent_, "." + classname);
       if (current.getLength() > 1)
       {
-         Debug.logWarning("Multiple controls found with class: " + classname);
+         Debug.logWarning("Multiple controls found with class: " + classname); //$NON-NLS-1$
          return null;
       }
       if (current.getLength() == 1)

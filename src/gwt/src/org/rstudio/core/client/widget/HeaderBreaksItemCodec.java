@@ -50,7 +50,7 @@ public abstract class HeaderBreaksItemCodec<T, TItemOutput, TItemOutput2>
       Node previousSibling = tbody.getPreviousSibling();
       if (previousSibling != null
           && previousSibling.getNodeType() == Node.ELEMENT_NODE
-          && ((Element)previousSibling).getTagName().equalsIgnoreCase("tbody"))
+          && ((Element)previousSibling).getTagName().equalsIgnoreCase("tbody")) //$NON-NLS-1$
       {
          TableSectionElement prevbody = (TableSectionElement) previousSibling;
          NodeList<TableRowElement> prevrows = prevbody.getRows();
@@ -178,5 +178,5 @@ public abstract class HeaderBreaksItemCodec<T, TItemOutput, TItemOutput2>
       return logicalOffset;
    }
 
-   private static final String EXTRA_ROWS = "extrarows";
+   private static final String EXTRA_ROWS = "extrarows"; //$NON-NLS-1$
 }

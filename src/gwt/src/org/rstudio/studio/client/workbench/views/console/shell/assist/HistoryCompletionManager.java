@@ -345,13 +345,13 @@ public class HistoryCompletionManager implements KeyDownPreviewHandler,
             return
                SafeHtmlUtils.htmlEscape(
                      history_.substring(0, idx)) +
-               "<span class=\"" +
+               "<span class=\"" + //$NON-NLS-1$
                ConsoleResources.INSTANCE.consoleStyles().searchMatch() +
                "\">" +
                SafeHtmlUtils.htmlEscape(
                      history_.substring(idx,
                                           idx + match_.length())) +
-               "</span>" +
+               "</span>" + //$NON-NLS-1$
                SafeHtmlUtils.htmlEscape(
                      history_.substring(idx + match_.length(),
                                           history_.length()));

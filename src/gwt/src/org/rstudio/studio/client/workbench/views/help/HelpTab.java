@@ -67,6 +67,12 @@ public class HelpTab extends DelayLoadWorkbenchTab<Help>
                   EventBus events,
                   final Session session)
    {
+      // i18n: This title sets the visible title of the pane shown in the tab.  It does not (I think?) set the key by
+      //       which other consumers, like settings defined in Options->Pane Layout (PaneConfig.java), refer to this
+      //       pane by (those might be in RStudioGinModule.java and/or PaneManager.java).  There might be something
+      //       expecting this title to match the name given in RStudioGinModule/PaneManager, though?.
+      //       Summary: This needs to be i18n'd, but might need special treatment as translating this might break other
+      //       things.
       super("Help", shim);
       binder.bind(commands, shim);
       events.addHandler(ShowHelpEvent.TYPE, shim);
