@@ -489,11 +489,11 @@ public class PackagesPane extends WorkbenchPane implements Packages.Display
                      if (pkgInfo.isInProjectLibrary())
                      {
                         String source = pkgInfo.getPackratSource();
-                        if (source == "github")
+                        if (source == "github") //$NON-NLS-1$
                            return "GitHub";
-                        else if (source == "Bioconductor")
+                        else if (source == "Bioconductor") //$NON-NLS-1$
                            return "BioC";
-                        else if (source == "source")
+                        else if (source == "source") //$NON-NLS-1$
                            return "Source";
                         else
                            return source;
@@ -574,6 +574,7 @@ public class PackagesPane extends WorkbenchPane implements Packages.Display
                if (packageInfo.getLibrary() == null ||
                    packageInfo.getLibrary().length() == 0)
                {
+                  // i18n: concatenate message before translation
                   display_.showMessage(GlobalDisplay.MSG_INFO, 
                         "Package Not Loaded",
                         "The package '" + packageInfo.getName() + "' cannot " +
@@ -613,7 +614,8 @@ public class PackagesPane extends WorkbenchPane implements Packages.Display
                      if (packageInfo.getHelpUrl() == null || 
                          packageInfo.getHelpUrl().length() == 0)
                      {
-                        display_.showMessage(GlobalDisplay.MSG_INFO, 
+                        // i18n: concatenate message before translation
+                        display_.showMessage(GlobalDisplay.MSG_INFO,
                               "Help Not Available", 
                               "The package '" + packageInfo.getName() + "' " + 
                               "is not installed. Install the package to make " +

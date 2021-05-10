@@ -51,5 +51,5 @@ public class NotebookDoc extends JavaScriptObject
       this.chunk_definitions = defs;
    }-*/;
 
-   public final static String CHUNK_RENDERED_WIDTH = "chunk_rendered_width";
+   public final static String CHUNK_RENDERED_WIDTH = "chunk_rendered_width"; //$NON-NLS-1$
 }

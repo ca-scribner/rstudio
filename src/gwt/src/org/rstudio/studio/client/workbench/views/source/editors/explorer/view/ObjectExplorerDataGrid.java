@@ -452,7 +452,7 @@ public class ObjectExplorerDataGrid
 
          String name = data.getDisplayName();
          if (name == null)
-            name = "<unknown>";
+            name = "<unknown>"; // i18n: ?
          divBuilder.text(name);
          builder.append(divBuilder.asSafeHtml());
 
@@ -533,9 +533,12 @@ public class ObjectExplorerDataGrid
                                   SafeHtmlBuilder builder)
       {
          SafeHtml extractTag = SafeHtmlUtil.createDiv(
-               "class",       CLASS + " " + RES.dataGridStyle().spriteExtractCodeIcon(),
-               "style",       "visibility: hidden",
-               "data-action", ACTION_EXTRACT);
+            "class",
+            CLASS + " " + RES.dataGridStyle().spriteExtractCodeIcon(),
+            "style",
+            "visibility: hidden", //$NON-NLS-1$
+            "data-action", //$NON-NLS-1$
+            ACTION_EXTRACT);
          builder.append(extractTag);
          builder.appendHtmlConstant("</div>");
       }
@@ -544,9 +547,12 @@ public class ObjectExplorerDataGrid
                                SafeHtmlBuilder builder)
       {
          SafeHtml viewTag = SafeHtmlUtil.createDiv(
-               "class",       CLASS + " " + RES.dataGridStyle().spriteViewObjectIcon(),
-               "style",       "visibility: hidden",
-               "data-action", ACTION_VIEW);
+            "class",
+            CLASS + " " + RES.dataGridStyle().spriteViewObjectIcon(),
+            "style",
+            "visibility: hidden", //$NON-NLS-1$
+            "data-action", //$NON-NLS-1$
+            ACTION_VIEW);
          builder.append(viewTag);
          builder.appendHtmlConstant("</div>");
       }
@@ -554,8 +560,8 @@ public class ObjectExplorerDataGrid
       private static final String CLASS = RES.dataGridStyle().clickableIcon();
 
       private static final String[] VIEWABLE_CLASSES = new String[] {
-            "data.frame",
-            "function"
+            "data.frame", //$NON-NLS-1$
+            "function" //$NON-NLS-1$
       };
    }
 
@@ -1079,7 +1085,7 @@ public class ObjectExplorerDataGrid
       Data data = getData().get(row);
       String code = generateExtractingCode(data);
       String language = handle_.getLanguage();
-      code = "View(" + code + ")";
+      code = "View(" + code + ")"; //$NON-NLS-1$
       events_.fireEvent(new SendToConsoleEvent(code, language, true));
    }
 
@@ -1391,13 +1397,13 @@ public class ObjectExplorerDataGrid
    // SessionObjectExplorer.R
    private static final int DEFAULT_ROW_LIMIT = 1000;
 
-   private static final String ACTION_OPEN    = "open";
-   private static final String ACTION_CLOSE   = "close";
-   private static final String ACTION_EXTRACT = "extract";
-   private static final String ACTION_VIEW    = "view";
+   private static final String ACTION_OPEN    = "open"; //$NON-NLS-1$
+   private static final String ACTION_CLOSE   = "close"; //$NON-NLS-1$
+   private static final String ACTION_EXTRACT = "extract"; //$NON-NLS-1$
+   private static final String ACTION_VIEW    = "view"; //$NON-NLS-1$
 
-   private static final String TAG_ATTRIBUTES = "attributes";
-   private static final String TAG_VIRTUAL    = "virtual";
+   private static final String TAG_ATTRIBUTES = "attributes"; //$NON-NLS-1$
+   private static final String TAG_VIRTUAL    = "virtual"; //$NON-NLS-1$
 
    // Resources, etc ----
    public interface Resources extends RStudioDataGridResources
@@ -1405,28 +1411,28 @@ public class ObjectExplorerDataGrid
       @Source({RStudioDataGridStyle.RSTUDIO_DEFAULT_CSS, "ObjectExplorerDataGrid.css"})
       Styles dataGridStyle();
 
-      @Source("images/expandIcon.png")
+      @Source("images/expandIcon.png") //$NON-NLS-1$
       ImageResource expandIcon();
 
-      @Source("images/expandIcon_2x.png")
+      @Source("images/expandIcon_2x.png") //$NON-NLS-1$
       ImageResource expandIcon2x();
 
-      @Source("images/collapseIcon.png")
+      @Source("images/collapseIcon.png") //$NON-NLS-1$
       ImageResource collapseIcon();
 
-      @Source("images/collapseIcon_2x.png")
+      @Source("images/collapseIcon_2x.png") //$NON-NLS-1$
       ImageResource collapseIcon2x();
 
-      @Source("images/extractCode.png")
+      @Source("images/extractCode.png") //$NON-NLS-1$
       ImageResource extractCode();
 
-      @Source("images/extractCode_2x.png")
+      @Source("images/extractCode_2x.png") //$NON-NLS-1$
       ImageResource extractCode2x();
 
-      @Source("images/viewObject.png")
+      @Source("images/viewObject.png") //$NON-NLS-1$
       ImageResource viewObject();
 
-      @Source("images/viewObject_2x.png")
+      @Source("images/viewObject_2x.png") //$NON-NLS-1$
       ImageResource viewObject2x();
    }
 

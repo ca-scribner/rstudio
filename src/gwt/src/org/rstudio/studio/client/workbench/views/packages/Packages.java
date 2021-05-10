@@ -524,7 +524,7 @@ public class Packages
             public void requestData(
                   ServerRequestCallback<JsArray<PackratPackageAction>> requestCallback)
             {
-               packratServer_.getPendingActions("clean",
+               packratServer_.getPendingActions("clean", //$NON-NLS-1$
                      session_.getSessionInfo().getActiveProjectDir().getPath(),
                      requestCallback);
             }
@@ -604,13 +604,19 @@ public class Packages
             }
             else if (actions.getRestoreActions().length() > 0)
             {
-               confirmPackratActions(actions.getRestoreActions(),
-                                     "Restore", "restore");
+               confirmPackratActions(
+                  actions.getRestoreActions(),
+                  "Restore",
+                  "restore" //$NON-NLS-1$
+               );
             }
             else if (actions.getSnapshotActions().length() > 0)
             {
-               confirmPackratActions(actions.getSnapshotActions(),
-                                     "Snapshot", "snapshot");
+               confirmPackratActions(
+                  actions.getSnapshotActions(),
+                  "Snapshot",
+                  "snapshot" //$NON-NLS-1$
+               );
             }
             else
             {
@@ -658,7 +664,7 @@ public class Packages
 
             final OperationWithInput<Void> operation = (Void input) -> {
 
-               String code = "renv::" + action.toLowerCase() + "(confirm = FALSE)";
+               String code = "renv::" + action.toLowerCase() + "(confirm = FALSE)"; //$NON-NLS-1$
                events_.fireEvent(new SendToConsoleEvent(code, true));
             };
 
@@ -1021,6 +1027,7 @@ public class Packages
 
    private void restartForInstallWithConfirmation(final String installCmd)
    {
+      // i18n: Concat constant before i18n
       String msg =
             "One or more of the packages to be updated are currently loaded. " +
             "Restarting R prior to install is highly recommended.\n\n" +
@@ -1122,7 +1129,7 @@ public class Packages
                public void execute(Void input)
                {
                   packratUtil_.executePackratFunction(packratFunction,
-                        "prompt = FALSE");
+                        "prompt = FALSE"); //$NON-NLS-1$
                }
             }).showModal();
    }
@@ -1140,13 +1147,14 @@ public class Packages
                {
                   if (input == PackratConflictResolution.Library)
                   {
-                     packratUtil_.executePackratFunction("restore",
-                           "prompt = FALSE");
+                     packratUtil_.executePackratFunction(
+                        "restore", //$NON-NLS-1$
+                        "prompt = FALSE"); //$NON-NLS-1$
                   }
                   else if (input == PackratConflictResolution.Snapshot)
                   {
-                     packratUtil_.executePackratFunction("snapshot",
-                           "prompt = FALSE");
+                     packratUtil_.executePackratFunction("snapshot", //$NON-NLS-1$
+                           "prompt = FALSE"); //$NON-NLS-1$
                   }
                }
             }).showModal();

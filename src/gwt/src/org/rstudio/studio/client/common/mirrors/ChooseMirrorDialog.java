@@ -74,6 +74,10 @@ public class ChooseMirrorDialog extends ModalDialog<CRANMirror>
          CRANMirror cranMirror = CRANMirror.empty();
          cranMirror.setURL(customTextBox_.getText());
 
+         // i18n: I think this is an enumerator.  PackagesPreferencesPane.java checks if host == Custom and if yes,
+         //       displays just "Host" as a display name rather than the typical "Name - Host" format that comes from
+         //       getDisplay().  I don't think the Name is shown anywhere else?
+         //       This is related to PackagesPreferencesPane.java, SecondaryReposDialog.java, and maybe others?
          cranMirror.setHost("Custom");
          cranMirror.setName("Custom");
 
@@ -112,7 +116,8 @@ public class ChooseMirrorDialog extends ModalDialog<CRANMirror>
          onValidated.execute(false);
          return;
       }
-      
+
+      // i18n: See above note.  This is at least an enumerator, but looks like the
       if (input.getHost().equals("Custom"))
       {
          progressIndicator_.onProgress("Validating CRAN repository...");

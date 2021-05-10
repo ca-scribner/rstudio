@@ -31,6 +31,7 @@ public class NewRdDialog extends ModalDialog<NewRdDialog.Result>
 {
    public static class Result
    {
+      // i18n: I think this is an enumeration?  It is tested for in one place, and I don't see it ever being set
       public static final String TYPE_NONE = "none";
 
       public Result(String name, String type)

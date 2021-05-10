@@ -117,7 +117,7 @@ public class ObjectBrowser extends Composite implements RequiresResize
 
          // look only for those that are targeted at the Show More button
          Element target = Element.as(event.getNativeEvent().getEventTarget());
-         if (!StringUtil.equals(target.getTagName().toLowerCase(), "a"))
+         if (!StringUtil.equals(target.getTagName().toLowerCase(), "a")) //$NON-NLS-1$
             return;
          if (!target.getInnerText().equals("Show more"))
             return;
@@ -180,7 +180,9 @@ public class ObjectBrowser extends Composite implements RequiresResize
    static {
       RES.cellTreeStyle().ensureInjected();
    }
-   
+
+   // i18n: This implements a message for en_US, but then other code here interprets using `if == "Show more"` (eg:
+   //       references the english text directly).  Need to handle properly
    @DefaultLocale("en_US")
    public interface TableBrowserMessages extends CellTreeMessages {
      @DefaultMessage("Show more")

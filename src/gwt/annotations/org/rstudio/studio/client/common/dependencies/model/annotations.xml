@@ -1,0 +1,5 @@
+<root>
+    <item name='org.rstudio.studio.client.common.dependencies.model.Dependency org.rstudio.studio.client.common.dependencies.model.Dependency cranPackage(java.lang.String, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

@@ -98,8 +98,8 @@ public class NewPlumberAPI extends ModalDialog<NewPlumberAPI.Result>
    {
       public PlumberAPIClientState()
       {
-         super("plumber",
-               "new-plumber-application",
+         super("plumber", //$NON-NLS-1$
+               "new-plumber-application", //$NON-NLS-1$
                ClientState.PERSISTENT,
                session_.getSessionInfo().getClientState(),
                false);
@@ -111,8 +111,8 @@ public class NewPlumberAPI extends ModalDialog<NewPlumberAPI.Result>
          result_ = (value == null) ?
                Result.create() :
                   Result.create(
-                        value.getString("name"),
-                        value.getString("dir"));
+                        value.getString("name"), //$NON-NLS-1$
+                        value.getString("dir")); //$NON-NLS-1$
       }
 
       @Override
@@ -200,7 +200,7 @@ public class NewPlumberAPI extends ModalDialog<NewPlumberAPI.Result>
 
       HelpLink plumberHelpLink_ = new HelpLink(
          "Plumber APIs",
-         "about_plumber",
+         "about_plumber", //$NON-NLS-1$
          false);
       plumberHelpLink_.getElement().getStyle().setMarginTop(4, Unit.PX);
       addLeftWidget(plumberHelpLink_);
@@ -263,10 +263,10 @@ public class NewPlumberAPI extends ModalDialog<NewPlumberAPI.Result>
    private static PlumberAPIClientState clientStateValue_;
 
    private static final Pattern RE_VALID_API_NAME = Pattern.create(
-         "^\\s*" +
+         "^\\s*" + //$NON-NLS-1$
          "[" + RegexUtil.wordCharacter() + "]" +
          "[" + RegexUtil.wordCharacter() + "._-]*" +
-         "\\s*$", "");
+         "\\s*$", ""); //$NON-NLS-1$
 
    // Injected ----
    private Session session_;

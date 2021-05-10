@@ -108,7 +108,7 @@ public class ObjectBrowserModel implements TreeViewModel
       if (connection_.getObjectTypes() != null)
          rootType = connection_.getObjectTypes().get(0);
       if (rootType != null)
-         rootData = rootType.getContains() == "data";
+         rootData = rootType.getContains() == "data"; //$NON-NLS-1$
 
       if (value == null || rootData)
       {
@@ -156,7 +156,7 @@ public class ObjectBrowserModel implements TreeViewModel
       
       // extract the type of the object; if it's a known type, it's not a leaf
       JsObject jso = JsObject.fromJavaScriptObject((JavaScriptObject)value);
-      String type = jso.getString("type").toLowerCase();
+      String type = jso.getString("type").toLowerCase(); //$NON-NLS-1$
       JsArray<ConnectionObjectType> types = connection_.getObjectTypes();
       for (int i = 0; i < types.length(); i++)
       {
@@ -473,7 +473,7 @@ public class ObjectBrowserModel implements TreeViewModel
    {
       public ContainerCell()
       {
-         super("click");
+         super("click"); //$NON-NLS-1$
       }
       
       @Override
@@ -508,7 +508,7 @@ public class ObjectBrowserModel implements TreeViewModel
       public void onBrowserEvent(Cell.Context context,
               Element parent, DatabaseObject value, NativeEvent event,
               ValueUpdater<DatabaseObject> valueUpdater) {
-          if ("click".equals(event.getType()))
+          if ("click".equals(event.getType())) //$NON-NLS-1$
           {
              Element eventTarget = event.getEventTarget().cast();
              if (eventTarget.getAttribute("class").equals(

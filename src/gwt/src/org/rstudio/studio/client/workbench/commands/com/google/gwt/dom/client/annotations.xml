@@ -56,10 +56,16 @@
     <item name='com.google.gwt.dom.client.Style void setBackgroundColor(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.dom.client.Style void setBackgroundImage(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.dom.client.Style void setBorderColor(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.Style void setProperty(java.lang.String, java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Style void setPropertyPx(java.lang.String, int) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.StyleElement void setType(java.lang.String) 0'>

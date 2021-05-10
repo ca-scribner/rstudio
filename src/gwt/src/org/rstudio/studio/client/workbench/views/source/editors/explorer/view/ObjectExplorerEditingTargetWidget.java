@@ -193,10 +193,10 @@ public class ObjectExplorerEditingTargetWidget extends Composite
    // Resources, etc ----
    public interface Resources extends ClientBundle
    {
-      @Source("images/refresh_2x.png")
+      @Source("images/refresh_2x.png") //$NON-NLS-1$
       ImageResource refresh2x();
       
-      @Source("ObjectExplorerEditingTargetWidget.css")
+      @Source("ObjectExplorerEditingTargetWidget.css") //$NON-NLS-1$
       Styles styles();
    }
    

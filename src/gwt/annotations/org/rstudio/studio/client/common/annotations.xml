@@ -28,6 +28,9 @@
     <item name='org.rstudio.studio.client.common.HelpLink HelpLink(java.lang.String, java.lang.String) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.studio.client.common.HelpLink HelpLink(java.lang.String, java.lang.String, boolean) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='org.rstudio.studio.client.common.HelpLink HelpLink(java.lang.String, java.lang.String, boolean, boolean) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>

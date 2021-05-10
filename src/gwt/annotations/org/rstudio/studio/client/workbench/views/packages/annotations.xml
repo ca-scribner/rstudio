@@ -1,0 +1,37 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages org.rstudio.studio.client.workbench.views.packages.Packages.InstallCommand buildUpdatePackagesCommand(java.util.ArrayList&lt;org.rstudio.studio.client.workbench.views.packages.model.PackageUpdate&gt;, org.rstudio.studio.client.workbench.views.packages.model.PackageInstallContext)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages void executeRemoveCommand(java.util.ArrayList&lt;org.rstudio.studio.client.packrat.model.PackratPackageAction&gt;)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages void loadPackage(org.rstudio.studio.client.workbench.views.packages.model.PackageInfo)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="&quot;HardCodedStringLiteral&quot;"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages void unloadPackage(org.rstudio.studio.client.workbench.views.packages.model.PackageInfo)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="&quot;HardCodedStringLiteral&quot;"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages$17 void execute(org.rstudio.core.client.files.FileSystemItem, org.rstudio.core.client.widget.ProgressIndicator)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages$21$1 void execute()'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.packages.Packages$8 void execute(org.rstudio.studio.client.workbench.views.packages.model.PackageInstallRequest)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

@@ -22,6 +22,7 @@ public class ObjectExplorerFileType extends EditableFileType
 {
    public ObjectExplorerFileType()
    {
+      // i18n: Is this for users to see or a key?
       super(ID,
             "Object Explorer",
             new ImageResource2x(FileIconResources.INSTANCE.iconObjectExplorer2x()));
@@ -34,5 +35,5 @@ public class ObjectExplorerFileType extends EditableFileType
          "Object explorer doesn't operate on filesystem files";
    }
    
-   public static final String ID = "object_explorer";
+   public static final String ID = "object_explorer"; //$NON-NLS-1$
 }

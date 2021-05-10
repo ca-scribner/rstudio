@@ -123,7 +123,7 @@ public class NewShinyWebApplication extends ModalDialog<NewShinyWebApplication.R
       public ShinyWebApplicationClientState()
       {
          super("shiny",
-               "new-shiny-application",
+               "new-shiny-application", //$NON-NLS-1$
                ClientState.PERSISTENT,
                session_.getSessionInfo().getClientState(),
                false);
@@ -135,9 +135,9 @@ public class NewShinyWebApplication extends ModalDialog<NewShinyWebApplication.R
          result_ = (value == null) ?
                Result.create() :
                   Result.create(
-                        value.getString("name"),
-                        value.getString("type"),
-                        value.getString("dir"));
+                        value.getString("name"), //$NON-NLS-1$
+                        value.getString("type"), //$NON-NLS-1$
+                        value.getString("dir")); //$NON-NLS-1$
       }
 
       @Override
@@ -331,8 +331,8 @@ public class NewShinyWebApplication extends ModalDialog<NewShinyWebApplication.R
       session_.persistClientState();
    }
    
-   public static final String TYPE_SINGLE_FILE = "type_single_file";
-   public static final String TYPE_MULTI_FILE  = "type_multi_file";
+   public static final String TYPE_SINGLE_FILE = "type_single_file"; //$NON-NLS-1$
+   public static final String TYPE_MULTI_FILE  = "type_multi_file"; //$NON-NLS-1$
    
    private HorizontalPanel container_;
    private VerticalPanel controls_;
@@ -353,10 +353,10 @@ public class NewShinyWebApplication extends ModalDialog<NewShinyWebApplication.R
    
    
    private static final Pattern RE_VALID_APP_NAME = Pattern.create(
-         "^\\s*" +
+         "^\\s*" + //$NON-NLS-1$
          "[" + RegexUtil.wordCharacter() + "]" +
          "[" + RegexUtil.wordCharacter() + "._-]*" +
-         "\\s*$", "");
+         "\\s*$", ""); //$NON-NLS-1$
    
    // Injected ----
    private Session session_;

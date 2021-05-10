@@ -155,7 +155,7 @@ public class NotebookHtmlRenderer
                                        final String outputPath)
    {
       dependencyManager_.withUnsatisfiedDependencies(
-            Dependency.cranPackage("rmarkdown", "1.6"),
+            Dependency.cranPackage("rmarkdown", "1.6"), //$NON-NLS-1$
             new ServerRequestCallback<JsArray<Dependency>>()
             {
                @Override
@@ -172,11 +172,13 @@ public class NotebookHtmlRenderer
 
                   if (StringUtil.isNullOrEmpty(dependency.getVersion()))
                   {
+                     // i18n multiline constant
                      message = "The rmarkdown package is not installed; " +
                                "notebook HTML file will not be generated.";
                   }
                   else
                   {
+                     // i18n multiline constant
                      message = "An updated version of the rmarkdown package " +
                                "is required to generate notebook HTML files.";
                   }

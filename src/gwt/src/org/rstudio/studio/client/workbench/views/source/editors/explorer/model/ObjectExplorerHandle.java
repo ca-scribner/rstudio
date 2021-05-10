@@ -18,7 +18,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class ObjectExplorerHandle extends JavaScriptObject
 {
-   public static final String URI_PREFIX = "explorer://";
+   public static final String URI_PREFIX = "explorer://"; //$NON-NLS-1$
    
    protected ObjectExplorerHandle()
    {

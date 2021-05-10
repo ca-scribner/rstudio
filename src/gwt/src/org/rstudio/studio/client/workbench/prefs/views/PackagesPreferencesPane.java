@@ -82,7 +82,9 @@ public class PackagesPreferencesPane extends PreferencesPane
             cranMirror_ = cranMirror;
             cranMirrorTextBox_.setText(cranMirror_.getDisplay());
 
-            if (cranMirror_.getHost().equals("Custom"))
+            // i18n: See notes in ChooseMirrorDialog.  I think this is an enumerator only, and not displayed to users
+            //       Why have logic here based on getHost's value?  Shouldn't this if statement be in getDisplay()?
+            if (cranMirror_.getHost().equals("Custom")) //$NON-NLS-1$
             {
                cranMirrorTextBox_.setText(cranMirror_.getURL());
             }
@@ -93,7 +95,7 @@ public class PackagesPreferencesPane extends PreferencesPane
 
             secondaryReposWidget_.setCranRepoUrl(
                   cranMirror_.getURL(),
-                  cranMirror_.getHost().equals("Custom")
+                  cranMirror_.getHost().equals("Custom") //$NON-NLS-1$
             );
          });
       };
@@ -233,6 +235,7 @@ public class PackagesPreferencesPane extends PreferencesPane
    @Override
    public String getName()
    {
+      // i18n: This is what displays on screen in the Global Options left hand bar and must be translated.
       return "Packages";
    }
 
@@ -247,10 +250,10 @@ public class PackagesPreferencesPane extends PreferencesPane
 
          secondaryReposWidget_.setCranRepoUrl(
             cranMirror_.getURL(),
-            cranMirror_.getHost().equals("Custom")
+            cranMirror_.getHost().equals("Custom") //$NON-NLS-1$
          );
 
-         if (cranMirror_.getHost().equals("Custom"))
+         if (cranMirror_.getHost().equals("Custom")) //$NON-NLS-1$
          {
             cranMirrorTextBox_.setText(cranMirror_.getURL());
          }
@@ -269,6 +272,7 @@ public class PackagesPreferencesPane extends PreferencesPane
       useInternet2_.addValueChangeHandler(event -> globalDisplay_.showMessage(
             MessageDialog.INFO,
             "Restart R Required",
+            // i18n: Concatenate constants before translation
             "You must restart your R session for this setting " +
             "to take effect.")
       );
@@ -365,7 +369,7 @@ public class PackagesPreferencesPane extends PreferencesPane
 
       boolean cranRepoChanged = !mirrorTextValue.equals(cranMirrorStored_);
       boolean cranRepoChangedToUrl = cranRepoChanged &&
-                                      mirrorTextValue.startsWith("http");
+                                      mirrorTextValue.startsWith("http"); //$NON-NLS-1$
 
       if (cranRepoChanged || secondaryReposHasChanged())
       {
@@ -373,8 +377,8 @@ public class PackagesPreferencesPane extends PreferencesPane
          {
             cranMirror_.setURL(mirrorTextValue);
 
-            cranMirror_.setHost("Custom");
-            cranMirror_.setName("Custom");
+            cranMirror_.setHost("Custom"); //$NON-NLS-1$
+            cranMirror_.setName("Custom"); //$NON-NLS-1$
          }
       }
 
