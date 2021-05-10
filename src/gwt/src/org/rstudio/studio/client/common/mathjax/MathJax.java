@@ -653,6 +653,6 @@ public class MathJax
    private HandlerRegistration cursorChangedHandler_;
    private String lastRenderedText_ = "";
 
-   public static final String LINE_WIDGET_TYPE = "mathjax-preview";
-   public static final String MATHJAX_ROOT_CLASSNAME = "rstudio-mathjax-root";
+   public static final String LINE_WIDGET_TYPE = "mathjax-preview"; //$NON-NLS-1$
+   public static final String MATHJAX_ROOT_CLASSNAME = "rstudio-mathjax-root"; //$NON-NLS-1$
 }

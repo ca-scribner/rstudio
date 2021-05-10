@@ -36,6 +36,7 @@ public class JobsPane extends WorkbenchPane
    public JobsPane(UserPrefs uiPrefs,
                    JobsPaneWidgets widgets)
    {
+      // i18n: Is this enumeration or for users, etc?
       super("Jobs");
       
       userPrefs_ = uiPrefs;

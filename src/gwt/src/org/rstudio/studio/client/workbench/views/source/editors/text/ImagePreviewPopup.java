@@ -155,10 +155,10 @@ public class ImagePreviewPopup extends MiniPopupPanel
    private final Image image_;
    private final Label error_;
 
-   private static final String SMALL_MAX_WIDTH  = "100px";
-   private static final String SMALL_MAX_HEIGHT = "100px";
+   private static final String SMALL_MAX_WIDTH  = "100px"; //$NON-NLS-1$
+   private static final String SMALL_MAX_HEIGHT = "100px"; //$NON-NLS-1$
 
-   private static final String LARGE_MAX_WIDTH  = "400px";
-   private static final String LARGE_MAX_HEIGHT = "600px";
+   private static final String LARGE_MAX_WIDTH  = "400px"; //$NON-NLS-1$
+   private static final String LARGE_MAX_HEIGHT = "600px"; //$NON-NLS-1$
 }
 

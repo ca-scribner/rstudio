@@ -1,0 +1,12 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.BlueResources'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

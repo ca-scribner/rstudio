@@ -198,7 +198,8 @@ public class NewConnectionShinyHost extends Composite
    private void appendStyle(RStudioFrame frame)
    {
       Document document = frame.getWindow().getDocument();
-      
+
+      //noinspection HardCodedStringLiteral
       String customStyle = "\n" +
       "body {\n" +
       "  background: none;\n" +

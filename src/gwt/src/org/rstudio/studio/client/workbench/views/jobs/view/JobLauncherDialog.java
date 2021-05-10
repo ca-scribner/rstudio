@@ -83,7 +83,7 @@ public class JobLauncherDialog extends ModalDialog<JobLaunchSpec>
       {
          return JobLaunchSpec.create(jobName,
                controls_.scriptPath(), 
-               "unknown", // encoding unknown (will try to look it up later)
+               "unknown", // encoding unknown (will try to look it up later) //$NON-NLS-1$
                controls_.workingDir(),
                controls_.importEnv(),
                controls_.exportEnv());
@@ -116,11 +116,11 @@ public class JobLauncherDialog extends ModalDialog<JobLaunchSpec>
    {
       if (StringUtil.isNullOrEmpty(path))
       {
-         return "Current selection";
+         return "Current selection"; //$NON-NLS-1$
       }
       else
       {
-         return FileSystemItem.getNameFromPath(path) + " selection";
+         return FileSystemItem.getNameFromPath(path) + " selection"; //$NON-NLS-1$
       }
    }
    

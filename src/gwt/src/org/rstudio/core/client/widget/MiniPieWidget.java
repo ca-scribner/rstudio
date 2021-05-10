@@ -54,7 +54,7 @@ public class MiniPieWidget extends Composite
       // Create accessibility title and description
       title_ = Document.get().createTitleElement();
       title_.setInnerText(title);
-      title_.setId(ElementIds.getUniqueElementId("pie-title"));
+      title_.setId(ElementIds.getUniqueElementId("pie-title")); //$NON-NLS-1$
       svg.appendChild(title_);
       Roles.getImgRole().setAriaLabelledbyProperty(svg, Id.of(title_));
 

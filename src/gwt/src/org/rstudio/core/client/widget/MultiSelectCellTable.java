@@ -243,7 +243,7 @@ public class MultiSelectCellTable<T> extends CellTable<T>
         // TODO: We need is() implementations in all Element subclasses.
         // This would allow us to use TableCellElement.is() -- much cleaner.
         String tagName = elem.getTagName();
-        if ("td".equalsIgnoreCase(tagName) || "th".equalsIgnoreCase(tagName)) {
+        if ("td".equalsIgnoreCase(tagName) || "th".equalsIgnoreCase(tagName)) { //$NON-NLS-1$
           return elem.cast();
         }
         elem = elem.getParentElement();

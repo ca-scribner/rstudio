@@ -84,9 +84,9 @@ public class JobLauncherControls extends Composite
    public String exportEnv()
    {
       String env = exportEnv_.getSelectedValue();
-      if (env == "local")
+      if (env == "local") //$NON-NLS-1$
       {
-         env = FileSystemItem.createFile(file_.getText()).getStem() + "_results";
+         env = FileSystemItem.createFile(file_.getText()).getStem() + "_results"; //$NON-NLS-1$
       }
       return env;
    }

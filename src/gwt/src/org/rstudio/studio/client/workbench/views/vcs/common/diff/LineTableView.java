@@ -85,7 +85,7 @@ public class LineTableView extends MultiSelectCellTable<ChunkOrLine> implements 
    {
       public LineContentCell()
       {
-         super("mousedown");
+         super("mousedown"); //$NON-NLS-1$
       }
 
       @Override
@@ -95,7 +95,7 @@ public class LineTableView extends MultiSelectCellTable<ChunkOrLine> implements 
                                  NativeEvent event,
                                  ValueUpdater<ChunkOrLine> chunkOrLineValueUpdater)
       {
-         if ("mousedown".equals(event.getType())
+         if ("mousedown".equals(event.getType()) //$NON-NLS-1$
              && event.getButton() == NativeEvent.BUTTON_LEFT
              && parent.isOrHasChild(event.getEventTarget().<Node>cast()))
          {

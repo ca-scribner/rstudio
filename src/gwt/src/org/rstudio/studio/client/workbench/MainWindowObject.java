@@ -155,9 +155,9 @@ public class MainWindowObject<T>
    
    private static final native Window ownWindow() /*-{ return $wnd; }-*/;
    
-   private static final String LAST_FOCUSED_WINDOW           = "last_focused_window";
-   private static final String LAST_FOCUSED_WINDOW_ID        = "last_focused_window_id";
-   private static final String LAST_FOCUSED_EDITOR_ID        = "last_focused_editor_id";
-   private static final String LAST_FOCUSED_SOURCE_WINDOW_ID = "last_focused_source_window_id";
-   private static final String R_ADDINS                      = "r_addins";
+   private static final String LAST_FOCUSED_WINDOW           = "last_focused_window"; //$NON-NLS-1$
+   private static final String LAST_FOCUSED_WINDOW_ID        = "last_focused_window_id"; //$NON-NLS-1$
+   private static final String LAST_FOCUSED_EDITOR_ID        = "last_focused_editor_id"; //$NON-NLS-1$
+   private static final String LAST_FOCUSED_SOURCE_WINDOW_ID = "last_focused_source_window_id"; //$NON-NLS-1$
+   private static final String R_ADDINS                      = "r_addins"; //$NON-NLS-1$
 }

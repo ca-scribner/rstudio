@@ -1,0 +1,7 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.views.jobs.model.JobManagerTests'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
+</root>

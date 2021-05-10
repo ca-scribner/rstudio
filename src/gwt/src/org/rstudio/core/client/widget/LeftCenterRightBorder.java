@@ -63,7 +63,7 @@ public class LeftCenterRightBorder extends ResizeComposite implements AcceptsOne
                                 center.getHeight(),
                                 Unit.PX);
       Element centerEl = panel_.getWidgetContainerElement(center);
-      centerEl.getStyle().setBackgroundImage("url(" + center.getUrl() + ")");
+      centerEl.getStyle().setBackgroundImage("url(" + center.getUrl() + ")"); //$NON-NLS-1$
       centerEl.getStyle().setProperty("backgroundRepeat", "repeat-x");
       center.setVisible(false);
 

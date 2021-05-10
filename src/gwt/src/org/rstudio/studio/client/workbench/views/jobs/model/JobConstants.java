@@ -29,8 +29,8 @@ public class JobConstants
    public final static int STATE_FAILED    = 5;
 
    // special job actions
-   public final static String ACTION_STOP = "stop";
-   public final static String ACTION_INFO = "info";
+   public final static String ACTION_STOP = "stop"; //$NON-NLS-1$
+   public final static String ACTION_INFO = "info"; //$NON-NLS-1$
 
    // job types
    public final static int JOB_TYPE_UNKNOWN = 0;

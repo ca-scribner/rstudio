@@ -2,7 +2,16 @@
     <item name='com.google.gwt.i18n.client.Constants.DefaultStringValue java.lang.String value()'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.user.client.ui.CellPanel void setCellHeight(com.google.gwt.user.client.ui.Widget, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.user.client.ui.CellPanel void setCellWidth(com.google.gwt.user.client.ui.Widget, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.DockPanel void setCellHeight(com.google.gwt.user.client.ui.Widget, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.user.client.ui.HTMLTable.CellFormatter void setWidth(int, int, java.lang.String) 2'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.user.client.ui.ListBox void addItem(java.lang.String, java.lang.String) 1'>

@@ -52,7 +52,7 @@ public class ModuleTabLayoutPanel extends TabLayoutPanel
 
          String minimized_id = "";
          if (minimized)
-            minimized_id = "_minimized";
+            minimized_id = "_minimized"; //$NON-NLS-1$
 
          // Determine a base element ID based on the tab's title; make available to be
          // associated with actual tab element when ModuleTab is attached to the tab layout panel

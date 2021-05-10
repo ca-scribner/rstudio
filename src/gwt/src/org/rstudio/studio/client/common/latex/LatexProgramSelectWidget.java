@@ -24,7 +24,11 @@ public class LatexProgramSelectWidget extends SelectWidget
    {
       super("Typeset LaTeX into PDF using:", latexProgramRegistry_.getTypeNames());
          
-      HelpButton.addHelpButton(this, "latex_program", "Help on customizing LaTeX options");
+      HelpButton.addHelpButton(
+         this,
+         "latex_program", //$NON-NLS-1$
+         "Help on customizing LaTeX options"
+      );
    }
    
    

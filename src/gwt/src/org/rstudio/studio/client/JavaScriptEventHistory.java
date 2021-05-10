@@ -122,14 +122,14 @@ public class JavaScriptEventHistory
          historyPanel_ = new MiniPopupPanel(false, false);
       
       VerticalPanel contentPanel = new VerticalPanel();
-      contentPanel.add(new HTML("<h4 style='margin: 0;'>JavaScript Event History</h2><hr />"));
+      contentPanel.add(new HTML("<h4 style='margin: 0;'>JavaScript Event History</h2><hr />")); //$NON-NLS-1$
       
       int i = 0, n = Math.min(10, queue_.size());
       for (EventData event : queue_)
       {
          if (i++ == n)
             break;
-         contentPanel.add(new HTML("Event: " + event.getType()));
+         contentPanel.add(new HTML("Event: " + event.getType())); //$NON-NLS-1$
       }
       
       historyPanel_.setWidget(contentPanel);

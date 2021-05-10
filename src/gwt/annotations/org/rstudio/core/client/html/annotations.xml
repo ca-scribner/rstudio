@@ -1,0 +1,5 @@
+<root>
+    <item name='org.rstudio.core.client.html.HTMLAttributesParser.Parser boolean consumeUntilRegex(java.lang.String, com.google.gwt.user.client.Command) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

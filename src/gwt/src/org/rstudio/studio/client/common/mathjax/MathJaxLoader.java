@@ -132,8 +132,8 @@ public class MathJaxLoader
    {
       ScriptElement el = Document.get().createScriptElement();
       el.setAttribute("type", "text/javascript");
-      el.setSrc("mathjax/MathJax.js?config=TeX-MML-AM_CHTML");
-      el.setAttribute("async", "true");
+      el.setSrc("mathjax/MathJax.js?config=TeX-MML-AM_CHTML"); //$NON-NLS-1$
+      el.setAttribute("async", "true"); //$NON-NLS-1$
       return el;
    }
    

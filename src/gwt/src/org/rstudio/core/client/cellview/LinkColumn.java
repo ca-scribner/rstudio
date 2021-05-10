@@ -57,12 +57,12 @@ public abstract class LinkColumn<T> extends Column<T, String>
             {
               Styles styles = RESOURCES.styles();
               StringBuilder div = new StringBuilder();
-              div.append("<div class=\"");
+              div.append("<div class=\""); //$NON-NLS-1$
               div.append(styles.link() + " ");
               div.append(ThemeResources.INSTANCE.themeStyles().handCursor());
               if (alwaysUnderline)
                  div.append(" " + styles.linkUnderlined());
-              div.append("\" title=\"" + value.asString() + "\">");
+              div.append("\" title=\"" + value.asString() + "\">"); //$NON-NLS-1$
 
               sb.appendHtmlConstant(div.toString());
               sb.append(value);
@@ -78,7 +78,7 @@ public abstract class LinkColumn<T> extends Column<T, String>
                                     ValueUpdater<String> valueUpdater)
          {
            super.onBrowserEvent(context, parent, value, event, valueUpdater);
-           if ("click".equals(event.getType()))
+           if ("click".equals(event.getType())) //$NON-NLS-1$
            {
               // verify that the click was on the package link
               JavaScriptObject evTarget = event.getEventTarget().cast();

@@ -40,7 +40,7 @@ public class ImageButtonColumn<T> extends Column<T, T>
 
    public interface RenderTemplates extends SafeHtmlTemplates
    {
-      @Template("<span title=\"{1}\" style=\"cursor: pointer;\">{0}</span>")
+      @Template("<span title=\"{1}\" style=\"cursor: pointer;\">{0}</span>") //$NON-NLS-1$
       SafeHtml render(SafeHtml image, String title);
    }
 

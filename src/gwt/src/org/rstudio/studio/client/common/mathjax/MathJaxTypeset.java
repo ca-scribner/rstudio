@@ -96,7 +96,7 @@ public class MathJaxTypeset
       {
          // if mathjax displayed an error, try re-rendering once more
          Element[] errorEls = DomUtils.getElementsByClassName(mathjaxEl, 
-               "MathJax_Error");
+               "MathJax_Error"); //$NON-NLS-1$
          if (errorEls != null && errorEls.length > 0 &&
              attempt < MAX_RENDER_ATTEMPTS)
          {

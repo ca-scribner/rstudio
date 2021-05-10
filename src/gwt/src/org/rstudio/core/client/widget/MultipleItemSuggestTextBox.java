@@ -30,7 +30,7 @@ public class MultipleItemSuggestTextBox extends TextBoxBase
    public MultipleItemSuggestTextBox()
    {
       super(Document.get().createTextInputElement());
-      setStyleName("gwt-TextBox");
+      setStyleName("gwt-TextBox"); //$NON-NLS-1$
       DomUtils.disableSpellcheck(this);
    }
    

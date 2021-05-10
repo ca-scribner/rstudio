@@ -19,7 +19,17 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.core.client.command.KeyCombination'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
     <item name='org.rstudio.core.client.command.KeyCombination KeyCombination(java.lang.String, int, int) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.command.KeySequence org.rstudio.core.client.command.KeySequence fromShortcutString(java.lang.String)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
     </item>
 </root>

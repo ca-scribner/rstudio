@@ -578,7 +578,7 @@ public abstract class ModalDialogBase extends DialogBox
                   e.hasTagName("A") ||
                   e.hasTagName("BUTTON") ||
                   e.hasClassName(ALLOW_ENTER_KEY_CLASS) ||
-                  (e.hasAttribute("role") && StringUtil.equals(e.getAttribute("role"), "link")))
+                  (e.hasAttribute("role") && StringUtil.equals(e.getAttribute("role"), "link"))) //$NON-NLS-1$
                return;
 
             ThemedButton defaultButton = defaultOverrideButton_ == null
@@ -763,7 +763,7 @@ public abstract class ModalDialogBase extends DialogBox
       ArrayList<Element> focusable = getFocusableElements();
       if (focusable.size() == 0)
       {
-         Debug.logWarning("No potentially focusable controls found in modal dialog");
+         Debug.logWarning("No potentially focusable controls found in modal dialog"); //$NON-NLS-1$
          return;
       }
       focus_.setFirst(focusable.get(0));
@@ -826,5 +826,5 @@ public abstract class ModalDialogBase extends DialogBox
    private final AriaLiveStatusWidget ariaLiveStatusWidget_;
    private final FocusHelper focus_;
    
-   public static final String ALLOW_ENTER_KEY_CLASS = "__rstudio_modal_allow_enter_key";
+   public static final String ALLOW_ENTER_KEY_CLASS = "__rstudio_modal_allow_enter_key"; //$NON-NLS-1$
 }

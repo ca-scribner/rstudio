@@ -190,15 +190,15 @@ public class HTMLPreviewPresenter implements IsWidget
                lastSuccessfulPreview_ = result;
                view_.closeProgress();
                String url = result.getPreviewURL();
-               if (!url.startsWith("http"))
+               if (!url.startsWith("http")) //$NON-NLS-1$
                   url = server_.getApplicationURL(url);
 
                url = URIUtils.addQueryParam(url,
-                                            "capabilities",
+                                            "capabilities", //$NON-NLS-1$
                                             String.valueOf(1 << 0));
          
                url = URIUtils.addQueryParam(url,
-                                            "host",
+                                            "host", //$NON-NLS-1$
                                             htmlMessageListener_.getOriginDomain());
                
                htmlMessageListener_.allowOpenOnLoad();
@@ -359,7 +359,7 @@ public class HTMLPreviewPresenter implements IsWidget
    private StringBuilder lastPreviewOutput_ = new StringBuilder();
    
    private String savePreviewDir_;
-   private static final String MODULE_HTML_PREVIEW = "html_preview";
+   private static final String MODULE_HTML_PREVIEW = "html_preview"; //$NON-NLS-1$
    private static final String KEY_SAVEAS_DIR = "saveAsDir";
    
    private final GlobalDisplay globalDisplay_;

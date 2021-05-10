@@ -29,7 +29,8 @@ import com.google.inject.Singleton;
 @Singleton
 public class HTMLPreviewApplication extends SatelliteApplication
 {
-   public static final String NAME = "preview";
+   // i18n: I think this is a key and not shown to user, and thus not i18n?
+   public static final String NAME = "preview"; //$NON-NLS-1$
    
    @Inject
    public HTMLPreviewApplication(HTMLPreviewApplicationView view,

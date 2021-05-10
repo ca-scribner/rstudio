@@ -306,7 +306,7 @@ public class MiniPopupPanel extends DecoratedPopupPanel
    private HandlerRegistration escapeHandler_;
    
    private static final String[] TAGS_EXCLUDE_DRAG = new String[] {
-      "a", "input", "button", "select"
+      "a", "input", "button", "select" //$NON-NLS-1$
    };
    
    // Styles ------------------------------------------

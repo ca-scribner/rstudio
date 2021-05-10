@@ -81,16 +81,16 @@ public class NewConnectionNavigationPage
 
             String subTitle = connectionInfo.getName() + " via " + connectionInfo.getSource();
 
-            if (connectionInfo.getType() == "Shiny") {
+            if (connectionInfo.getType() == "Shiny") { //$NON-NLS-1$
                pages.add(new NewConnectionShinyPage(connectionInfo, subTitle));
             }
-            else if (connectionInfo.getType() == "Snippet") {
+            else if (connectionInfo.getType() == "Snippet") { //$NON-NLS-1$
                pages.add(new NewConnectionSnippetPage(connectionInfo, subTitle));
             }
-            else if (connectionInfo.getType() == "Install" && connectionInfo.getSubtype() == "Package") {
+            else if (connectionInfo.getType() == "Install" && connectionInfo.getSubtype() == "Package") { //$NON-NLS-1$
                pages.add(new NewConnectionInstallPackagePage(connectionInfo));
             }
-            else if (connectionInfo.getType() == "Install" && connectionInfo.getSubtype() == "Odbc") {
+            else if (connectionInfo.getType() == "Install" && connectionInfo.getSubtype() == "Odbc") { //$NON-NLS-1$
                pages.add(new NewConnectionPreInstallOdbcPage(connectionInfo, subTitle));
             }
          }
@@ -201,7 +201,7 @@ public class NewConnectionNavigationPage
          panel.addStyleName(styles.wizardPageSelectorItemSize());
          Roles.getButtonRole().set(panel.getElement());
          panel.getElement().setTabIndex(0);
-         panel.getElement().setId(ElementIds.idFromLabel(page.getTitle() + "_wizard_page"));
+         panel.getElement().setId(ElementIds.idFromLabel(page.getTitle() + "_wizard_page")); //$NON-NLS-1$
 
          DecorativeImage rightArrow = new DecorativeImage(new ImageResource2x(WizardResources.INSTANCE.wizardDisclosureArrow2x()));
          rightArrow.addStyleName(styles.wizardPageSelectorItemRightArrow());

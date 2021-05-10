@@ -11,7 +11,13 @@
     <item name='com.google.gwt.dom.client.Element boolean addClassName(java.lang.String)'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.dom.client.Element boolean hasAttribute(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.dom.client.Element boolean hasClassName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Element boolean hasTagName(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.Element com.google.gwt.dom.client.NodeList&lt;com.google.gwt.dom.client.Element&gt; getElementsByTagName(java.lang.String) 0'>
@@ -39,6 +45,9 @@
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.LinkElement void setType(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='com.google.gwt.dom.client.Style java.lang.String getProperty(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='com.google.gwt.dom.client.Style void clearProperty(java.lang.String) 0'>

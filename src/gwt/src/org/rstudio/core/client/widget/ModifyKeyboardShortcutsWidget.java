@@ -144,6 +144,7 @@ public class ModifyKeyboardShortcutsWidget extends ModalDialogBase
       public String getDisplayType()
       {
          if (commandType_ == TYPE_EDITOR_COMMAND)
+            // i18n: Is this shown to user or just an enum?
             return "Editor";
          
          return context_.toString();
@@ -766,11 +767,11 @@ public class ModifyKeyboardShortcutsWidget extends ModalDialogBase
    {
       NativeEvent event = preview.getNativeEvent();
       String type = event.getType();
-      if (type == "blur")
+      if (type == "blur") //$NON-NLS-1$
       {
          buffer_.clear();
       }
-      else if (type == "keydown")
+      else if (type == "keydown") //$NON-NLS-1$
       {
          int keyCode = event.getKeyCode();
          int modifiers = KeyboardShortcut.getModifierValue(event);
@@ -806,7 +807,7 @@ public class ModifyKeyboardShortcutsWidget extends ModalDialogBase
       NativeEvent event = preview.getNativeEvent();
       String type = event.getType();
       
-      if (type == "keydown")
+      if (type == "keydown") //$NON-NLS-1$
       {
          int keyCode = event.getKeyCode();
          int modifiers = KeyboardShortcut.getModifierValue(event);

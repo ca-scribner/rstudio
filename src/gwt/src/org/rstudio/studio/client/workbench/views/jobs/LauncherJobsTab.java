@@ -51,6 +51,7 @@ public class LauncherJobsTab extends DelayLoadWorkbenchTab<LauncherJobsPresenter
                           Commands commands,
                           EventBus events)
    {
+      // i18n: Enum, screen text, both, or neither?
       super("Launcher", shim);
       shim_ = shim;
       

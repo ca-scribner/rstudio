@@ -22,7 +22,10 @@ import org.rstudio.studio.client.workbench.prefs.model.UserPrefs;
 
 public class LineEndingsSelectWidget extends SelectWidget
 {
-   // TODO: i18n
+   // i18n: It implements the enumerator and human readable values directly, plus logic for whether to show all values
+   //       or a subset. This class is also used by ProjectEditingPreferencesPane.java, which does not have the same
+   //       access to preferences as EditingPreferencesPane.java. Need to investigate. Porting logic will be easy, but
+   //       getting the translated values from the lineEndingConversion() PrefValue might be harder.
    public LineEndingsSelectWidget()
    {
       this(false);

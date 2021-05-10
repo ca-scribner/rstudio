@@ -133,9 +133,9 @@ public class HistoryPresenter
                            final Provider<SVNHistoryStrategy> pSvnStrategy)
    {
       String vcsName = session.getSessionInfo().getVcsName();
-      if (vcsName.equalsIgnoreCase("git"))
+      if (vcsName.equalsIgnoreCase("git")) //$NON-NLS-1$
          strategy_ = pGitStrategy.get();
-      else if (vcsName.equalsIgnoreCase("svn"))
+      else if (vcsName.equalsIgnoreCase("svn")) //$NON-NLS-1$
          strategy_ = pSvnStrategy.get();
       else
          throw new IllegalStateException("Unknown vcs name: " + vcsName);

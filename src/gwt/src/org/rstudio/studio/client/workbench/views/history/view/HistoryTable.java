@@ -69,7 +69,7 @@ public class HistoryTable extends FastSelectTable<HistoryEntry, String, Long>
             {
                Element el = DOM.eventGetTarget((Event) event.getNativeEvent());
                if (el != null
-                   && el.getTagName().equalsIgnoreCase("div")
+                   && el.getTagName().equalsIgnoreCase("div") //$NON-NLS-1$
                    && el.getClassName().contains(res.styles().disclosure()))
                {
                   // disclosure click

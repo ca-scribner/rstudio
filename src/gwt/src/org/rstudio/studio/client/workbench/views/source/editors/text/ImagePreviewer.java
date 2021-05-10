@@ -520,8 +520,8 @@ public class ImagePreviewer
          absPath = docDir + "/" + absPath;
       }
       
-      return "file_show?path=" + StringUtil.encodeURIComponent(absPath) + 
-            "&id=" + IMAGE_ID++;
+      return "file_show?path=" + StringUtil.encodeURIComponent(absPath) + //$NON-NLS-1$
+            "&id=" + IMAGE_ID++; //$NON-NLS-1$
    }
    
    private static void onPreviewImage(DocDisplay display, 
@@ -579,7 +579,7 @@ public class ImagePreviewer
    private final DocUpdateSentinel sentinel_;
    private final UserPrefs prefs_;
 
-   private static final String LINE_WIDGET_TYPE = "image-preview";
+   private static final String LINE_WIDGET_TYPE = "image-preview"; //$NON-NLS-1$
    private static int IMAGE_ID = 0;
    
    interface Styles extends CssResource

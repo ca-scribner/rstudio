@@ -158,7 +158,7 @@ public class LocatorPanel extends LayoutPanel
                }
             });
             toolbar.addRightWidget(doneButton);
-            toolbar.addRightWidget(new HTML("&nbsp;&nbsp;"));
+            toolbar.addRightWidget(new HTML("&nbsp;&nbsp;")); //$NON-NLS-1$
          }
       });
    }

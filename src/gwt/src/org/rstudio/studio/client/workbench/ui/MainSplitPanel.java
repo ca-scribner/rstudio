@@ -372,7 +372,7 @@ public class MainSplitPanel extends NotifyingSplitLayoutPanel
    private ArrayList<Widget> leftList_;
    private Widget center_;
    private Widget right_;
-   private static final String GROUP_WORKBENCH = "workbenchp";
-   private static final String KEY_RIGHTPANESIZE = "rightpanesize";
+   private static final String GROUP_WORKBENCH = "workbenchp"; //$NON-NLS-1$
+   private static final String KEY_RIGHTPANESIZE = "rightpanesize"; //$NON-NLS-1$
    private Command layoutCommand_;
 }

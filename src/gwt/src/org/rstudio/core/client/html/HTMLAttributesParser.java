@@ -244,7 +244,7 @@ public class HTMLAttributesParser
       private String currentKey_;
       private String currentValue_;
       
-      private static final Pattern RE_KEY = Pattern.create("^[a-zA-Z][a-zA-Z0-9_.:-]*$", "");
+      private static final Pattern RE_KEY = Pattern.create("^[a-zA-Z][a-zA-Z0-9_.:-]*$", ""); //$NON-NLS-1$
    }
    
    public static Attributes parseAttributes(String attributes)

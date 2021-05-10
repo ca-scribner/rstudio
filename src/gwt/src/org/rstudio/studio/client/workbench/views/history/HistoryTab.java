@@ -39,6 +39,7 @@ public class HistoryTab extends DelayLoadWorkbenchTab<History>
    @Inject
    public HistoryTab(Shim shim, Binder binder, Commands commands)
    {
+      // i18n: Is this a shown text to user, an enumerator used the access this by label, or ... ?
       super("History", shim);
       binder.bind(commands, shim);
    }

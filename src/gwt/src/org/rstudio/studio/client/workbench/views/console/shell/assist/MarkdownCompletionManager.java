@@ -77,7 +77,7 @@ public class MarkdownCompletionManager extends CompletionManagerBase
          return false;
             
       JsObject data = JsObject.createJsObject();
-      data.setString("token", token.hasType("markup.href") ? token.getValue() : "");
+      data.setString("token", token.hasType("markup.href") ? token.getValue() : ""); //$NON-NLS-1$
       data.setString("path", context_.getPath());
       data.setString("id", context_.getId());
       server_.markdownGetCompletions(COMPLETION_HREF, data, context);

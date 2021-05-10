@@ -17,6 +17,7 @@
       <option name="ignoreAssignedToConstants" value="false" />
       <option name="ignoreToString" value="false" />
       <option name="nonNlsCommentPattern" value="NON-NLS" />
+      <option name="nonNlsLiteralPattern" value="((?i)https?://.+)|\w*(\.\w+)+|\w*[$]\w*|((?i)&lt;/?(html|b|i|body|br|li|ol|ul|code)/?&gt;)*|&amp;\w+;|[A-Za-z][a-z0-9]*([A-Z]+[a-z0-9]*)+|\#[a-zA-Z0-9]{6}" />
     </inspection_tool>
     <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="TOP_LEVEL_CLASS_OPTIONS">

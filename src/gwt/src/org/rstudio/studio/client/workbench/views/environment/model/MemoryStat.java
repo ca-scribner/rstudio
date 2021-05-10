@@ -32,6 +32,9 @@ public class MemoryStat extends JavaScriptObject
    {
       switch(getProvider())
       {
+         // i18n: These reach users in the environment pane through the memory usage tool tip.  The first three need
+         //       translation.  Does it make sense to also put cgroup, ulimit, in the "translations" even if they don't
+         //       get translated, just to keep it consistent?
          default:
          case MEMORY_PROVIDER_UNKNOWN:
             return "Unknown";
@@ -40,13 +43,13 @@ public class MemoryStat extends JavaScriptObject
          case MEMORY_PROVIDER_WINDOWS:
             return "Windows System";
          case MEMORY_PROVIDER_LINUX_CGROUPS:
-            return "cgroup";
+            return "cgroup"; //$NON-NLS-1$
          case MEMORY_PROVIDER_LINUX_ULIMIT:
-            return "ulimit";
+            return "ulimit"; //$NON-NLS-1$
          case MEMORY_PROVIDER_LINUX_PROCFS:
-            return "/proc filesystem";
+            return "/proc filesystem"; //$NON-NLS-1$
          case MEMORY_PROVIDER_LINUX_PROCMEMINFO:
-            return "/proc/meminfo";
+            return "/proc/meminfo"; //$NON-NLS-1$
       }
    }
 

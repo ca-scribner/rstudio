@@ -22,7 +22,7 @@ public class ImageFrame extends Frame
 {
    public ImageFrame(String title)
    {
-      setUrl("javascript:false");
+      setUrl("javascript:false"); //$NON-NLS-1$
       setTitle(title);
    }
 
@@ -43,7 +43,7 @@ public class ImageFrame extends Frame
             }
             else
             {
-               String sizing = "width=\"100%\" height=\"100%\"";
+               String sizing = "width=\"100%\" height=\"100%\""; //$NON-NLS-1$
                setupContent(getElement(), sizing);
                replaceLocation(getElement(), url_);
             }
@@ -110,5 +110,5 @@ public class ImageFrame extends Frame
       doc.close();
    }-*/;
 
-   private String url_ = "javascript:false";
+   private String url_ = "javascript:false"; //$NON-NLS-1$
 }

@@ -36,7 +36,7 @@ public class HyperlinkLabel extends Label
    public HyperlinkLabel()
    {
       super();
-      this.setStyleName("rstudio-HyperlinkLabel");
+      this.setStyleName("rstudio-HyperlinkLabel"); //$NON-NLS-1$
       Roles.getLinkRole().set(getElement());
       getElement().setTabIndex(0);
    }
@@ -45,7 +45,7 @@ public class HyperlinkLabel extends Label
    {
       super(caption); 
       clickHandler_ = clickHandler;
-      this.setStyleName("rstudio-HyperlinkLabel");
+      this.setStyleName("rstudio-HyperlinkLabel"); //$NON-NLS-1$
       this.addStyleName(ThemeStyles.INSTANCE.handCursor());
       Roles.getLinkRole().set(getElement());
       getElement().setTabIndex(0);
@@ -64,7 +64,7 @@ public class HyperlinkLabel extends Label
 
    @Override
    public HandlerRegistration addClickHandler(ClickHandler handler) {
-      Debug.logWarning("HyperlinkLabel: for keyboard support use setClickHandler instead of addClickHandler");
+      Debug.logWarning("HyperlinkLabel: for keyboard support use setClickHandler instead of addClickHandler"); //$NON-NLS-1$
       return super.addClickHandler(handler);
    }
 

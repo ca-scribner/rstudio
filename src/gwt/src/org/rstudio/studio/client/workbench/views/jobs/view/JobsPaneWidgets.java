@@ -43,6 +43,7 @@ public class JobsPaneWidgets implements JobsPaneOperations
       userPrefs_ = userPrefs;
       list_ = list;
 
+      // i18n: Is this enumeration or for users, etc?
       toolbar_ = new Toolbar("Jobs Tab");
       
       allJobs_ = new ToolbarButton(

@@ -73,7 +73,7 @@ public class MathJaxUtil
       }
       
       Token lhsToken = startIt.getCurrentToken();
-      if (lhsToken == null || !lhsToken.hasAllTypes("latex", "begin"))
+      if (lhsToken == null || !lhsToken.hasAllTypes("latex", "begin")) //$NON-NLS-1$
          return null;
       
       Token rhsToken = endIt.getCurrentToken();
@@ -117,7 +117,7 @@ public class MathJaxUtil
          if (token == null)
             continue;
          
-         if (token.hasAllTypes("latex", "begin") && token.getValue().equals("$$"))
+         if (token.hasAllTypes("latex", "begin") && token.getValue().equals("$$")) //$NON-NLS-1$
          {
             startPos = pos;
             

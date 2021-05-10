@@ -39,9 +39,9 @@ public class ListChangedEvent extends GwtEvent<ListChangedEvent.Handler>
 
    public ListChangedEvent(JsObject eventData)
    {
-      name_ = eventData.getString("name");
+      name_ = eventData.getString("name"); //$NON-NLS-1$
 
-      JsArrayString list = eventData.getObject("list");
+      JsArrayString list = eventData.getObject("list"); //$NON-NLS-1$
       list_ = new ArrayList<>();
       for (int i=0; i<list.length(); i++)
          list_.add(list.get(i));

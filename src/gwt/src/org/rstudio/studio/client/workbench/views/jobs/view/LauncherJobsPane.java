@@ -33,6 +33,7 @@ public class LauncherJobsPane extends WorkbenchPane
    public LauncherJobsPane(UserPrefs uiPrefs,
                            LauncherJobsPaneWidgets widgets)
    {
+      // i18n: Enum, screen text, both, or neither?
       super("Launcher");
       
       uiPrefs_ = uiPrefs;
