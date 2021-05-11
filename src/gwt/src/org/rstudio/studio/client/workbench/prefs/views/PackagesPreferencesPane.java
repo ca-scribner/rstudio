@@ -82,20 +82,9 @@ public class PackagesPreferencesPane extends PreferencesPane
             cranMirror_ = cranMirror;
             cranMirrorTextBox_.setText(cranMirror_.getDisplay());
 
-            // i18n: See notes in ChooseMirrorDialog.  I think this is an enumerator only, and not displayed to users
-            //       Why have logic here based on getHost's value?  Shouldn't this if statement be in getDisplay()?
-            if (cranMirror_.getHost().equals("Custom")) //$NON-NLS-1$
-            {
-               cranMirrorTextBox_.setText(cranMirror_.getURL());
-            }
-            else
-            {
-               cranMirrorTextBox_.setText(cranMirror_.getDisplay());
-            }
-
             secondaryReposWidget_.setCranRepoUrl(
                   cranMirror_.getURL(),
-                  cranMirror_.getHost().equals("Custom") //$NON-NLS-1$
+                  cranMirror_.isCustom()
             );
          });
       };
@@ -250,17 +239,10 @@ public class PackagesPreferencesPane extends PreferencesPane
 
          secondaryReposWidget_.setCranRepoUrl(
             cranMirror_.getURL(),
-            cranMirror_.getHost().equals("Custom") //$NON-NLS-1$
+            cranMirror_.isCustom()
          );
 
-         if (cranMirror_.getHost().equals("Custom")) //$NON-NLS-1$
-         {
-            cranMirrorTextBox_.setText(cranMirror_.getURL());
-         }
-         else
-         {
-            cranMirrorTextBox_.setText(cranMirror_.getDisplay());
-         }
+         cranMirrorTextBox_.setText(cranMirror_.getDisplay());
 
          cranMirrorStored_ = cranMirrorTextBox_.getTextBox().getText();
 
@@ -377,8 +359,7 @@ public class PackagesPreferencesPane extends PreferencesPane
          {
             cranMirror_.setURL(mirrorTextValue);
 
-            cranMirror_.setHost("Custom"); //$NON-NLS-1$
-            cranMirror_.setName("Custom"); //$NON-NLS-1$
+            cranMirror_.setAsCustom();
          }
       }
 
