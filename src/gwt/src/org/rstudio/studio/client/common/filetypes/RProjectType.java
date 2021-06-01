@@ -22,6 +22,7 @@ public class RProjectType extends FileType
 {
    RProjectType()
    {
+      // i18n: Enumerator, user facing text, or both?
       super("r_proj");
    }
 

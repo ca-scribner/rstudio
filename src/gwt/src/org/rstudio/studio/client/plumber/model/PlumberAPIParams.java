@@ -20,10 +20,10 @@ public class PlumberAPIParams extends JavaScriptObject
 {
    protected PlumberAPIParams() {}
    
-   public final static String STATE_STARTED = "started";
-   public final static String STATE_STOPPING = "stopping";
-   public final static String STATE_STOPPED = "stopped";
-   public final static String STATE_RELOADING = "reloading";
+   public final static String STATE_STARTED = "started"; //$NON-NLS-1$
+   public final static String STATE_STOPPING = "stopping"; //$NON-NLS-1$
+   public final static String STATE_STOPPED = "stopped"; //$NON-NLS-1$
+   public final static String STATE_RELOADING = "reloading"; //$NON-NLS-1$
    
    public native static PlumberAPIParams create(String path, 
                                                 String url, 

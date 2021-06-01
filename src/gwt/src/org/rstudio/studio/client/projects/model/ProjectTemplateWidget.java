@@ -77,7 +77,7 @@ public class ProjectTemplateWidget extends Composite
       {
          String position = StringUtil.notNull(descriptions.get(i).getPosition());
          Widget widget = widgets_.get(i);
-         if ("right".equals(position.toLowerCase()))
+         if ("right".equals(position.toLowerCase())) //$NON-NLS-1$
             rightPanel.add(widget);
          else
             leftPanel.add(widget);
@@ -239,17 +239,17 @@ public class ProjectTemplateWidget extends Composite
    {
       String lower = value.toLowerCase();
       return
-            lower.equals("true") ||
-            lower.equals("yes") ||
-            lower.equals("on") ||
+            lower.equals("true") || //$NON-NLS-1$
+            lower.equals("yes") || //$NON-NLS-1$
+            lower.equals("on") || //$NON-NLS-1$
             lower.equals("1");
    }
    
    private final List<ProjectTemplateWidgetItem> widgets_;
    
-   public static final String TYPE_CHECKBOX_INPUT = "checkboxinput";
-   public static final String TYPE_SELECT_INPUT   = "selectinput";
-   public static final String TYPE_FILE_INPUT     = "fileinput";
-   public static final String TYPE_TEXT_INPUT     = "textinput";
+   public static final String TYPE_CHECKBOX_INPUT = "checkboxinput"; //$NON-NLS-1$
+   public static final String TYPE_SELECT_INPUT   = "selectinput"; //$NON-NLS-1$
+   public static final String TYPE_FILE_INPUT     = "fileinput"; //$NON-NLS-1$
+   public static final String TYPE_TEXT_INPUT     = "textinput"; //$NON-NLS-1$
    
 }

@@ -31,16 +31,16 @@ public class RmdOutputFormat extends JavaScriptObject
    }-*/;
 
    // output format name strings from the rmarkdown package (not exhaustive)
-   public final static String OUTPUT_HTML_DOCUMENT = "html_document";
-   public final static String OUTPUT_HTML_NOTEBOOK = "html_notebook";
-   public final static String OUTPUT_BEAMER_PRESENTATION = "beamer_presentation";
-   public final static String OUTPUT_REVEALJS_PRESENTATION = "revealjs_presentation";
-   public final static String OUTPUT_IOSLIDES_PRESENTATION = "ioslides_presentation";
-   public final static String OUTPUT_SLIDY_PRESENTATION = "slidy_presentation";
-   public final static String OUTPUT_PPT_PRESENTATION = "powerpoint_presentation";
-   public final static String OUTPUT_PRESENTATION_SUFFIX = "_presentation";
-   public final static String OUTPUT_DASHBOARD_SUFFIX = "_dashboard";
-   public final static String OUTPUT_WORD_DOCUMENT = "word_document";
-   public final static String OUTPUT_PDF_DOCUMENT = "pdf_document";
+   public final static String OUTPUT_HTML_DOCUMENT = "html_document"; // $NON-NLS-1$
+   public final static String OUTPUT_HTML_NOTEBOOK = "html_notebook"; // $NON-NLS-1$
+   public final static String OUTPUT_BEAMER_PRESENTATION = "beamer_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_REVEALJS_PRESENTATION = "revealjs_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_IOSLIDES_PRESENTATION = "ioslides_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_SLIDY_PRESENTATION = "slidy_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_PPT_PRESENTATION = "powerpoint_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_PRESENTATION_SUFFIX = "_presentation"; // $NON-NLS-1$
+   public final static String OUTPUT_DASHBOARD_SUFFIX = "_dashboard"; // $NON-NLS-1$
+   public final static String OUTPUT_WORD_DOCUMENT = "word_document"; // $NON-NLS-1$
+   public final static String OUTPUT_PDF_DOCUMENT = "pdf_document"; // $NON-NLS-1$
 }
 

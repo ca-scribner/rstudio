@@ -29,7 +29,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class RmdOutputSatellite extends SatelliteApplication
 {
-   public static final String NAME = "rmarkdown";
+   public static final String NAME = "rmarkdown"; // $NON-NLS-1$
    
    @Inject
    public RmdOutputSatellite(RmdOutputView view,

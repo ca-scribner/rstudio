@@ -74,7 +74,7 @@ public class RStudioDataGrid<T> extends DataGrid<T>
       // have no class we must resort to JavaScript + inline styles.
       //
       // https://github.com/rstudio/rstudio/issues/4529
-      NodeList<Element> children = DomUtils.querySelectorAll(parent, "div[style*='overflow:']");
+      NodeList<Element> children = DomUtils.querySelectorAll(parent, "div[style*='overflow:']"); //$NON-NLS-1$
       for (int i = 0; i < children.getLength(); i++)
       {
          Element el = children.getItem(i);

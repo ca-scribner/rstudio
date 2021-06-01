@@ -190,7 +190,7 @@ public class Plots extends BasePresenter implements PlotsChangedEvent.Handler,
       // the server. this is shown as a blank pane by Webkit, however
       // firefox shows the full URI of the empty.png rather than a blank
       // pane. therefore, we put in this workaround.
-      if (plotsState.getFilename().startsWith("empty."))
+      if (plotsState.getFilename().startsWith("empty.")) //$NON-NLS-1$
       {
          view_.showEmptyPlot();
       }
@@ -436,14 +436,14 @@ public class Plots extends BasePresenter implements PlotsChangedEvent.Handler,
          scale = 0;
 
       // compose url string
-      String url = server_.getGraphicsUrl("plot_zoom?" +
-                                          "width=" + windowSize.width + "&" +
-                                          "height=" + windowSize.height + "&" +
-                                          "scale=" + scale);
+      String url = server_.getGraphicsUrl("plot_zoom?" + //$NON-NLS-1$
+                                          "width=" + windowSize.width + "&" + //$NON-NLS-1$
+                                          "height=" + windowSize.height + "&" + //$NON-NLS-1$
+                                          "scale=" + scale); //$NON-NLS-1$
 
       // open the window
       ZoomUtils.openZoomWindow(
-         "_rstudio_zoom",
+         "_rstudio_zoom", //$NON-NLS-1$
          url,
          windowSize,
          new OperationWithInput<WindowEx>() {

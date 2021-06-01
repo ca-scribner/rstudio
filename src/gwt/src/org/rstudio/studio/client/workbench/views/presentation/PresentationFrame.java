@@ -42,6 +42,7 @@ public class PresentationFrame extends AnchorableFrame
                             boolean allowFullScreen,
                             final HasText titleWidget)
    {
+      // i18n: Is this enum or user text?
       super("Presentation Frame", autoFocus);
       
       // allow full-screen view of iframe
@@ -75,7 +76,7 @@ public class PresentationFrame extends AnchorableFrame
    
    public void clear()
    {
-      getWindow().replaceLocationHref("about:blank");
+      getWindow().replaceLocationHref("about:blank"); //$NON-NLS-1$
    }
    
    public void home()

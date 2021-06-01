@@ -252,7 +252,7 @@ public class PDFViewer implements CompilePdfCompletedEvent.Handler,
       {
           // open the window and continue
           String viewerUrl = 
-                server_.getApplicationURL("pdf_js/web/viewer.html?file=");
+                server_.getApplicationURL("pdf_js/web/viewer.html?file="); //$NON-NLS-1$
           NewWindowOptions options = new NewWindowOptions();
           options.setName(WINDOW_NAME);
           options.setShowDesktopToolbar(false);
@@ -334,5 +334,5 @@ public class PDFViewer implements CompilePdfCompletedEvent.Handler,
    private final Synctex synctex_;
    private final UserPrefs prefs_;
    
-   private final static String WINDOW_NAME = "rstudio_pdfjs";
+   private final static String WINDOW_NAME = "rstudio_pdfjs"; //$NON-NLS-1$
 }

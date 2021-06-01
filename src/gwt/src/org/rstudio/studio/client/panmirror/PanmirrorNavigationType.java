@@ -18,9 +18,9 @@ package org.rstudio.studio.client.panmirror;
 
 public class PanmirrorNavigationType
 {
-  public final static String Pos = "pos";
-  public final static String Id = "id";
-  public final static String Href = "href";
-  public final static String Heading = "heading";
-  public final static String XRef = "xref";
+  public final static String Pos = "pos"; //$NON-NLS-1$
+  public final static String Id = "id"; //$NON-NLS-1$
+  public final static String Href = "href"; //$NON-NLS-1$
+  public final static String Heading = "heading"; //$NON-NLS-1$
+  public final static String XRef = "xref"; //$NON-NLS-1$
 }

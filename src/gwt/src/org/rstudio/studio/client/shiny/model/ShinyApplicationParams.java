@@ -22,12 +22,12 @@ public class ShinyApplicationParams extends JavaScriptObject
 {
    protected ShinyApplicationParams() {}
    
-   public final static String STATE_STARTED = "started";
-   public final static String STATE_STOPPING = "stopping";
-   public final static String STATE_STOPPED = "stopped";
-   public final static String STATE_RELOADING = "reloading";
+   public final static String STATE_STARTED = "started"; //$NON-NLS-1$
+   public final static String STATE_STOPPING = "stopping"; //$NON-NLS-1$
+   public final static String STATE_STOPPED = "stopped"; //$NON-NLS-1$
+   public final static String STATE_RELOADING = "reloading"; //$NON-NLS-1$
 
-   public final static String ID_FOREGROUND = "foreground";
+   public final static String ID_FOREGROUND = "foreground"; //$NON-NLS-1$
    
    public native static ShinyApplicationParams create(String path,
                                                       String id,

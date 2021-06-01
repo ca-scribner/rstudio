@@ -160,7 +160,7 @@ class RemoteServerAuth
       updateCredentialsForm.setEncoding(FormPanel.ENCODING_URLENCODED);
 
       // form url
-      String url = remoteServer_.getApplicationURL("auth-update-credentials");
+      String url = remoteServer_.getApplicationURL("auth-update-credentials"); //$NON-NLS-1$
       updateCredentialsForm.setAction(url);
 
       // request log entry (fake up a json rpc method call to conform
@@ -212,6 +212,7 @@ class RemoteServerAuth
                logEntry.logResponse(ResponseType.Error, results);
 
                // form message
+               // i18n: message
                String msg = "Error parsing results: " +
                             (results != null ? results : "(null)");
 
@@ -245,8 +246,8 @@ class RemoteServerAuth
    private String createRequestData()
    {
       JSONObject request = new JSONObject();
-      request.put("method", new JSONString("update_credentials"));
-      request.put("params", new JSONArray());
+      request.put("method", new JSONString("update_credentials")); //$NON-NLS-1$
+      request.put("params", new JSONArray()); //$NON-NLS-1$
       return request.toString();
    }
 

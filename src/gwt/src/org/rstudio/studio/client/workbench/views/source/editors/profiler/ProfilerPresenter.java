@@ -66,7 +66,8 @@ public class ProfilerPresenter implements RprofEvent.Handler
    private final WorkbenchContext workbenchContext_;
    private final FileTypeRegistry fileTypeRegistry_;
    private String currentDocId_;
-   
+
+   // i18n: This looks like user text, but it's usage feels like an enumerator?
    final String profilerDependecyUserAction_ = "The profiler";
    
    private ProfileOperationResponse response_ = null;

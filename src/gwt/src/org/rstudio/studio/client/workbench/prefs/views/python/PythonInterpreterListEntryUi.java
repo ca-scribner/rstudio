@@ -38,12 +38,12 @@ public class PythonInterpreterListEntryUi extends Composite
       String altText;
       
       String type = interpreter_.getType();
-      if (StringUtil.equals(type, "conda"))
+      if (StringUtil.equals(type, "conda")) //$NON-NLS-1$
       {
          resource = new ImageResource2x(CodeIcons.INSTANCE.conda2x());
          altText = "Conda Environment";
       }
-      else if (StringUtil.equals(type, "virtualenv"))
+      else if (StringUtil.equals(type, "virtualenv")) //$NON-NLS-1$
       {
          resource = new ImageResource2x(CodeIcons.INSTANCE.virtualenv2x());
          altText = "Virtual Environment";
@@ -61,7 +61,7 @@ public class PythonInterpreterListEntryUi extends Composite
    
    private final Label createUiVersion()
    {
-      return new Label("Python " + interpreter_.getVersion());
+      return new Label("Python " + interpreter_.getVersion()); //$NON-NLS-1$
    }
    
    private final Label createUiPath()

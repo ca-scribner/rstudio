@@ -112,5 +112,5 @@ public class RSAEncrypt
    }-*/;
 
    private static final ExternalJavaScriptLoader loader_ =
-         new ExternalJavaScriptLoader("js/encrypt.min.js");
+         new ExternalJavaScriptLoader("js/encrypt.min.js"); //$NON-NLS-1$
 }

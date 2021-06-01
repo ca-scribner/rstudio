@@ -104,12 +104,14 @@ public class RPubsUploadDialog extends ModalDialogBase
       String msg;
       if (!isPublished_ && uploadId_.isEmpty())
       {
+         // i18n: Concatenation/Message
          msg = "RPubs is a free service from RStudio for sharing " +
                        "documents on the web. Click Publish to get " +
                        "started.";
       }
       else
       {
+         // i18n: Concatenation/Message
          msg = "This document has already been published on RPubs. You can " +
                "choose to either update the existing RPubs document, or " +
                "create a new one.";
@@ -120,6 +122,7 @@ public class RPubsUploadDialog extends ModalDialogBase
       setARIADescribedBy(descLabel.getElement());
 
       HTML warningLabel =  new HTML(
+         // i18n: Concatenation/Message
         "<strong>IMPORTANT: All documents published to RPubs are " +
         "publicly visible.</strong> You should " +
         "only publish documents that you wish to share publicly.");

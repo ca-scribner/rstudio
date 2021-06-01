@@ -117,7 +117,8 @@ public class ShinyGadgetDialog extends ModalDialogBase
    }-*/;
 
    private static void onMessage(String data, String origin)
-   {  
+   {
+      // i18n: Will this be disrupted by i18n?
       if ("disconnected".equals(data))
       {
          // ensure the frame url starts with the specified origin

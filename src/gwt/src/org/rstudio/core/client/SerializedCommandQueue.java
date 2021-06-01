@@ -60,7 +60,7 @@ public class SerializedCommandQueue
    {
       if (running_)
       {
-         log("already running");
+         log("already running"); //$NON-NLS-1$
          return;
       }
       running_ = true;
@@ -74,7 +74,7 @@ public class SerializedCommandQueue
 
       if (commands_.isEmpty())
       {
-         log("done");
+         log("done"); //$NON-NLS-1$
          running_ = false;
          return;
       }
@@ -82,7 +82,7 @@ public class SerializedCommandQueue
       SerializedCommand head = commands_.remove(0);
       head.onExecute(() ->
       {
-         log("continuation");
+         log("continuation"); //$NON-NLS-1$
          executeNextCommand();
       });
    }

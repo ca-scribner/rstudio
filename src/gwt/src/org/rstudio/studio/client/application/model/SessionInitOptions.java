@@ -18,12 +18,12 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class SessionInitOptions extends JavaScriptObject
 {
-   public final static String RESTORE_WORKSPACE_OPTION = "restore_workspace";
+   public final static String RESTORE_WORKSPACE_OPTION = "restore_workspace"; //$NON-NLS-1$
    public final static int RESTORE_WORKSPACE_NO      = 0;
    public final static int RESTORE_WORKSPACE_YES     = 1;
    public final static int RESTORE_WORKSPACE_DEFAULT = 2;
 
-   public final static String RUN_RPROFILE_OPTION = "run_rprofile";
+   public final static String RUN_RPROFILE_OPTION = "run_rprofile"; //$NON-NLS-1$
    public final static int RUN_RPROFILE_NO      = 0;
    public final static int RUN_RPROFILE_YES     = 1;
    public final static int RUN_RPROFILE_DEFAULT = 2;

@@ -49,6 +49,7 @@ public class RSConnectDeployOutputPresenter extends BusyPresenter
                                    Binder binder,
                                    EventBus events)
    {
+      // i18n: Enumerator, user facing text, or both?
       super(outputFactory.create("Deploy", ""));
       binder.bind(commands, this);
       view_ = (CompileOutputPaneDisplay) getView();

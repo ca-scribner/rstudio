@@ -32,9 +32,9 @@ public class PrefLayer extends JavaScriptObject
       return this.values;
    }-*/;
    
-   public final static String LAYER_DEFAULT = "default";
-   public final static String LAYER_SYSTEM = "system";
-   public final static String LAYER_COMPUTED = "computed";
-   public final static String LAYER_USER = "user";
-   public final static String LAYER_PROJECT = "project";
+   public final static String LAYER_DEFAULT = "default"; //$NON-NLS-1$
+   public final static String LAYER_SYSTEM = "system"; //$NON-NLS-1$
+   public final static String LAYER_COMPUTED = "computed"; //$NON-NLS-1$
+   public final static String LAYER_USER = "user"; //$NON-NLS-1$
+   public final static String LAYER_PROJECT = "project"; //$NON-NLS-1$
 }

@@ -72,9 +72,9 @@ public class RpcRequest
       JSONObject request = new JSONObject();
       request.put("method", new JSONString(method_));
       if ( params_ != null )
-         request.put("params", params_);  
+         request.put("params", params_); //$NON-NLS-1$
       if ( kwparams_ != null)
-         request.put("kwparams", kwparams_);
+         request.put("kwparams", kwparams_); //$NON-NLS-1$
       
       // add src window if we have it
       if (sourceWindow_ != null)
@@ -89,20 +89,20 @@ public class RpcRequest
       
       // configure request builder
       RequestBuilder builder = new RequestBuilder(RequestBuilder.POST, url_);
-      builder.setHeader("Content-Type", "application/json");
-      builder.setHeader("Accept", "application/json");
+      builder.setHeader("Content-Type", "application/json"); //$NON-NLS-1$
+      builder.setHeader("Accept", "application/json"); //$NON-NLS-1$
       String requestId = Integer.toString(Random.nextInt());
-      builder.setHeader("X-RS-RID", requestId);
+      builder.setHeader("X-RS-RID", requestId); //$NON-NLS-1$
       
       // in server mode, append a CSRF token for request validation
       if (!Desktop.isDesktop())
       {
-         builder.setHeader("X-CSRF-Token", ApplicationCsrfToken.getCsrfToken());
+         builder.setHeader("X-CSRF-Token", ApplicationCsrfToken.getCsrfToken()); //$NON-NLS-1$
       }
 
       // inform the server if we should not refresh auth creds
       if (!refreshCredentials_)
-         builder.setHeader("X-RStudio-Refresh-Auth-Creds", "0");
+         builder.setHeader("X-RStudio-Refresh-Auth-Creds", "0"); //$NON-NLS-1$
       
       // send request
       try
@@ -112,6 +112,8 @@ public class RpcRequest
             Debug.log("Request: " + requestString);
 
          requestLogEntry_ = RequestLog.log(requestId,
+                                           // i18n: I think something similar is used elsewhere - is this shown to user
+                                           //       or an enumerator?
                                            redactLog_ ? "[REDACTED]"
                                                       : requestString);
 
@@ -164,6 +166,7 @@ public class RpcRequest
                   // ERROR: Non-200 response from server
                   
                   // default error message
+                  // i18n: Concatenation/Message
                   String message = "Status code " + 
                                    Integer.toString(status) + 
                                    " returned by " +
@@ -174,6 +177,7 @@ public class RpcRequest
                   // override error message for status code 0
                   if (status == 0)
                   {
+                     // i18n: Concatenation/Message
                      message = "Unable to establish connection with " +
                         (Desktop.isDesktop() ? "R session" : "RStudio Server") +
                         " when executing '" + getMethod() + "'";
@@ -214,6 +218,7 @@ public class RpcRequest
       
       if (requestLogEntry_ != null)
       {
+         // i18n: Is this shown to user or just internal logs?
          requestLogEntry_.logResponse(ResponseType.Cancelled, "Cancelled");
          requestLogEntry_ = null;
       }

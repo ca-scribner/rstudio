@@ -65,7 +65,7 @@ public class Pattern extends JavaScriptObject
       {
          char c = str.charAt(i);
          String hexStr = Integer.toHexString(c);
-         output.append("\\u");
+         output.append("\\u"); //$NON-NLS-1$
          for (int j = 4 - hexStr.length(); j > 0; j--)
             output.append('0');
          output.append(hexStr);

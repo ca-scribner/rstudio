@@ -61,7 +61,7 @@ import java.util.List;
  * <li>.gwt-SliderBar-shell .gwt-SliderBar-label { the text labels along the
  * line }</li> </ul>
  */
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "HardCodedStringLiteral"})
 public class SliderBar extends FocusPanel implements ResizableWidget,
     SourcesChangeEvents {
   /**

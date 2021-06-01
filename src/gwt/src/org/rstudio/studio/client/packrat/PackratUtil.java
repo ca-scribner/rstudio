@@ -52,7 +52,7 @@ public class PackratUtil
             args = args + ", " + projectArg;
       }
       
-      String cmd = "packrat::" + name + "(" + args + ")";
+      String cmd = "packrat::" + name + "(" + args + ")"; //$NON-NLS-1$
       
       eventBus_.fireEvent(new SendToConsoleEvent(cmd, 
                                                  true, 
@@ -67,7 +67,7 @@ public class PackratUtil
       FileSystemItem workingDir = workbenchContext_
                                        .getCurrentWorkingDir();
       if (!projectDir.equalTo(workingDir))
-         projectArg = "project = '" + projectDir.getPath() + "'";
+         projectArg = "project = '" + projectDir.getPath() + "'"; //$NON-NLS-1$
       return projectArg;
    }
 

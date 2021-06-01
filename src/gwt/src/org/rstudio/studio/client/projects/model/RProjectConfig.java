@@ -20,7 +20,8 @@ import org.rstudio.core.client.StringUtil;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
-
+// i18n: Many enumerators here that look like human-formatted text.  I think they're used as both (at least some are -
+//       see note on MARKDOWN_WRAP_* below).  How to handle them?
 public class RProjectConfig extends JavaScriptObject
 {
    public static final int DEFAULT_VALUE = 0;
@@ -277,7 +278,7 @@ public class RProjectConfig extends JavaScriptObject
       String roxygenize = StringUtil.join(roclets, ROXYGENIZE_DELIM);
       setPackageRoxygenizeNative(roxygenize);
    }
-   
+   // i18n: Enumerator, user facing text, or both?
    private static final String ROXYGENIZE_RD = "rd";
    private static final String ROXYGENIZE_COLLATE = "collate";
    private static final String ROXYGENIZE_NAMESPACE = "namespace";
@@ -333,7 +334,9 @@ public class RProjectConfig extends JavaScriptObject
    public native final void setTutorialPath(String tutorialPath) /*-{
       this.tutorial_path = tutorialPath;
    }-*/;
-   
+
+   // i18n: These surface in the Options->R Markdown->Visual->Automatic Text Wrapping box.  But they also look like
+   //       enumerations.  Can they be safely i18n'd, or do we need to separate between enumerator and visible text?
    public static final String MARKDOWN_WRAP_DEFAULT = "Default";
    public static final String MARKDOWN_WRAP_NONE = "None";
    public static final String MARKDOWN_WRAP_COLUMN = "Column";

@@ -52,6 +52,7 @@ public class PackagesTab extends DelayLoadWorkbenchTab<Packages>
                       UserPrefs uiPrefs,
                       Session session)
    {
+      // i18n: Enum, screen text, both, or neither?
       super("Packages", shim);
       binder.bind(commands, shim);
       events.addHandler(LoadedPackageUpdatesEvent.TYPE, shim);

@@ -144,7 +144,7 @@ public class PathBreadcrumbWidget
       if (lastAnchor != null)
       {
          lastAnchor.addStyleName(RES.styles().last());
-         A11y.setARIACurrent(lastAnchor, "location");
+         A11y.setARIACurrent(lastAnchor, "location"); //$NON-NLS-1$
       }
 
       onWidthsChanged();

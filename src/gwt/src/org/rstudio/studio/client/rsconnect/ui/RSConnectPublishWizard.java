@@ -22,7 +22,8 @@ import org.rstudio.core.client.widget.WizardPage;
 import org.rstudio.studio.client.rsconnect.model.RSConnectPublishInput;
 import org.rstudio.studio.client.rsconnect.model.RSConnectPublishResult;
 
-public class RSConnectPublishWizard 
+// i18n: Make all Publish refer to a single copy of "Publish"
+public class RSConnectPublishWizard
    extends Wizard<RSConnectPublishInput, RSConnectPublishResult>
 {
    public RSConnectPublishWizard(RSConnectPublishInput input, 

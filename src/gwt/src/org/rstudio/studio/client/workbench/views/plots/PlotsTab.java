@@ -98,6 +98,7 @@ public class PlotsTab extends DelayLoadWorkbenchTab<Plots>
                    Commands commands,
                    PlotsServerOperations server)
    {
+      // i18n: Is this enum, user, or both?
       super("Plots", shim);
       binder.bind(commands, shim);
       commands_ = commands;

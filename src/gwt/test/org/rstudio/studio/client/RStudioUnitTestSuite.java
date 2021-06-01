@@ -40,7 +40,7 @@ public class RStudioUnitTestSuite extends GWTTestSuite
 {
    public static Test suite()
    {
-      GWTTestSuite suite = new GWTTestSuite("RStudio Unit Test Suite");
+      GWTTestSuite suite = new GWTTestSuite("RStudio Unit Test Suite"); //$NON-NLS-1$
       suite.addTestSuite(RTokenizerTests.class);
       suite.addTestSuite(VirtualConsoleTests.class);
       suite.addTestSuite(ConsoleOutputWriterTests.class);

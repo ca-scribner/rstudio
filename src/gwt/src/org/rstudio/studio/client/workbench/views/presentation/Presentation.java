@@ -220,7 +220,7 @@ public class Presentation extends BasePresenter
       // show the zoomed version of the presentation. after it closes
       // restore the inline version
       view_.zoom(session_.getSessionInfo().getPresentationName(),
-                 buildPresentationUrl("zoom"), 
+                 buildPresentationUrl("zoom"), //$NON-NLS-1$
                  new Command() {
          @Override
          public void execute()
@@ -247,7 +247,7 @@ public class Presentation extends BasePresenter
       else
       {
          globalDisplay_.openWindow(
-                           server_.getApplicationURL("presentation/view"));
+                           server_.getApplicationURL("presentation/view")); //$NON-NLS-1$
       }
    }
    
@@ -316,7 +316,8 @@ public class Presentation extends BasePresenter
    {
       globalDisplay_.showYesNoMessage(
             MessageDialog.INFO, 
-            "Clear Knitr Cache", 
+            "Clear Knitr Cache",
+            // i18n: Concatenate
             "Clearing the Knitr cache will discard previously cached " +
             "output and re-run all of the R code chunks within the " +
             "presentation.\n\n" +
@@ -473,7 +474,7 @@ public class Presentation extends BasePresenter
    
    private String buildPresentationUrl(String extraPath)
    {
-      String url = server_.getApplicationURL("presentation/");
+      String url = server_.getApplicationURL("presentation/"); //$NON-NLS-1$
       if (extraPath != null)
          url = url + extraPath;
       url = url + "#/" + currentState_.getSlideIndex();

@@ -88,7 +88,7 @@ public class RpcError extends JavaScriptObject
  
    public final JSONValue getClientInfo()
    {
-      return new JSONObject(this).get("client_info");
+      return new JSONObject(this).get("client_info"); //$NON-NLS-1$
    }
 
    public final String getEndUserMessage()

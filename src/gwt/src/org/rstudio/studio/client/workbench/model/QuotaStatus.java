@@ -24,17 +24,17 @@ public class QuotaStatus extends JavaScriptObject
 
    public final long getUsed()
    {
-      return getLongValue("used");
+      return getLongValue("used"); //$NON-NLS-1$
    }
 
    public final long getQuota()
    {
-      return getLongValue("quota");
+      return getLongValue("quota"); //$NON-NLS-1$
    }
 
    public final long getLimit()
    {
-      return getLongValue("limit");
+      return getLongValue("limit"); //$NON-NLS-1$
    }
 
    public final boolean isNearQuota()

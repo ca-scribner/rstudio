@@ -22,7 +22,7 @@ public class RDSDataType extends FileType
 {
    RDSDataType()
    {
-      super("rds_data");
+      super("rds_data"); //$NON-NLS-1$
    }
 
    @Override

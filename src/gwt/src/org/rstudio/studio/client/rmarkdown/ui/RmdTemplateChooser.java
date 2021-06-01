@@ -72,7 +72,7 @@ public class RmdTemplateChooser extends Composite
             // template's preference, if any
             RmdDiscoveredTemplateItem item = listTemplates_.getSelectedItem();
             templateOptionsPanel_.setVisible(
-                  item.getTemplate().getCreateDir() == "true");
+                  item.getTemplate().getCreateDir() == "true"); //$NON-NLS-1$
          }
       });
       Roles.getListboxRole().setAriaLabelledbyProperty(listTemplates_.getElement(),
@@ -162,7 +162,7 @@ public class RmdTemplateChooser extends Composite
    public CaptionWithHelp makeHelpCaption()
    {
       return new CaptionWithHelp("Template:", "Using R Markdown Templates",
-                                 "using_rmarkdown_templates", null);
+                                 "using_rmarkdown_templates", null); //$NON-NLS-1$
    }
    
    @UiFactory
@@ -194,7 +194,7 @@ public class RmdTemplateChooser extends Composite
          if (template != null)
          {
             templateOptionsPanel_.setVisible(
-                  template.getCreateDir() == "true");
+                  template.getCreateDir() == "true"); //$NON-NLS-1$
          }
       }
    }
@@ -221,7 +221,7 @@ public class RmdTemplateChooser extends Composite
    {
       RmdDiscoveredTemplateItem item = listTemplates_.getSelectedItem();
       if (item != null)
-         return item.getTemplate().getCreateDir() == "true";
+         return item.getTemplate().getCreateDir() == "true"; //$NON-NLS-1$
       return false;
    }
    

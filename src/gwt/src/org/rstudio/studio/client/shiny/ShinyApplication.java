@@ -381,14 +381,16 @@ public class ShinyApplication implements ShinyApplicationStatusEvent.Handler,
          else
          {
             // Background apps: stop the associated job
-            jobsServer_.executeJobAction(appState.getId(), "stop", 
+            jobsServer_.executeJobAction(appState.getId(), "stop", //$NON-NLS-1$
                   new VoidServerRequestCallback()
             {
                @Override
                public void onError(ServerError error)
                {
-                  display_.showErrorMessage("Failed to Stop", 
-                        "Could not stop the Shiny application.\n\n" + 
+                  display_.showErrorMessage(
+                     "Failed to Stop",
+                     // i18n: Concatenation/Message
+                     "Could not stop the Shiny application.\n\n" +
                         error.getMessage());
                }
             });
@@ -474,7 +476,8 @@ public class ShinyApplication implements ShinyApplicationStatusEvent.Handler,
                   @Override
                   public void onError(ServerError error)
                   {
-                     display_.showErrorMessage("Shiny App Launch Failed", 
+                     // i18n: Concatenation/Message
+                     display_.showErrorMessage("Shiny App Launch Failed",
                                                error.getMessage());
                   }
                });
@@ -493,7 +496,8 @@ public class ShinyApplication implements ShinyApplicationStatusEvent.Handler,
                   @Override
                   public void onError(ServerError error)
                   {
-                     display_.showErrorMessage("Shiny App Background Launch Failed", 
+                     // i18n: Concatenation/Message
+                     display_.showErrorMessage("Shiny App Background Launch Failed",
                                                error.getMessage());
                   }
                });
@@ -575,6 +579,6 @@ public class ShinyApplication implements ShinyApplicationStatusEvent.Handler,
    private String satelliteClosePath_ = null;
    private String currentViewType_;
    
-   public static final String FOREGROUND_APP = "foreground";
-   public static final String BACKGROUND_APP = "background";
+   public static final String FOREGROUND_APP = "foreground"; //$NON-NLS-1$
+   public static final String BACKGROUND_APP = "background"; //$NON-NLS-1$
 }

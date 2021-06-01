@@ -144,8 +144,8 @@ public class SessionInfo extends JavaScriptObject
       return getUserState().get(Math.min(getPrefs().length(), UserState.LAYER_USER));
    }
 
-   public final static String DESKTOP_MODE = "desktop";
-   public final static String SERVER_MODE = "server";
+   public final static String DESKTOP_MODE = "desktop"; //$NON-NLS-1$
+   public final static String SERVER_MODE = "server"; //$NON-NLS-1$
 
    public final native String getMode() /*-{
       return this.mode;
@@ -224,7 +224,7 @@ public class SessionInfo extends JavaScriptObject
 
    public final String[] getAvailableVCS()
    {
-      return this.<JsObject>cast().getString("vcs_available", true).split(",");
+      return this.<JsObject>cast().getString("vcs_available", true).split(","); //$NON-NLS-1$
    }
 
    public final native String getVcsName() /*-{
@@ -315,6 +315,7 @@ public class SessionInfo extends JavaScriptObject
       return this.html_capabilities;
    }-*/;
 
+   // i18n: Enumerator, user facing text, or both?
    public final static String BUILD_TOOLS_NONE = "None";
    public final static String BUILD_TOOLS_PACKAGE = "Package";
    public final static String BUILD_TOOLS_MAKEFILE = "Makefile";

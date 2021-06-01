@@ -67,11 +67,11 @@ public class RStudioThemes
       document.getBody().removeClassName("rstudio-themes-light-menus");
       document.getBody().removeClassName("rstudio-themes-light-menus-disabled");
       
-      if (themeName == "default" || themeName == "dark-grey" || themeName == "alternate")
+      if (themeName == "default" || themeName == "dark-grey" || themeName == "alternate") //$NON-NLS-1$
       {
          document.getBody().addClassName("rstudio-themes-flat");
          
-         if (themeName.contains("dark"))
+         if (themeName.contains("dark")) //$NON-NLS-1$
          {
             document.getBody().addClassName("rstudio-themes-dark-menus");
             element.addClassName("rstudio-themes-dark");
@@ -110,10 +110,10 @@ public class RStudioThemes
 
    public static String suggestThemeFromAceTheme(AceTheme aceTheme, String rstudioTheme)
    {
-      if (StringUtil.equals(rstudioTheme, "classic") || (aceTheme == null))
+      if (StringUtil.equals(rstudioTheme, "classic") || (aceTheme == null)) //$NON-NLS-1$
          return rstudioTheme;
       
-      return aceTheme.isDark() ? "dark-grey" : rstudioTheme;
+      return aceTheme.isDark() ? "dark-grey" : rstudioTheme; //$NON-NLS-1$
    }
 
    public static String getThemeFromUserPrefs(UserPrefs prefs, UserState state)

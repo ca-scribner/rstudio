@@ -104,7 +104,7 @@ class SectionChooser extends SimplePanel implements
       innerPanel.add(nudgeRightPlus(label));
       panel.add(innerPanel);
       panel.setStyleName(res_.styles().section());
-      Id sectionTabId = Id.of(ElementIds.idFromLabel(name) + "_options");
+      Id sectionTabId = Id.of(ElementIds.idFromLabel(name) + "_options"); //$NON-NLS-1$
       panel.getElement().setId(sectionTabId.getAriaValue());
 
       panel.addClickHandler(event -> select(inner_.getWidgetIndex(panel)));
@@ -263,7 +263,7 @@ class SectionChooser extends SimplePanel implements
     */
    public static Id getTabPanelId(Id tabId)
    {
-      return Id.of(tabId.getAriaValue() + "_panel");
+      return Id.of(tabId.getAriaValue() + "_panel"); //$NON-NLS-1$
    }
 
    private Widget nudgeRightPlus(Widget widget)

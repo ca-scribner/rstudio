@@ -79,7 +79,8 @@ public class ShortcutInfoPanel extends Composite
       SafeHtmlBuilder sb = new SafeHtmlBuilder();
       List<ShortcutInfo> shortcuts = 
             ShortcutManager.INSTANCE.getActiveShortcutInfo();
-      String[][] groupNames = { 
+      // i18n: Not sure what to do with this part.  Are these accessed by order or by name?
+      String[][] groupNames = {
             new String[] { "Tabs", "Panes", "Files", "Main Menu (Server)" },
             new String[] { "Source Navigation", "Execute" },
             new String[] { "Source Editor", "Debug", "Accessibility" }, 

@@ -51,25 +51,25 @@ public class RegexUtil
    private static String WORD_CHARACTER = null;
    
    public static final Pattern RE_RMARKDOWN_CHUNK_BEGIN =
-         Pattern.create("^\\s*```\\{(.*?)\\}\\s*$", "");
+         Pattern.create("^\\s*```\\{(.*?)\\}\\s*$", ""); //$NON-NLS-1$
    
    public static final Pattern RE_RMARKDOWN_CHUNK_END =
-         Pattern.create("^\\s*```\\s*$", "");
+         Pattern.create("^\\s*```\\s*$", ""); //$NON-NLS-1$
    
    public static final Pattern RE_RHTML_CHUNK_BEGIN =
-         Pattern.create("^\\s*<!-{2,}\\s*(.*?)\\s*$", "");
+         Pattern.create("^\\s*<!-{2,}\\s*(.*?)\\s*$", ""); //$NON-NLS-1$
    
    public static final Pattern RE_RHTML_CHUNK_END =
-         Pattern.create("end\\.rcode\\s*-{2,}\\>", "");
+         Pattern.create("end\\.rcode\\s*-{2,}\\>", ""); //$NON-NLS-1$
    
    public static final Pattern RE_SWEAVE_CHUNK_BEGIN =
-         Pattern.create("^\\s*\\<\\<(.*?)\\>\\>=\\s*$", "");
+         Pattern.create("^\\s*\\<\\<(.*?)\\>\\>=\\s*$", ""); //$NON-NLS-1$
    
    public static final Pattern RE_SWEAVE_CHUNK_END =
-         Pattern.create("^\\s*@\\s*$", "");
+         Pattern.create("^\\s*@\\s*$", ""); //$NON-NLS-1$
    
    public static final Pattern RE_EMBEDDED_R_CHUNK_BEGIN =
-         Pattern.create("^\\s*\\{(.*?)\\}\\s*$", "");
+         Pattern.create("^\\s*\\{(.*?)\\}\\s*$", ""); //$NON-NLS-1$
    
    static { initialize(); }
    

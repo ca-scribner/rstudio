@@ -251,7 +251,8 @@ public abstract class PreferencesDialogBase<T> extends ModalDialogBase
             GlobalDisplay.MSG_QUESTION,
             "Restart Required",
             "You need to restart RStudio in order for these changes to take effect. " +
-                  "Do you want to do this now?",
+               // i18n: Concatenate
+               "Do you want to do this now?",
             () -> onRestart(quit, session),
             true);
    }
@@ -268,6 +269,7 @@ public abstract class PreferencesDialogBase<T> extends ModalDialogBase
       display.showYesNoMessage(
             GlobalDisplay.MSG_QUESTION,
             "Restart Required",
+            // i18n: Concatenate.  Duplicate of restart message text above
             "You need to restart the R session in order for these changes to take effect. " +
             "Do you want to do this now?",
             () -> onRestartSession(),

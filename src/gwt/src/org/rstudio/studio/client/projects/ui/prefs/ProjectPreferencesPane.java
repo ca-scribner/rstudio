@@ -57,7 +57,8 @@ public abstract class ProjectPreferencesPane
    {
       globalDisplay_.showYesNoMessage(
          MessageDialog.QUESTION,
-         "Confirm Restart RStudio", 
+         "Confirm Restart RStudio",
+         // i18n: Concatenate
          "You need to restart RStudio in order for this change to take " +
          "effect. Do you want to do this now?",
          new Operation()

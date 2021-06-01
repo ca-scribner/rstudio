@@ -39,7 +39,7 @@ public class RProjectBuildContext extends JavaScriptObject
    {
       JsArrayString formats = getWebsiteOutputFormats();
       for (int i = 0; i<formats.length(); i++)
-         if (formats.get(i).startsWith("bookdown"))
+         if (formats.get(i).startsWith("bookdown")) //$NON-NLS-1$
             return true;
       
       return false;

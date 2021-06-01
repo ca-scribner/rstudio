@@ -132,6 +132,7 @@ public class SessionOpener
             Debug.logError(error);
             pDisplay_.get().showErrorMessage(
                   "Create Session",
+                  // i18n: Concatenation/Message
                   "Could not allocate a new session." +
                         (!StringUtil.isNullOrEmpty(error.getMessage()) ?
                         "\n\n" + error.getMessage() : ""));

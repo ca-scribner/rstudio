@@ -64,6 +64,7 @@ public class PresentationPane extends WorkbenchPane implements Presentation.Disp
    public PresentationPane(Commands commands, Session session,
          PresentationServerOperations server, GlobalDisplay display)
    {
+      // i18n: Enum or user text?
       super("Presentation");
       commands_ = commands;
       session_ = session;
@@ -164,7 +165,7 @@ public class PresentationPane extends WorkbenchPane implements Presentation.Disp
    protected Widget createMainWidget()
    {  
       frame_ = new PresentationFrame(false);
-      frame_.setUrl("about:blank");
+      frame_.setUrl("about:blank"); //$NON-NLS-1$
       frame_.setSize("100%", "100%");
       return new AutoGlassPanel(frame_);
    }
@@ -219,8 +220,8 @@ public class PresentationPane extends WorkbenchPane implements Presentation.Disp
    public boolean hasSlides()
    {
       String href = frame_.getWindow().getLocationHref();
-      return !"about:blank".equals(href) &&
-             !"javascript:void(0)".equals(href);
+      return !"about:blank".equals(href) && //$NON-NLS-1$
+             !"javascript:void(0)".equals(href); //$NON-NLS-1$
    }
    
    @Override

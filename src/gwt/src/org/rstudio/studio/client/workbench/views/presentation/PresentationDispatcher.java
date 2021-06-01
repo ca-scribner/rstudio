@@ -94,7 +94,7 @@ public class PresentationDispatcher
       
       String cmdName = command.getName().toLowerCase();
       
-      if (cmdName.equals("source"))
+      if (cmdName.equals("source")) //$NON-NLS-1$
          performSourceCommand(param1, param2);
       else if (session_.getSessionInfo().getPresentationCommands()) 
          performOtherCommand(cmdName, params, param1, param2);
@@ -141,17 +141,17 @@ public class PresentationDispatcher
          String param1, 
          String param2)
    {
-      if (cmdName == "help-doc")
+      if (cmdName == "help-doc") //$NON-NLS-1$
          performHelpDocCommand(param1, param2);
-      else if (cmdName == "help-topic")
+      else if (cmdName == "help-topic") //$NON-NLS-1$
          performHelpTopicCommand(param1, param2);
-      else if (cmdName == "console")
+      else if (cmdName == "console") //$NON-NLS-1$
          performConsoleCommand(params);
-      else if (cmdName == "console-input")
+      else if (cmdName == "console-input") //$NON-NLS-1$
          performConsoleInputCommand(params);
-      else if (cmdName == "execute")
+      else if (cmdName == "execute") //$NON-NLS-1$
          performExecuteCommand(params);
-      else if (cmdName == "pause")
+      else if (cmdName == "pause") //$NON-NLS-1$
          performPauseCommand();
       else 
       {

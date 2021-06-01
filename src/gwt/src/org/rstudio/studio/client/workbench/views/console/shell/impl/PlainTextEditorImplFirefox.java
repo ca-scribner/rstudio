@@ -51,8 +51,8 @@ public class PlainTextEditorImplFirefox extends PlainTextEditorImpl
    @Override
    public void relayFocusEvents(HasHandlers handlers)
    {
-      addDomListener(textContainer_, "focus", handlers);
-      addDomListener(textContainer_, "blur", handlers);
+      addDomListener(textContainer_, "focus", handlers); //$NON-NLS-1$
+      addDomListener(textContainer_, "blur", handlers); //$NON-NLS-1$
    }
 
    private native static JavaScriptObject addDomListener(

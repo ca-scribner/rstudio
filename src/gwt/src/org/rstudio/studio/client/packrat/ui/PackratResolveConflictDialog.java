@@ -62,6 +62,7 @@ public class PackratResolveConflictDialog
       final int kActionCol2Width = 200;
       
       // create label
+      // i18n: concatenate before translating
       Label label = new Label(
         "Packrat's packages are out of sync with the packages currently " +
         "installed in your library. To resolve the conflict you need to " +
@@ -117,14 +118,16 @@ public class PackratResolveConflictDialog
       // create radio buttons
       Grid choiceGrid = new Grid(1, 3);
       choiceGrid.setWidth(kTableWidth + "px");
-      choiceGrid.getColumnFormatter().setWidth(0, (kPackageColWidth-3) + "px");
-      choiceGrid.getColumnFormatter().setWidth(1, (kActionCol1Width+3) + "px");
-      choiceGrid.getColumnFormatter().setWidth(2, kActionCol2Width + "px");
+      choiceGrid.getColumnFormatter().setWidth(0, (kPackageColWidth-3) + "px"); //$NON-NLS-1$
+      choiceGrid.getColumnFormatter().setWidth(1, (kActionCol1Width+3) + "px"); //$NON-NLS-1$
+      choiceGrid.getColumnFormatter().setWidth(2, kActionCol2Width + "px"); //$NON-NLS-1$
       choiceGrid.addStyleName(RESOURCES.styles().choicesGrid());
       Label resolutionLabel =new Label("Resolution:");
       resolutionLabel.addStyleName(RESOURCES.styles().resolutionLabel());
       choiceGrid.setWidget(0, 0, resolutionLabel);
-      snapshotChoice_ = new RadioButton("snapshot", "Update Packrat (Snapshot)");
+      snapshotChoice_ = new RadioButton(
+         "snapshot", //$NON-NLS-1$
+         "Update Packrat (Snapshot)");
       snapshotChoice_.addStyleName(RESOURCES.styles().choiceButton());
       choiceGrid.setWidget(0, 1, snapshotChoice_);
       snapshotChoice_.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
@@ -134,7 +137,9 @@ public class PackratResolveConflictDialog
             libraryChoice_.setValue(!event.getValue(), false);
          }
       });
-      libraryChoice_ = new RadioButton("library", "Update Library (Restore)");
+      libraryChoice_ = new RadioButton(
+         "library", //$NON-NLS-1$
+         "Update Library (Restore)");
       libraryChoice_.addStyleName(RESOURCES.styles().choiceButton());
       choiceGrid.setWidget(0, 2, libraryChoice_);
       libraryChoice_.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
@@ -177,7 +182,8 @@ public class PackratResolveConflictDialog
       {
          RStudioGinjector.INSTANCE.getGlobalDisplay().showMessage(
                MessageDialog.ERROR, 
-               "No Selection Made", 
+               "No Selection Made",
+               // i18n: concatenate before translation
                "You must choose to either update Packrat (snapshot) or " +
                "update the project's private library (restore).");
          return false;

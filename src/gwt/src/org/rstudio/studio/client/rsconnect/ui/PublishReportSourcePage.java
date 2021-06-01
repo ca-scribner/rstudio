@@ -51,7 +51,8 @@ public class PublishReportSourcePage
          descriptor = "documents";
       if (input.isWebsiteRmd())
          descriptor = "website";
-      
+
+      // i18n: message
       pages.add(new PublishFilesPage("Publish " +
             descriptor + " with source code",
             "Choose this option if you want to create " + 

@@ -22,7 +22,7 @@ public class ProjectTemplateIconImageResource implements ImageResource
    public ProjectTemplateIconImageResource(String name, String data)
    {
       name_ = name;
-      uri_  = "data:image/png;base64," + data;
+      uri_  = "data:image/png;base64," + data; //$NON-NLS-1$
       safeUri_ = new SafeUri()
       {
          @Override

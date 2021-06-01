@@ -77,7 +77,7 @@ public class RObjectEntry
       {
          return Categories.Data;
       }
-      else if (type == "function" || hasTraceInfo())
+      else if (type == "function" || hasTraceInfo()) //$NON-NLS-1$
       {
          return Categories.Function;
       }
@@ -87,7 +87,7 @@ public class RObjectEntry
 
    public boolean isPromise()
    {
-      return rObject.getType() == "promise";
+      return rObject.getType() == "promise"; //$NON-NLS-1$
    }
    
    public boolean isTabular()
@@ -124,7 +124,7 @@ public class RObjectEntry
       return false;
    }
 
-   public static final String NO_VALUE = "NO_VALUE";
+   public static final String NO_VALUE = "NO_VALUE"; //$NON-NLS-1$
    
    private static final Set<String> DATA_CLASSES = new HashSet<>();
    private static final Set<String> HIERARCHICAL_CLASSES = new HashSet<>();
@@ -132,17 +132,17 @@ public class RObjectEntry
    static {
       
       DATA_CLASSES.addAll(ListUtil.create(
-            "matrix",
-            "data.frame",
-            "cast_df",
-            "xts",
-            "DataFrame"
+            "matrix", //$NON-NLS-1$
+            "data.frame", //$NON-NLS-1$
+            "cast_df", //$NON-NLS-1$
+            "xts", //$NON-NLS-1$
+            "DataFrame" //$NON-NLS-1$
       ));
       
       HIERARCHICAL_CLASSES.addAll(ListUtil.create(
-            "list",
-            "environment",
-            "S4"
+            "list", //$NON-NLS-1$
+            "environment", //$NON-NLS-1$
+            "S4" //$NON-NLS-1$
       ));
       
    }

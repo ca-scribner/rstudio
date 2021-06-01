@@ -267,7 +267,7 @@ public class RCompletionManager implements CompletionManager
             }
             
             // if this is a string, try resolving that string as a file name
-            if (cursor.hasType("string"))
+            if (cursor.hasType("string")) //$NON-NLS-1$
             {
                String tokenValue = cursor.currentValue();
                String path = tokenValue.substring(1, tokenValue.length() - 1);
@@ -364,7 +364,7 @@ public class RCompletionManager implements CompletionManager
                    else if (def.getObjectType() == DataDefinition.OBJECT_TYPE)
                    {
                       eventBus_.fireEvent(new SendToConsoleEvent(
-                            "View(" + def.getObjectName() + ")", true, false));
+                            "View(" + def.getObjectName() + ")", true, false)); //$NON-NLS-1$
                    }
                 }
             }
@@ -1168,17 +1168,17 @@ public class RCompletionManager implements CompletionManager
          if (cursor.moveToPosition(input_.getCursorPosition()))
          {
             String token = "";
-            if (cursor.hasType("identifier"))
+            if (cursor.hasType("identifier")) //$NON-NLS-1$
                token = cursor.currentValue();
             
-            String cursorPos = "left";
+            String cursorPos = "left"; //$NON-NLS-1$
             if (cursor.currentValue() == "=")
-               cursorPos = "right";
+               cursorPos = "right"; //$NON-NLS-1$
             
             TokenCursor clone = cursor.cloneCursor();
             if (clone.moveToPreviousToken())
                if (clone.currentValue() == "=")
-                  cursorPos = "right";
+                  cursorPos = "right"; //$NON-NLS-1$
             
             // Try to get a dplyr join completion
             DplyrJoinContext joinContext =
@@ -1905,9 +1905,9 @@ public class RCompletionManager implements CompletionManager
          // we don't quote for completions from certain custom sources
          String source = name.source;
          boolean isSpecialSource =
-               StringUtil.equals(source,  "<file>") ||
-               StringUtil.equals(source,  "<directory>") ||
-               StringUtil.equals(source,  "<chunk-option>");
+               StringUtil.equals(source,  "<file>") || //$NON-NLS-1$
+               StringUtil.equals(source,  "<directory>") || //$NON-NLS-1$
+               StringUtil.equals(source,  "<chunk-option>"); //$NON-NLS-1$
          
          if (isSpecialSource)
             return value;
@@ -1967,7 +1967,7 @@ public class RCompletionManager implements CompletionManager
          if (completionToken.startsWith("'") || completionToken.startsWith("\""))
             completionToken = completionToken.substring(1);
          
-         if (qualifiedName.source == "<chunk-option>")
+         if (qualifiedName.source == "<chunk-option>") //$NON-NLS-1$
          {
             applyValueRmdOption(qualifiedName.name);
             return;

@@ -63,10 +63,10 @@ public class RmdTemplateFormatOption extends JavaScriptObject
    }-*/;
 
 
-   public final static String TYPE_BOOLEAN = "boolean";
-   public final static String TYPE_CHOICE = "choice";
-   public final static String TYPE_FLOAT = "float";
-   public final static String TYPE_FILE = "file";
-   public final static String TYPE_INTEGER = "integer";
-   public final static String TYPE_STRING = "string";
+   public final static String TYPE_BOOLEAN = "boolean"; //$NON-NLS-1$
+   public final static String TYPE_CHOICE = "choice"; //$NON-NLS-1$
+   public final static String TYPE_FLOAT = "float"; //$NON-NLS-1$
+   public final static String TYPE_FILE = "file"; //$NON-NLS-1$
+   public final static String TYPE_INTEGER = "integer"; //$NON-NLS-1$
+   public final static String TYPE_STRING = "string"; //$NON-NLS-1$
 }

@@ -18,7 +18,7 @@ package org.rstudio.studio.client.panmirror.format;
 
 public class PanmirrorExtendedDocType
 {    
-   public static String bookdown = "bookdown";
-   public static String hugo = "hugo";
+   public static String bookdown = "bookdown"; //$NON-NLS-1$
+   public static String hugo = "hugo"; //$NON-NLS-1$
 }
 

@@ -62,7 +62,7 @@ public class RpcResponse extends JavaScriptObject
    
    public final RpcError getError()
    {
-      return getField("error");
+      return getField("error"); //$NON-NLS-1$
    }
 
    public final String getAsyncHandle()
@@ -72,7 +72,7 @@ public class RpcResponse extends JavaScriptObject
    
    public final <T> T getResult()
    {
-      T field = this.<T>getField("result");
+      T field = this.<T>getField("result"); //$NON-NLS-1$
       return field;
    }
 

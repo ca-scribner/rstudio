@@ -64,11 +64,11 @@ public class RSConnectPublishSettings
    public JavaScriptObject toJso()
    {
       JsObject obj = JsObject.createJsObject();
-      obj.setJsArrayString("deploy_files", 
+      obj.setJsArrayString("deploy_files", //$NON-NLS-1$
             JsArrayUtil.toJsArrayString(getDeployFiles()));
-      obj.setJsArrayString("additional_files", 
+      obj.setJsArrayString("additional_files", //$NON-NLS-1$
             JsArrayUtil.toJsArrayString(getAdditionalFiles()));
-      obj.setJsArrayString("ignored_files", 
+      obj.setJsArrayString("ignored_files", //$NON-NLS-1$
             JsArrayUtil.toJsArrayString(getIgnoredFiles()));
       obj.setBoolean("as_multiple", getAsMultiple());
       obj.setBoolean("as_static", getAsStatic());

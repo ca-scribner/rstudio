@@ -28,7 +28,7 @@ public class PackratActionDialog extends ModalDialog<Void>
          JsArray<PackratPackageAction> actions,
          final OperationWithInput<Void> operation)
    {
-      super("Packrat " + packratAction, Roles.getDialogRole(), operation);
+      super("Packrat " + packratAction, Roles.getDialogRole(), operation); //$NON-NLS-1$
       setOkButtonCaption(packratAction);
       contents_ = new PackratActionDialogContents(packratAction, actions);
       setWidth("500px");

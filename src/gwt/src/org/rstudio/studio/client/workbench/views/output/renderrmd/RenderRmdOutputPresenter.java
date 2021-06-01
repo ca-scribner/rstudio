@@ -62,8 +62,11 @@ public class RenderRmdOutputPresenter extends BusyPresenter
                                    Binder binder,
                                    EventBus events)
    {
-      super(outputFactory.create("R Markdown",
-                                 "View the R Markdown render log"));
+      // i18n: taskName enum or user text?
+      super(outputFactory.create(
+         "R Markdown",
+         "View the R Markdown render log"
+      ));
       binder.bind(commands, this);
       view_ = (CompileOutputPaneDisplay) getView();
       view_.setHasLogs(false);
@@ -99,6 +102,7 @@ public class RenderRmdOutputPresenter extends BusyPresenter
       {
         globalDisplay_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
               "Stop R Markdown Rendering",
+              // i18n: message/concatenate
               "The rendering of '" + targetFile_ + "' is in progress. Do you "+
               "want to terminate and close the tab?", false,
               new Operation()

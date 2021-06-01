@@ -292,16 +292,16 @@ public class ShortcutManager implements NativePreviewHandler,
       String[] splat = disableModes.split(",");
       for (String item : splat)
       {
-         if (item == "default")
+         if (item == "default") //$NON-NLS-1$
             mode |= KeyboardShortcut.MODE_DEFAULT;
-         else if (item == "vim")
+         else if (item == "vim") //$NON-NLS-1$
             mode |= KeyboardShortcut.MODE_VIM;
-         else if (item == "emacs")
+         else if (item == "emacs") //$NON-NLS-1$
             mode |= KeyboardShortcut.MODE_EMACS;
-         else if (item == "sublime")
+         else if (item == "sublime") //$NON-NLS-1$
             mode |= KeyboardShortcut.MODE_SUBLIME;
          else
-            assert false: "Unrecognized 'disableModes' value '" + item + "'";
+            assert false: "Unrecognized 'disableModes' value '" + item + "'"; //$NON-NLS-1$
       }
 
       return mode;

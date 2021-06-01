@@ -49,6 +49,7 @@ public class RmdTemplateOptionsDialog
          OperationWithInput<RmdTemplateOptionsDialog.Result> onSaved,
          Operation onCancelled)
    {
+      // i18n: Concatenation/Message (?)
       super("Edit " + (isShiny ? "Shiny " : "R Markdown ") + 
             template.getName() + " Options", Roles.getDialogRole(), onSaved, onCancelled);
       setWidth("425px");

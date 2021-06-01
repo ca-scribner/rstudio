@@ -108,7 +108,7 @@ public class RTokenizer
    
    private RToken matchWhitespace()
    {
-      String whitespace = peek("[\\s\\u00A0]+");
+      String whitespace = peek("[\\s\\u00A0]+"); //$NON-NLS-1$
       assert whitespace != null;
       return consumeToken(RToken.WHITESPACE, whitespace.length());
    }
@@ -155,9 +155,9 @@ public class RTokenizer
    
    private RToken matchNumber()
    {
-      String num = peek("0x[0-9a-fA-F]*L?");
+      String num = peek("0x[0-9a-fA-F]*L?"); //$NON-NLS-1$
       if (num == null)
-         num = peek("[0-9]*(\\.[0-9]*)?([eE][+-]?[0-9]*)?[Li]?");
+         num = peek("[0-9]*(\\.[0-9]*)?([eE][+-]?[0-9]*)?[Li]?"); //$NON-NLS-1$
 
       // We should only be in this method if 0-9 was matched, so this should
       // be a safe assumption
@@ -170,7 +170,7 @@ public class RTokenizer
    {
       int start = pos_;
       eat();
-      String rest = peek("[\\w.]*");
+      String rest = peek("[\\w.]*"); //$NON-NLS-1$
       pos_ += (rest != null ? rest : "").length();
       return new RToken(RToken.ID, 
                         data_.substring(start, pos_), 

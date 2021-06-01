@@ -28,17 +28,17 @@ public class RChunkHeaderParserTests extends GWTTestCase
    
    public void testRMarkdownChunkHeader()
    {
-      String header = "```{r label, echo=TRUE}";
+      String header = "```{r label, echo=TRUE}"; //$NON-NLS-1$
       Map<String, String> pieces = RChunkHeaderParser.parse(header);
-      assertTrue(pieces.containsKey("label"));
+      assertTrue(pieces.containsKey("label")); //$NON-NLS-1$
       assertTrue(pieces.containsKey("echo"));
-      assertTrue(pieces.get("label").contentEquals("label"));
+      assertTrue(pieces.get("label").contentEquals("label")); //$NON-NLS-1$
       assertTrue(pieces.get("echo").contentEquals("TRUE"));
    }
    
    public void testNoCommaBeforeFirstItem()
    {
-      String header = "```{r echo=TRUE}";
+      String header = "```{r echo=TRUE}"; //$NON-NLS-1$
       Map<String, String> pieces = RChunkHeaderParser.parse(header);
       assertTrue(pieces.containsKey("echo"));
       assertTrue(pieces.get("echo").contentEquals("TRUE"));
@@ -46,7 +46,7 @@ public class RChunkHeaderParserTests extends GWTTestCase
    
    public void testCommaBeforeFirstItem()
    {
-      String header = "```{r, echo=TRUE}";
+      String header = "```{r, echo=TRUE}"; //$NON-NLS-1$
       Map<String, String> pieces = RChunkHeaderParser.parse(header);
       assertTrue(pieces.containsKey("echo"));
       assertTrue(pieces.get("echo").contentEquals("TRUE"));
@@ -54,12 +54,12 @@ public class RChunkHeaderParserTests extends GWTTestCase
    
    public void testComplicatedExpression()
    {
-      String header = "```{r, echo= {1 + 1}, message=FALSE}";
+      String header = "```{r, echo= {1 + 1}, message=FALSE}"; //$NON-NLS-1$
       Map<String, String> pieces = RChunkHeaderParser.parse(header);
       assertTrue(pieces.containsKey("echo"));
       assertTrue(pieces.get("echo").contentEquals("{1 + 1}"));
-      assertTrue(pieces.containsKey("message"));
-      assertTrue(pieces.get("message").contentEquals("FALSE"));
+      assertTrue(pieces.containsKey("message")); //$NON-NLS-1$
+      assertTrue(pieces.get("message").contentEquals("FALSE")); //$NON-NLS-1$
    }
 
 }

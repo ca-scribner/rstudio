@@ -55,7 +55,7 @@ public class PanmirrorEditAttrDialog extends ModalDialog<PanmirrorAttrEditResult
          ThemedButton removeAttributesButton = new ThemedButton(removeButtonCaption);
          removeAttributesButton.addClickHandler((event) -> {
             PanmirrorAttrEditResult result = collectInput();
-            result.action = "remove";
+            result.action = "remove"; //$NON-NLS-1$
             validateAndGo(result, new Command()
             {
                @Override
@@ -89,7 +89,7 @@ public class PanmirrorEditAttrDialog extends ModalDialog<PanmirrorAttrEditResult
    {
       PanmirrorAttrEditResult result = new PanmirrorAttrEditResult();
       result.attr = editAttr_.getAttr();
-      result.action = "edit";
+      result.action = "edit"; //$NON-NLS-1$
       return result;
    }
 

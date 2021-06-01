@@ -82,6 +82,7 @@ public class ProjectPackratPreferencesPane extends ProjectPreferencesPane
    {
       Styles styles = RES.styles();
       Label label = new Label(
+         // i18n: concatenate
             "Packrat is a dependency management tool that makes your " +
             "R code more isolated, portable, and reproducible by " +
             "giving your project its own privately managed package " +

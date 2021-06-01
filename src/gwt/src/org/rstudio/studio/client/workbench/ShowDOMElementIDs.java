@@ -101,12 +101,12 @@ public class ShowDOMElementIDs
             String[] classNames = el.getClassName().split(" ");
             
             boolean interesting = false;
-            if (id.startsWith("rstudio_"))
+            if (id.startsWith("rstudio_")) //$NON-NLS-1$
                interesting = true;
             
             for (String className : classNames)
             {
-               if (className.startsWith("rstudio_"))
+               if (className.startsWith("rstudio_")) //$NON-NLS-1$
                {
                   interesting = true;
                   break;
@@ -122,7 +122,7 @@ public class ShowDOMElementIDs
             
             for (String className : classNames)
             {
-               if (className.startsWith("rstudio_"))
+               if (className.startsWith("rstudio_")) //$NON-NLS-1$
                {
                   builder.appendHtmlConstant("<span style='color: rgb(117, 112, 179)'>");
                   builder.appendEscaped(".");

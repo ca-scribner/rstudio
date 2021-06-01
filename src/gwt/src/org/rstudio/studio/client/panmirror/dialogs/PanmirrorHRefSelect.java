@@ -57,7 +57,7 @@ public class PanmirrorHRefSelect extends Composite implements CanFocus
       type_.addItem("URL", Integer.toString(PanmirrorLinkType.URL));
       
       if (capabilities.headings && targets.headings.length > 0)
-         type_.addItem("Heading", Integer.toString(PanmirrorLinkType.Heading));
+         type_.addItem("Heading", Integer.toString(PanmirrorLinkType.Heading)); //$NON-NLS-1$
       if (targets.ids.length > 0)
          type_.addItem("ID",Integer.toString(PanmirrorLinkType.ID));
       controls_.add(type_);

@@ -2396,6 +2396,7 @@ public class SourceColumnManager implements CommandPaletteEntrySource,
    private void showFileTooLargeWarning(FileSystemItem file,
                                         long sizeLimit)
    {
+      // i18n: Concatenation/Message
       StringBuilder msg = new StringBuilder();
       msg.append("The file '" + file.getName() + "' is too ");
       msg.append("large to open in the source editor (the file is ");
@@ -2412,6 +2413,7 @@ public class SourceColumnManager implements CommandPaletteEntrySource,
                                      Operation openOperation,
                                      Operation noOperation)
    {
+      // i18n: Concatenation/Message
       StringBuilder msg = new StringBuilder();
       msg.append("The source file '" + file.getName() + "' is large (");
       msg.append(StringUtil.formatFileSize(file.getLength()) + ") ");
@@ -2744,7 +2746,7 @@ public class SourceColumnManager implements CommandPaletteEntrySource,
    private final SourceNavigationHistory sourceNavigationHistory_ =
        new SourceNavigationHistory(30);
 
-   public final static String COLUMN_PREFIX = "Source";
+   public final static String COLUMN_PREFIX = "Source"; //$NON-NLS-1$
    public final static String MAIN_SOURCE_NAME = COLUMN_PREFIX;
    static int sourceColumnCounter_ = 1;
 }

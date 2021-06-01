@@ -95,15 +95,15 @@ public class PaneManager
       Presentation, Environment, Viewer, Source, Console, SourceColumn
    }
 
-   public static final String LEFT_COLUMN = "left";
-   public static final String RIGHT_COLUMN = "right";
+   public static final String LEFT_COLUMN = "left"; //$NON-NLS-1$
+   public static final String RIGHT_COLUMN = "right"; //$NON-NLS-1$
 
    class SelectedTabStateValue extends IntStateValue
    {
       SelectedTabStateValue(String name,
                             WorkbenchTabPanel tabPanel)
       {
-         super("workbench-pane", name, ClientState.PROJECT_PERSISTENT,
+         super("workbench-pane", name, ClientState.PROJECT_PERSISTENT, //$NON-NLS-1$
                session_.getSessionInfo().getClientState(), true);
          tabPanel_ = tabPanel;
          finishInit(session_.getSessionInfo().getClientState());
@@ -208,6 +208,8 @@ public class PaneManager
       }
    }
 
+   // i18n: See notes on Presentation in PaneLayoutPreferencesPan, and others.  Are these displayed names, enumerations,
+   //       or both?
    @Inject
    public PaneManager(Provider<MainSplitPanel> pSplitPanel,
                       EventBus eventBus,
@@ -485,7 +487,7 @@ public class PaneManager
       });
 
       // highlight pane containing keyboard focus
-      DomGlobal.document.addEventListener("focusin", (Event) ->
+      DomGlobal.document.addEventListener("focusin", (Event) -> //$NON-NLS-1$
       {
          if (!userPrefs_.showPanelFocusRectangle().getValue())
          {
@@ -677,7 +679,7 @@ public class PaneManager
           window.getNormal() == null ||
           !window.getNormal().getName().contains(SourceColumnManager.COLUMN_PREFIX))
       {
-         Debug.logWarning("Attempted focusSourceColumnSeparator when source column not active.");
+         Debug.logWarning("Attempted focusSourceColumnSeparator when source column not active."); //$NON-NLS-1$
          return;
       }
       panel_.focusSplitter(window.getNormal());
@@ -1351,8 +1353,8 @@ public class PaneManager
       else
       {
          // unexpected; why are we trying to activate a suppressed tab?
-         Debug.logWarning("Attempt to activate suppressed or unavailable " +
-                          "tab '" + tab.name() + "')");
+         Debug.logWarning("Attempt to activate suppressed or unavailable " + //$NON-NLS-1$
+                          "tab '" + tab.name() + "')"); //$NON-NLS-1$
       }
    }
 
@@ -1483,7 +1485,7 @@ public class PaneManager
       }
       else
       {
-         Debug.logWarning("Unexpected column identifier: " + columnId);
+         Debug.logWarning("Unexpected column identifier: " + columnId); //$NON-NLS-1$
          return;
       }
       // Currently we cannot zoom on left widgets
@@ -1812,6 +1814,7 @@ public class PaneManager
 
    private Tab tabForName(String name)
    {
+      // i18n: Related to Presentation and other pane names.
       if (name.equalsIgnoreCase("history"))
          return Tab.History;
       if (name.equalsIgnoreCase("files"))

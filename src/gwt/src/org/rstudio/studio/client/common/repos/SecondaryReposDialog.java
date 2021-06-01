@@ -119,6 +119,7 @@ public class SecondaryReposDialog extends ModalDialog<CRANMirror>
       if (excluded_.contains(input.getName()))
       {
          globalDisplay_.showErrorMessage("Error",
+               // i18n: Concatenation/Message
                "The repository " + input.getName() + " is already included");
          return false;
       }

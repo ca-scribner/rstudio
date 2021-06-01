@@ -58,11 +58,11 @@ public class RenvActionDialogContents extends Composite
       textColumn("Action",           "45%", (RenvAction entry) -> getAction(entry));
       
       
-      if (action == "Snapshot")
+      if (action == "Snapshot") //$NON-NLS-1$
       {
          headerLabel_ = new Label("The following packages will be updated in the lockfile.");
       }
-      else if (action == "Restore")
+      else if (action == "Restore") //$NON-NLS-1$
       {
          headerLabel_ = new Label("The following changes will be made to the project library.");
       }
@@ -91,7 +91,7 @@ public class RenvActionDialogContents extends Composite
    
    private String getAction(RenvAction entry)
    {
-      return (action_ == "Snapshot") ? snapshotAction(entry) : restoreAction(entry);
+      return (action_ == "Snapshot") ? snapshotAction(entry) : restoreAction(entry); //$NON-NLS-1$
    }
    
    private interface ValueGetter<T>
@@ -116,8 +116,9 @@ public class RenvActionDialogContents extends Composite
    
    private String snapshotAction(RenvAction entry)
    {
-      if (entry.getAction() == "install")
+      if (entry.getAction() == "install") //$NON-NLS-1$
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "Add '{package}' [{version}] to the lockfile",
                "package", entry.getPackageName(),
@@ -125,6 +126,7 @@ public class RenvActionDialogContents extends Composite
       }
       else if (entry.getAction() == "remove")
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "Remove '{package}' [{version}] from the lockfile",
                "package", entry.getPackageName(),
@@ -132,6 +134,7 @@ public class RenvActionDialogContents extends Composite
       }
       else
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "Update '{package}' [{oldVersion} -> {newVersion}] in the lockfile",
                "package", entry.getPackageName(),
@@ -142,16 +145,18 @@ public class RenvActionDialogContents extends Composite
    
    private String restoreAction(RenvAction entry)
    {
-      if (entry.getAction() == "install")
+      if (entry.getAction() == "install") //$NON-NLS-1$
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "Install '{package}' [{version}]",
                "action",  StringUtil.capitalize(entry.getAction()),
                "package", entry.getPackageName(),
                "version", entry.getLockfileVersion());
       }
-      else if (entry.getAction() == "remove")
+      else if (entry.getAction() == "remove") //$NON-NLS-1$
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "Remove '{package}' [{version}]",
                "action",  StringUtil.capitalize(entry.getAction()),
@@ -160,6 +165,7 @@ public class RenvActionDialogContents extends Composite
       }
       else
       {
+         // i18n: Message, but uses format string.  Change to i18n
          return StringUtil.format(
                "{action} '{package}' [{oldVersion} -> {newVersion}]",
                "action",     StringUtil.capitalize(entry.getAction()),

@@ -146,7 +146,7 @@ public class PanmirrorEditLinkDialog extends ModalDialog<PanmirrorLinkEditResult
    protected PanmirrorLinkEditResult collectInput()
    {
       PanmirrorLinkEditResult result = new PanmirrorLinkEditResult();
-      result.action = "edit";
+      result.action = "edit"; //$NON-NLS-1$
       result.link = new PanmirrorLinkProps();
       result.link.type = href_.getType();
       result.link.href = href_.getHRef();

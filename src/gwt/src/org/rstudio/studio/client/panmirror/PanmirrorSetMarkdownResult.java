@@ -28,8 +28,8 @@ public class PanmirrorSetMarkdownResult
    public String[] unrecognized;
    public JsObject unparsed_meta;
    public PanmirrorEditingOutlineLocation location;
-   
-   public static final String kLineWrappingNone = "none";
-   public static final String kLineWrappingColumn= "column";
-   public static final String kLineWrappingSentence = "sentence";
+
+   public static final String kLineWrappingNone = "none"; //$NON-NLS-1$
+   public static final String kLineWrappingColumn= "column"; //$NON-NLS-1$
+   public static final String kLineWrappingSentence = "sentence"; //$NON-NLS-1$
 }

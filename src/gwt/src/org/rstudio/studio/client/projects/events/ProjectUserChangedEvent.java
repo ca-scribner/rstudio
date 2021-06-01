@@ -74,10 +74,10 @@ public class ProjectUserChangedEvent
 
    private final Data data_;
 
-   public static final String JOINED   = "joined";
-   public static final String LEFT     = "left";
-   public static final String REPLACED = "replaced";
-   public static final String CHANGED  = "changed";
+   public static final String JOINED   = "joined"; //$NON-NLS-1$
+   public static final String LEFT     = "left"; //$NON-NLS-1$
+   public static final String REPLACED = "replaced"; //$NON-NLS-1$
+   public static final String CHANGED  = "changed"; //$NON-NLS-1$
 
    public static final Type<Handler> TYPE = new Type<>();
 }

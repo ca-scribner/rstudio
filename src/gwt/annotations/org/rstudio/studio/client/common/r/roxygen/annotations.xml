@@ -1,0 +1,11 @@
+<root>
+    <item name='org.rstudio.studio.client.common.r.roxygen.RoxygenHelper void amendExistingRoxygenBlock(int, java.lang.String, com.google.gwt.core.client.JsArrayString, com.google.gwt.core.client.JsArrayString, java.lang.String, org.rstudio.core.client.regex.Pattern) 4'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.r.roxygen.RoxygenHelper void insertRoxygenTemplate(java.lang.String, com.google.gwt.core.client.JsArrayString, com.google.gwt.core.client.JsArrayString, java.lang.String, java.lang.String, org.rstudio.studio.client.workbench.views.source.editors.text.ace.Position) 3'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.common.r.roxygen.RoxygenHelper void insertRoxygenTemplate(java.lang.String, com.google.gwt.core.client.JsArrayString, com.google.gwt.core.client.JsArrayString, java.lang.String, java.lang.String, org.rstudio.studio.client.workbench.views.source.editors.text.ace.Position) 4'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

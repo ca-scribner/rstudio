@@ -161,7 +161,7 @@ public class ProgressSpinner extends Composite
          // compute transparency for this blade
          double alpha = 1.0 - (((double)((i + frame_) % NUM_BLADES)) / 
                                ((double)NUM_BLADES));
-         ctx.setStrokeStyle("rgba(" + color + ", " + alpha + ")");
+         ctx.setStrokeStyle("rgba(" + color + ", " + alpha + ")"); //$NON-NLS-1$
          
          // draw the blade
          ctx.moveTo(center + sin * innerRadius_,

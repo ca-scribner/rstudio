@@ -77,7 +77,7 @@ public class PanmirrorEditRawDialog extends ModalDialog<PanmirrorRawFormatResult
          addLeftButton(removeFormatButton, ElementIds.VISUAL_MD_RAW_FORMAT_REMOVE_BUTTON); 
          removeFormatButton.addClickHandler((event) -> {
             PanmirrorRawFormatResult input = collectInput();
-            input.action = "remove";
+            input.action = "remove"; //$NON-NLS-1$
             validateAndGo(input, new Command()
             {
                @Override
@@ -125,7 +125,7 @@ public class PanmirrorEditRawDialog extends ModalDialog<PanmirrorRawFormatResult
       result.raw = new PanmirrorRawFormatProps();
       result.raw.format = rawFormatSelect_.getValue();
       result.raw.content = rawContent();
-      result.action = "edit";
+      result.action = "edit"; //$NON-NLS-1$
       return result;
    }
 

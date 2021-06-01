@@ -121,7 +121,7 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
          return null;
       
       token = iterator.stepBackward();
-      return token.valueEquals("knitr") ? iterator.getCurrentTokenPosition() : null;
+      return token.valueEquals("knitr") ? iterator.getCurrentTokenPosition() : null; //$NON-NLS-1$
    }
    
    private Range findOptsChunk()
@@ -138,7 +138,7 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
             break;
          
          Position startPos = iterator.getCurrentTokenPosition();
-         if (token.getValue() != "opts_chunk")
+         if (token.getValue() != "opts_chunk") //$NON-NLS-1$
             continue;
          
          Position knitrPrefixPos = findKnitrPrefix(iterator.clone());
@@ -150,7 +150,7 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
             continue;
          
          token = iterator.stepForward();
-         if (token.getValue() != "set")
+         if (token.getValue() != "set") //$NON-NLS-1$
             continue;
          
          token = iterator.stepForward();
@@ -235,10 +235,11 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       for (String key : keys)
          options.put(key, chunkOptions_.get(key));
       
-      addParam(options, "echo");
-      addParam(options, "eval");
-      addParam(options, "include");
-      
+      addParam(options, "echo"); //$NON-NLS-1$
+      addParam(options, "eval"); //$NON-NLS-1$
+      addParam(options, "include"); //$NON-NLS-1$
+
+      // i18n?
       addCheckboxParam(options, showMessagesInOutputCb_, "message");
       addCheckboxParam(options, showWarningsInOutputCb_, "warning");
       
@@ -255,7 +256,7 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       if (options.size() <= 2)
       {
          String joined = StringUtil.collapse(options, " = ", ", ");
-         String code = "knitr::opts_chunk$set(" + joined + ")\n";
+         String code = "knitr::opts_chunk$set(" + joined + ")\n"; //$NON-NLS-1$ //$NON-NLS-1$
          display_.insertCode(code);
          return;
       }
@@ -263,7 +264,7 @@ public class SetupChunkOptionsPopupPanel extends ChunkOptionsPopupPanel
       Map<String, String> sorted = sortedOptions(options);
       
       String code =
-            "knitr::opts_chunk$set(\n\t" +
+            "knitr::opts_chunk$set(\n\t" + //$NON-NLS-1$
             joinOptions(sorted) +
             "\n)\n";
       

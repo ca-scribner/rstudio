@@ -32,8 +32,8 @@ public class ProjectTemplateDescription extends JavaScriptObject
    public native final String getPageCaption()      /*-{ return this["caption"]; }-*/;
    public native final JsArrayString getOpenFiles() /*-{ return this["open_files"]; }-*/;
    
-   public final ImageResource getIcon()      { return getIconImpl("icon"); }
-   public final ImageResource getIconLarge() { return getIconImpl("icon_large"); }
+   public final ImageResource getIcon()      { return getIconImpl("icon"); } //$NON-NLS-1$
+   public final ImageResource getIconLarge() { return getIconImpl("icon_large"); } //$NON-NLS-1$
    
    public native final JsArray<ProjectTemplateWidgetDescription> getWidgetDescription()
    /*-{

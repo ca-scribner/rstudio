@@ -767,7 +767,7 @@ class ProseMirrorDevTools
  
    @JsOverlay
    private static final ExternalJavaScriptLoader devtoolsLoader_ =
-     new ExternalJavaScriptLoader("js/panmirror/prosemirror-dev-tools.min.js");
+     new ExternalJavaScriptLoader("js/panmirror/prosemirror-dev-tools.min.js"); //$NON-NLS-1$
 }
 
 

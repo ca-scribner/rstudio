@@ -82,13 +82,13 @@ public class RmdEditorOptions
       return yamlTree.toString();
    }
    
-   private static String EDITOR_OPTION_KEY = "editor_options";
-   private static String MARKDOWN_OPTION_KEY = "markdown";
+   private static String EDITOR_OPTION_KEY = "editor_options"; // $NON-NLS-1$
+   private static String MARKDOWN_OPTION_KEY = "markdown"; // $NON-NLS-1$
    
-   public static String MARKDOWN_WRAP_OPTION = "wrap";
+   public static String MARKDOWN_WRAP_OPTION = "wrap"; // $NON-NLS-1$
    
-   public static String PREVIEW_IN        = "preview";
-   public static String PREVIEW_IN_WINDOW = "window";
-   public static String PREVIEW_IN_VIEWER = "viewer";
-   public static String PREVIEW_IN_NONE   = "none";
+   public static String PREVIEW_IN        = "preview"; // $NON-NLS-1$
+   public static String PREVIEW_IN_WINDOW = "window"; // $NON-NLS-1$
+   public static String PREVIEW_IN_VIEWER = "viewer"; // $NON-NLS-1$
+   public static String PREVIEW_IN_NONE   = "none"; // $NON-NLS-1$
 }

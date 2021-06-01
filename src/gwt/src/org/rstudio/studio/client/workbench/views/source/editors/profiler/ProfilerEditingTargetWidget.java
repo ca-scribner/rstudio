@@ -58,7 +58,7 @@ public class ProfilerEditingTargetWidget extends Composite
          title,
          null,
          getCustomStyle(),
-         "../profiler_resource/profiler.css",
+         "../profiler_resource/profiler.css", //$NON-NLS-1$
          true);
 
       profilePage_.setWidth("100%");

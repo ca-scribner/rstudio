@@ -46,6 +46,7 @@ public class PanmirrorCommandPaletteEntry extends CommandPaletteCommand
    @Override
    public String getContext()
    {
+      // i18n: Is this enum, user, or both?  I think it is at least used as enum in panmirrorCommandPaletteItem.java
       return "Visual Editor";
    }
 

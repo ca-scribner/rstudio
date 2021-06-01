@@ -107,6 +107,8 @@ public class RequestLogVisualization extends Composite
       detail_.getElement().getStyle().setBackgroundColor("#FFE");
 
       instructions_ = new HTML();
+      // i18n: Probably i18n?  although more complex and it makes a html list...  is it interactive somehow?
+      //       Concatenate if a simple i18n
       instructions_.setHTML("<p>Click on a request to see details. Click on the " +
                             "background to show these instructions again.</p>" +
                             "<h4>Available commands:</h4>" +

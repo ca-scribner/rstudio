@@ -79,7 +79,7 @@ public class PanmirrorImageChooser extends TextBoxWithButton {
                         JsArrayString images = JsArrayString.createArray().cast();
                         images.push(input.getPath());
                         FileSystemItem defaultDir = FileSystemItem.createDir(uiContext.getDefaultResourceDir.get());
-                        String imagesDir = defaultDir.completePath("images");
+                        String imagesDir = defaultDir.completePath("images"); //$NON-NLS-1$
                         server.rmdImportImages(images, imagesDir, new SimpleRequestCallback<JsArrayString>() {
                            @Override
                            public void onResponseReceived(JsArrayString resolvedImages)

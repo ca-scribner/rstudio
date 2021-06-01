@@ -53,7 +53,7 @@ public class PanmirrorInsertCiteDialog extends ModalDialog<PanmirrorInsertCiteRe
          @Override
          public String fileExtension()
          {
-            return "bib";
+            return "bib"; //$NON-NLS-1$
          }
       },
       yaml {
@@ -61,26 +61,26 @@ public class PanmirrorInsertCiteDialog extends ModalDialog<PanmirrorInsertCiteRe
          public String displayName()
          {
             return "CSL-YAML";
-         }
+         } //$NON-NLS-1$
 
          @Override
          public String fileExtension()
          {
             return "yaml";
-         }
+         } //$NON-NLS-1$
       },
       json {
          @Override
          public String displayName()
          {
             return "CSL-JSON";
-         }
+         } //$NON-NLS-1$
 
          @Override
          public String fileExtension()
          {
             return "json";
-         }
+         } //$NON-NLS-1$
       };
       
       public abstract String displayName();
@@ -153,10 +153,10 @@ public class PanmirrorInsertCiteDialog extends ModalDialog<PanmirrorInsertCiteRe
 
                // Get the preview and suggested Id
                JsPropertyMap<Object> responseObj = Js.asAny(response).asPropertyMap();
-               String status = (String) responseObj.get("status");
-               if (status.equals("ok")) {
+               String status = (String) responseObj.get("status"); //$NON-NLS-1$
+               if (status.equals("ok")) { //$NON-NLS-1$
 
-                  citeProps_.csl = (JsObject) responseObj.getAsAny("message");
+                  citeProps_.csl = (JsObject) responseObj.getAsAny("message"); //$NON-NLS-1$
                   
                   PanmirrorUIToolsCitation citationTools = new PanmirrorUITools().citation;
                   PanmirrorInsertCiteUI citeUI = citationTools.citeUI(citeProps_);
@@ -343,7 +343,7 @@ public class PanmirrorInsertCiteDialog extends ModalDialog<PanmirrorInsertCiteRe
          createBibliographyTypes_.setSelectedIndex(
             createBibliographyTypes_.getIndexFromValue(userState_.bibliographyDefaultType().getValue())
          );
-         createBibliographyFileName_.setText(ensureExtension("references", createBibliographyTypes_.getSelectedValue()));
+         createBibliographyFileName_.setText(ensureExtension("references", createBibliographyTypes_.getSelectedValue())); //$NON-NLS-1$
       }
       else
       {
@@ -383,11 +383,11 @@ public class PanmirrorInsertCiteDialog extends ModalDialog<PanmirrorInsertCiteRe
    }
    
    private void displayErrorForStatus(String status) { 
-      if (status.equals("notfound")) {
+      if (status.equals("notfound")) { //$NON-NLS-1$
 
          displayError(kNoDataError);
          
-      } else if (status.equals("nohost")) {
+      } else if (status.equals("nohost")) { //$NON-NLS-1$
          displayError(kServerError);
          
       } else {

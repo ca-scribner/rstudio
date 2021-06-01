@@ -54,13 +54,14 @@ public class PackratActionDialogContents extends Composite {
       
       initWidget(uiBinder.createAndBindUi(this));
 
-      if (packratAction == "Snapshot")
+      // i18n: Can valid packratActions be centralized to a common enumerator?
+      if (packratAction == "Snapshot") //$NON-NLS-1$
       {
          summaryLabel_.setText("The following packages have changed in " +
                "your project's private library. Select Snapshot to save " + 
                "these changes in Packrat.");
       }
-      else if (packratAction == "Restore")
+      else if (packratAction == "Restore") //$NON-NLS-1$
       {
          summaryLabel_.setText("The following packages have changed in " +
                "Packrat. Select Restore to apply these changes to your " +
@@ -77,10 +78,26 @@ public class PackratActionDialogContents extends Composite {
    
    private void initTableColumns()
    {      
-      addColumn(table_, new SortableColumnWithHeader<>(prRestoreActionsList_, "package", "Package"));
-      addColumn(table_, new SortableColumnWithHeader<>(prRestoreActionsList_, "packrat.version", "Packrat"));
-      addColumn(table_, new SortableColumnWithHeader<>(prRestoreActionsList_, "library.version", "Library"));
-      addColumn(table_, new SortableColumnWithHeader<>(prRestoreActionsList_, "message", "Action"));
+      addColumn(table_, new SortableColumnWithHeader<>(
+         prRestoreActionsList_,
+         "package", //$NON-NLS-1$
+         "Package")
+      );
+      addColumn(table_, new SortableColumnWithHeader<>(
+         prRestoreActionsList_,
+         "packrat.version", //$NON-NLS-1$
+         "Packrat")
+      );
+      addColumn(table_, new SortableColumnWithHeader<>(
+         prRestoreActionsList_,
+         "library.version", //$NON-NLS-1$
+         "Library")
+      );
+      addColumn(table_, new SortableColumnWithHeader<>(
+         prRestoreActionsList_,
+         "message", //$NON-NLS-1$
+         "Action")
+      );
       
       table_.setColumnWidth(0, "15%");
       table_.setColumnWidth(1, "15%");

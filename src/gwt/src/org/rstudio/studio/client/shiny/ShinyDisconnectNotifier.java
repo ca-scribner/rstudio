@@ -78,6 +78,7 @@ public class ShinyDisconnectNotifier
    private void onMessage(String data, String origin, String name)
    {
       // check to see if this is a 'disconnected' message
+      // i18n: Will this be disrupted by i18n elsewhere?
       if (!StringUtil.equals(data, "disconnected"))
          return;
       

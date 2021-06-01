@@ -41,11 +41,13 @@ public class PublishMultiplePage
       ArrayList<WizardPage<RSConnectPublishInput, 
                            RSConnectPublishResult>> pages = new ArrayList<>();
       String singleTitle = "Publish just this document";
+      // i18n: message
       String singleSubtitle = "Only the document " + 
                               input.getSourceRmd().getName() + 
                               " will be published.";
       String multipleTitle = "Publish all documents in the directory";
-      String multipleSubtitle = "All of the documents in the directory " + 
+      // i18n: message
+      String multipleSubtitle = "All of the documents in the directory " +
                                 input.getSourceRmd().getParentPathString() + 
                                 " will be published.";
       if (input.isShiny() || !input.hasDocOutput())

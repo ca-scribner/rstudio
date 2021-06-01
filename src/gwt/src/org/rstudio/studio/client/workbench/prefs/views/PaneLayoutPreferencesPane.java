@@ -112,6 +112,8 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
             checkBox.addValueChangeHandler(this);
             checkBoxes_.add(checkBox);
             flowPanel.add(checkBox);
+            // i18n: This looks like an enumerator, but might also be shown to the user?  Find where this is defined
+            //       and handle it accordingly
             if (module == "Presentation")
                checkBox.setVisible(false);
          }
@@ -165,6 +167,7 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
             return false;
 
          CheckBox lastCheckBox = checkBoxes_.get(checkBoxes_.size() - 1);
+         // i18n: See above
          return StringUtil.equals(lastCheckBox.getText(), "Presentation") &&
                                   lastCheckBox.isVisible();
       }
@@ -191,6 +194,7 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
       PaneConfig paneConfig = userPrefs.panes().getGlobalValue().cast();
       additionalColumnCount_ = paneConfig.getAdditionalSourceColumns();
 
+      // i18n: Concatenate
       add(new Label("Choose the layout of the panels in RStudio by selecting from the controls in" +
          " each panel. Add up to three additional Source Columns to the left side of the layout. " +
          "When a column is removed, all saved files within the column are closed and any unsaved " +
@@ -200,6 +204,7 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
       Toolbar columnToolbar = new Toolbar("Manage Column Display");
       columnToolbar.setStyleName(res_.styles().newSection());
 
+      // i18n: Not sure where these show, but I think they're displayed?
       ToolbarButton addButton = new ToolbarButton(
          "Add Column",
          "Add column",
@@ -365,8 +370,8 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
       cellWidthValue -= (GRID_CELL_SPACING + GRID_CELL_PADDING);
       columnWidthValue -= (GRID_CELL_SPACING + GRID_CELL_PADDING);
 
-      final String columnWidth = columnWidthValue + "px";
-      final String cellWidth = cellWidthValue + "px";
+      final String columnWidth = columnWidthValue + "px"; //$NON-NLS-1$
+      final String cellWidth = cellWidthValue + "px"; //$NON-NLS-1$
       final String selectWidth = (cellWidthValue - GRID_SELECT_PADDING) + "px";
       leftTop_.setWidth(selectWidth);
       leftBottom_.setWidth(selectWidth);
@@ -518,6 +523,7 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
          PaneConfig prevConfig = userPrefs_.panes().getGlobalValue().cast();
          boolean consoleLeftOnTop = prevConfig.getConsoleLeftOnTop();
          boolean consoleRightOnTop = prevConfig.getConsoleRightOnTop();
+         // i18n: Think this is enumerator and display text.  See note about Presentation
          final String kConsole = "Console";
          if (panes.get(0).equals(kConsole))
             consoleLeftOnTop = true;
@@ -567,7 +573,8 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
       String itemText1 = tabSet1ModuleList_.getValue().isEmpty() ?
          "TabSet" : StringUtil.join(tabSet1ModuleList_.getValue(), ", "); 
       String itemText2 = tabSet2ModuleList_.getValue().isEmpty() ?
-         "TabSet" : StringUtil.join(tabSet2ModuleList_.getValue(), ", "); 
+         "TabSet" : StringUtil.join(tabSet2ModuleList_.getValue(), ", ");
+      // i18n: See above
       if (StringUtil.equals(itemText1, "Presentation") && !tabSet1ModuleList_.presentationVisible())
          itemText1 = "TabSet";
 

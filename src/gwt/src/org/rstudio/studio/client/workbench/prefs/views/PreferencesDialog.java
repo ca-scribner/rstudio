@@ -68,6 +68,8 @@ public class PreferencesDialog extends PreferencesDialogBase<UserPrefs>
                             UserPrefs userPrefs,
                             UserState userState)
    {
+      // i18n: Is this an enumeration or user text?
+      // i18n: Is this related to how we select Panes (eg by enum or other ways)?
       super("Options",
             res.styles().panelContainer(),
             res.styles().panelContainerNoChooser(),

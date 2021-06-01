@@ -58,7 +58,8 @@ public class ShowPublicKeyDialog extends ModalDialogBase
       int mod = BrowseCap.hasMetaKey() ? KeyboardShortcut.META : 
                                          KeyboardShortcut.CTRL;
       String cmdText = new KeyCombination("c", 'C', mod).toString(true);
-      HTML label = new HTML("Press " + cmdText + 
+      // i18n: Concatenation/Message
+      HTML label = new HTML("Press " + cmdText +
                             " to copy the key to the clipboard");
       label.addStyleName(RES.styles().viewPublicKeyLabel());
       panel.add(label);

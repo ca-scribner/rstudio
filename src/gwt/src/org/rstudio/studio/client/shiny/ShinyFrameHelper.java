@@ -187,9 +187,9 @@ public class ShinyFrameHelper
    private final static int WINDOW_RETRY_DELAY = 100;
          
    // event names (must match those in rsiframe.js)
-   private final static String EVENT_SCROLL_CHANGE = "doc_scroll_change";
-   private final static String EVENT_HASH_CHANGE = "doc_hash_change";
-   private final static String EVENT_READY = "doc_ready";
-   private final static String METHOD_SET_SCROLL = "rs_set_scroll_pos";
-   private final static String METHOD_SET_HASH = "rs_set_hash";
+   private final static String EVENT_SCROLL_CHANGE = "doc_scroll_change"; //$NON-NLS-1$
+   private final static String EVENT_HASH_CHANGE = "doc_hash_change"; //$NON-NLS-1$
+   private final static String EVENT_READY = "doc_ready"; //$NON-NLS-1$
+   private final static String METHOD_SET_SCROLL = "rs_set_scroll_pos"; //$NON-NLS-1$
+   private final static String METHOD_SET_HASH = "rs_set_hash"; //$NON-NLS-1$
 }

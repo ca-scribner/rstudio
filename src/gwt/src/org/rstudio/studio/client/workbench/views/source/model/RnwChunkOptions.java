@@ -51,7 +51,7 @@ public class RnwChunkOptions extends JavaScriptObject
       if (arr.size() == 1)
          return arr.get(0).isString().stringValue();
       else
-         return "list";
+         return "list"; //$NON-NLS-1$
    }
    
    public final ArrayList<String> getOptionValues(String name)
@@ -144,7 +144,7 @@ public class RnwChunkOptions extends JavaScriptObject
                               JsArrayString completions)
    {
       String optionType = StringUtil.notNull(this.getOptionType(name));
-      if (optionType.equals("logical"))
+      if (optionType.equals("logical")) //$NON-NLS-1$
       {
          CompletionOptions options = new CompletionOptions();
          options.addOption("TRUE", 0);
@@ -152,15 +152,15 @@ public class RnwChunkOptions extends JavaScriptObject
          if (!rnwWeave.usesCodeForOptions())
          {
             // Legacy Sweave is case insensitive
-            options.addOption("true", 1);
-            options.addOption("false", 1);
-            options.addOption("True", 2);
-            options.addOption("False", 2);
+            options.addOption("true", 1); // $NON-NLS-1$
+            options.addOption("false", 1); // $NON-NLS-1$
+            options.addOption("True", 2); // $NON-NLS-1$
+            options.addOption("False", 2); // $NON-NLS-1$
          }
          for (String logical : options.getCompletions(value))
             completions.push(logical);
       }
-      else if (optionType.equals("list"))
+      else if (optionType.equals("list")) //$NON-NLS-1$
       {
          CompletionOptions options = new CompletionOptions();
          ArrayList<String> optionValues = this.getOptionValues(name);

@@ -22,8 +22,8 @@ public class RnwWeaveDirective
    public static RnwWeaveDirective fromTexMagicComment(
                                           TexMagicComment magicComment) 
    {
-      if (magicComment.getScope().equalsIgnoreCase("rnw") &&
-          magicComment.getVariable().equalsIgnoreCase("weave"))
+      if (magicComment.getScope().equalsIgnoreCase("rnw") && //$NON-NLS-1$
+          magicComment.getVariable().equalsIgnoreCase("weave")) //$NON-NLS-1$
       { 
          return new RnwWeaveDirective(magicComment.getValue());
       }

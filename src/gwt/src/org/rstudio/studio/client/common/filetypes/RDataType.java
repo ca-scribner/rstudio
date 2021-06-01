@@ -22,7 +22,7 @@ public class RDataType extends FileType
 {
    RDataType()
    {
-      super("r_data");
+      super("r_data"); //$NON-NLS-1$
    }
 
    @Override

@@ -4,4 +4,13 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.studio.client.server.remote.RemoteServer void sendRequest(java.lang.String, java.lang.String, com.google.gwt.json.client.JSONArray, org.rstudio.studio.client.server.ServerRequestCallback&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.server.remote.RemoteServer void sendRequest(java.lang.String, java.lang.String, java.lang.String, org.rstudio.studio.client.server.ServerRequestCallback&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.server.remote.RemoteServer void sendRequest(java.lang.String, java.lang.String, org.rstudio.studio.client.server.ServerRequestCallback&lt;T&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
 </root>

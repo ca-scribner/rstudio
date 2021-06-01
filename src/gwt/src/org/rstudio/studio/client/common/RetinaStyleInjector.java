@@ -31,11 +31,11 @@ public class RetinaStyleInjector
    private static String asRetina(String css)
    {
       return
-            "@media " +
-            "(-webkit-min-device-pixel-ratio: 1.5), " +
-            "(-moz-min-device-pixel-ratio: 1.5), " +
-            "(-o-min-device-pixel-ratio: 3/2), " +
-            "(min-device-pixel-ratio: 1.5) {" +
+            "@media " +  //$NON-NLS-1$
+            "(-webkit-min-device-pixel-ratio: 1.5), " +  //$NON-NLS-1$
+            "(-moz-min-device-pixel-ratio: 1.5), " +  //$NON-NLS-1$
+            "(-o-min-device-pixel-ratio: 3/2), " +  //$NON-NLS-1$
+            "(min-device-pixel-ratio: 1.5) {" +  //$NON-NLS-1$
             css +
             "}";
    }

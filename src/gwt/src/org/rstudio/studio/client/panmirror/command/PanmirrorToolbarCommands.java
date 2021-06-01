@@ -193,7 +193,7 @@ public class PanmirrorToolbarCommands implements CommandPaletteEntryProvider
       PanmirrorCommandUI cmd = commandsUI_.get(id);
       if (cmd == null)
       {
-         Debug.logWarning("Command palette requested unknown command from visual editor: '" + id + "'");
+         Debug.logWarning("Command palette requested unknown command from visual editor: '" + id + "'"); //$NON-NLS-1$
       }
 
       return new PanmirrorCommandPaletteItem(cmd);

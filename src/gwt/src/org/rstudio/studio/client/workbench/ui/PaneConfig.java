@@ -60,6 +60,7 @@ public class PaneConfig extends UserPrefsAccessor.Panes
       panes.push(UserPrefsAccessor.Panes.QUADRANTS_HIDDENTABSET);
 
       // Pane default group 1
+      // i18n: See notes below
       JsArrayString tabSet1 = createArray().cast();
       tabSet1.push("Environment");
       tabSet1.push("History");

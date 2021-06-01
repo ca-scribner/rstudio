@@ -98,7 +98,10 @@ public class ProjectCompilePdfPreferencesPane extends ProjectPreferencesPane
          super("Compile PDF root document:",
                "(Current Document)",
                "Browse...",
-               new HelpButton("pdf_root_document", "Get help on Compile PDF root document"),
+               new HelpButton(
+                  "pdf_root_document", //$NON-NLS-1$
+                  "Get help on Compile PDF root document"
+               ),
                ElementIds.TextBoxButtonId.PDF_ROOT,
                true,
                null);

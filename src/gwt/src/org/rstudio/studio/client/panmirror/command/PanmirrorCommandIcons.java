@@ -27,20 +27,20 @@ import com.google.gwt.resources.client.ImageResource;
 
 public class PanmirrorCommandIcons
 {
-   public final String BLOCKQUOTE = "blockquote";
-   public final String BOLD = "bold";
-   public final String BULLET_LIST = "bullet_list";
-   public final String CITATION = "citation";
-   public final String CODE = "code";
-   public final String IMAGE = "image";
-   public final String ITALIC = "italic";
-   public final String UNDERLINE = "underline";
-   public final String OMNI = "omni";
-   public final String LINK = "link";
-   public final String NUMBERED_LIST = "numbered_list";
-   public final String TABLE = "table";
-   public final String CLEAR_FORMATTING = "clear_formatting";
-   public final String COMMENT = "comment";
+   public final String BLOCKQUOTE = "blockquote"; //$NON-NLS-1$
+   public final String BOLD = "bold"; //$NON-NLS-1$
+   public final String BULLET_LIST = "bullet_list"; //$NON-NLS-1$
+   public final String CITATION = "citation"; //$NON-NLS-1$
+   public final String CODE = "code"; //$NON-NLS-1$
+   public final String IMAGE = "image"; //$NON-NLS-1$
+   public final String ITALIC = "italic"; //$NON-NLS-1$
+   public final String UNDERLINE = "underline"; //$NON-NLS-1$
+   public final String OMNI = "omni"; //$NON-NLS-1$
+   public final String LINK = "link"; //$NON-NLS-1$
+   public final String NUMBERED_LIST = "numbered_list"; //$NON-NLS-1$
+   public final String TABLE = "table"; //$NON-NLS-1$
+   public final String CLEAR_FORMATTING = "clear_formatting"; //$NON-NLS-1$
+   public final String COMMENT = "comment"; //$NON-NLS-1$
    
    private PanmirrorCommandIcons()
    {

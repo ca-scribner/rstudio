@@ -71,6 +71,7 @@ public class PanmirrorEditListDialog extends ModalDialog<PanmirrorListProps>
       numberDelimiter_.setVisible(capabilities.fancy);
       
       List<String> numberStyleChoices = new ArrayList<>();
+      // i18n: ?  These look user facing but not usre
       numberStyleChoices.add("DefaultStyle");
       numberStyleChoices.add("Decimal");
       numberStyleChoices.add("LowerRoman");
@@ -81,7 +82,8 @@ public class PanmirrorEditListDialog extends ModalDialog<PanmirrorListProps>
          numberStyleChoices.add("Example");
       }
       numberStyle_.setChoices(numberStyleChoices.toArray(new String[] {}));
-      
+
+      // i18n
       numberDelimiter_.setChoices(new String[] {
          "DefaultDelim",
          "Period",

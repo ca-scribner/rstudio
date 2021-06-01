@@ -157,6 +157,7 @@ public class PublishingPreferencesPane extends PreferencesPane
       final VerticalPanel missingPkgPanel = new VerticalPanel();
       missingPkgPanel.setVisible(false);
       missingPkgPanel.add(new Label(
+            // i18n: Concatenate
             "Account records appear to exist, but cannot be viewed because a " +
             "required package is not installed."));
       ThemedButton installPkgs = new ThemedButton("Install Missing Packages");
@@ -303,6 +304,7 @@ public class PublishingPreferencesPane extends PreferencesPane
       display_.showYesNoMessage(
             GlobalDisplay.MSG_QUESTION,
             "Confirm Remove Account",
+            // i18n: message
             "Are you sure you want to disconnect the '" +
               account.getName() +
             "' account on '" +

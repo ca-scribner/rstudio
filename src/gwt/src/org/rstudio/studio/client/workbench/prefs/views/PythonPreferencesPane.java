@@ -27,7 +27,10 @@ public class PythonPreferencesPane extends PythonPreferencesPaneBase<UserPrefs>
    public PythonPreferencesPane(PythonDialogResources res,
                                 PythonServerOperations server)
    {
-      super("420px", "(No interpreter selected)");
+      super(
+         "420px", //$NON-NLS-1$
+         "(No interpreter selected)"
+      );
       
       overrideLabel_ = new Label();
       add(overrideLabel_);
@@ -44,6 +47,7 @@ public class PythonPreferencesPane extends PythonPreferencesPaneBase<UserPrefs>
       boolean hasProjectOverride = !StringUtil.isNullOrEmpty(projectPythonPath);
       if (hasProjectOverride)
       {
+         // i18n: concatenate
          String text =
                "(NOTE: This project has already been configured with " +
                "its own Python interpreter. Use the Project Options " +

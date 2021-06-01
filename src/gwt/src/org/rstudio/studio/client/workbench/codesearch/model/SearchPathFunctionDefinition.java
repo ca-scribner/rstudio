@@ -59,5 +59,5 @@ public class SearchPathFunctionDefinition extends JavaScriptObject
       return this.active_debug_code ? true : false;
    }-*/;
    
-   public final static String OBJECT_TYPE = "search_path_function";
+   public final static String OBJECT_TYPE = "search_path_function"; //$NON-NLS-1$
 }

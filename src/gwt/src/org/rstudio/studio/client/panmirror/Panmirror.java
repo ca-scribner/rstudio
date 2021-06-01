@@ -33,6 +33,6 @@ public class Panmirror
    
    @JsOverlay
    private static final ExternalJavaScriptLoader panmirrorLoader_ =
-     new ExternalJavaScriptLoader("js/panmirror/panmirror.js");
+     new ExternalJavaScriptLoader("js/panmirror/panmirror.js"); //$NON-NLS-1$
    
 }

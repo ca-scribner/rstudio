@@ -20,6 +20,9 @@
     <item name='com.google.gwt.dom.client.Element boolean hasTagName(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='com.google.gwt.dom.client.Element boolean removeClassName(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='com.google.gwt.dom.client.Element com.google.gwt.dom.client.NodeList&lt;com.google.gwt.dom.client.Element&gt; getElementsByTagName(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>

@@ -463,7 +463,7 @@ public class RemoteServer implements Server
          // can restart the session
          JSONArray params = new JSONArray();
          JSONObject kwParams = new JSONObject();
-         kwParams.put("launch_parameters", new JSONObject(launchParameters_));
+         kwParams.put("launch_parameters", new JSONObject(launchParameters_)); //$NON-NLS-1$
          sendRequest(RPC_SCOPE, PING, params, kwParams, requestCallback);
       }
    }
@@ -502,7 +502,7 @@ public class RemoteServer implements Server
    public void editPreferences(ServerRequestCallback<Void> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-                  "edit_user_prefs",
+                  "edit_user_prefs", //$NON-NLS-1$
                   requestCallback);
    }
 
@@ -510,7 +510,7 @@ public class RemoteServer implements Server
    public void viewPreferences(ServerRequestCallback<Void> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-                  "view_all_prefs",
+                  "view_all_prefs", //$NON-NLS-1$
                   requestCallback);
    }
 
@@ -518,7 +518,7 @@ public class RemoteServer implements Server
    public void clearPreferences(ServerRequestCallback<String> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-                  "clear_user_prefs",
+                  "clear_user_prefs", //$NON-NLS-1$
                   requestCallback);
    }
 
@@ -851,7 +851,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONString(docPath));
       params.set(1, new JSONNumber(line));
       params.set(2, new JSONNumber(column));
-      sendRequest(RPC_SCOPE, "go_to_cpp_definition", params, requestCallback);
+      sendRequest(RPC_SCOPE, "go_to_cpp_definition", params, requestCallback); //$NON-NLS-1$
    }
 
    public void findCppUsages(
@@ -864,7 +864,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONString(docPath));
       params.set(1, new JSONNumber(line));
       params.set(2, new JSONNumber(column));
-      sendRequest(RPC_SCOPE, "find_cpp_usages", params, requestCallback);
+      sendRequest(RPC_SCOPE, "find_cpp_usages", params, requestCallback); //$NON-NLS-1$
    }
 
    public void getCppCompletions(
@@ -908,7 +908,7 @@ public class RemoteServer implements Server
       params.set(3,  JSONBoolean.getInstance(docDirty));
       params.set(4, new JSONNumber(line));
       params.set(5, new JSONNumber(column));
-      sendRequest(RPC_SCOPE, "print_cpp_completions", params, requestCallback);
+      sendRequest(RPC_SCOPE, "print_cpp_completions", params, requestCallback); //$NON-NLS-1$
    }
 
    public void isFunction(
@@ -1004,7 +1004,7 @@ public class RemoteServer implements Server
    public void saveSnippets(JsArray<SnippetData> snippets,
                             ServerRequestCallback<Void> callback)
    {
-      sendRequest(RPC_SCOPE, "save_snippets", snippets, callback);
+      sendRequest(RPC_SCOPE, "save_snippets", snippets, callback); //$NON-NLS-1$
    }
 
    public void getCompletions(
@@ -1372,7 +1372,7 @@ public class RemoteServer implements Server
    public void suggestTopics(String prefix,
                              ServerRequestCallback<JsArrayString> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "suggest_topics", prefix, requestCallback);
+      sendRequest(RPC_SCOPE, "suggest_topics", prefix, requestCallback); //$NON-NLS-1$
    }
 
    public void getHelp(String topic,
@@ -1493,7 +1493,7 @@ public class RemoteServer implements Server
       paramArray.set(0, new JSONString(path));
       paramArray.set(1, new JSONString(encoding));
 
-      sendRequest(RPC_SCOPE, "get_file_contents", paramArray, requestCallback);
+      sendRequest(RPC_SCOPE, "get_file_contents", paramArray, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -1605,8 +1605,8 @@ public class RemoteServer implements Server
       if (Desktop.isDesktop())
       {
          String prefix = BrowseCap.isWindowsDesktop()
-               ? "file:///"
-               : "file://";
+               ? "file:///" //$NON-NLS-1$
+               : "file://"; //$NON-NLS-1$
 
          return prefix + resolveAliasedPath(file);
       }
@@ -1619,7 +1619,7 @@ public class RemoteServer implements Server
          else
          {
             String url = getApplicationURL(FILE_SHOW);
-            url += "?path=" + URL.encodeQueryString(file.getPath());
+            url += "?path=" + URL.encodeQueryString(file.getPath()); //$NON-NLS-1$
             return url;
          }
       }
@@ -1638,7 +1638,7 @@ public class RemoteServer implements Server
       String sessionNode = session_.getSessionInfo().getSessionNode();
       if (!sessionNode.isEmpty())
       {
-         url += "?host_node=" + sessionNode;
+         url += "?host_node=" + sessionNode; //$NON-NLS-1$
       }
 
       return url;
@@ -1657,8 +1657,8 @@ public class RemoteServer implements Server
    public String getFileExportUrl(String name, FileSystemItem file)
    {
       return getApplicationURL(EXPORT_SCOPE) + "/" + URL.encodePathSegment(name) + "?" +
-         "name=" + URL.encodeQueryString(name) + "&" +
-         "file=" + URL.encodeQueryString(file.getPath());
+         "name=" + URL.encodeQueryString(name) + "&" + //$NON-NLS-1$
+         "file=" + URL.encodeQueryString(file.getPath()); //$NON-NLS-1$
    }
 
    public void writeConfigJSON(String path,
@@ -1668,7 +1668,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(path));
       params.set(1, new JSONObject(object));
-      sendRequest(RPC_SCOPE, "write_config_json", params, requestCallback);
+      sendRequest(RPC_SCOPE, "write_config_json", params, requestCallback); //$NON-NLS-1$
    }
 
    public void readConfigJSON(String path,
@@ -1678,7 +1678,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(path));
       params.set(1, JSONBoolean.getInstance(logErrorIfNotFound));
-      sendRequest(RPC_SCOPE, "read_config_json", params, requestCallback);
+      sendRequest(RPC_SCOPE, "read_config_json", params, requestCallback); //$NON-NLS-1$
    }
 
    public String getFileExportUrl(String name,
@@ -1689,15 +1689,15 @@ public class RemoteServer implements Server
       StringBuilder files = new StringBuilder();
       for (int i = 0; i<filenames.size(); i++)
       {
-         files.append("file").append(i).append("=");
+         files.append("file").append(i).append("="); //$NON-NLS-1$
          files.append(URL.encodeQueryString(filenames.get(i)));
          files.append("&");
       }
 
       // return url
       return getApplicationURL(EXPORT_SCOPE) + "/" + URL.encodePathSegment(name) + "?" +
-        "name=" + URL.encodeQueryString(name) + "&" +
-        "parent=" + URL.encodeQueryString(parentDirectory.getPath()) + "&" +
+        "name=" + URL.encodeQueryString(name) + "&" + //$NON-NLS-1$
+        "parent=" + URL.encodeQueryString(parentDirectory.getPath()) + "&" + //$NON-NLS-1$
          files.toString();
    }
 
@@ -1714,16 +1714,16 @@ public class RemoteServer implements Server
                                   boolean attachment)
    {
       // build preview URL
-      String previewURL = getGraphicsUrl("plot." + type);
+      String previewURL = getGraphicsUrl("plot." + type); //$NON-NLS-1$
       previewURL += "?";
-      previewURL += "width=" + width;
+      previewURL += "width=" + width; //$NON-NLS-1$
       previewURL += "&";
-      previewURL += "height=" + height;
+      previewURL += "height=" + height; //$NON-NLS-1$
       // append random number to default over-aggressive image caching
       // by browsers
-      previewURL += "&randomizer=" + Random.nextInt();
+      previewURL += "&randomizer=" + Random.nextInt(); //$NON-NLS-1$
       if (attachment)
-         previewURL += "&attachment=1";
+         previewURL += "&attachment=1"; //$NON-NLS-1$
 
       return previewURL;
    }
@@ -1858,7 +1858,7 @@ public class RemoteServer implements Server
    public void validateProjectPath(String projectPath,
                                    ServerRequestCallback<Boolean> callback)
    {
-      sendRequest(RPC_SCOPE, "validate_project_path", projectPath, callback);
+      sendRequest(RPC_SCOPE, "validate_project_path", projectPath, callback); //$NON-NLS-1$
    }
 
    public void createShinyApp(String appName,
@@ -1909,7 +1909,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(docId));
       params.set(1, JSONBoolean.getInstance(dirty));
-      sendRequest(RPC_SCOPE, "set_source_document_dirty", params,
+      sendRequest(RPC_SCOPE, "set_source_document_dirty", params, //$NON-NLS-1$
                   requestCallback);
    }
 
@@ -1973,14 +1973,14 @@ public class RemoteServer implements Server
          String projectDir,
          ServerRequestCallback<RVersionSpec> callback)
    {
-      sendRequest(RPC_SCOPE, "get_project_r_version", projectDir, callback);
+      sendRequest(RPC_SCOPE, "get_project_r_version", projectDir, callback); //$NON-NLS-1$
    }
 
    public void getProjectFilePath(
          String projectId,
          ServerRequestCallback<String> callback)
    {
-      sendRequest(RPC_SCOPE, "get_project_file_path", projectId, callback);
+      sendRequest(RPC_SCOPE, "get_project_file_path", projectId, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -1988,7 +1988,7 @@ public class RemoteServer implements Server
          String folder,
          ServerRequestCallback<String> callback)
    {
-      sendRequest(RPC_SCOPE, "find_project_in_folder", folder, callback);
+      sendRequest(RPC_SCOPE, "find_project_in_folder", folder, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -2296,8 +2296,8 @@ public class RemoteServer implements Server
 
    public String getProgressUrl(String message)
    {
-      String url = getApplicationURL(SOURCE_SCOPE + "/" + "progress");
-      url += "?message=" + URL.encodeQueryString(message);
+      String url = getApplicationURL(SOURCE_SCOPE + "/" + "progress"); //$NON-NLS-1$
+      url += "?message=" + URL.encodeQueryString(message); //$NON-NLS-1$
       return url;
    }
 
@@ -2430,7 +2430,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(inputPath));
-      sendRequest(RPC_SCOPE, "extract_rmd_from_notebook", params,
+      sendRequest(RPC_SCOPE, "extract_rmd_from_notebook", params, //$NON-NLS-1$
             requestCallback);
    }
 
@@ -2439,14 +2439,14 @@ public class RemoteServer implements Server
                  CompileNotebookOptions options,
                  ServerRequestCallback<CompileNotebookResult> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "create_notebook", options, requestCallback);
+      sendRequest(RPC_SCOPE, "create_notebook", options, requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void isReadOnlyFile(String path,
                               ServerRequestCallback<Boolean> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "is_read_only_file", path, requestCallback);
+      sendRequest(RPC_SCOPE, "is_read_only_file", path, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -2457,21 +2457,21 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(StringUtil.notNull(interpreter)));
       params.set(1, new JSONString(path));
-      sendRequest(RPC_SCOPE, "get_script_run_command", params, callback);
+      sendRequest(RPC_SCOPE, "get_script_run_command", params, callback); //$NON-NLS-1$
    }
 
    @Override
    public void getMinimalSourcePath(String path,
                                     ServerRequestCallback<String> callback)
    {
-      sendRequest(RPC_SCOPE, "get_minimal_source_path", path, callback);
+      sendRequest(RPC_SCOPE, "get_minimal_source_path", path, callback); //$NON-NLS-1$
    }
 
    @Override
    public void getShinyCapabilities(
          ServerRequestCallback<ShinyCapabilities> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "get_shiny_capabilities", requestCallback);
+      sendRequest(RPC_SCOPE, "get_shiny_capabilities", requestCallback); //$NON-NLS-1$
    }
 
    public void getRecentHistory(
@@ -3038,7 +3038,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONNumber(lastEventId));
       return sendRequest(EVENTS_SCOPE,
-                         "get_events",
+                         "get_events", //$NON-NLS-1$
                          params,
                          null, // kwParams
                          false, // redactLog
@@ -3401,7 +3401,7 @@ public class RemoteServer implements Server
                eventBus_.fireEvent(new ApplicationTutorialEvent(
                      ApplicationTutorialEvent.API_ERROR,
                      error.getEndUserMessage(),
-                     new TutorialApiCallContext("rpc", null)));
+                     new TutorialApiCallContext("rpc", null))); //$NON-NLS-1$
 
                // no global handlers processed it, send on to caller
                responseHandler.onResponseReceived(RpcResponse.create(error));
@@ -3486,7 +3486,7 @@ public class RemoteServer implements Server
 
    private boolean eventsPending(RpcResponse response)
    {
-      String eventsPending = response.getField("ep");
+      String eventsPending = response.getField("ep"); //$NON-NLS-1$
       if (eventsPending == null)
          return true; // default to true for json-rpc compactness
       else
@@ -3768,11 +3768,11 @@ public class RemoteServer implements Server
       JSONObject request = new JSONObject();
       request.put("method", new JSONString(method));
       if (params != null)
-         request.put("params", params);
+         request.put("params", params); //$NON-NLS-1$
 
       final RequestLogEntry requestLogEntry = RequestLog.log(
          Integer.toString(Random.nextInt()),
-         redactLog ? "[REDACTED]": request.toString());
+         redactLog ? "[REDACTED]": request.toString()); //$NON-NLS-1$
 
       sendRequestViaMainWorkbench(
             scope,
@@ -4008,37 +4008,37 @@ public class RemoteServer implements Server
    @Override
    public void viewerStopped(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_stopped", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_stopped", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void viewerBack(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_back", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_back", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void viewerForward(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_forward", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_forward", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void viewerCurrent(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_current", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_current", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void viewerClearCurrent(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_clear_current", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_clear_current", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void viewerClearAll(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "viewer_clear_all", requestCallback);
+      sendRequest(RPC_SCOPE, "viewer_clear_all", requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -4047,7 +4047,7 @@ public class RemoteServer implements Server
             ServerRequestCallback<SavePlotAsImageContext> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-                  "get_viewer_export_context",
+                  "get_viewer_export_context", //$NON-NLS-1$
                   directory,
                   requestCallback);
    }
@@ -4057,7 +4057,7 @@ public class RemoteServer implements Server
                                    ServerRequestCallback<Void> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-            "viewer_save_as_web_page",
+            "viewer_save_as_web_page", //$NON-NLS-1$
             targetPath,
             requestCallback);
    }
@@ -4071,7 +4071,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(title));
       params.set(1, new JSONString(comment));
-      sendRequest(RPC_SCOPE, "viewer_create_rpubs_html", params, callback);
+      sendRequest(RPC_SCOPE, "viewer_create_rpubs_html", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -4087,7 +4087,7 @@ public class RemoteServer implements Server
       params.set(1, new JSONString(comment));
       params.set(2,  new JSONNumber(width));
       params.set(3,  new JSONNumber(height));
-      sendRequest(RPC_SCOPE, "plots_create_rpubs_html", params, callback);
+      sendRequest(RPC_SCOPE, "plots_create_rpubs_html", params, callback); //$NON-NLS-1$
    }
 
 
@@ -4112,7 +4112,7 @@ public class RemoteServer implements Server
    public void rpubsIsPublished(String htmlFile,
                                 ServerRequestCallback<Boolean> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "rpubs_is_published", htmlFile, requestCallback);
+      sendRequest(RPC_SCOPE, "rpubs_is_published", htmlFile, requestCallback); //$NON-NLS-1$
    }
 
    public void rpubsUpload(String contextId,
@@ -4395,7 +4395,7 @@ public class RemoteServer implements Server
    @Override
    public void getWordChars(ServerRequestCallback<String> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "get_word_chars", requestCallback);
+      sendRequest(RPC_SCOPE, "get_word_chars", requestCallback); //$NON-NLS-1$
    }
 
    public void addCustomDictionary(
@@ -4449,7 +4449,7 @@ public class RemoteServer implements Server
    @Override
    public void clearFindResults(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "clear_find_results", requestCallback);
+      sendRequest(RPC_SCOPE, "clear_find_results", requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -4550,7 +4550,7 @@ public class RemoteServer implements Server
    public void getBookdownFormats(
                   ServerRequestCallback<BookdownFormats> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "get_bookdown_formats", requestCallback);
+      sendRequest(RPC_SCOPE, "get_bookdown_formats", requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -4714,7 +4714,7 @@ public class RemoteServer implements Server
    public void getMemoryUsageReport(ServerRequestCallback<MemoryUsageReport> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-         "get_memory_usage_report",
+         "get_memory_usage_report", //$NON-NLS-1$
          requestCallback);
    }
 
@@ -4913,7 +4913,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONString(shinyFile));
       params.set(1, new JSONString(extendedType));
       sendRequest(RPC_SCOPE,
-            "run_shiny_background_app",
+            "run_shiny_background_app", //$NON-NLS-1$
             params,
             requestCallback);
    }
@@ -5182,7 +5182,7 @@ public class RemoteServer implements Server
       params.set(1, new JSONString(StringUtil.isNullOrEmpty(appPath) ?
             "" : appPath));
       params.set(2, new JSONString(accountName));
-      sendRequest(RPC_SCOPE, "generate_app_name", params, resultCallback);
+      sendRequest(RPC_SCOPE, "generate_app_name", params, resultCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5190,7 +5190,7 @@ public class RemoteServer implements Server
          ServerRequestCallback<JsArrayString> resultCallback)
    {
       sendRequest(RPC_SCOPE,
-                 "get_edit_published_docs",
+                 "get_edit_published_docs", //$NON-NLS-1$
                  appPath,
                  resultCallback);
    }
@@ -5199,7 +5199,7 @@ public class RemoteServer implements Server
    public void getRMarkdownContext(
                   ServerRequestCallback<RMarkdownContext> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "get_rmarkdown_context", requestCallback);
+      sendRequest(RPC_SCOPE, "get_rmarkdown_context", requestCallback); //$NON-NLS-1$
    }
 
 
@@ -5239,7 +5239,7 @@ public class RemoteServer implements Server
    public void maybeCopyWebsiteAsset(String file,
                                 ServerRequestCallback<Boolean> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "maybe_copy_website_asset", file, requestCallback);
+      sendRequest(RPC_SCOPE, "maybe_copy_website_asset", file, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5262,7 +5262,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(file));
       params.set(1, new JSONString(encoding));
-      sendRequest(RPC_SCOPE, "rmd_output_format", params, requestCallback);
+      sendRequest(RPC_SCOPE, "rmd_output_format", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5331,7 +5331,7 @@ public class RemoteServer implements Server
          ServerRequestCallback<RmdExecutionState> requestCallback)
    {
       sendRequest(RPC_SCOPE,
-                  "prepare_for_rmd_chunk_execution",
+                  "prepare_for_rmd_chunk_execution", //$NON-NLS-1$
                   id,
                   requestCallback);
    }
@@ -5348,7 +5348,7 @@ public class RemoteServer implements Server
       params.set(3, new JSONString(requestId));
       params.set(4, new JSONString(chunkId));
       sendRequest(RPC_SCOPE,
-            "refresh_chunk_output",
+            "refresh_chunk_output", //$NON-NLS-1$
             params,
             requestCallback);
    }
@@ -5369,7 +5369,7 @@ public class RemoteServer implements Server
       params.set(6, new JSONNumber(pixelWidth));
       params.set(7, new JSONNumber(charWidth));
       sendRequest(RPC_SCOPE,
-            "set_chunk_console",
+            "set_chunk_console", //$NON-NLS-1$
             params,
             requestCallback);
    }
@@ -5382,7 +5382,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(rmdPath));
       params.set(1, new JSONString(outputPath));
-      sendRequest(RPC_SCOPE, "create_notebook_from_cache", params, requestCallback);
+      sendRequest(RPC_SCOPE, "create_notebook_from_cache", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5394,7 +5394,7 @@ public class RemoteServer implements Server
       params.set(1, new JSONString(initialChunkId));
       params.set(2, new JSONNumber(pixelWidth));
       params.set(3, new JSONNumber(pixelHeight));
-      sendRequest(RPC_SCOPE, "replay_notebook_plots", params, requestCallback);
+      sendRequest(RPC_SCOPE, "replay_notebook_plots", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5406,7 +5406,7 @@ public class RemoteServer implements Server
       params.set(1, new JSONString(chunkId));
       params.set(2, new JSONNumber(pixelWidth));
       params.set(3, new JSONNumber(pixelHeight));
-      sendRequest(RPC_SCOPE, "replay_notebook_chunk_plots", params, requestCallback);
+      sendRequest(RPC_SCOPE, "replay_notebook_chunk_plots", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5416,7 +5416,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(docId));
       params.set(1, new JSONString(chunkId));
-      sendRequest(RPC_SCOPE, "clean_replay_notebook_chunk_plots", params, requestCallback);
+      sendRequest(RPC_SCOPE, "clean_replay_notebook_chunk_plots", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5435,7 +5435,7 @@ public class RemoteServer implements Server
       params.set(3, new JSONString(engine));
       params.set(4, new JSONString(code));
       params.set(5, new JSONObject(options));
-      sendRequest(RPC_SCOPE, "execute_alternate_engine_chunk", params, requestCallback);
+      sendRequest(RPC_SCOPE, "execute_alternate_engine_chunk", params, requestCallback); //$NON-NLS-1$
    }
 
    public void executeNotebookChunks(NotebookDocQueue queue,
@@ -5443,7 +5443,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONObject(queue));
-      sendRequest(RPC_SCOPE, "execute_notebook_chunks", params,
+      sendRequest(RPC_SCOPE, "execute_notebook_chunks", params, //$NON-NLS-1$
             requestCallback);
    }
 
@@ -5454,7 +5454,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONObject(unit));
       params.set(1, new JSONNumber(op));
       params.set(2, new JSONString(beforeChunkId));
-      sendRequest(RPC_SCOPE, "update_notebook_exec_queue", params,
+      sendRequest(RPC_SCOPE, "update_notebook_exec_queue", params, //$NON-NLS-1$
             requestCallback);
    }
 
@@ -5466,7 +5466,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(docId));
       params.set(1, new JSONString(chunkId));
-      sendRequest(RPC_SCOPE, "interrupt_chunk", params, requestCallback);
+      sendRequest(RPC_SCOPE, "interrupt_chunk", params, requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5498,7 +5498,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONArray(dependencies));
       params.set(1, JSONBoolean.getInstance(silentUpdate));
       sendRequest(RPC_SCOPE,
-                  "unsatisfied_dependencies",
+                  "unsatisfied_dependencies", //$NON-NLS-1$
                   params,
                   requestCallback);
    }
@@ -5513,7 +5513,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONString(StringUtil.notNull(context)));
       params.set(1, new JSONArray(dependencies));
       sendRequest(RPC_SCOPE,
-                  "install_dependencies",
+                  "install_dependencies", //$NON-NLS-1$
                   params,
                   requestCallback);
    }
@@ -5612,20 +5612,20 @@ public class RemoteServer implements Server
    @Override
    public void markersTabClosed(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "markers_tab_closed", requestCallback);
+      sendRequest(RPC_SCOPE, "markers_tab_closed", requestCallback); //$NON-NLS-1$
    }
 
    @Override
    public void updateActiveMarkerSet(String set,
                                      ServerRequestCallback<Void> callback)
    {
-      sendRequest(RPC_SCOPE, "update_active_marker_set", set, callback);
+      sendRequest(RPC_SCOPE, "update_active_marker_set", set, callback); //$NON-NLS-1$
    }
 
    @Override
    public void clearActiveMarkerSet(ServerRequestCallback<Void> requestCallback)
    {
-      sendRequest(RPC_SCOPE, "clear_active_marker_set", requestCallback);
+      sendRequest(RPC_SCOPE, "clear_active_marker_set", requestCallback); //$NON-NLS-1$
    }
 
    @Override
@@ -5704,7 +5704,7 @@ public class RemoteServer implements Server
    public void getProjectSharedUsers(
          ServerRequestCallback<JsArray<ProjectUserRole>> callback)
    {
-      sendRequest(RPC_SCOPE, "get_shared_users", callback);
+      sendRequest(RPC_SCOPE, "get_shared_users", callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5713,20 +5713,20 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONArray(users));
-      sendRequest(RPC_SCOPE, "set_shared_users", params, callback);
+      sendRequest(RPC_SCOPE, "set_shared_users", params, callback); //$NON-NLS-1$
    }
 
    @Override
    public void getAllServerUsers(ServerRequestCallback<JsArrayString> callback)
    {
-      sendRequest(RPC_SCOPE, "get_all_users", callback);
+      sendRequest(RPC_SCOPE, "get_all_users", callback); //$NON-NLS-1$
    }
 
    @Override
    public void validateSharingConfig(
          ServerRequestCallback<SharingConfigResult> callback)
    {
-      sendRequest(RPC_SCOPE, "validate_sharing_config", callback);
+      sendRequest(RPC_SCOPE, "validate_sharing_config", callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5735,7 +5735,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONNumber(maxProjects));
-      sendRequest(RPC_SCOPE, "get_shared_projects", params, callback);
+      sendRequest(RPC_SCOPE, "get_shared_projects", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5746,7 +5746,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(path));
       params.set(1, new JSONString(id));
-      sendRequest(RPC_SCOPE, "set_currently_editing", params, callback);
+      sendRequest(RPC_SCOPE, "set_currently_editing", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5756,7 +5756,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(path));
       params.set(1, new JSONString(id));
-      sendRequest(RPC_SCOPE, "report_collab_disconnected", params, callback);
+      sendRequest(RPC_SCOPE, "report_collab_disconnected", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5765,7 +5765,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(sessionId));
-      sendRequest(RPC_SCOPE, "get_project_user", params, callback);
+      sendRequest(RPC_SCOPE, "get_project_user", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -5774,7 +5774,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(sessionId));
-      sendRequest(RPC_SCOPE, "set_following_user", params, callback);
+      sendRequest(RPC_SCOPE, "set_following_user", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -6062,7 +6062,7 @@ public class RemoteServer implements Server
       params.set(0, new JSONString(id));
       params.set(1, JSONBoolean.getInstance(listening));
       params.set(2, JSONBoolean.getInstance(bypassLauncherCall));
-      sendRequest(RPC_SCOPE, "set_job_listening", params, callback);
+      sendRequest(RPC_SCOPE, "set_job_listening", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -6072,7 +6072,7 @@ public class RemoteServer implements Server
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(id));
       params.set(1, new JSONString(action));
-      sendRequest(RPC_SCOPE, "execute_job_action", params, callback);
+      sendRequest(RPC_SCOPE, "execute_job_action", params, callback); //$NON-NLS-1$
    }
 
    @Override
@@ -6081,13 +6081,13 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONObject(spec));
-      sendRequest(RPC_SCOPE, "run_script_job", params, callback);
+      sendRequest(RPC_SCOPE, "run_script_job", params, callback); //$NON-NLS-1$
    }
 
    @Override
    public void clearJobs(ServerRequestCallback<Void> callback)
    {
-      sendRequest(RPC_SCOPE, "clear_jobs", callback);
+      sendRequest(RPC_SCOPE, "clear_jobs", callback); //$NON-NLS-1$
    }
 
    @Override
@@ -6367,7 +6367,7 @@ public class RemoteServer implements Server
    @Override
    public void getInstalledFonts(ServerRequestCallback<JsArrayString> callback)
    {
-      sendRequest(RPC_SCOPE, "get_installed_fonts", callback);
+      sendRequest(RPC_SCOPE, "get_installed_fonts", callback); //$NON-NLS-1$
    }
 
    @Override
@@ -6376,7 +6376,7 @@ public class RemoteServer implements Server
    {
       JSONArray params = new JSONArray();
       params.set(0, new JSONString(StringUtil.notNull(commandId)));
-      sendRequest(RPC_SCOPE, "record_command_execution", params, callback);
+      sendRequest(RPC_SCOPE, "record_command_execution", params, callback); //$NON-NLS-1$
    }
 
    protected String clientInitId_ = "";
@@ -6397,505 +6397,505 @@ public class RemoteServer implements Server
    protected final EventBus eventBus_;
 
    // url scopes
-   protected static final String RPC_SCOPE = "rpc";
-   private static final String FILES_SCOPE = "files";
-   private static final String EVENTS_SCOPE = "events";
-   private static final String UPLOAD_SCOPE = "upload";
-   private static final String EXPORT_SCOPE = "export";
-   private static final String GRAPHICS_SCOPE = "graphics";
-   private static final String SOURCE_SCOPE = "source";
-   private static final String LOG_SCOPE = "log";
-   private static final String META_SCOPE = "meta";
-   private static final String FILE_SHOW = "file_show";
-   protected static final String JOB_LAUNCHER_RPC_SCOPE = "job_launcher_rpc";
+   protected static final String RPC_SCOPE = "rpc"; //$NON-NLS-1$
+   private static final String FILES_SCOPE = "files"; //$NON-NLS-1$
+   private static final String EVENTS_SCOPE = "events"; //$NON-NLS-1$
+   private static final String UPLOAD_SCOPE = "upload"; //$NON-NLS-1$
+   private static final String EXPORT_SCOPE = "export"; //$NON-NLS-1$
+   private static final String GRAPHICS_SCOPE = "graphics"; //$NON-NLS-1$
+   private static final String SOURCE_SCOPE = "source"; //$NON-NLS-1$
+   private static final String LOG_SCOPE = "log"; //$NON-NLS-1$
+   private static final String META_SCOPE = "meta"; //$NON-NLS-1$
+   private static final String FILE_SHOW = "file_show"; //$NON-NLS-1$
+   protected static final String JOB_LAUNCHER_RPC_SCOPE = "job_launcher_rpc"; //$NON-NLS-1$
 
    // session methods
-   private static final String CLIENT_INIT = "client_init";
-   private static final String SUSPEND_SESSION = "suspend_session";
-   private static final String HANDLE_UNSAVED_CHANGES_COMPLETED = "handle_unsaved_changes_completed";
-   private static final String QUIT_SESSION = "quit_session";
-   private static final String SUSPEND_FOR_RESTART = "suspend_for_restart";
-   private static final String PING = "ping";
-   private static final String RSTUDIOAPI_RESPONSE = "rstudioapi_response";
+   private static final String CLIENT_INIT = "client_init"; //$NON-NLS-1$
+   private static final String SUSPEND_SESSION = "suspend_session"; //$NON-NLS-1$
+   private static final String HANDLE_UNSAVED_CHANGES_COMPLETED = "handle_unsaved_changes_completed"; //$NON-NLS-1$
+   private static final String QUIT_SESSION = "quit_session"; //$NON-NLS-1$
+   private static final String SUSPEND_FOR_RESTART = "suspend_for_restart"; //$NON-NLS-1$
+   private static final String PING = "ping"; //$NON-NLS-1$
+   private static final String RSTUDIOAPI_RESPONSE = "rstudioapi_response"; //$NON-NLS-1$
 
-   private static final String SET_WORKBENCH_METRICS = "set_workbench_metrics";
-   private static final String SET_PREFS = "set_prefs";
-   private static final String SET_USER_PREFS = "set_user_prefs";
-   private static final String SET_USER_STATE = "set_user_state";
-   private static final String GET_R_PREFS = "get_r_prefs";
-   private static final String SET_CLIENT_STATE = "set_client_state";
-   private static final String USER_PROMPT_COMPLETED = "user_prompt_completed";
-   private static final String ADMIN_NOTIFICATION_ACKNOWLEDGED = "admin_notification_acknowledged";
-   private static final String GET_TERMINAL_OPTIONS = "get_terminal_options";
-   private static final String GET_TERMINAL_SHELLS = "get_terminal_shells";
-   private static final String START_TERMINAL = "start_terminal";
-   private static final String SEARCH_CODE = "search_code";
-   private static final String GET_SEARCH_PATH_FUNCTION_DEFINITION = "get_search_path_function_definition";
-   private static final String GET_METHOD_DEFINITION = "get_method_definition";
-   private static final String GET_FUNCTION_DEFINITION = "get_function_definition";
-   private static final String FIND_FUNCTION_IN_SEARCH_PATH = "find_function_in_search_path";
+   private static final String SET_WORKBENCH_METRICS = "set_workbench_metrics"; //$NON-NLS-1$
+   private static final String SET_PREFS = "set_prefs"; //$NON-NLS-1$
+   private static final String SET_USER_PREFS = "set_user_prefs"; //$NON-NLS-1$
+   private static final String SET_USER_STATE = "set_user_state"; //$NON-NLS-1$
+   private static final String GET_R_PREFS = "get_r_prefs"; //$NON-NLS-1$
+   private static final String SET_CLIENT_STATE = "set_client_state"; //$NON-NLS-1$
+   private static final String USER_PROMPT_COMPLETED = "user_prompt_completed"; //$NON-NLS-1$
+   private static final String ADMIN_NOTIFICATION_ACKNOWLEDGED = "admin_notification_acknowledged"; //$NON-NLS-1$
+   private static final String GET_TERMINAL_OPTIONS = "get_terminal_options"; //$NON-NLS-1$
+   private static final String GET_TERMINAL_SHELLS = "get_terminal_shells"; //$NON-NLS-1$
+   private static final String START_TERMINAL = "start_terminal"; //$NON-NLS-1$
+   private static final String SEARCH_CODE = "search_code"; //$NON-NLS-1$
+   private static final String GET_SEARCH_PATH_FUNCTION_DEFINITION = "get_search_path_function_definition"; //$NON-NLS-1$
+   private static final String GET_METHOD_DEFINITION = "get_method_definition"; //$NON-NLS-1$
+   private static final String GET_FUNCTION_DEFINITION = "get_function_definition"; //$NON-NLS-1$
+   private static final String FIND_FUNCTION_IN_SEARCH_PATH = "find_function_in_search_path"; //$NON-NLS-1$
 
-   private static final String CONSOLE_INPUT = "console_input";
-   private static final String RESET_CONSOLE_ACTIONS = "reset_console_actions";
-   private static final String INTERRUPT = "interrupt";
-   private static final String ABORT = "abort";
-   private static final String ADAPT_TO_LANGUAGE = "adapt_to_language";
-   private static final String EXECUTE_CODE = "execute_code";
+   private static final String CONSOLE_INPUT = "console_input"; //$NON-NLS-1$
+   private static final String RESET_CONSOLE_ACTIONS = "reset_console_actions"; //$NON-NLS-1$
+   private static final String INTERRUPT = "interrupt"; //$NON-NLS-1$
+   private static final String ABORT = "abort"; //$NON-NLS-1$
+   private static final String ADAPT_TO_LANGUAGE = "adapt_to_language"; //$NON-NLS-1$
+   private static final String EXECUTE_CODE = "execute_code"; //$NON-NLS-1$
    private static final String GET_DPLYR_JOIN_COMPLETIONS_STRING =
-         "get_dplyr_join_completions_string";
-   private static final String GET_DPLYR_JOIN_COMPLETIONS = "get_dplyr_join_completions";
-   private static final String GET_ARGS = "get_args";
-   private static final String EXTRACT_CHUNK_OPTIONS = "extract_chunk_options";
-   private static final String EXECUTE_USER_COMMAND = "execute_user_command";
-   private static final String GET_COMPLETIONS = "get_completions";
-   private static final String IS_FUNCTION = "is_function";
-   private static final String GET_HELP_AT_CURSOR = "get_help_at_cursor";
-
-   private static final String PROCESS_START = "process_start";
-   private static final String PROCESS_INTERRUPT = "process_interrupt";
-   private static final String PROCESS_REAP = "process_reap";
-   private static final String PROCESS_WRITE_STDIN = "process_write_stdin";
-   private static final String PROCESS_SET_SIZE = "process_set_size";
-   private static final String PROCESS_SET_CAPTION = "process_set_caption";
-   private static final String PROCESS_SET_TITLE = "process_set_title";
-   private static final String PROCESS_ERASE_BUFFER = "process_erase_buffer";
-   private static final String PROCESS_GET_BUFFER_CHUNK = "process_get_buffer_chunk";
-   private static final String PROCESS_GET_BUFFER = "process_get_buffer";
-   private static final String PROCESS_USE_RPC = "process_use_rpc";
-   private static final String PROCESS_TEST_EXISTS = "process_test_exists";
-   private static final String PROCESS_NOTIFY_VISIBLE = "process_notify_visible";
-   private static final String PROCESS_INTERRUPT_CHILD = "process_interrupt_child";
-
-   private static final String REMOVE_ALL_OBJECTS = "remove_all_objects";
-   private static final String REMOVE_OBJECTS = "remove_objects";
-   private static final String DOWNLOAD_DATA_FILE = "download_data_file";
-   private static final String GET_DATA_PREVIEW = "get_data_preview";
-   private static final String GET_OUTPUT_PREVIEW = "get_output_preview";
-
-   private static final String PREVIEW_SQL = "preview_sql";
-
-   private static final String EDIT_COMPLETED = "edit_completed";
-   private static final String CHOOSE_FILE_COMPLETED = "choose_file_completed";
-   private static final String OPEN_FILE_DIALOG_COMPLETED = "open_file_dialog_completed";
-
-   private static final String GET_PACKAGE_STATE = "get_package_state";
-   private static final String AVAILABLE_PACKAGES = "available_packages";
-   private static final String CHECK_FOR_PACKAGE_UPDATES = "check_for_package_updates";
-   private static final String INIT_DEFAULT_USER_LIBRARY = "init_default_user_library";
-   private static final String LOADED_PACKAGE_UPDATES_REQUIRED = "loaded_package_updates_required";
-   private static final String IGNORE_NEXT_LOADED_PACKAGE_CHECK = "ignore_next_loaded_package_check";
-   private static final String GET_PACKAGE_NEWS_URL = "get_package_news_url";
-   private static final String GET_PACKAGE_INSTALL_CONTEXT = "get_package_install_context";
-   private static final String IS_PACKAGE_LOADED = "is_package_loaded";
-   private static final String IS_PACKAGE_INSTALLED = "is_package_installed";
-   private static final String SET_CRAN_MIRROR = "set_cran_mirror";
-   private static final String GET_CRAN_MIRRORS = "get_cran_mirrors";
-   private static final String GET_CRAN_ACTIVES = "get_cran_actives";
-   private static final String PACKAGE_SKELETON = "package_skeleton";
-   private static final String DISCOVER_PACKAGE_DEPENDENCIES = "discover_package_dependencies";
-
-   private static final String GET_HELP = "get_help";
-   private static final String SHOW_HELP_TOPIC = "show_help_topic";
-   private static final String SEARCH = "search";
-   private static final String GET_CUSTOM_HELP = "get_custom_help";
-   private static final String GET_CUSTOM_PARAMETER_HELP = "get_custom_parameter_help";
-   private static final String SHOW_CUSTOM_HELP_TOPIC = "show_custom_help_topic";
-
-   private static final String STAT = "stat";
-   private static final String IS_TEXT_FILE = "is_text_file";
-   private static final String IS_GIT_DIRECTORY = "is_git_directory";
-   private static final String IS_PACKAGE_DIRECTORY = "is_package_directory";
-   private static final String LIST_FILES = "list_files";
-   private static final String LIST_ALL_FILES = "list_all_files";
-   private static final String CREATE_FOLDER = "create_folder";
-   private static final String DELETE_FILES = "delete_files";
-   private static final String COPY_FILE = "copy_file";
-   private static final String MOVE_FILES = "move_files";
-   private static final String RENAME_FILE = "rename_file";
-   private static final String COMPLETE_UPLOAD = "complete_upload";
-
-   private static final String NEXT_PLOT = "next_plot";
-   private static final String PREVIOUS_PLOT = "previous_plot";
-   private static final String REMOVE_PLOT = "remove_plot";
-   private static final String CLEAR_PLOTS = "clear_plots";
-   private static final String REFRESH_PLOT = "refresh_plot";
-   private static final String SAVE_PLOT_AS = "save_plot_as";
-   private static final String SAVE_PLOT_AS_PDF = "save_plot_as_pdf";
-   private static final String COPY_PLOT_TO_CLIPBOARD_METAFILE = "copy_plot_to_clipboard_metafile";
-   private static final String COPY_PLOT_TO_COCOA_PASTEBOARD = "copy_plot_to_cocoa_pasteboard";
-   private static final String GET_UNIQUE_SAVE_PLOT_STEM = "get_unique_save_plot_stem";
-   private static final String GET_SAVE_PLOT_CONTEXT = "get_save_plot_context";
-   private static final String LOCATOR_COMPLETED = "locator_completed";
-   private static final String SET_MANIPULATOR_VALUES = "set_manipulator_values";
-   private static final String MANIPULATOR_PLOT_CLICKED = "manipulator_plot_clicked";
-
-   private static final String EXECUTE_R_CODE = "execute_r_code";
-
-   private static final String GET_NEW_PROJECT_CONTEXT = "get_new_project_context";
-   private static final String GET_NEW_SESSION_URL = "get_new_session_url";
-   private static final String GET_ACTIVE_SESSIONS = "get_active_sessions";
-   private static final String SET_SESSION_LABEL = "set_session_label";
-   private static final String DELETE_SESSION_DIR = "delete_session_dir";
-   private static final String GET_AVAILABLE_R_VERSIONS = "get_available_r_versions";
-   private static final String CREATE_PROJECT = "create_project";
-   private static final String CREATE_PROJECT_FILE = "create_project_file";
-   private static final String GET_PROJECT_TEMPLATE_REGISTRY = "get_project_template_registry";
-   private static final String EXECUTE_PROJECT_TEMPLATE = "execute_project_template";
-   private static final String READ_PROJECT_OPTIONS = "read_project_options";
-   private static final String WRITE_PROJECT_OPTIONS = "write_project_options";
-   private static final String WRITE_PROJECT_CONFIG = "write_project_config";
-   private static final String WRITE_PROJECT_VCS_OPTIONS = "write_project_vcs_options";
-
-   private static final String NEW_DOCUMENT = "new_document";
-   private static final String OPEN_DOCUMENT = "open_document";
-   private static final String SAVE_DOCUMENT = "save_document";
-   private static final String SAVE_DOCUMENT_DIFF = "save_document_diff";
-   private static final String CHECK_FOR_EXTERNAL_EDIT = "check_for_external_edit";
-   private static final String IGNORE_EXTERNAL_EDIT = "ignore_external_edit";
-   private static final String CLOSE_DOCUMENT = "close_document";
-   private static final String CLOSE_ALL_DOCUMENTS = "close_all_documents";
-   private static final String GET_SOURCE_TEMPLATE = "get_source_template";
-   private static final String CREATE_RD_SHELL = "create_rd_shell";
-   private static final String SET_SOURCE_DOCUMENT_ON_SAVE = "set_source_document_on_save";
-   private static final String SAVE_ACTIVE_DOCUMENT = "save_active_document";
-   private static final String REQUEST_DOCUMENT_SAVE_COMPLETED = "request_document_save_completed";
-   private static final String REQUEST_DOCUMENT_CLOSE_COMPLETED = "request_document_close_completed";
-   private static final String MODIFY_DOCUMENT_PROPERTIES = "modify_document_properties";
-   private static final String GET_DOCUMENT_PROPERTIES = "get_document_properties";
-   private static final String REVERT_DOCUMENT = "revert_document";
-   private static final String REOPEN_WITH_ENCODING = "reopen_with_encoding";
-   private static final String REMOVE_CONTENT_URL = "remove_content_url";
-   private static final String DETECT_FREE_VARS = "detect_free_vars";
-   private static final String ICONVLIST = "iconvlist";
-   private static final String GET_TEX_CAPABILITIES = "get_tex_capabilities";
-   private static final String GET_CHUNK_OPTIONS = "get_chunk_options";
-   private static final String SET_DOC_ORDER = "set_doc_order";
-   private static final String REMOVE_CACHED_DATA = "remove_cached_data";
-   private static final String ENSURE_FILE_EXISTS = "ensure_file_exists";
-   private static final String GET_SOURCE_DOCUMENT = "get_source_document";
-
-   private static final String EXPLORER_INSPECT_OBJECT = "explorer_inspect_object";
-   private static final String EXPLORER_BEGIN_INSPECT = "explorer_begin_inspect";
-   private static final String EXPLORER_END_INSPECT = "explorer_end_inspect";
-
-   private static final String GET_EDITOR_CONTEXT_COMPLETED = "get_editor_context_completed";
-
-   private static final String GET_RECENT_HISTORY = "get_recent_history";
-   private static final String GET_HISTORY_ITEMS = "get_history_items";
-   private static final String REMOVE_HISTORY_ITEMS = "remove_history_items";
-   private static final String CLEAR_HISTORY = "clear_history";
-   private static final String GET_HISTORY_ARCHIVE_ITEMS = "get_history_archive_items";
-   private static final String SEARCH_HISTORY = "search_history";
-   private static final String SEARCH_HISTORY_ARCHIVE = "search_history_archive";
-   private static final String SEARCH_HISTORY_ARCHIVE_BY_PREFIX = "search_history_archive_by_prefix";
-
-   private static final String VCS_CLONE = "vcs_clone";
-
-   private static final String GIT_ADD = "git_add";
-   private static final String GIT_REMOVE = "git_remove";
-   private static final String GIT_DISCARD = "git_discard";
-   private static final String GIT_REVERT = "git_revert";
-   private static final String GIT_STAGE = "git_stage";
-   private static final String GIT_UNSTAGE = "git_unstage";
-   private static final String GIT_ALL_STATUS = "git_all_status";
-   private static final String GIT_FULL_STATUS = "git_full_status";
-   private static final String GIT_CREATE_BRANCH = "git_create_branch";
-   private static final String GIT_LIST_BRANCHES = "git_list_branches";
-   private static final String GIT_LIST_REMOTES = "git_list_remotes";
-   private static final String GIT_ADD_REMOTE = "git_add_remote";
-   private static final String GIT_CHECKOUT = "git_checkout";
-   private static final String GIT_CHECKOUT_REMOTE = "git_checkout_remote";
-   private static final String GIT_COMMIT = "git_commit";
-   private static final String GIT_PUSH = "git_push";
-   private static final String GIT_PUSH_BRANCH = "git_push_branch";
-   private static final String GIT_PULL = "git_pull";
-   private static final String GIT_PULL_REBASE = "git_pull_rebase";
-   private static final String ASKPASS_COMPLETED = "askpass_completed";
-   private static final String CREATE_SSH_KEY = "create_ssh_key";
-   private static final String GIT_SSH_PUBLIC_KEY = "git_ssh_public_key";
-   private static final String GIT_HAS_REPO = "git_has_repo";
-   private static final String GIT_INIT_REPO = "git_init_repo";
-   private static final String GIT_GET_IGNORES = "git_get_ignores";
-   private static final String GIT_SET_IGNORES = "git_set_ignores";
-   private static final String GIT_GITHUB_REMOTE_URL = "git_github_remote_url";
-   private static final String GIT_DIFF_FILE = "git_diff_file";
-   private static final String GIT_APPLY_PATCH = "git_apply_patch";
-   private static final String GIT_HISTORY_COUNT = "git_history_count";
-   private static final String GIT_HISTORY = "git_history";
-   private static final String GIT_SHOW = "git_show";
-   private static final String GIT_SHOW_FILE = "git_show_file";
-   private static final String GIT_EXPORT_FILE = "git_export_file";
-
-   private static final String SVN_ADD = "svn_add";
-   private static final String SVN_DELETE = "svn_delete";
-   private static final String SVN_REVERT = "svn_revert";
-   private static final String SVN_RESOLVE = "svn_resolve";
-   private static final String SVN_STATUS = "svn_status";
-   private static final String SVN_UPDATE = "svn_update";
-   private static final String SVN_CLEANUP = "svn_cleanup";
-   private static final String SVN_COMMIT = "svn_commit";
-   private static final String SVN_DIFF_FILE = "svn_diff_file";
-   private static final String SVN_APPLY_PATCH = "svn_apply_patch";
-   private static final String SVN_HISTORY_COUNT = "svn_history_count";
-   private static final String SVN_HISTORY = "svn_history";
-   private static final String SVN_SHOW = "svn_show";
-   private static final String SVN_SHOW_FILE = "svn_show_file";
-   private static final String SVN_GET_IGNORES = "svn_get_ignores";
-   private static final String SVN_SET_IGNORES = "svn_set_ignores";
-
-   private static final String GET_PUBLIC_KEY = "get_public_key";
-
-   private static final String LIST_GET = "list_get";
-   private static final String LIST_SET_CONTENTS = "list_set_contents";
-   private static final String LIST_PREPEND_ITEM = "list_prepend_item";
-   private static final String LIST_APPEND_ITEM = "list_append_item";
-   private static final String LIST_REMOVE_ITEM = "list_remove_item";
-   private static final String LIST_CLEAR = "list_clear";
-
-   private static final String PREVIEW_HTML = "preview_html";
-   private static final String TERMINATE_PREVIEW_HTML = "terminate_preview_html";
-   private static final String GET_HTML_CAPABILITIES = "get_html_capabilities";
-   private static final String RPUBS_UPLOAD = "rpubs_upload";
-   private static final String RPUBS_TERMINATE_UPLOAD = "terminate_rpubs_upload";
-
-   private static final String SET_WORKING_DIRECTORY = "set_working_directory";
-   private static final String CREATE_STANDALONE_PRESENTATION = "create_standalone_presentation";
-   private static final String CREATE_DESKTOP_VIEW_IN_BROWSER_PRESENTATION = "create_desktop_view_in_browser_presentation";
-   private static final String CREATE_PRESENTATION_RPUBS_SOURCE = "create_presentation_rpubs_source";
-   private static final String SET_PRESENTATION_SLIDE_INDEX = "set_presentation_slide_index";
-   private static final String PRESENTATION_EXECUTE_CODE = "presentation_execute_code";
-   private static final String CREATE_NEW_PRESENTATION = "create_new_presentation";
-   private static final String SHOW_PRESENTATION_PANE = "show_presentation_pane";
-   private static final String CLOSE_PRESENTATION_PANE = "close_presentation_pane";
-
-   private static final String TUTORIAL_QUIZ_RESPONSE = "tutorial_quiz_response";
-
-   private static final String TUTORIAL_STARTED = "tutorial_started";
-   private static final String TUTORIAL_STOP = "tutorial_stop";
-   private static final String TUTORIAL_METADATA = "tutorial_metadata";
-
-   private static final String GET_SLIDE_NAVIGATION_FOR_FILE = "get_slide_navigation_for_file";
-   private static final String GET_SLIDE_NAVIGATION_FOR_CODE = "get_slide_navigation_for_code";
-   private static final String CLEAR_PRESENTATION_CACHE = "clear_presentation_cache";
-
-   private static final String COMPILE_PDF = "compile_pdf";
-   private static final String IS_COMPILE_PDF_RUNNING = "is_compile_pdf_running";
-   private static final String TERMINATE_COMPILE_PDF = "terminate_compile_pdf";
-   private static final String COMPILE_PDF_CLOSED = "compile_pdf_closed";
-
-   private static final String SYNCTEX_FORWARD_SEARCH = "synctex_forward_search";
-   private static final String SYNCTEX_INVERSE_SEARCH = "synctex_inverse_search";
-   private static final String APPLY_FORWARD_CONCORDANCE = "apply_forward_concordance";
-   private static final String APPLY_INVERSE_CONCORDANCE = "apply_inverse_concordance";
-
-   private static final String CHECK_SPELLING = "check_spelling";
-   private static final String SUGGESTION_LIST = "suggestion_list";
-   private static final String ADD_CUSTOM_DICTIONARY = "add_custom_dictionary";
-   private static final String REMOVE_CUSTOM_DICTIONARY = "remove_custom_dictionary";
-   private static final String INSTALL_ALL_DICTIONARIES = "install_all_dictionaries";
-
-   private static final String BEGIN_FIND = "begin_find";
-   private static final String STOP_FIND = "stop_find";
-
-   private static final String PREVIEW_REPLACE = "preview_replace";
-   private static final String COMPLETE_REPLACE = "complete_replace";
-   private static final String STOP_REPLACE = "stop_replace";
-
-   private static final String GET_CPP_COMPLETIONS = "get_cpp_completions";
-   private static final String GET_CPP_DIAGNOSTICS = "get_cpp_diagnostics";
-
-   private static final String MARKDOWN_GET_COMPLETIONS = "markdown_get_completions";
-
-   private static final String PYTHON_ACTIVE_INTERPRETER = "python_active_interpreter";
-   private static final String PYTHON_FIND_INTERPRETERS = "python_find_interpreters";
-   private static final String PYTHON_INTERPRETER_INFO = "python_interpreter_info";
-   private static final String PYTHON_GET_COMPLETIONS = "python_get_completions";
-   private static final String PYTHON_GO_TO_DEFINITION = "python_go_to_definition";
-   private static final String PYTHON_GO_TO_HELP = "python_go_to_help";
-
-   private static final String STAN_GET_COMPLETIONS = "stan_get_completions";
-   private static final String STAN_GET_ARGUMENTS = "stan_get_arguments";
-   private static final String STAN_RUN_DIAGNOSTICS = "stan_run_diagnostics";
-
-   private static final String SQL_GET_COMPLETIONS = "sql_get_completions";
-
-   private static final String GET_CPP_CAPABILITIES = "get_cpp_capabilities";
-   private static final String INSTALL_BUILD_TOOLS = "install_build_tools";
-   private static final String START_BUILD = "start_build";
-   private static final String TERMINATE_BUILD = "terminate_build";
-   private static final String DEVTOOLS_LOAD_ALL_PATH = "devtools_load_all_path";
-
-   private static final String LIST_ENVIRONMENT = "list_environment";
-   private static final String SET_CONTEXT_DEPTH = "set_context_depth";
-   private static final String SET_ENVIRONMENT = "set_environment";
-   private static final String SET_ENVIRONMENT_FRAME = "set_environment_frame";
-   private static final String GET_ENVIRONMENT_NAMES = "get_environment_names";
-   private static final String GET_ENVIRONMENT_STATE = "get_environment_state";
-   private static final String GET_OBJECT_CONTENTS = "get_object_contents";
-   private static final String REQUERY_CONTEXT = "requery_context";
-   private static final String ENVIRONMENT_SET_LANGUAGE = "environment_set_language";
-   private static final String SET_ENVIRONMENT_MONITORING = "set_environment_monitoring";
-   private static final String IS_FUNCTION_MASKED = "is_function_masked";
-
-   private static final String GET_FUNCTION_STEPS = "get_function_steps";
-   private static final String SET_FUNCTION_BREAKPOINTS = "set_function_breakpoints";
-   private static final String GET_FUNCTION_STATE = "get_function_state";
-   private static final String EXECUTE_DEBUG_SOURCE = "execute_debug_source";
-   private static final String SET_ERROR_MANAGEMENT_TYPE = "set_error_management_type";
-   private static final String UPDATE_BREAKPOINTS = "update_breakpoints";
-   private static final String REMOVE_ALL_BREAKPOINTS = "remove_all_breakpoints";
-
-   private static final String LOG = "log";
-   private static final String LOG_EXCEPTION = "log_exception";
-
-   private static final String GET_INIT_MESSAGES = "get_init_messages";
-
-   private static final String CHECK_FOR_UPDATES = "check_for_updates";
-   private static final String GET_PRODUCT_INFO = "get_product_info";
-   private static final String GET_PRODUCT_NOTICE = "get_product_notice";
-
-   private static final String GET_R_ADDINS = "get_r_addins";
-   private static final String PREPARE_FOR_ADDIN = "prepare_for_addin";
-   private static final String EXECUTE_R_ADDIN = "execute_r_addin";
-
-   private static final String CREATE_SHINY_APP = "create_shiny_app";
-   private static final String GET_SHINY_VIEWER_TYPE = "get_shiny_viewer_type";
-   private static final String GET_SHINY_RUN_CMD = "get_shiny_run_cmd";
-   private static final String SET_SHINY_VIEWER_TYPE = "set_shiny_viewer_type";
-
-   private static final String CREATE_PLUMBER_API = "create_plumber_api";
-   private static final String GET_PLUMBER_VIEWER_TYPE = "get_plumber_viewer_type";
-   private static final String GET_PLUMBER_RUN_CMD = "get_plumber_run_cmd";
-
-   private static final String GET_RSCONNECT_ACCOUNT_LIST = "get_rsconnect_account_list";
-   private static final String REMOVE_RSCONNECT_ACCOUNT = "remove_rsconnect_account";
-   private static final String CONNECT_RSCONNECT_ACCOUNT = "connect_rsconnect_account";
-   private static final String GET_RSCONNECT_APP_LIST = "get_rsconnect_app_list";
-   private static final String GET_RSCONNECT_APP = "get_rsconnect_app";
-   private static final String GET_RSCONNECT_DEPLOYMENTS = "get_rsconnect_deployments";
-   private static final String FORGET_RSCONNECT_DEPLOYMENTS = "forget_rsconnect_deployments";
-   private static final String RSCONNECT_PUBLISH = "rsconnect_publish";
-   private static final String CANCEL_PUBLISH = "cancel_publish";
-   private static final String GET_DEPLOYMENT_FILES = "get_deployment_files";
-   private static final String VALIDATE_SERVER_URL = "validate_server_url";
-   private static final String GET_SERVER_URLS = "get_server_urls";
-   private static final String GET_AUTH_TOKEN = "get_auth_token";
-   private static final String GET_USER_FROM_TOKEN = "get_user_from_token";
-   private static final String REGISTER_USER_TOKEN = "register_user_token";
-   private static final String GET_RSCONNECT_LINT_RESULTS = "get_rsconnect_lint_results";
-   private static final String GET_RMD_PUBLISH_DETAILS = "get_rmd_publish_details";
-   private static final String HAS_ORPHANED_ACCOUNTS = "has_orphaned_accounts";
-
-   private static final String RENDER_RMD = "render_rmd";
-   private static final String RENDER_RMD_SOURCE = "render_rmd_source";
-   private static final String TERMINATE_RENDER_RMD = "terminate_render_rmd";
-   private static final String CONVERT_TO_YAML = "convert_to_yaml";
-   private static final String CONVERT_FROM_YAML = "convert_from_yaml";
-   private static final String CREATE_RMD_FROM_TEMPLATE = "create_rmd_from_template";
-   private static final String GET_RMD_TEMPLATE = "get_rmd_template";
-   private static final String GET_RMD_TEMPLATES = "get_rmd_templates";
-   private static final String GET_RMD_OUTPUT_INFO = "get_rmd_output_info";
-   private static final String RMD_IMPORT_IMAGES = "rmd_import_images";
-
-   private static final String GET_PACKRAT_PREREQUISITES = "get_packrat_prerequisites";
-   private static final String INSTALL_PACKRAT = "install_packrat";
-   private static final String GET_PACKRAT_CONTEXT = "get_packrat_context";
-   private static final String GET_PACKRAT_STATUS = "get_packrat_status";
-   private static final String PACKRAT_BOOTSTRAP = "packrat_bootstrap";
-   private static final String GET_PENDING_ACTIONS = "get_pending_actions";
-   private static final String GET_PACKRAT_ACTIONS = "get_packrat_actions";
-
-   private static final String RENV_INIT = "renv_init";
-   private static final String RENV_ACTIONS = "renv_actions";
-
-   private static final String LINT_R_SOURCE_DOCUMENT = "lint_r_source_document";
-   private static final String ANALYZE_PROJECT = "analyze_project";
-
-   private static final String GET_SET_CLASS_CALL = "get_set_class_slots";
-   private static final String GET_SET_GENERIC_CALL = "get_set_generic_call";
-   private static final String GET_SET_METHOD_CALL = "get_set_method_call";
-   private static final String GET_SET_REF_CLASS_CALL = "get_set_ref_class_call";
-   private static final String TRANSFORM_SNIPPET = "transform_snippet";
-   private static final String GET_SNIPPETS = "get_snippets";
-
-   private static final String PREVIEW_DATA_IMPORT = "preview_data_import";
-   private static final String ASSEMBLE_DATA_IMPORT = "assemble_data_import";
-   private static final String PREVIEW_DATA_IMPORT_ASYNC = "preview_data_import_async";
-   private static final String PREVIEW_DATA_IMPORT_ASYNC_ABORT = "preview_data_import_async_abort";
-   private static final String PREVIEW_DATA_IMPORT_CLEAN = "preview_data_import_clean";
-
-   private static final String START_PROFILING = "start_profiling";
-   private static final String STOP_PROFILING = "stop_profiling";
-   private static final String OPEN_PROFILE = "open_profile";
-   private static final String COPY_PROFILE = "copy_profile";
-   private static final String CLEAR_PROFILE = "clear_profile";
-   private static final String PROFILE_SOURCES = "profile_sources";
-
-   private static final String REMOVE_CONNECTION = "remove_connection";
-   private static final String CONNECTION_DISCONNECT = "connection_disconnect";
-   private static final String CONNECTION_EXECUTE_ACTION = "connection_execute_action";
-   private static final String CONNECTION_LIST_OBJECTS = "connection_list_objects";
-   private static final String CONNECTION_LIST_FIELDS = "connection_list_fields";
-   private static final String CONNECTION_PREVIEW_OBJECT = "connection_preview_object";
-   private static final String CONNECTION_TEST = "connection_test";
-   private static final String GET_NEW_CONNECTION_CONTEXT = "get_new_connection_context";
-   private static final String INSTALL_SPARK = "install_spark";
-
-   private static final String SQL_CHUNK_DEFAULT_CONNECTION = "default_sql_connection_name";
-
-   private static final String LAUNCH_EMBEDDED_SHINY_CONNECTION_UI = "launch_embedded_shiny_connection_ui";
-   private static final String RSTUDIOAPI_SHOW_DIALOG_COMPLETED = "rstudioapi_show_dialog_completed";
-
-   private static final String STOP_SHINY_APP = "stop_shiny_app";
-
-   private static final String CONNECTION_ADD_PACKAGE = "connection_add_package";
-
-   private static final String ASKSECRET_COMPLETED = "asksecret_completed";
-   private static final String INSTALL_ODBC_DRIVER = "install_odbc_driver";
-   private static final String GET_NEW_ODBC_CONNECTION_CONTEXT = "get_new_odbc_connection_context";
-   private static final String UNINSTALL_ODBC_DRIVER = "uninstall_odbc_driver";
-   private static final String UPDATE_ODBC_INSTALLERS = "update_odbc_installers";
-
-   private static final String HAS_SHINYTEST_HAS_DEPENDENCIES = "has_shinytest_dependencies";
-   private static final String INSTALL_SHINYTEST_DEPENDENCIES = "install_shinytest_dependencies";
-   private static final String HAS_SHINYTEST_RESULTS = "has_shinytest_results";
-
-   private static final String GET_SECONDARY_REPOS = "get_secondary_repos";
-   private static final String VALIDATE_CRAN_REPO = "validate_cran_repo";
-
-   private static final String GET_THEMES = "get_themes";
-   private static final String ADD_THEME = "add_theme";
-   private static final String REMOVE_THEME = "remove_theme";
-   private static final String GET_THEME_NAME = "get_theme_name";
-   private static final String SET_COMPUTED_THEME_COLORS = "set_computed_theme_colors";
-
-   private static final String REPLACE_COMMENT_HEADER = "replace_comment_header";
-   private static final String SET_USER_CRASH_HANDLER_PROMPTED = "set_user_crash_handler_prompted";
-
-   private static final String PANDOC_GET_CAPABILITIES = "pandoc_get_capabilities";
-   private static final String PANDOC_AST_TO_MARKDOWN = "pandoc_ast_to_markdown";
-   private static final String PANDOC_MARKDOWN_TO_AST = "pandoc_markdown_to_ast";
-   private static final String PANDOC_LIST_EXTENSIONS = "pandoc_list_extensions";
-   private static final String PANDOC_GET_BIBLIOGRAPHY = "pandoc_get_bibliography";
-   private static final String PANDOC_ADD_TO_BIBLIOGRAPHY = "pandoc_add_to_bibliography";
-   private static final String PANDOC_CITATION_HTML = "pandoc_citation_html";
-
-   private static final String CROSSREF_WORKS = "crossref_works";
-
-   private static final String PUBMED_SEARCH = "pubmed_search";
-
-   private static final String DATACITE_SEARCH = "datacite_search";
-
-   private static final String ZOTERO_GET_COLLECTIONS = "zotero_get_collections";
-   private static final String ZOTERO_GET_LIBRARY_NAMES = "zotero_get_library_names";
-   private static final String ZOTERO_GET_ACTIVE_COLLECTIONSPECS = "zotero_get_active_collection_specs";
-   private static final String ZOTERO_VALIDATE_WEB_API_KEY = "zotero_validate_web_api_key";
-   private static final String ZOTERO_DETECT_LOCAL_CONFIG = "zotero_detect_local_config";
-   private static final String ZOTERO_BETTER_BIBTEX_EXPORT = "zotero_better_bibtex_export";
-
-   private static final String DOI_FETCH_CSL = "doi_fetch_csl";
-
-   private static final String XREF_INDEX_FOR_FILE = "xref_index_for_file";
-   private static final String XREF_FOR_ID = "xref_for_id";
+         "get_dplyr_join_completions_string"; //$NON-NLS-1$
+   private static final String GET_DPLYR_JOIN_COMPLETIONS = "get_dplyr_join_completions"; //$NON-NLS-1$
+   private static final String GET_ARGS = "get_args"; //$NON-NLS-1$
+   private static final String EXTRACT_CHUNK_OPTIONS = "extract_chunk_options"; //$NON-NLS-1$
+   private static final String EXECUTE_USER_COMMAND = "execute_user_command"; //$NON-NLS-1$
+   private static final String GET_COMPLETIONS = "get_completions"; //$NON-NLS-1$
+   private static final String IS_FUNCTION = "is_function"; //$NON-NLS-1$
+   private static final String GET_HELP_AT_CURSOR = "get_help_at_cursor"; //$NON-NLS-1$
+
+   private static final String PROCESS_START = "process_start"; //$NON-NLS-1$
+   private static final String PROCESS_INTERRUPT = "process_interrupt"; //$NON-NLS-1$
+   private static final String PROCESS_REAP = "process_reap"; //$NON-NLS-1$
+   private static final String PROCESS_WRITE_STDIN = "process_write_stdin"; //$NON-NLS-1$
+   private static final String PROCESS_SET_SIZE = "process_set_size"; //$NON-NLS-1$
+   private static final String PROCESS_SET_CAPTION = "process_set_caption"; //$NON-NLS-1$
+   private static final String PROCESS_SET_TITLE = "process_set_title"; //$NON-NLS-1$
+   private static final String PROCESS_ERASE_BUFFER = "process_erase_buffer"; //$NON-NLS-1$
+   private static final String PROCESS_GET_BUFFER_CHUNK = "process_get_buffer_chunk"; //$NON-NLS-1$
+   private static final String PROCESS_GET_BUFFER = "process_get_buffer"; //$NON-NLS-1$
+   private static final String PROCESS_USE_RPC = "process_use_rpc"; //$NON-NLS-1$
+   private static final String PROCESS_TEST_EXISTS = "process_test_exists"; //$NON-NLS-1$
+   private static final String PROCESS_NOTIFY_VISIBLE = "process_notify_visible"; //$NON-NLS-1$
+   private static final String PROCESS_INTERRUPT_CHILD = "process_interrupt_child"; //$NON-NLS-1$
+
+   private static final String REMOVE_ALL_OBJECTS = "remove_all_objects"; //$NON-NLS-1$
+   private static final String REMOVE_OBJECTS = "remove_objects"; //$NON-NLS-1$
+   private static final String DOWNLOAD_DATA_FILE = "download_data_file"; //$NON-NLS-1$
+   private static final String GET_DATA_PREVIEW = "get_data_preview"; //$NON-NLS-1$
+   private static final String GET_OUTPUT_PREVIEW = "get_output_preview"; //$NON-NLS-1$
+
+   private static final String PREVIEW_SQL = "preview_sql"; //$NON-NLS-1$
+
+   private static final String EDIT_COMPLETED = "edit_completed"; //$NON-NLS-1$
+   private static final String CHOOSE_FILE_COMPLETED = "choose_file_completed"; //$NON-NLS-1$
+   private static final String OPEN_FILE_DIALOG_COMPLETED = "open_file_dialog_completed"; //$NON-NLS-1$
+
+   private static final String GET_PACKAGE_STATE = "get_package_state"; //$NON-NLS-1$
+   private static final String AVAILABLE_PACKAGES = "available_packages"; //$NON-NLS-1$
+   private static final String CHECK_FOR_PACKAGE_UPDATES = "check_for_package_updates"; //$NON-NLS-1$
+   private static final String INIT_DEFAULT_USER_LIBRARY = "init_default_user_library"; //$NON-NLS-1$
+   private static final String LOADED_PACKAGE_UPDATES_REQUIRED = "loaded_package_updates_required"; //$NON-NLS-1$
+   private static final String IGNORE_NEXT_LOADED_PACKAGE_CHECK = "ignore_next_loaded_package_check"; //$NON-NLS-1$
+   private static final String GET_PACKAGE_NEWS_URL = "get_package_news_url"; //$NON-NLS-1$
+   private static final String GET_PACKAGE_INSTALL_CONTEXT = "get_package_install_context"; //$NON-NLS-1$
+   private static final String IS_PACKAGE_LOADED = "is_package_loaded"; //$NON-NLS-1$
+   private static final String IS_PACKAGE_INSTALLED = "is_package_installed"; //$NON-NLS-1$
+   private static final String SET_CRAN_MIRROR = "set_cran_mirror"; //$NON-NLS-1$
+   private static final String GET_CRAN_MIRRORS = "get_cran_mirrors"; //$NON-NLS-1$
+   private static final String GET_CRAN_ACTIVES = "get_cran_actives"; //$NON-NLS-1$
+   private static final String PACKAGE_SKELETON = "package_skeleton"; //$NON-NLS-1$
+   private static final String DISCOVER_PACKAGE_DEPENDENCIES = "discover_package_dependencies"; //$NON-NLS-1$
+
+   private static final String GET_HELP = "get_help"; //$NON-NLS-1$
+   private static final String SHOW_HELP_TOPIC = "show_help_topic"; //$NON-NLS-1$
+   private static final String SEARCH = "search"; //$NON-NLS-1$
+   private static final String GET_CUSTOM_HELP = "get_custom_help"; //$NON-NLS-1$
+   private static final String GET_CUSTOM_PARAMETER_HELP = "get_custom_parameter_help"; //$NON-NLS-1$
+   private static final String SHOW_CUSTOM_HELP_TOPIC = "show_custom_help_topic"; //$NON-NLS-1$
+
+   private static final String STAT = "stat"; //$NON-NLS-1$
+   private static final String IS_TEXT_FILE = "is_text_file"; //$NON-NLS-1$
+   private static final String IS_GIT_DIRECTORY = "is_git_directory"; //$NON-NLS-1$
+   private static final String IS_PACKAGE_DIRECTORY = "is_package_directory"; //$NON-NLS-1$
+   private static final String LIST_FILES = "list_files"; //$NON-NLS-1$
+   private static final String LIST_ALL_FILES = "list_all_files"; //$NON-NLS-1$
+   private static final String CREATE_FOLDER = "create_folder"; //$NON-NLS-1$
+   private static final String DELETE_FILES = "delete_files"; //$NON-NLS-1$
+   private static final String COPY_FILE = "copy_file"; //$NON-NLS-1$
+   private static final String MOVE_FILES = "move_files"; //$NON-NLS-1$
+   private static final String RENAME_FILE = "rename_file"; //$NON-NLS-1$
+   private static final String COMPLETE_UPLOAD = "complete_upload"; //$NON-NLS-1$
+
+   private static final String NEXT_PLOT = "next_plot"; //$NON-NLS-1$
+   private static final String PREVIOUS_PLOT = "previous_plot"; //$NON-NLS-1$
+   private static final String REMOVE_PLOT = "remove_plot"; //$NON-NLS-1$
+   private static final String CLEAR_PLOTS = "clear_plots"; //$NON-NLS-1$
+   private static final String REFRESH_PLOT = "refresh_plot"; //$NON-NLS-1$
+   private static final String SAVE_PLOT_AS = "save_plot_as"; //$NON-NLS-1$
+   private static final String SAVE_PLOT_AS_PDF = "save_plot_as_pdf"; //$NON-NLS-1$
+   private static final String COPY_PLOT_TO_CLIPBOARD_METAFILE = "copy_plot_to_clipboard_metafile"; //$NON-NLS-1$
+   private static final String COPY_PLOT_TO_COCOA_PASTEBOARD = "copy_plot_to_cocoa_pasteboard"; //$NON-NLS-1$
+   private static final String GET_UNIQUE_SAVE_PLOT_STEM = "get_unique_save_plot_stem"; //$NON-NLS-1$
+   private static final String GET_SAVE_PLOT_CONTEXT = "get_save_plot_context"; //$NON-NLS-1$
+   private static final String LOCATOR_COMPLETED = "locator_completed"; //$NON-NLS-1$
+   private static final String SET_MANIPULATOR_VALUES = "set_manipulator_values"; //$NON-NLS-1$
+   private static final String MANIPULATOR_PLOT_CLICKED = "manipulator_plot_clicked"; //$NON-NLS-1$
+
+   private static final String EXECUTE_R_CODE = "execute_r_code"; //$NON-NLS-1$
+
+   private static final String GET_NEW_PROJECT_CONTEXT = "get_new_project_context"; //$NON-NLS-1$
+   private static final String GET_NEW_SESSION_URL = "get_new_session_url"; //$NON-NLS-1$
+   private static final String GET_ACTIVE_SESSIONS = "get_active_sessions"; //$NON-NLS-1$
+   private static final String SET_SESSION_LABEL = "set_session_label"; //$NON-NLS-1$
+   private static final String DELETE_SESSION_DIR = "delete_session_dir"; //$NON-NLS-1$
+   private static final String GET_AVAILABLE_R_VERSIONS = "get_available_r_versions"; //$NON-NLS-1$
+   private static final String CREATE_PROJECT = "create_project"; //$NON-NLS-1$
+   private static final String CREATE_PROJECT_FILE = "create_project_file"; //$NON-NLS-1$
+   private static final String GET_PROJECT_TEMPLATE_REGISTRY = "get_project_template_registry"; //$NON-NLS-1$
+   private static final String EXECUTE_PROJECT_TEMPLATE = "execute_project_template"; //$NON-NLS-1$
+   private static final String READ_PROJECT_OPTIONS = "read_project_options"; //$NON-NLS-1$
+   private static final String WRITE_PROJECT_OPTIONS = "write_project_options"; //$NON-NLS-1$
+   private static final String WRITE_PROJECT_CONFIG = "write_project_config"; //$NON-NLS-1$
+   private static final String WRITE_PROJECT_VCS_OPTIONS = "write_project_vcs_options"; //$NON-NLS-1$
+
+   private static final String NEW_DOCUMENT = "new_document"; //$NON-NLS-1$
+   private static final String OPEN_DOCUMENT = "open_document"; //$NON-NLS-1$
+   private static final String SAVE_DOCUMENT = "save_document"; //$NON-NLS-1$
+   private static final String SAVE_DOCUMENT_DIFF = "save_document_diff"; //$NON-NLS-1$
+   private static final String CHECK_FOR_EXTERNAL_EDIT = "check_for_external_edit"; //$NON-NLS-1$
+   private static final String IGNORE_EXTERNAL_EDIT = "ignore_external_edit"; //$NON-NLS-1$
+   private static final String CLOSE_DOCUMENT = "close_document"; //$NON-NLS-1$
+   private static final String CLOSE_ALL_DOCUMENTS = "close_all_documents"; //$NON-NLS-1$
+   private static final String GET_SOURCE_TEMPLATE = "get_source_template"; //$NON-NLS-1$
+   private static final String CREATE_RD_SHELL = "create_rd_shell"; //$NON-NLS-1$
+   private static final String SET_SOURCE_DOCUMENT_ON_SAVE = "set_source_document_on_save"; //$NON-NLS-1$
+   private static final String SAVE_ACTIVE_DOCUMENT = "save_active_document"; //$NON-NLS-1$
+   private static final String REQUEST_DOCUMENT_SAVE_COMPLETED = "request_document_save_completed"; //$NON-NLS-1$
+   private static final String REQUEST_DOCUMENT_CLOSE_COMPLETED = "request_document_close_completed"; //$NON-NLS-1$
+   private static final String MODIFY_DOCUMENT_PROPERTIES = "modify_document_properties"; //$NON-NLS-1$
+   private static final String GET_DOCUMENT_PROPERTIES = "get_document_properties"; //$NON-NLS-1$
+   private static final String REVERT_DOCUMENT = "revert_document"; //$NON-NLS-1$
+   private static final String REOPEN_WITH_ENCODING = "reopen_with_encoding"; //$NON-NLS-1$
+   private static final String REMOVE_CONTENT_URL = "remove_content_url"; //$NON-NLS-1$
+   private static final String DETECT_FREE_VARS = "detect_free_vars"; //$NON-NLS-1$
+   private static final String ICONVLIST = "iconvlist"; //$NON-NLS-1$
+   private static final String GET_TEX_CAPABILITIES = "get_tex_capabilities"; //$NON-NLS-1$
+   private static final String GET_CHUNK_OPTIONS = "get_chunk_options"; //$NON-NLS-1$
+   private static final String SET_DOC_ORDER = "set_doc_order"; //$NON-NLS-1$
+   private static final String REMOVE_CACHED_DATA = "remove_cached_data"; //$NON-NLS-1$
+   private static final String ENSURE_FILE_EXISTS = "ensure_file_exists"; //$NON-NLS-1$
+   private static final String GET_SOURCE_DOCUMENT = "get_source_document"; //$NON-NLS-1$
+
+   private static final String EXPLORER_INSPECT_OBJECT = "explorer_inspect_object"; //$NON-NLS-1$
+   private static final String EXPLORER_BEGIN_INSPECT = "explorer_begin_inspect"; //$NON-NLS-1$
+   private static final String EXPLORER_END_INSPECT = "explorer_end_inspect"; //$NON-NLS-1$
+
+   private static final String GET_EDITOR_CONTEXT_COMPLETED = "get_editor_context_completed"; //$NON-NLS-1$
+
+   private static final String GET_RECENT_HISTORY = "get_recent_history"; //$NON-NLS-1$
+   private static final String GET_HISTORY_ITEMS = "get_history_items"; //$NON-NLS-1$
+   private static final String REMOVE_HISTORY_ITEMS = "remove_history_items"; //$NON-NLS-1$
+   private static final String CLEAR_HISTORY = "clear_history"; //$NON-NLS-1$
+   private static final String GET_HISTORY_ARCHIVE_ITEMS = "get_history_archive_items"; //$NON-NLS-1$
+   private static final String SEARCH_HISTORY = "search_history"; //$NON-NLS-1$
+   private static final String SEARCH_HISTORY_ARCHIVE = "search_history_archive"; //$NON-NLS-1$
+   private static final String SEARCH_HISTORY_ARCHIVE_BY_PREFIX = "search_history_archive_by_prefix"; //$NON-NLS-1$
+
+   private static final String VCS_CLONE = "vcs_clone"; //$NON-NLS-1$
+
+   private static final String GIT_ADD = "git_add"; //$NON-NLS-1$
+   private static final String GIT_REMOVE = "git_remove"; //$NON-NLS-1$
+   private static final String GIT_DISCARD = "git_discard"; //$NON-NLS-1$
+   private static final String GIT_REVERT = "git_revert"; //$NON-NLS-1$
+   private static final String GIT_STAGE = "git_stage"; //$NON-NLS-1$
+   private static final String GIT_UNSTAGE = "git_unstage"; //$NON-NLS-1$
+   private static final String GIT_ALL_STATUS = "git_all_status"; //$NON-NLS-1$
+   private static final String GIT_FULL_STATUS = "git_full_status"; //$NON-NLS-1$
+   private static final String GIT_CREATE_BRANCH = "git_create_branch"; //$NON-NLS-1$
+   private static final String GIT_LIST_BRANCHES = "git_list_branches"; //$NON-NLS-1$
+   private static final String GIT_LIST_REMOTES = "git_list_remotes"; //$NON-NLS-1$
+   private static final String GIT_ADD_REMOTE = "git_add_remote"; //$NON-NLS-1$
+   private static final String GIT_CHECKOUT = "git_checkout"; //$NON-NLS-1$
+   private static final String GIT_CHECKOUT_REMOTE = "git_checkout_remote"; //$NON-NLS-1$
+   private static final String GIT_COMMIT = "git_commit"; //$NON-NLS-1$
+   private static final String GIT_PUSH = "git_push"; //$NON-NLS-1$
+   private static final String GIT_PUSH_BRANCH = "git_push_branch"; //$NON-NLS-1$
+   private static final String GIT_PULL = "git_pull"; //$NON-NLS-1$
+   private static final String GIT_PULL_REBASE = "git_pull_rebase"; //$NON-NLS-1$
+   private static final String ASKPASS_COMPLETED = "askpass_completed"; //$NON-NLS-1$
+   private static final String CREATE_SSH_KEY = "create_ssh_key"; //$NON-NLS-1$
+   private static final String GIT_SSH_PUBLIC_KEY = "git_ssh_public_key"; //$NON-NLS-1$
+   private static final String GIT_HAS_REPO = "git_has_repo"; //$NON-NLS-1$
+   private static final String GIT_INIT_REPO = "git_init_repo"; //$NON-NLS-1$
+   private static final String GIT_GET_IGNORES = "git_get_ignores"; //$NON-NLS-1$
+   private static final String GIT_SET_IGNORES = "git_set_ignores"; //$NON-NLS-1$
+   private static final String GIT_GITHUB_REMOTE_URL = "git_github_remote_url"; //$NON-NLS-1$
+   private static final String GIT_DIFF_FILE = "git_diff_file"; //$NON-NLS-1$
+   private static final String GIT_APPLY_PATCH = "git_apply_patch"; //$NON-NLS-1$
+   private static final String GIT_HISTORY_COUNT = "git_history_count"; //$NON-NLS-1$
+   private static final String GIT_HISTORY = "git_history"; //$NON-NLS-1$
+   private static final String GIT_SHOW = "git_show"; //$NON-NLS-1$
+   private static final String GIT_SHOW_FILE = "git_show_file"; //$NON-NLS-1$
+   private static final String GIT_EXPORT_FILE = "git_export_file"; //$NON-NLS-1$
+
+   private static final String SVN_ADD = "svn_add"; //$NON-NLS-1$
+   private static final String SVN_DELETE = "svn_delete"; //$NON-NLS-1$
+   private static final String SVN_REVERT = "svn_revert"; //$NON-NLS-1$
+   private static final String SVN_RESOLVE = "svn_resolve"; //$NON-NLS-1$
+   private static final String SVN_STATUS = "svn_status"; //$NON-NLS-1$
+   private static final String SVN_UPDATE = "svn_update"; //$NON-NLS-1$
+   private static final String SVN_CLEANUP = "svn_cleanup"; //$NON-NLS-1$
+   private static final String SVN_COMMIT = "svn_commit"; //$NON-NLS-1$
+   private static final String SVN_DIFF_FILE = "svn_diff_file"; //$NON-NLS-1$
+   private static final String SVN_APPLY_PATCH = "svn_apply_patch"; //$NON-NLS-1$
+   private static final String SVN_HISTORY_COUNT = "svn_history_count"; //$NON-NLS-1$
+   private static final String SVN_HISTORY = "svn_history"; //$NON-NLS-1$
+   private static final String SVN_SHOW = "svn_show"; //$NON-NLS-1$
+   private static final String SVN_SHOW_FILE = "svn_show_file"; //$NON-NLS-1$
+   private static final String SVN_GET_IGNORES = "svn_get_ignores"; //$NON-NLS-1$
+   private static final String SVN_SET_IGNORES = "svn_set_ignores"; //$NON-NLS-1$
+
+   private static final String GET_PUBLIC_KEY = "get_public_key"; //$NON-NLS-1$
+
+   private static final String LIST_GET = "list_get"; //$NON-NLS-1$
+   private static final String LIST_SET_CONTENTS = "list_set_contents"; //$NON-NLS-1$
+   private static final String LIST_PREPEND_ITEM = "list_prepend_item"; //$NON-NLS-1$
+   private static final String LIST_APPEND_ITEM = "list_append_item"; //$NON-NLS-1$
+   private static final String LIST_REMOVE_ITEM = "list_remove_item"; //$NON-NLS-1$
+   private static final String LIST_CLEAR = "list_clear"; //$NON-NLS-1$
+
+   private static final String PREVIEW_HTML = "preview_html"; //$NON-NLS-1$
+   private static final String TERMINATE_PREVIEW_HTML = "terminate_preview_html"; //$NON-NLS-1$
+   private static final String GET_HTML_CAPABILITIES = "get_html_capabilities"; //$NON-NLS-1$
+   private static final String RPUBS_UPLOAD = "rpubs_upload"; //$NON-NLS-1$
+   private static final String RPUBS_TERMINATE_UPLOAD = "terminate_rpubs_upload"; //$NON-NLS-1$
+
+   private static final String SET_WORKING_DIRECTORY = "set_working_directory"; //$NON-NLS-1$
+   private static final String CREATE_STANDALONE_PRESENTATION = "create_standalone_presentation"; //$NON-NLS-1$
+   private static final String CREATE_DESKTOP_VIEW_IN_BROWSER_PRESENTATION = "create_desktop_view_in_browser_presentation"; //$NON-NLS-1$
+   private static final String CREATE_PRESENTATION_RPUBS_SOURCE = "create_presentation_rpubs_source"; //$NON-NLS-1$
+   private static final String SET_PRESENTATION_SLIDE_INDEX = "set_presentation_slide_index"; //$NON-NLS-1$
+   private static final String PRESENTATION_EXECUTE_CODE = "presentation_execute_code"; //$NON-NLS-1$
+   private static final String CREATE_NEW_PRESENTATION = "create_new_presentation"; //$NON-NLS-1$
+   private static final String SHOW_PRESENTATION_PANE = "show_presentation_pane"; //$NON-NLS-1$
+   private static final String CLOSE_PRESENTATION_PANE = "close_presentation_pane"; //$NON-NLS-1$
+
+   private static final String TUTORIAL_QUIZ_RESPONSE = "tutorial_quiz_response"; //$NON-NLS-1$
+
+   private static final String TUTORIAL_STARTED = "tutorial_started"; //$NON-NLS-1$
+   private static final String TUTORIAL_STOP = "tutorial_stop"; //$NON-NLS-1$
+   private static final String TUTORIAL_METADATA = "tutorial_metadata"; //$NON-NLS-1$
+
+   private static final String GET_SLIDE_NAVIGATION_FOR_FILE = "get_slide_navigation_for_file"; //$NON-NLS-1$
+   private static final String GET_SLIDE_NAVIGATION_FOR_CODE = "get_slide_navigation_for_code"; //$NON-NLS-1$
+   private static final String CLEAR_PRESENTATION_CACHE = "clear_presentation_cache"; //$NON-NLS-1$
+
+   private static final String COMPILE_PDF = "compile_pdf"; //$NON-NLS-1$
+   private static final String IS_COMPILE_PDF_RUNNING = "is_compile_pdf_running"; //$NON-NLS-1$
+   private static final String TERMINATE_COMPILE_PDF = "terminate_compile_pdf"; //$NON-NLS-1$
+   private static final String COMPILE_PDF_CLOSED = "compile_pdf_closed"; //$NON-NLS-1$
+
+   private static final String SYNCTEX_FORWARD_SEARCH = "synctex_forward_search"; //$NON-NLS-1$
+   private static final String SYNCTEX_INVERSE_SEARCH = "synctex_inverse_search"; //$NON-NLS-1$
+   private static final String APPLY_FORWARD_CONCORDANCE = "apply_forward_concordance"; //$NON-NLS-1$
+   private static final String APPLY_INVERSE_CONCORDANCE = "apply_inverse_concordance"; //$NON-NLS-1$
+
+   private static final String CHECK_SPELLING = "check_spelling"; //$NON-NLS-1$
+   private static final String SUGGESTION_LIST = "suggestion_list"; //$NON-NLS-1$
+   private static final String ADD_CUSTOM_DICTIONARY = "add_custom_dictionary"; //$NON-NLS-1$
+   private static final String REMOVE_CUSTOM_DICTIONARY = "remove_custom_dictionary"; //$NON-NLS-1$
+   private static final String INSTALL_ALL_DICTIONARIES = "install_all_dictionaries"; //$NON-NLS-1$
+
+   private static final String BEGIN_FIND = "begin_find"; //$NON-NLS-1$
+   private static final String STOP_FIND = "stop_find"; //$NON-NLS-1$
+
+   private static final String PREVIEW_REPLACE = "preview_replace"; //$NON-NLS-1$
+   private static final String COMPLETE_REPLACE = "complete_replace"; //$NON-NLS-1$
+   private static final String STOP_REPLACE = "stop_replace"; //$NON-NLS-1$
+
+   private static final String GET_CPP_COMPLETIONS = "get_cpp_completions"; //$NON-NLS-1$
+   private static final String GET_CPP_DIAGNOSTICS = "get_cpp_diagnostics"; //$NON-NLS-1$
+
+   private static final String MARKDOWN_GET_COMPLETIONS = "markdown_get_completions"; //$NON-NLS-1$
+
+   private static final String PYTHON_ACTIVE_INTERPRETER = "python_active_interpreter"; //$NON-NLS-1$
+   private static final String PYTHON_FIND_INTERPRETERS = "python_find_interpreters"; //$NON-NLS-1$
+   private static final String PYTHON_INTERPRETER_INFO = "python_interpreter_info"; //$NON-NLS-1$
+   private static final String PYTHON_GET_COMPLETIONS = "python_get_completions"; //$NON-NLS-1$
+   private static final String PYTHON_GO_TO_DEFINITION = "python_go_to_definition"; //$NON-NLS-1$
+   private static final String PYTHON_GO_TO_HELP = "python_go_to_help"; //$NON-NLS-1$
+
+   private static final String STAN_GET_COMPLETIONS = "stan_get_completions"; //$NON-NLS-1$
+   private static final String STAN_GET_ARGUMENTS = "stan_get_arguments"; //$NON-NLS-1$
+   private static final String STAN_RUN_DIAGNOSTICS = "stan_run_diagnostics"; //$NON-NLS-1$
+
+   private static final String SQL_GET_COMPLETIONS = "sql_get_completions"; //$NON-NLS-1$
+
+   private static final String GET_CPP_CAPABILITIES = "get_cpp_capabilities"; //$NON-NLS-1$
+   private static final String INSTALL_BUILD_TOOLS = "install_build_tools"; //$NON-NLS-1$
+   private static final String START_BUILD = "start_build"; //$NON-NLS-1$
+   private static final String TERMINATE_BUILD = "terminate_build"; //$NON-NLS-1$
+   private static final String DEVTOOLS_LOAD_ALL_PATH = "devtools_load_all_path"; //$NON-NLS-1$
+
+   private static final String LIST_ENVIRONMENT = "list_environment"; //$NON-NLS-1$
+   private static final String SET_CONTEXT_DEPTH = "set_context_depth"; //$NON-NLS-1$
+   private static final String SET_ENVIRONMENT = "set_environment"; //$NON-NLS-1$
+   private static final String SET_ENVIRONMENT_FRAME = "set_environment_frame"; //$NON-NLS-1$
+   private static final String GET_ENVIRONMENT_NAMES = "get_environment_names"; //$NON-NLS-1$
+   private static final String GET_ENVIRONMENT_STATE = "get_environment_state"; //$NON-NLS-1$
+   private static final String GET_OBJECT_CONTENTS = "get_object_contents"; //$NON-NLS-1$
+   private static final String REQUERY_CONTEXT = "requery_context"; //$NON-NLS-1$
+   private static final String ENVIRONMENT_SET_LANGUAGE = "environment_set_language"; //$NON-NLS-1$
+   private static final String SET_ENVIRONMENT_MONITORING = "set_environment_monitoring"; //$NON-NLS-1$
+   private static final String IS_FUNCTION_MASKED = "is_function_masked"; //$NON-NLS-1$
+
+   private static final String GET_FUNCTION_STEPS = "get_function_steps"; //$NON-NLS-1$
+   private static final String SET_FUNCTION_BREAKPOINTS = "set_function_breakpoints"; //$NON-NLS-1$
+   private static final String GET_FUNCTION_STATE = "get_function_state"; //$NON-NLS-1$
+   private static final String EXECUTE_DEBUG_SOURCE = "execute_debug_source"; //$NON-NLS-1$
+   private static final String SET_ERROR_MANAGEMENT_TYPE = "set_error_management_type"; //$NON-NLS-1$
+   private static final String UPDATE_BREAKPOINTS = "update_breakpoints"; //$NON-NLS-1$
+   private static final String REMOVE_ALL_BREAKPOINTS = "remove_all_breakpoints"; //$NON-NLS-1$
+
+   private static final String LOG = "log"; //$NON-NLS-1$
+   private static final String LOG_EXCEPTION = "log_exception"; //$NON-NLS-1$
+
+   private static final String GET_INIT_MESSAGES = "get_init_messages"; //$NON-NLS-1$
+
+   private static final String CHECK_FOR_UPDATES = "check_for_updates"; //$NON-NLS-1$
+   private static final String GET_PRODUCT_INFO = "get_product_info"; //$NON-NLS-1$
+   private static final String GET_PRODUCT_NOTICE = "get_product_notice"; //$NON-NLS-1$
+
+   private static final String GET_R_ADDINS = "get_r_addins"; //$NON-NLS-1$
+   private static final String PREPARE_FOR_ADDIN = "prepare_for_addin"; //$NON-NLS-1$
+   private static final String EXECUTE_R_ADDIN = "execute_r_addin"; //$NON-NLS-1$
+
+   private static final String CREATE_SHINY_APP = "create_shiny_app"; //$NON-NLS-1$
+   private static final String GET_SHINY_VIEWER_TYPE = "get_shiny_viewer_type"; //$NON-NLS-1$
+   private static final String GET_SHINY_RUN_CMD = "get_shiny_run_cmd"; //$NON-NLS-1$
+   private static final String SET_SHINY_VIEWER_TYPE = "set_shiny_viewer_type"; //$NON-NLS-1$
+
+   private static final String CREATE_PLUMBER_API = "create_plumber_api"; //$NON-NLS-1$
+   private static final String GET_PLUMBER_VIEWER_TYPE = "get_plumber_viewer_type"; //$NON-NLS-1$
+   private static final String GET_PLUMBER_RUN_CMD = "get_plumber_run_cmd"; //$NON-NLS-1$
+
+   private static final String GET_RSCONNECT_ACCOUNT_LIST = "get_rsconnect_account_list"; //$NON-NLS-1$
+   private static final String REMOVE_RSCONNECT_ACCOUNT = "remove_rsconnect_account"; //$NON-NLS-1$
+   private static final String CONNECT_RSCONNECT_ACCOUNT = "connect_rsconnect_account"; //$NON-NLS-1$
+   private static final String GET_RSCONNECT_APP_LIST = "get_rsconnect_app_list"; //$NON-NLS-1$
+   private static final String GET_RSCONNECT_APP = "get_rsconnect_app"; //$NON-NLS-1$
+   private static final String GET_RSCONNECT_DEPLOYMENTS = "get_rsconnect_deployments"; //$NON-NLS-1$
+   private static final String FORGET_RSCONNECT_DEPLOYMENTS = "forget_rsconnect_deployments"; //$NON-NLS-1$
+   private static final String RSCONNECT_PUBLISH = "rsconnect_publish"; //$NON-NLS-1$
+   private static final String CANCEL_PUBLISH = "cancel_publish"; //$NON-NLS-1$
+   private static final String GET_DEPLOYMENT_FILES = "get_deployment_files"; //$NON-NLS-1$
+   private static final String VALIDATE_SERVER_URL = "validate_server_url"; //$NON-NLS-1$
+   private static final String GET_SERVER_URLS = "get_server_urls"; //$NON-NLS-1$
+   private static final String GET_AUTH_TOKEN = "get_auth_token"; //$NON-NLS-1$
+   private static final String GET_USER_FROM_TOKEN = "get_user_from_token"; //$NON-NLS-1$
+   private static final String REGISTER_USER_TOKEN = "register_user_token"; //$NON-NLS-1$
+   private static final String GET_RSCONNECT_LINT_RESULTS = "get_rsconnect_lint_results"; //$NON-NLS-1$
+   private static final String GET_RMD_PUBLISH_DETAILS = "get_rmd_publish_details"; //$NON-NLS-1$
+   private static final String HAS_ORPHANED_ACCOUNTS = "has_orphaned_accounts"; //$NON-NLS-1$
+
+   private static final String RENDER_RMD = "render_rmd"; //$NON-NLS-1$
+   private static final String RENDER_RMD_SOURCE = "render_rmd_source"; //$NON-NLS-1$
+   private static final String TERMINATE_RENDER_RMD = "terminate_render_rmd"; //$NON-NLS-1$
+   private static final String CONVERT_TO_YAML = "convert_to_yaml"; //$NON-NLS-1$
+   private static final String CONVERT_FROM_YAML = "convert_from_yaml"; //$NON-NLS-1$
+   private static final String CREATE_RMD_FROM_TEMPLATE = "create_rmd_from_template"; //$NON-NLS-1$
+   private static final String GET_RMD_TEMPLATE = "get_rmd_template"; //$NON-NLS-1$
+   private static final String GET_RMD_TEMPLATES = "get_rmd_templates"; //$NON-NLS-1$
+   private static final String GET_RMD_OUTPUT_INFO = "get_rmd_output_info"; //$NON-NLS-1$
+   private static final String RMD_IMPORT_IMAGES = "rmd_import_images"; //$NON-NLS-1$
+
+   private static final String GET_PACKRAT_PREREQUISITES = "get_packrat_prerequisites"; //$NON-NLS-1$
+   private static final String INSTALL_PACKRAT = "install_packrat"; //$NON-NLS-1$
+   private static final String GET_PACKRAT_CONTEXT = "get_packrat_context"; //$NON-NLS-1$
+   private static final String GET_PACKRAT_STATUS = "get_packrat_status"; //$NON-NLS-1$
+   private static final String PACKRAT_BOOTSTRAP = "packrat_bootstrap"; //$NON-NLS-1$
+   private static final String GET_PENDING_ACTIONS = "get_pending_actions"; //$NON-NLS-1$
+   private static final String GET_PACKRAT_ACTIONS = "get_packrat_actions"; //$NON-NLS-1$
+
+   private static final String RENV_INIT = "renv_init"; //$NON-NLS-1$
+   private static final String RENV_ACTIONS = "renv_actions"; //$NON-NLS-1$
+
+   private static final String LINT_R_SOURCE_DOCUMENT = "lint_r_source_document"; //$NON-NLS-1$
+   private static final String ANALYZE_PROJECT = "analyze_project"; //$NON-NLS-1$
+
+   private static final String GET_SET_CLASS_CALL = "get_set_class_slots"; //$NON-NLS-1$
+   private static final String GET_SET_GENERIC_CALL = "get_set_generic_call"; //$NON-NLS-1$
+   private static final String GET_SET_METHOD_CALL = "get_set_method_call"; //$NON-NLS-1$
+   private static final String GET_SET_REF_CLASS_CALL = "get_set_ref_class_call"; //$NON-NLS-1$
+   private static final String TRANSFORM_SNIPPET = "transform_snippet"; //$NON-NLS-1$
+   private static final String GET_SNIPPETS = "get_snippets"; //$NON-NLS-1$
+
+   private static final String PREVIEW_DATA_IMPORT = "preview_data_import"; //$NON-NLS-1$
+   private static final String ASSEMBLE_DATA_IMPORT = "assemble_data_import"; //$NON-NLS-1$
+   private static final String PREVIEW_DATA_IMPORT_ASYNC = "preview_data_import_async"; //$NON-NLS-1$
+   private static final String PREVIEW_DATA_IMPORT_ASYNC_ABORT = "preview_data_import_async_abort"; //$NON-NLS-1$
+   private static final String PREVIEW_DATA_IMPORT_CLEAN = "preview_data_import_clean"; //$NON-NLS-1$
+
+   private static final String START_PROFILING = "start_profiling"; //$NON-NLS-1$
+   private static final String STOP_PROFILING = "stop_profiling"; //$NON-NLS-1$
+   private static final String OPEN_PROFILE = "open_profile"; //$NON-NLS-1$
+   private static final String COPY_PROFILE = "copy_profile"; //$NON-NLS-1$
+   private static final String CLEAR_PROFILE = "clear_profile"; //$NON-NLS-1$
+   private static final String PROFILE_SOURCES = "profile_sources"; //$NON-NLS-1$
+
+   private static final String REMOVE_CONNECTION = "remove_connection"; //$NON-NLS-1$
+   private static final String CONNECTION_DISCONNECT = "connection_disconnect"; //$NON-NLS-1$
+   private static final String CONNECTION_EXECUTE_ACTION = "connection_execute_action"; //$NON-NLS-1$
+   private static final String CONNECTION_LIST_OBJECTS = "connection_list_objects"; //$NON-NLS-1$
+   private static final String CONNECTION_LIST_FIELDS = "connection_list_fields"; //$NON-NLS-1$
+   private static final String CONNECTION_PREVIEW_OBJECT = "connection_preview_object"; //$NON-NLS-1$
+   private static final String CONNECTION_TEST = "connection_test"; //$NON-NLS-1$
+   private static final String GET_NEW_CONNECTION_CONTEXT = "get_new_connection_context"; //$NON-NLS-1$
+   private static final String INSTALL_SPARK = "install_spark"; //$NON-NLS-1$
+
+   private static final String SQL_CHUNK_DEFAULT_CONNECTION = "default_sql_connection_name"; //$NON-NLS-1$
+
+   private static final String LAUNCH_EMBEDDED_SHINY_CONNECTION_UI = "launch_embedded_shiny_connection_ui"; //$NON-NLS-1$
+   private static final String RSTUDIOAPI_SHOW_DIALOG_COMPLETED = "rstudioapi_show_dialog_completed"; //$NON-NLS-1$
+
+   private static final String STOP_SHINY_APP = "stop_shiny_app"; //$NON-NLS-1$
+
+   private static final String CONNECTION_ADD_PACKAGE = "connection_add_package"; //$NON-NLS-1$
+
+   private static final String ASKSECRET_COMPLETED = "asksecret_completed"; //$NON-NLS-1$
+   private static final String INSTALL_ODBC_DRIVER = "install_odbc_driver"; //$NON-NLS-1$
+   private static final String GET_NEW_ODBC_CONNECTION_CONTEXT = "get_new_odbc_connection_context"; //$NON-NLS-1$
+   private static final String UNINSTALL_ODBC_DRIVER = "uninstall_odbc_driver"; //$NON-NLS-1$
+   private static final String UPDATE_ODBC_INSTALLERS = "update_odbc_installers"; //$NON-NLS-1$
+
+   private static final String HAS_SHINYTEST_HAS_DEPENDENCIES = "has_shinytest_dependencies"; //$NON-NLS-1$
+   private static final String INSTALL_SHINYTEST_DEPENDENCIES = "install_shinytest_dependencies"; //$NON-NLS-1$
+   private static final String HAS_SHINYTEST_RESULTS = "has_shinytest_results"; //$NON-NLS-1$
+
+   private static final String GET_SECONDARY_REPOS = "get_secondary_repos"; //$NON-NLS-1$
+   private static final String VALIDATE_CRAN_REPO = "validate_cran_repo"; //$NON-NLS-1$
+
+   private static final String GET_THEMES = "get_themes"; //$NON-NLS-1$
+   private static final String ADD_THEME = "add_theme"; //$NON-NLS-1$
+   private static final String REMOVE_THEME = "remove_theme"; //$NON-NLS-1$
+   private static final String GET_THEME_NAME = "get_theme_name"; //$NON-NLS-1$
+   private static final String SET_COMPUTED_THEME_COLORS = "set_computed_theme_colors"; //$NON-NLS-1$
+
+   private static final String REPLACE_COMMENT_HEADER = "replace_comment_header"; //$NON-NLS-1$
+   private static final String SET_USER_CRASH_HANDLER_PROMPTED = "set_user_crash_handler_prompted"; //$NON-NLS-1$
+
+   private static final String PANDOC_GET_CAPABILITIES = "pandoc_get_capabilities"; //$NON-NLS-1$
+   private static final String PANDOC_AST_TO_MARKDOWN = "pandoc_ast_to_markdown"; //$NON-NLS-1$
+   private static final String PANDOC_MARKDOWN_TO_AST = "pandoc_markdown_to_ast"; //$NON-NLS-1$
+   private static final String PANDOC_LIST_EXTENSIONS = "pandoc_list_extensions"; //$NON-NLS-1$
+   private static final String PANDOC_GET_BIBLIOGRAPHY = "pandoc_get_bibliography"; //$NON-NLS-1$
+   private static final String PANDOC_ADD_TO_BIBLIOGRAPHY = "pandoc_add_to_bibliography"; //$NON-NLS-1$
+   private static final String PANDOC_CITATION_HTML = "pandoc_citation_html"; //$NON-NLS-1$
+
+   private static final String CROSSREF_WORKS = "crossref_works"; //$NON-NLS-1$
+
+   private static final String PUBMED_SEARCH = "pubmed_search"; //$NON-NLS-1$
+
+   private static final String DATACITE_SEARCH = "datacite_search"; //$NON-NLS-1$
+
+   private static final String ZOTERO_GET_COLLECTIONS = "zotero_get_collections"; //$NON-NLS-1$
+   private static final String ZOTERO_GET_LIBRARY_NAMES = "zotero_get_library_names"; //$NON-NLS-1$
+   private static final String ZOTERO_GET_ACTIVE_COLLECTIONSPECS = "zotero_get_active_collection_specs"; //$NON-NLS-1$
+   private static final String ZOTERO_VALIDATE_WEB_API_KEY = "zotero_validate_web_api_key"; //$NON-NLS-1$
+   private static final String ZOTERO_DETECT_LOCAL_CONFIG = "zotero_detect_local_config"; //$NON-NLS-1$
+   private static final String ZOTERO_BETTER_BIBTEX_EXPORT = "zotero_better_bibtex_export"; //$NON-NLS-1$
+
+   private static final String DOI_FETCH_CSL = "doi_fetch_csl"; //$NON-NLS-1$
+
+   private static final String XREF_INDEX_FOR_FILE = "xref_index_for_file"; //$NON-NLS-1$
+   private static final String XREF_FOR_ID = "xref_for_id"; //$NON-NLS-1$
 
 }

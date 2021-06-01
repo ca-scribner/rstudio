@@ -230,6 +230,7 @@ public class ProjectSourceControlPreferencesPane extends ProjectPreferencesPane
                globalDisplay_.showYesNoMessage(
                   MessageDialog.QUESTION,
                   "Confirm New Git Repository",
+                  // i18n: Concatenate
                   "Do you want to initialize a new git repository " +
                   "for this project?",
                   false,
@@ -318,9 +319,9 @@ public class ProjectSourceControlPreferencesPane extends ProjectPreferencesPane
    private OriginLabel lblOrigin_;
    private RProjectVcsContext vcsContext_;
 
-   private static final String NONE = "(None)";
+   private static final String NONE = "(None)"; //$NON-NLS-1$
 
-   private static final String NO_REMOTE_ORIGIN  ="None";
+   private static final String NO_REMOTE_ORIGIN  ="None"; //$NON-NLS-1$
 
    private static final ProjectPreferencesDialogResources RES =
                                     ProjectPreferencesDialogResources.INSTANCE;

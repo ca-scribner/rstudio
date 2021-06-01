@@ -29,6 +29,7 @@ public class ProfilerType extends EditableFileType
 {
    public ProfilerType()
    {
+      // i18n: Enum or user text?
       super("r_prof", "R Profiler",
             new ImageResource2x(FileIconResources.INSTANCE.iconRdoc2x()));
    }

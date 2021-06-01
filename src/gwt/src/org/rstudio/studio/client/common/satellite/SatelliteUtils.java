@@ -31,5 +31,5 @@ public class SatelliteUtils
       return windowName.startsWith(SATELLITE_PREFIX);
    }
    
-   private final static String SATELLITE_PREFIX = "_rstudio_satellite_";
+   private final static String SATELLITE_PREFIX = "_rstudio_satellite_"; //$NON-NLS-1$
 }

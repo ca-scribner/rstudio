@@ -294,7 +294,7 @@ public class PanmirrorEditImageDialog extends ModalDialog<PanmirrorImageProps>
       if (dims_ == null)
          return;
 
-      String width = null, height = null, units = "px";
+      String width = null, height = null, units = "px"; //$NON-NLS-1$
 
       // if we have both width and height then use them
       if (widthProp_ != null && heightProp_ != null)
@@ -312,7 +312,7 @@ public class PanmirrorEditImageDialog extends ModalDialog<PanmirrorImageProps>
          {
             width = dims_.naturalWidth.toString();
             height = dims_.naturalHeight.toString();
-            units = "px";
+            units = "px"; //$NON-NLS-1$
          }
          else if (widthProp_ != null)
          {
@@ -455,8 +455,8 @@ public class PanmirrorEditImageDialog extends ModalDialog<PanmirrorImageProps>
    private final TextBox linkTo_;
    private final PanmirrorEditAttrWidget editAttr_;
 
-   private static final String WIDTH = "width";
-   private static final String HEIGHT = "height";
+   private static final String WIDTH = "width"; //$NON-NLS-1$
+   private static final String HEIGHT = "height"; //$NON-NLS-1$
 
 
 }

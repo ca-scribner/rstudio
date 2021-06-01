@@ -45,9 +45,9 @@ public class ShellPane extends ShellWidget implements Shell.Display
          {
             Widget inputWidget = editor.getWidget();
             if (arg)
-               inputWidget.removeStyleName("nocolor");
+               inputWidget.removeStyleName("nocolor"); //$NON-NLS-1$
             else
-               inputWidget.addStyleName("nocolor");
+               inputWidget.addStyleName("nocolor"); //$NON-NLS-1$
          }
       });
 

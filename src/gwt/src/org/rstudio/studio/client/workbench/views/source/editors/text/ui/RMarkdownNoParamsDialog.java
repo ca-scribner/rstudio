@@ -64,8 +64,9 @@ public class RMarkdownNoParamsDialog extends ModalDialogBase
       // add message widget
       VerticalPanel messagePanel = new VerticalPanel();
       Label label = new MultiLineLabel(
-            "There are no parameters defined for the current " +
-            "R Markdown document.");
+         // i18n: concatenate/message
+         "There are no parameters defined for the current " +
+         "R Markdown document.");
       label.setStylePrimaryName(
             ThemeResources.INSTANCE.themeStyles().dialogMessage());
       messagePanel.add(label);

@@ -47,19 +47,19 @@ public class RmdTemplate extends JavaScriptObject
    
    public final RmdTemplateFormat getFormat(String format)
    {
-      return JsArrayUtil.jsFindInCollection(getFormats(), "format_name", 
+      return JsArrayUtil.jsFindInCollection(getFormats(), "format_name", // $NON-NLS-1$
                                             format);
    }
 
    public final RmdTemplateFormatOption getOption(String option)
    {
-      return JsArrayUtil.jsFindInCollection(getOptions(), "option_name", 
+      return JsArrayUtil.jsFindInCollection(getOptions(), "option_name", // $NON-NLS-1$
                                             option);
    }
    
    public final static RmdTemplate getTemplate(JsArray<RmdTemplate> haystack,
                                                String needle) 
    {
-      return JsArrayUtil.jsFindInCollection(haystack, "template_name", needle);
+      return JsArrayUtil.jsFindInCollection(haystack, "template_name", needle); // $NON-NLS-1$
    }
 }

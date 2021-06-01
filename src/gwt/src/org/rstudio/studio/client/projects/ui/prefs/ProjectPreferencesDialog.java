@@ -216,8 +216,8 @@ public class ProjectPreferencesDialog extends PreferencesDialogBase<RProjectOpti
          return;
 
       String renvAction = options.useRenv
-            ? "renv::activate()"
-            : "renv::deactivate()";
+            ? "renv::activate()" //$NON-NLS-1$
+            : "renv::deactivate()"; //$NON-NLS-1$
 
       pEventBus_.get().fireEvent(new SendToConsoleEvent(renvAction, true, true));
    }

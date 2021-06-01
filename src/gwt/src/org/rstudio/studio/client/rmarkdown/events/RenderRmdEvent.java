@@ -128,7 +128,7 @@ public class RenderRmdEvent extends CrossWindowEvent<RenderRmdEvent.Handler>
    private String workingDirectory_;
    private String viewerType_;
 
-   public final static String WORKING_DIR_PROP = "working_dir";
+   public final static String WORKING_DIR_PROP = "working_dir"; //$NON-NLS-1$
 
    public static final Type<Handler> TYPE = new Type<>();
 }

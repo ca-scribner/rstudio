@@ -82,6 +82,8 @@ public class RequestLogEntry
 
    public String getRequestMethodName()
    {
+      // i18n: ?  I think this came up elsewhere and looked like it would surface to user, but here it looks like
+      //       enumeration.  Investigate
       if (requestData_ == "[REDACTED]")
          return requestData_;
 

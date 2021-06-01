@@ -60,8 +60,8 @@ public class Rectangle
    @Override
    public String toString()
    {
-      return "Rectangle(x=" + x + ",y=" + y +
-             ",w=" + width + ",h=" + height + ")";
+      return "Rectangle(x=" + x + ",y=" + y + //$NON-NLS-1$
+             ",w=" + width + ",h=" + height + ")"; //$NON-NLS-1$
    }
 
    public int getLeft()

@@ -197,6 +197,7 @@ public class RSConnect implements SessionInitEvent.Handler,
             StringUtil.isNullOrEmpty(event.getHtmlFile()))
       {
          display_.showErrorMessage("Republish Document",
+               // i18n: Concatenation/Message
                "Only rendered documents can be republished to RPubs. " +
                "To republish this document, click Knit or Preview to render it to HTML, then " +
                "click the Republish button above the rendered document.");
@@ -382,6 +383,7 @@ public class RSConnect implements SessionInitEvent.Handler,
             {
                // we should generally hide the button in this case
                display_.showErrorMessage("Content Not Publishable",
+                     // i18n: Concatenation/Message
                      "Only self-contained documents can currently be " +
                      "published to RPubs.");
             }
@@ -402,7 +404,8 @@ public class RSConnect implements SessionInitEvent.Handler,
          if (!input.isConnectUIEnabled())
          {
             display_.showErrorMessage("API Not Publishable",
-                     "Publishing to RStudio Connect is disabled in the Publishing options.");
+               // i18n: Concatenation/Message
+               "Publishing to RStudio Connect is disabled in the Publishing options.");
          }
          else
          {
@@ -420,7 +423,7 @@ public class RSConnect implements SessionInitEvent.Handler,
           event.getContentType() == CONTENT_TYPE_APP_SINGLE ||
           isAPI)
       {
-         if (StringUtil.getExtension(event.getPath()).equalsIgnoreCase("r"))
+         if (StringUtil.getExtension(event.getPath()).equalsIgnoreCase("r")) //$NON-NLS-1$
          {
             FileSystemItem rFile = FileSystemItem.createFile(event.getPath());
             // use the directory for the deployment record when publishing APIs or
@@ -540,6 +543,7 @@ public class RSConnect implements SessionInitEvent.Handler,
             {
                display_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
                      "Lint Failed",
+                     // i18n: Concatenation/Message
                      "The content you tried to publish could not be checked " +
                      "for errors. Do you want to proceed? \n\n" +
                      results.getErrorMessage(), false,
@@ -568,6 +572,7 @@ public class RSConnect implements SessionInitEvent.Handler,
             {
                display_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
                      "Publish Content Issues Found",
+                     // i18n: Concatenation/Message
                      "Some issues were found in your content, which may " +
                      "prevent it from working correctly after publishing. " +
                      "Do you want to review these issues or publish anyway? "
@@ -627,6 +632,7 @@ public class RSConnect implements SessionInitEvent.Handler,
    {
       display_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
             "Stop deployment?",
+            // i18n: Concatenation/Message
             "Do you want to stop the deployment process? If the server has already " +
             "received the content, it will still be published.",
             false, // include cancel
@@ -662,7 +668,7 @@ public class RSConnect implements SessionInitEvent.Handler,
    public void onRSConnectDeploymentFailed(
          final RSConnectDeploymentFailedEvent event)
    {
-      String failedPath = event.getData().getPath();
+      String failedPath = event.getData().getPath(); //$NON-NLS-1$
       // if this looks like an API call, process the path to get the 'bare'
       // server URL
       int pos = failedPath.indexOf("__api__");
@@ -697,6 +703,7 @@ public class RSConnect implements SessionInitEvent.Handler,
             errorImage.getElement().getStyle().setMarginTop(1, Unit.EM);
             errorImage.getElement().getStyle().setMarginRight(1, Unit.EM);
             panel.add(errorImage);
+            // i18n: Concatenation/Message
             panel.add(new HTML("<p>Your content could not be published because " +
                   "of a problem on the server.</p>" +
                   "<p>More information may be available on the server's home " +
@@ -789,6 +796,7 @@ public class RSConnect implements SessionInitEvent.Handler,
 
    public static String contentTypeDesc(int contentType)
    {
+      // i18n: These ARE visible to the user
       switch(contentType)
       {
       case RSConnect.CONTENT_TYPE_APP:
@@ -842,6 +850,7 @@ public class RSConnect implements SessionInitEvent.Handler,
          if (!Desktop.hasDesktopFrame())
          {
             display_.showMessage(GlobalDisplay.MSG_INFO, "Deployment Started",
+                  // i18n: Concatenation/Message
                   "RStudio is deploying " + result.getAppName() + ". " +
                   "Check the Deploy console tab in the main window for " +
                   "status updates. ");
@@ -863,7 +872,8 @@ public class RSConnect implements SessionInitEvent.Handler,
    private void showUnsupportedRPubsFormatMessage()
    {
       display_.showErrorMessage("Unsupported Document Format",
-            "Only documents rendered to HTML can be published to RPubs. " +
+            // i18n: Concatenation/Message
+         "Only documents rendered to HTML can be published to RPubs. " +
             "To publish this document, click Knit or Preview to render it to HTML, then " +
             "click the Publish button above the rendered document.");
    }
@@ -877,7 +887,8 @@ public class RSConnect implements SessionInitEvent.Handler,
          if (!input.hasDocOutput())
          {
             display_.showErrorMessage("Publish Document",
-                  "Only rendered documents can be published to RPubs. " +
+                  // i18n: Concatenation/Message
+               "Only rendered documents can be published to RPubs. " +
                   "To publish this document, click Knit or Preview to render it to HTML, then " +
                   "click the Publish button above the rendered document.");
             indicator.onCompleted();
@@ -892,7 +903,7 @@ public class RSConnect implements SessionInitEvent.Handler,
       }
 
       RPubsUploader uploader = new RPubsUploader(rpubsServer_, display_,
-            events_, "rpubs-" + rpubsCount_++);
+            events_, "rpubs-" + rpubsCount_++); //$NON-NLS-1$
       String contentType = contentTypeDesc(input.getContentType());
       indicator.onProgress("Uploading " + contentType);
       uploader.setOnUploadComplete(new CommandWithArg<Boolean>()
@@ -1229,6 +1240,7 @@ public class RSConnect implements SessionInitEvent.Handler,
    // Plumber API
    public final static int CONTENT_TYPE_PLUMBER_API    = 8;
 
+   // i18n: Enumerator, user facing text, or both?  I think they're enumerators, but other things here were user facing
    public final static String CONTENT_CATEGORY_PLOT = "plot";
    public final static String CONTENT_CATEGORY_SITE = "site";
    public final static String CONTENT_CATEGORY_API = "api";

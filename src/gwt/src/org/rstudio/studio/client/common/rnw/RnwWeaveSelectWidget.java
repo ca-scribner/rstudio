@@ -70,7 +70,8 @@ public class RnwWeaveSelectWidget extends SelectWidget
             {
                globalDisplay_.showYesNoMessage(
                   MessageDialog.QUESTION,
-                  "Confirm Change", 
+                  "Confirm Change",
+                  // i18n: Concatenation/Message
                   "The " + weave.getPackageName() + " package is required " +
                   "for " + weave.getName() + " weaving, " +
                   "however it is not currently installed. You should " +

@@ -82,6 +82,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
+// i18n: Are texts here user facing or developer facing?  If only meant for developers, i18n could be ignored
+
 public class RSConnectDeploy extends Composite
                              implements AppNameTextbox.Host
 {
@@ -221,7 +223,8 @@ public class RSConnectDeploy extends Composite
       createNewAnchor_.setClickHandler(() ->
       {
          display_.showMessage(GlobalDisplay.MSG_INFO, 
-               "Create New Content", 
+               "Create New Content",
+               // i18n: Concatenation/Message
                "To publish this content to a new location, click the Publish drop-down menu " +
                "and choose Other Destination.");
       });
@@ -847,6 +850,7 @@ public class RSConnectDeploy extends Composite
                      RStudioGinjector.INSTANCE.getGlobalDisplay().showMessage(
                            GlobalDisplay.MSG_INFO,
                            "Finished Document Not Found",
+                           // i18n: Concatenation/Message
                            "To publish finished document to RStudio Connect, you must first render " +
                                  "it. Dismiss this message, click Knit to render the document, " +
                                  "then try publishing again.");
@@ -882,6 +886,7 @@ public class RSConnectDeploy extends Composite
       // never happen, but if it does this error message will be more useful
       if (StringUtil.isNullOrEmpty(fileSource))
       {
+         // i18n: Concatenation/Message
          indicator.onError("Could not determine the list of files to deploy. " +
                   "Try re-rendering and ensuring that you're publishing to a " +
                   "server which supports this kind of content.");
@@ -901,6 +906,7 @@ public class RSConnectDeploy extends Composite
                   if (files.getDirSize() > files.getMaxSize())
                   {
                      indicator.onError(
+                           // i18n: Concatenation/Message
                            "The item to be deployed (" + fileSource + ") " +
                            "exceeds the maximum deployment size, which is " +
                            StringUtil.formatFileSize(files.getMaxSize()) + "." +
@@ -913,6 +919,7 @@ public class RSConnectDeploy extends Composite
                      if (files.getDirList() == null || 
                          files.getDirList().length() == 0)
                      {
+                        // i18n: Concatenation/Message
                         indicator.onError("Could not determine the list of " +
                           "files to deploy.");
                         indicator.onCompleted();
@@ -942,6 +949,7 @@ public class RSConnectDeploy extends Composite
                public void onError(ServerError error)
                {
                   // we need to have a list of files to deploy to proceed
+                  // i18n: Concatenation/Message
                   indicator.onError("Could not find files to deploy: \n\n" +
                      error.getMessage());
                   indicator.onCompleted();
@@ -993,7 +1001,8 @@ public class RSConnectDeploy extends Composite
                      if (path == null)
                      {
                         display_.showMessage(GlobalDisplay.MSG_INFO, 
-                              "Cannot Add File", 
+                              "Cannot Add File",
+                              // i18n: Concatenation/Message
                               "Only files in the same folder as the " +
                               "document (" + sourceDir + ") or one of its " +
                               "sub-folders may be added.");
@@ -1085,7 +1094,7 @@ public class RSConnectDeploy extends Composite
             // if this is a document with the name "index", guess the directory
             // as the content name rather than the file
             if (contentType_ == RSConnect.CONTENT_TYPE_DOCUMENT &&
-                appTitle.toLowerCase().equals("index"))
+                appTitle.toLowerCase().equals("index")) //$NON-NLS-1$
             {
                appTitle = FilePathUtils.fileNameSansExtension(
                      source_.getDeployDir());
@@ -1150,8 +1159,9 @@ public class RSConnectDeploy extends Composite
                   {
                      display_.showYesNoMessage(
                            GlobalDisplay.MSG_QUESTION, 
-                           "Overwrite " + appName + "?", 
-                           "You've already published an application named '" + 
+                           "Overwrite " + appName + "?",
+                           // i18n: Concatenation/Message
+                           "You've already published an application named '" +
                            appName +"' to " + account.getServer() + " (" + 
                            url + "). Do you want to replace the existing " + 
                            "application with this content?", false, 

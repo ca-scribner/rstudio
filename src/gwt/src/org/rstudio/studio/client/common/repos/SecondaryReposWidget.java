@@ -151,7 +151,8 @@ public class SecondaryReposWidget extends Composite
             final String repo = listBox_.getValue(index);
             globalDisplay_.showYesNoMessage(
                MessageDialog.WARNING, 
-               "Confirm Remove", 
+               "Confirm Remove",
+               // i18n: Concatenation/Message
                "Are you sure you want to remove the " + repo + " repository?",
                new Operation() {
                   @Override

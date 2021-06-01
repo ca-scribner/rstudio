@@ -383,7 +383,7 @@ public class RMarkdownPreferencesPane extends PreferencesPane
       spaced(zoteroConnection_);
       citations.add(zoteroConnection_);
      
-      zoteroApiKey_ = new ZoteroApiKeyWidget(zoteroServer, "240px");
+      zoteroApiKey_ = new ZoteroApiKeyWidget(zoteroServer, "240px"); //$NON-NLS-1$
       zoteroApiKey_.getElement().getStyle().setMarginLeft(4, Unit.PX);
       spaced(zoteroApiKey_);
       zoteroApiKey_.setKey(state_.zoteroApiKey().getValue());

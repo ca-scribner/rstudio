@@ -192,6 +192,7 @@ public class SavePlotAsHandler
                      globalDisplay_.showYesNoMessage(
                            MessageDialog.WARNING,
                            "File Exists",
+                           // i18n: Concatenation/Message
                            "The specified file name already exists. " +
                            "Do you want to overwrite it?",
                            new Operation() {

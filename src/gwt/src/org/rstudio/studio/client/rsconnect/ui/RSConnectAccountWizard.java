@@ -117,7 +117,8 @@ public class RSConnectAccountWizard
    }
    
    public static final String SERVICE_NAME =  "RStudio Connect";
-   public static final String SERVICE_DESCRIPTION = 
+   public static final String SERVICE_DESCRIPTION =
+      // i18n: Concatenation/Message
      "RStudio Connect is a server product from RStudio " +
      "for secure sharing of applications, reports, plots, and APIs.";
 }

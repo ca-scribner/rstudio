@@ -18,6 +18,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class RProjectRVersion extends JavaScriptObject
 {
+   // i18n: Enumerator?
    public static final String DEFAULT = "Default";
    
    public static final String ARCH_32 = "32";

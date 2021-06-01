@@ -147,7 +147,7 @@ public class PanmirrorCommandUI implements ScheduledCommand
          // normalize to RStudio shortcut string
          String key = command.keymap[0];
          key = key.replace('-', '+');
-         key = key.replace("Mod", BrowseCap.isMacintosh() ? "Cmd" : "Ctrl");
+         key = key.replace("Mod", BrowseCap.isMacintosh() ? "Cmd" : "Ctrl"); //$NON-NLS-1$
          
          // capitalize the last 
          return KeySequence.fromShortcutString(key);

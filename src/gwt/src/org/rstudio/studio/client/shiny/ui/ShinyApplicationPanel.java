@@ -83,7 +83,7 @@ public class ShinyApplicationPanel extends SatelliteFramePanel<RStudioFrame>
       String url = params.getUrl();
       
       // ensure that we display a full url in server mode
-      if (!url.startsWith("http"))
+      if (!url.startsWith("http")) //$NON-NLS-1$
          url = GWT.getHostPageBaseURL() + url;
       urlBox_.setText(url);
 

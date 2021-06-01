@@ -404,8 +404,8 @@ public class PdfJsWindow extends WindowEx
                div.getStyle().setProperty("transition", "opacity 4s");
                // use DomUtils to set transition styles so gwt doesn't assert
                // an invalid style name (no camelCase) in debug mode
-               DomUtils.setStyle(div, "-moz-transition", "opacity 4s");
-               DomUtils.setStyle(div, "-webkit-transition", "opacity 4s");
+               DomUtils.setStyle(div, "-moz-transition", "opacity 4s"); //$NON-NLS-1$
+               DomUtils.setStyle(div, "-webkit-transition", "opacity 4s"); //$NON-NLS-1$
 
                pageContainer.appendChild(div);
 

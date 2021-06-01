@@ -119,6 +119,7 @@ public class SelectWidget extends Composite
       listBox_.setMultipleSelect(isMultipleSelect);
       if (options == null)
       {
+         // i18n: Should this be internastionalized?  I think Item at least might be a enumerator, but value seen?
          listBox_.addItem("(None)", "(None)");
       }
       else

@@ -76,9 +76,9 @@ public class ReticulateEvent extends GwtEvent<ReticulateEvent.Handler>
    public static final Type<Handler> TYPE = new Type<>();
 
    // synchronize with SessionReticulate.R
-   public static final String TYPE_PYTHON_INITIALIZED = "python_initialized";
-   public static final String TYPE_REPL_INITIALIZED   = "repl_initialized";
-   public static final String TYPE_REPL_ITERATION     = "repl_iteration";
-   public static final String TYPE_REPL_BUSY          = "repl_busy";
-   public static final String TYPE_REPL_TEARDOWN      = "repl_teardown";
+   public static final String TYPE_PYTHON_INITIALIZED = "python_initialized"; // $NON-NLS-1$
+   public static final String TYPE_REPL_INITIALIZED   = "repl_initialized"; // $NON-NLS-1$
+   public static final String TYPE_REPL_ITERATION     = "repl_iteration"; // $NON-NLS-1$
+   public static final String TYPE_REPL_BUSY          = "repl_busy"; // $NON-NLS-1$
+   public static final String TYPE_REPL_TEARDOWN      = "repl_teardown"; // $NON-NLS-1$
 }

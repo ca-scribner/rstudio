@@ -158,7 +158,7 @@ public class SlideLabel extends Composite
       setCancelVisible(false);
       Roles.getPresentationRole().set(border_);
       Roles.getProgressbarRole().set(innerTable_);
-      progress_.setAlt("Spinner");
+      progress_.setAlt("Spinner"); //$NON-NLS-1$
       innerTable_.setAttribute("aria-hidden", "true");
       cancel_.addClickHandler(new ClickHandler()
       {
@@ -216,7 +216,7 @@ public class SlideLabel extends Composite
                protected void onStart()
                {
                   setVisible(true);
-                  innerTable_.removeAttribute("aria-hidden");
+                  innerTable_.removeAttribute("aria-hidden"); //$NON-NLS-1$
                   curtain_.setHeight("0px");
                   height = content_.getOffsetHeight() + 14 + 14;
                   super.onStart();
@@ -326,7 +326,7 @@ public class SlideLabel extends Composite
       if (!visible)
          cancel_.getElement().setAttribute("disabled", "");
       else
-         cancel_.getElement().removeAttribute("disabled");
+         cancel_.getElement().removeAttribute("disabled"); //$NON-NLS-1$
    }
 
    @UiField

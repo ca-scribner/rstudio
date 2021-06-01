@@ -354,13 +354,13 @@ public class PythonCompletionManager extends CompletionManagerBase
          if (token.valueEquals(":"))
          {
             String line = docDisplay_.getLine(it.getCurrentTokenRow());
-            Pattern pattern = Pattern.create("[:]\\s*(?:#|$)", "");
+            Pattern pattern = Pattern.create("[:]\\s*(?:#|$)", ""); //$NON-NLS-1$
             if (pattern.test(line))
                break;
          }
          
          // if we hit an 'import' or a 'from', we can bail
-         if (token.valueEquals("from") || token.valueEquals("import"))
+         if (token.valueEquals("from") || token.valueEquals("import")) //$NON-NLS-1$
             break;
          
          // if we hit an open bracket, use this line as the anchor
@@ -369,7 +369,7 @@ public class PythonCompletionManager extends CompletionManagerBase
             // double-check that this is a function invocation, not a definition
             int row = it.getCurrentTokenRow();
             String line = docDisplay_.getLine(row);
-            Pattern pattern = Pattern.create("^\\s*def\\s+", "");
+            Pattern pattern = Pattern.create("^\\s*def\\s+", ""); //$NON-NLS-1$
             if (pattern.test(line))
                break;
             
@@ -396,8 +396,8 @@ public class PythonCompletionManager extends CompletionManagerBase
    }
    
    private static final Pattern RE_IMPORT =
-         Pattern.create("^\\s*import\\s+([\\w._]+)\\s*(?:#.*|$)", "");
+         Pattern.create("^\\s*import\\s+([\\w._]+)\\s*(?:#.*|$)", ""); //$NON-NLS-1$
    
    private static final Pattern RE_IMPORT_AS =
-         Pattern.create("^\\s*import\\s+([\\w._]+)\\s+as\\s+([\\w._]+)\\s*(?:#.*|$)", "");
+         Pattern.create("^\\s*import\\s+([\\w._]+)\\s+as\\s+([\\w._]+)\\s*(?:#.*|$)", ""); //$NON-NLS-1$
 }

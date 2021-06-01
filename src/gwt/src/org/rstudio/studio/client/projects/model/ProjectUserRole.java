@@ -39,6 +39,6 @@ public class ProjectUserRole extends JavaScriptObject
       return this.role;
    }-*/;
    
-   public final static String ROLE_COLLABORATOR = "collaborator";
-   public final static String ROLE_OWNER = "owner";
+   public final static String ROLE_COLLABORATOR = "collaborator"; //$NON-NLS-1$
+   public final static String ROLE_OWNER = "owner"; //$NON-NLS-1$
 }

@@ -43,6 +43,7 @@ public class RequestLogDetail extends Composite
       panel.getElement().getStyle().setOverflow(Overflow.AUTO);
 
       HTML html = new HTML();
+      // i18n: ?
       html.setText("Request ID: " + entry.getRequestId() + "\n\n"
                    + "== REQUEST ======\n"
                    + tryPrettyJson(req)

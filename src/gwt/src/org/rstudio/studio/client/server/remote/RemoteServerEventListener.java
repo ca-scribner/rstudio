@@ -288,7 +288,7 @@ class RemoteServerEventListener
             // listen() again after processing
             catch(Throwable e)
             {
-               GWT.log("ERROR: Processing client events", e);
+               GWT.log("ERROR: Processing client events", e); //$NON-NLS-1$
             }
             
             // listen for more events
@@ -436,7 +436,7 @@ class RemoteServerEventListener
          }
          catch(Throwable e)
          {
-            GWT.log("Error restarting event source", e);
+            GWT.log("Error restarting event source", e); //$NON-NLS-1$
          }
       }
    }

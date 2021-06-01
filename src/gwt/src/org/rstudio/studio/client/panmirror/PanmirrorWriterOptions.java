@@ -21,8 +21,8 @@ import jsinterop.annotations.JsType;
 @JsType
 public class PanmirrorWriterOptions
 {    
-   public final static String kWrapNone = "none";
-   public final static String kWrapSentence = "sentence";
+   public final static String kWrapNone = "none"; //$NON-NLS-1$
+   public final static String kWrapSentence = "sentence"; //$NON-NLS-1$
    
    public boolean atxHeaders;
    public String wrap;

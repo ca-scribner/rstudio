@@ -459,6 +459,6 @@ public class RmdTemplateData
       ];
    }-*/;
    
-   public final static String DOCUMENT_TEMPLATE = "Document";
-   public final static String PRESENTATION_TEMPLATE = "Presentation";
+   public final static String DOCUMENT_TEMPLATE = "Document"; //$NON-NLS-1$
+   public final static String PRESENTATION_TEMPLATE = "Presentation"; //$NON-NLS-1$
 }

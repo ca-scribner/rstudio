@@ -89,6 +89,7 @@ public class ProjectRMarkdownPreferencesPane extends ProjectPreferencesPane
       
       // canonical mode
       canonical_ = new ListBox();
+      // i18n: Are these seen by the user?  This looks like it controlls a checkbox.  Why is there a (Default) item?
       canonical_.addItem("(Default)");
       canonical_.addItem("true");
       canonical_.addItem("false");

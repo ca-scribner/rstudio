@@ -147,7 +147,8 @@ public class RSAccountConnector implements EnableRStudioConnectUIEvent.Handler
             if (!found)
             {
                display_.showErrorMessage("Server Information Not Found",
-                     "RStudio could not retrieve server information for " +
+                  // i18n: Concatenation/Message
+                  "RStudio could not retrieve server information for " +
                      "the selected account.");
             }
          }
@@ -302,11 +303,12 @@ public class RSAccountConnector implements EnableRStudioConnectUIEvent.Handler
          final OperationWithInput<AccountConnectResult> onConnected)
    {
       // get command and substitute rsconnect for shinyapps
-      final String cmd = result.getCloudSecret().replace("shinyapps::",
-                                                         "rsconnect::");
-      if (!cmd.startsWith("rsconnect::setAccountInfo"))
+      final String cmd = result.getCloudSecret().replace("shinyapps::", //$NON-NLS-1$
+                                                         "rsconnect::"); //$NON-NLS-1$
+      if (!cmd.startsWith("rsconnect::setAccountInfo")) //$NON-NLS-1$
       {
          display_.showErrorMessage("Error Connecting Account",
+               // i18n: Concatenation/Message
                "The pasted command should start with " +
                "rsconnect::setAccountInfo. If you're having trouble, try " +
                "connecting your account manually; type " +
@@ -327,7 +329,8 @@ public class RSAccountConnector implements EnableRStudioConnectUIEvent.Handler
          public void onError(ServerError error)
          {
             display_.showErrorMessage("Error Connecting Account",
-                  "The command '" + cmd + "' failed. You can set up an " +
+                  // i18n: Concatenation/Message
+               "The command '" + cmd + "' failed. You can set up an " +
                   "account manually by using rsconnect::setAccountInfo; " +
                   "type ?rsconnect::setAccountInfo at the R console for " +
                   "more information.");
@@ -361,6 +364,7 @@ public class RSAccountConnector implements EnableRStudioConnectUIEvent.Handler
          public void onError(ServerError error)
          {
             display_.showErrorMessage("Account Connect Failed",
+                  // i18n: Concatenation/Message
                   "Your account was authenticated successfully, but could " +
                   "not be connected to RStudio. Make sure your installation " +
                   "of the 'rsconnect' package is correct for the server " +

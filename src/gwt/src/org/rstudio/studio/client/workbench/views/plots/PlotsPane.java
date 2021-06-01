@@ -51,6 +51,7 @@ public class PlotsPane extends WorkbenchPane implements Plots.Display,
    public PlotsPane(Commands commands, EventBus events, PlotsServerOperations server,
          DependencyManager dependencies)
    {
+      // i18n: Is this enum, user, or both?
       super("Plots", events);
       commands_ = commands;
       server_ = server;
@@ -113,10 +114,10 @@ public class PlotsPane extends WorkbenchPane implements Plots.Display,
       panel_.setSize("100%", "100%");
 
       frame_ = new ImageFrame("Plots Pane");
-      frame_.setStyleName("rstudio-HelpFrame");
+      frame_.setStyleName("rstudio-HelpFrame"); //$NON-NLS-1$
       frame_.setMarginWidth(0);
       frame_.setMarginHeight(0);
-      frame_.setUrl("about:blank");
+      frame_.setUrl("about:blank"); //$NON-NLS-1$
       frame_.setSize("100%", "100%");
       ElementIds.assignElementId(frame_.getElement(),
                                  ElementIds.PLOT_IMAGE_FRAME);

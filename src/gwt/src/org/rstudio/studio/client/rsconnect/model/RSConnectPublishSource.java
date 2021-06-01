@@ -137,10 +137,10 @@ public class RSConnectPublishSource
    
    public boolean isDocument()
    {
-      return isSourceExt("rmd") || isSourceExt("md") || isSourceExt("html") ||
-             isSourceExt("htm") || isSourceExt("rpres") || isSourceExt("pdf") ||
-             isSourceExt("docx") || isSourceExt("odt") || isSourceExt("rtf") ||
-             isSourceExt("pptx");
+      return isSourceExt("rmd") || isSourceExt("md") || isSourceExt("html") || //$NON-NLS-1$
+             isSourceExt("htm") || isSourceExt("rpres") || isSourceExt("pdf") || //$NON-NLS-1$
+             isSourceExt("docx") || isSourceExt("odt") || isSourceExt("rtf") || //$NON-NLS-1$
+             isSourceExt("pptx"); //$NON-NLS-1$
    }
    
    public String getDeployKey()
@@ -202,17 +202,17 @@ public class RSConnectPublishSource
    {
       // create summary of publish source for server
       JsObject obj = JsObject.createJsObject();
-      obj.setString("deploy_dir", getDeployDir());
-      obj.setString("deploy_file", isDocument() ||
+      obj.setString("deploy_dir", getDeployDir()); //$NON-NLS-1$
+      obj.setString("deploy_file", isDocument() || //$NON-NLS-1$
             isSingleFileShiny() ? getDeployFileName() : "");
-      obj.setString("source_file", 
+      obj.setString("source_file", //$NON-NLS-1$
             isDocument() && 
             getSourceFile() != null && 
             getContentCategory() != RSConnect.CONTENT_CATEGORY_SITE ?
                getSourceFile() : "");
-      obj.setString("content_category", StringUtil.notNull(
+      obj.setString("content_category", StringUtil.notNull( //$NON-NLS-1$
             getContentCategory()));
-      obj.setString("website_dir", StringUtil.notNull(getWebsiteDir()));
+      obj.setString("website_dir", StringUtil.notNull(getWebsiteDir())); //$NON-NLS-1$
       return obj.cast();
    }
    
