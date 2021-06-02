@@ -146,6 +146,7 @@ public class SourceWindow implements LastSourceDocClosedEvent.Handler,
 
                if (unsaved.size() > 0)
                {
+                  // i18n: Message with logic
                   String msg = "Your edits to the ";
                   if (unsaved.size() == 1)
                   {

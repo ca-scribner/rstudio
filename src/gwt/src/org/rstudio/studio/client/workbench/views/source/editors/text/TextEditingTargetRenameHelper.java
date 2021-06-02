@@ -58,14 +58,14 @@ public class TextEditingTargetRenameHelper
       String targetType = cursor.currentType();
       
       boolean isRefactorable =
-            cursor.hasType("identifier", "constant.language", "string") ||
-            cursor.typeEquals("keyword");
+            cursor.hasType("identifier", "constant.language", "string") || //$NON-NLS-1$
+            cursor.typeEquals("keyword"); //$NON-NLS-1$
       
       if (!isRefactorable)
          return 0;
       
       // If we're refactoring a string, just do it through the whole document.
-      if (cursor.typeEquals("string"))
+      if (cursor.typeEquals("string")) //$NON-NLS-1$
       {
          editor_.selectAll(cursor.currentValue());
          return editor_.getNativeSelection().getAllRanges().length;
@@ -90,7 +90,7 @@ public class TextEditingTargetRenameHelper
                break;
             
             String functionName = clone.currentValue();
-            if (functionName != "function")
+            if (functionName != "function") //$NON-NLS-1$
                return renameFunctionArgument(functionName, argName);
          }
       }
@@ -116,7 +116,7 @@ public class TextEditingTargetRenameHelper
       // We want to consider scopes as 'within' the braces, but the 'preamble'
       // of a scope begins with the function identifier.
       if (cursor.peekFwd(1).isLeftAssign() &&
-          cursor.peekFwd(2).valueEquals("function") &&
+          cursor.peekFwd(2).valueEquals("function") && //$NON-NLS-1$
           !scope.isTopLevel())
       {
          scope = scope.getParentScope();
@@ -261,7 +261,7 @@ public class TextEditingTargetRenameHelper
             // Update state.
             if (cursor.valueEquals("("))
             {
-               if (cursor.peekBwd(1).valueEquals("function"))
+               if (cursor.peekBwd(1).valueEquals("function")) //$NON-NLS-1$
                   pushState(STATE_FUNCTION_DEFINITION);
                else
                   pushState(STATE_FUNCTION_CALL);
@@ -289,7 +289,7 @@ public class TextEditingTargetRenameHelper
          }
          
          // Protect a name if it's the target of an assignment in a child scope.
-         if (cursor.hasType("identifier") &&
+         if (cursor.hasType("identifier") && //$NON-NLS-1$
              cursor.peekFwd(1).isLeftAssign() &&
              !cursor.peekBwd(1).isExtractionOperator())
          {
@@ -299,7 +299,7 @@ public class TextEditingTargetRenameHelper
             if (peekState() == STATE_FUNCTION_DEFINITION && scope != candidate)
                continue;
             
-            if (cursor.peekFwd(2).valueEquals("function") && !candidate.isTopLevel())
+            if (cursor.peekFwd(2).valueEquals("function") && !candidate.isTopLevel()) //$NON-NLS-1$
                candidate = candidate.getParentScope();
             
             if (candidate != scope)

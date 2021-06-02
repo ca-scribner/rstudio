@@ -43,7 +43,7 @@ public class TextEditingTargetSpelling extends SpellingContext
 {
    interface Resources extends ClientBundle
    {
-      @Source("./goToWorkingDir.png")
+      @Source("./goToWorkingDir.png") //$NON-NLS-1$
       ImageResource addToDictIcon();
    }
 
@@ -111,6 +111,7 @@ public class TextEditingTargetSpelling extends SpellingContext
                wordStart.getColumn(),
                wordEnd.getRow(),
                wordEnd.getColumn(),
+               // i18n: Enumerator, user facing text, or both?  Might be used as enumerator below
                "Spellcheck",
                "spelling"));
          }

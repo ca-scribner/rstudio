@@ -71,13 +71,13 @@ public class StanScopeTreeManager extends ScopeTreeManager
       super(docDisplay);
    }
    
-   private static final Pattern RE_SECTION = Pattern.create("^\\s*//(.*)(?:====|----)\\s*", "");
+   private static final Pattern RE_SECTION = Pattern.create("^\\s*//(.*)(?:====|----)\\s*", ""); //$NON-NLS-1$
    
    private static final String[] STAN_BLOCKS = new String[] {
-         "functions",
-         "data", "transformed data",
-         "parameters", "transformed parameters",
-         "model",
-         "generated quantities"
+         "functions", //$NON-NLS-1$
+         "data", "transformed data", //$NON-NLS-1$
+         "parameters", "transformed parameters", //$NON-NLS-1$
+         "model", //$NON-NLS-1$
+         "generated quantities" //$NON-NLS-1$
    };
 }

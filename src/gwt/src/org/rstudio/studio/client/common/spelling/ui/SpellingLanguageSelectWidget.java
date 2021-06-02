@@ -53,7 +53,12 @@ public class SpellingLanguageSelectWidget extends SelectWidget
       
       getLabel().getElement().getStyle().setMarginBottom(4, Unit.PX);
       
-      HelpButton.addHelpButton(this, "spelling_dictionaries", "Help on spelling dictionaries", 0);
+      HelpButton.addHelpButton(
+         this,
+         "spelling_dictionaries", //$NON-NLS-1$
+         "Help on spelling dictionaries",
+         0
+      );
       
       getListBox().addChangeHandler(new ChangeHandler() {
 

@@ -141,7 +141,7 @@ public class SourceNavigationHistory
    @SuppressWarnings("unused")
    private void debugPrintCurrentHistory()
    {
-      Debug.logToConsole("HISTORY (location=" + currentLocation_ + ")");
+      Debug.logToConsole("HISTORY (location=" + currentLocation_ + ")"); //$NON-NLS-1$
       for (int i=0; i<history_.size(); i++)
          Debug.logToConsole(history_.get(i).toDebugString());
       Debug.logToConsole("");

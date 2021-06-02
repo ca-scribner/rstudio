@@ -95,17 +95,17 @@ public class TriStateCheckboxCell<TKey> implements Cell<Boolean>
                               ValueUpdater<Boolean> booleanValueUpdater)
    {
       if (Element.is(event.getEventTarget()) &&
-          Element.as(event.getEventTarget()).getTagName().equalsIgnoreCase("img"))
+          Element.as(event.getEventTarget()).getTagName().equalsIgnoreCase("img")) //$NON-NLS-1$
       {
-         if ("click".equals(event.getType()))
+         if ("click".equals(event.getType())) //$NON-NLS-1$
          {
             booleanValueUpdater.update(value == null ? true : !value);
          }
-         else if ("mouseover".equals(event.getType()))
+         else if ("mouseover".equals(event.getType())) //$NON-NLS-1$
          {
             mouseInCheckbox_ = true;
          }
-         else if ("mouseout".equals(event.getType()))
+         else if ("mouseout".equals(event.getType())) //$NON-NLS-1$
          {
             // WARNING!!!! Sometimes we get mouseover without a corresponding
             // mouseout!! See comment at top of this class!

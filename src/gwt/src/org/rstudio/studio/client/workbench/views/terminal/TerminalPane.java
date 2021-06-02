@@ -91,6 +91,7 @@ public class TerminalPane extends WorkbenchPane
                           WorkbenchContext workbenchContext,
                           WorkbenchServerOperations server)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Terminal", events);
       globalDisplay_ = globalDisplay;
       commands_ = commands;
@@ -425,6 +426,7 @@ public class TerminalPane extends WorkbenchPane
       // terminals in the cache, something is, to be technical, busted.
       if (terminals_.terminalCount() > 0 || terminalSessionsPanel_.getTerminalCount() > 0)
       {
+         // i18n: Does this reach users or is this developer only?
          Debug.logWarning("Received terminal list from server when terminals " +
                           "already loaded. Ignoring.");
          return;
@@ -448,6 +450,7 @@ public class TerminalPane extends WorkbenchPane
          {
             globalDisplay_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
                   "Close " + visibleTerminal.getTitle(),
+                  // i18n: Concatenation/Message
                   "Are you sure you want to exit the terminal named \"" +
                         visibleTerminal.getCaption() + "\"? Any running jobs will be terminated.",
                   false,
@@ -631,7 +634,7 @@ public class TerminalPane extends WorkbenchPane
       if (visibleTerminal == null)
          return;
 
-      String command = "cd ";
+      String command = "cd "; //$NON-NLS-1$
 
       if (visibleTerminal.isPosixShell())
          command += StringUtil.escapeBashPath(workbenchContext_.getCurrentWorkingDir().getPath(), false);
@@ -653,6 +656,7 @@ public class TerminalPane extends WorkbenchPane
          dump.append("\n");
          for (int i = 0; i < total; i++)
          {
+            // i18n: How to handle below?
             TerminalSession session = terminalSessionsPanel_.getTerminalAtIndex(i);
             if (session == null)
             {

@@ -109,6 +109,7 @@ public class TerminalPreferencesPane extends PreferencesPane
                String shellExePath = customShellChooser_.getText();
                if (!shellExePath.endsWith(".exe"))
                {
+                  // i18n: Concatenation/Message
                   String message = "The program '" + shellExePath + "'" +
                      " is unlikely to be a valid shell executable.";
 
@@ -121,7 +122,7 @@ public class TerminalPreferencesPane extends PreferencesPane
          }
       };
 
-      String textboxWidth = "250px";
+      String textboxWidth = "250px"; //$NON-NLS-1$
       customShellPathLabel_ = new FormLabel("Custom shell binary:");
       customShellChooser_ = new FileChooserTextBox(customShellPathLabel_,
                                                    "(Not Found)",

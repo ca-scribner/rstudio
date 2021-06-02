@@ -62,6 +62,7 @@ public class ProjectSpellingPreferencesPane extends ProjectPreferencesPane
    @Override
    public String getName()
    {
+      // i18n: Enumerator, user facing text, or both?
       return "Spelling";
    }
 

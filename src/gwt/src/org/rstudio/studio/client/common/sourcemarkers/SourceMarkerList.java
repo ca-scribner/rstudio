@@ -88,7 +88,7 @@ public class SourceMarkerList extends Composite
          {
             Element el = DOM.eventGetTarget((Event) event.getNativeEvent());
             if (el != null
-                && el.getTagName().equalsIgnoreCase("div")
+                && el.getTagName().equalsIgnoreCase("div") //$NON-NLS-1$
                 && el.getClassName().contains(res_.styles().disclosure()))
             {
                ArrayList<CodeNavigationTarget> values =

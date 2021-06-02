@@ -29,27 +29,27 @@ public class SVNStatusRenderer implements SafeHtmlRenderer<String>
 {
    interface StatusResources extends ClientBundle
    {
-      @Source("images/statusAdded_2x.png")
+      @Source("images/statusAdded_2x.png") //$NON-NLS-1$
       ImageResource statusAdded2x();
-      @Source("images/statusConflicted_2x.png")
+      @Source("images/statusConflicted_2x.png") //$NON-NLS-1$
       ImageResource statusConflicted2x();
-      @Source("images/statusDeleted_2x.png")
+      @Source("images/statusDeleted_2x.png") //$NON-NLS-1$
       ImageResource statusDeleted2x();
-      @Source("images/statusExternal_2x.png")
+      @Source("images/statusExternal_2x.png") //$NON-NLS-1$
       ImageResource statusExternal2x();
-      @Source("images/statusIgnored_2x.png")
+      @Source("images/statusIgnored_2x.png") //$NON-NLS-1$
       ImageResource statusIgnored2x();
-      @Source("images/statusMissing_2x.png")
+      @Source("images/statusMissing_2x.png") //$NON-NLS-1$
       ImageResource statusMissing2x();
-//      @Source("images/statusMerged")
+//      @Source("images/statusMerged") //$NON-NLS-1$
 //      ImageResource statusMerged();
-      @Source("images/statusModified_2x.png")
+      @Source("images/statusModified_2x.png") //$NON-NLS-1$
       ImageResource statusModified2x();
-      @Source("images/statusNone_2x.png")
+      @Source("images/statusNone_2x.png") //$NON-NLS-1$
       ImageResource statusNone2x();
-      @Source("images/statusObstructed_2x.png")
+      @Source("images/statusObstructed_2x.png") //$NON-NLS-1$
       ImageResource statusObstructed2x();
-      @Source("images/statusUnversioned_2x.png")
+      @Source("images/statusUnversioned_2x.png") //$NON-NLS-1$
       ImageResource statusUnversioned2x();
    }
 

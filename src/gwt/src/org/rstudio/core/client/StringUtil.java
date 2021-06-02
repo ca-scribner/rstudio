@@ -101,7 +101,7 @@ public class StringUtil
       Date now = new Date();
 
       String format = "";
-
+      // i18n: Do date formats need ot be internationalized?
       if (DateTimeFormat.getFormat("MMM d").format(date) ==
           DateTimeFormat.getFormat("MMM d").format(now))
       {
@@ -255,7 +255,7 @@ public class StringUtil
 
    private static String toHex(char c)
    {
-      String table = "0123456789ABCDEF";
+      String table = "0123456789ABCDEF"; //$NON-NLS-1$
       return table.charAt((c >> 8) & 0xF) + "" + table.charAt(c & 0xF);
    }
 
@@ -269,7 +269,7 @@ public class StringUtil
 
    private static boolean isRKeyword(String identifier)
    {
-      String ALL_KEYWORDS = "|NULL|NA|TRUE|FALSE|T|F|Inf|NaN|NA_integer_|NA_real_|NA_character_|NA_complex_|function|while|repeat|for|if|in|else|next|break|...|";
+      String ALL_KEYWORDS = "|NULL|NA|TRUE|FALSE|T|F|Inf|NaN|NA_integer_|NA_real_|NA_character_|NA_complex_|function|while|repeat|for|if|in|else|next|break|...|"; //$NON-NLS-1$
 
       if (identifier.length() > 20 || identifier.contains("|"))
          return false;
@@ -402,19 +402,19 @@ public class StringUtil
     */
    public static String trimBlankLines(String data)
    {
-      data = Pattern.create("^[\\r\\n\\t ]*\\n", "g").replaceAll(data, "");
-      data = Pattern.create("\\r?\\n[\\r\\n\\t ]*$", "g").replaceAll(data, "");
+      data = Pattern.create("^[\\r\\n\\t ]*\\n", "g").replaceAll(data, ""); //$NON-NLS-1$
+      data = Pattern.create("\\r?\\n[\\r\\n\\t ]*$", "g").replaceAll(data, ""); //$NON-NLS-1$
       return data;
    }
 
    public static String trimLeft(String str)
    {
-      return str.replaceFirst("^\\s+", "");
+      return str.replaceFirst("^\\s+", ""); //$NON-NLS-1$
    }
 
    public static String trimRight(String str)
    {
-      return str.replaceFirst("\\s+$", "");
+      return str.replaceFirst("\\s+$", ""); //$NON-NLS-1$
    }
 
    /**
@@ -1039,11 +1039,11 @@ public class StringUtil
    }
 
    private static final String[] LABELS = {
-         "B",
-         "KB",
-         "MB",
-         "GB",
-         "TB"
+         "B", //$NON-NLS-1$
+         "KB", //$NON-NLS-1$
+         "MB", //$NON-NLS-1$
+         "GB", //$NON-NLS-1$
+         "TB" //$NON-NLS-1$
    };
 
    public static boolean isComplementOf(String self, String other)
@@ -1159,7 +1159,7 @@ public class StringUtil
 
    public static String makeRandomId(int length)
    {
-      String alphanum = "0123456789abcdefghijklmnopqrstuvwxyz";
+      String alphanum = "0123456789abcdefghijklmnopqrstuvwxyz"; //$NON-NLS-1$
       String id = "";
       for (int i = 0; i < length; i++)
       {
@@ -1485,8 +1485,9 @@ public class StringUtil
 
    private static final NumberFormat FORMAT = NumberFormat.getFormat("0.#");
    private static final NumberFormat PRETTY_NUMBER_FORMAT = NumberFormat.getFormat("#,##0.#####");
+   // i18n: Does this date format need i18n?
    private static final DateTimeFormat DATE_FORMAT
                           = DateTimeFormat.getFormat("MMM d, yyyy, h:mm a");
-   private static final Pattern RE_INDENT = Pattern.create("^\\s*", "");
+   private static final Pattern RE_INDENT = Pattern.create("^\\s*", ""); //$NON-NLS-1$
    private static final Pattern BASH_RESERVED_CHAR = Pattern.create("[^a-zA-Z0-9,._+@%/-]");
 }

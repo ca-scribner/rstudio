@@ -27,6 +27,7 @@ public class TutorialTab extends DelayLoadWorkbenchTab<TutorialPresenter>
    @Inject
    public TutorialTab(Shim shim)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Tutorial", shim);
       shim_ = shim;
    }

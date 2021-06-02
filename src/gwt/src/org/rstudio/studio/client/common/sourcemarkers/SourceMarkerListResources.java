@@ -39,25 +39,25 @@ public interface SourceMarkerListResources extends ClientBundle
       String disclosure();
    }
 
-   @Source("images/error_2x.png")
+   @Source("images/error_2x.png") //$NON-NLS-1$
    ImageResource error2x();
   
-   @Source("org/rstudio/core/client/theme/res/warningSmall_2x.png")
+   @Source("org/rstudio/core/client/theme/res/warningSmall_2x.png") //$NON-NLS-1$
    ImageResource warning2x();
 
-   @Source("images/badbox_2x.png")
+   @Source("images/badbox_2x.png") //$NON-NLS-1$
    ImageResource badbox2x();
    
-   @Source("images/info_2x.png")
+   @Source("images/info_2x.png") //$NON-NLS-1$
    ImageResource info2x();
    
-   @Source("images/style_2x.png")
+   @Source("images/style_2x.png") //$NON-NLS-1$
    ImageResource style2x();
 
-   @Source("SourceMarkerList.css")
+   @Source("SourceMarkerList.css") //$NON-NLS-1$
    Styles styles();
    
-   @Source("images/logContextButton_2x.png")
+   @Source("images/logContextButton_2x.png") //$NON-NLS-1$
    ImageResource logContextButton2x();
     
    public static SourceMarkerListResources INSTANCE = 

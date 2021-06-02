@@ -29,12 +29,12 @@ public class ThemeFonts
 
    public static String getProportionalFont()
    {
-      return fontLoader.getProportionalFont() + ", serif";
+      return fontLoader.getProportionalFont() + ", serif"; //$NON-NLS-1$
    }
 
    public static String getFixedWidthFont()
    {
-      return fontLoader.getFixedWidthFont() + ", monospace";
+      return fontLoader.getFixedWidthFont() + ", monospace"; //$NON-NLS-1$
    }
 
    static interface ThemeFontLoader
@@ -45,7 +45,7 @@ public class ThemeFonts
 
    public static String getFixedWidthClass()
    {
-      return "rstudio-fixed-width-font";
+      return "rstudio-fixed-width-font"; //$NON-NLS-1$
    }
 
    static class DesktopThemeFontLoader implements ThemeFontLoader
@@ -84,8 +84,8 @@ public class ThemeFonts
    {
       public String getProportionalFont()
       {
-         String font = BrowseCap.hasUbuntuFonts() ? "Ubuntu, " : "";
-         return font + "\"Lucida Sans\", \"DejaVu Sans\", \"Lucida Grande\", \"Segoe UI\", Verdana, Helvetica, sans-serif";
+         String font = BrowseCap.hasUbuntuFonts() ? "Ubuntu, " : ""; //$NON-NLS-1$
+         return font + "\"Lucida Sans\", \"DejaVu Sans\", \"Lucida Grande\", \"Segoe UI\", Verdana, Helvetica, sans-serif"; //$NON-NLS-1$
       }
 
       public String getFixedWidthFont()
@@ -114,11 +114,11 @@ public class ThemeFonts
          }
 
          if (BrowseCap.isMacintosh())
-            font += "Monaco, monospace";
+            font += "Monaco, monospace"; //$NON-NLS-1$
          else if (BrowseCap.isLinux())
-            font += "\"Ubuntu Mono\", \"Droid Sans Mono\", \"DejaVu Sans Mono\", monospace";
+            font += "\"Ubuntu Mono\", \"Droid Sans Mono\", \"DejaVu Sans Mono\", monospace"; //$NON-NLS-1$
          else
-            font += "Consolas, \"Lucida Console\", monospace";
+            font += "Consolas, \"Lucida Console\", monospace"; //$NON-NLS-1$
 
          return font;
       }

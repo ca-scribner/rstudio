@@ -39,10 +39,10 @@ public class TextEditingTargetReformatHelper
    }
    
    private static final Pattern ENDS_WITH_NEWLINE =
-         Pattern.create("\\n\\s*$", "");
+         Pattern.create("\\n\\s*$", ""); //$NON-NLS-1$
 
    private static final Pattern STARTS_WITH_NEWLINE =
-         Pattern.create("^\\s*\\n", "");
+         Pattern.create("^\\s*\\n", ""); //$NON-NLS-1$
    
    class SimpleTokenCursor {
       
@@ -195,7 +195,7 @@ public class TextEditingTargetReformatHelper
          if (index < 0 || index >= n_)
          {
             ArrayList<Token> dummyTokens = new ArrayList<>();
-            dummyTokens.add(Token.create("__ERROR__", "error", 0));
+            dummyTokens.add(Token.create("__ERROR__", "error", 0)); //$NON-NLS-1$
             return new SimpleTokenCursor(dummyTokens, 0, 1, complements_);
          }
          
@@ -435,7 +435,7 @@ public class TextEditingTargetReformatHelper
       public boolean isWhitespaceOrNewline()
       {
          Token token = currentToken();
-         return token.getType() == "text" &&
+         return token.getType() == "text" && //$NON-NLS-1$
                 token.getValue().matches("^[\\s\\n]*$");
       }
       
@@ -463,7 +463,7 @@ public class TextEditingTargetReformatHelper
       
       public boolean isComment()
       {
-         return tokens_.get(offset_).getType().indexOf("comment") != -1;
+         return tokens_.get(offset_).getType().indexOf("comment") != -1; //$NON-NLS-1$
       }
       
       public boolean hasNewline()
@@ -473,7 +473,7 @@ public class TextEditingTargetReformatHelper
       
       public boolean isKeyword()
       {
-         return tokens_.get(offset_).getType() == "keyword";
+         return tokens_.get(offset_).getType() == "keyword"; //$NON-NLS-1$
       }
       
       public boolean isControlFlowKeyword()
@@ -620,7 +620,7 @@ public class TextEditingTargetReformatHelper
          
          accumulatedLength += clone.getValue().replaceAll("\\s", "").length();
          
-         if (clone.currentType() == "text")
+         if (clone.currentType() == "text") //$NON-NLS-1$
             commaCount += StringUtil.countMatches(
                   clone.currentValue(), ',');
          
@@ -634,7 +634,7 @@ public class TextEditingTargetReformatHelper
          //
          //    tryCatch({
          //
-         if (clone.currentValue() == "function")
+         if (clone.currentValue() == "function") //$NON-NLS-1$
             if (clone.previousSignificantToken().getValue().contains(","))
                overrideNewlineInsertionAsFalse = true;
          
@@ -663,7 +663,7 @@ public class TextEditingTargetReformatHelper
             //
             if (clone.moveToNextSignificantToken())
             {
-               if (clone.currentValue() == "function")
+               if (clone.currentValue() == "function") //$NON-NLS-1$
                {
                   newlineAfterBrace = true;
                   newlineAfterComma = true;
@@ -733,7 +733,7 @@ public class TextEditingTargetReformatHelper
       // Within a function argument list, we almost always want to insert
       // newlines after commas, expect for very short function argument
       // lists.
-      if (prevSignificantValue == "function")
+      if (prevSignificantValue == "function") //$NON-NLS-1$
          commaScore += 20;
       
       // For scopes containing many `=`, we typically prefer inserting a
@@ -849,16 +849,16 @@ public class TextEditingTargetReformatHelper
             break;
          
          // Ensure a single space follows control flow statements
-         if (cursor.currentValue() == "if" ||
-             cursor.currentValue() == "for" ||
-             cursor.currentValue() == "while" ||
-             cursor.currentValue() == "repeat")
+         if (cursor.currentValue() == "if" || //$NON-NLS-1$
+             cursor.currentValue() == "for" || //$NON-NLS-1$
+             cursor.currentValue() == "while" || //$NON-NLS-1$
+             cursor.currentValue() == "repeat") //$NON-NLS-1$
          {
             cursor.ensureSingleSpaceFollows();
          }
          
          // Ensure newlines around 'naked' else
-         if (cursor.currentValue() == "else")
+         if (cursor.currentValue() == "else") //$NON-NLS-1$
          {
             if (cursor.previousSignificantToken().getValue() != "}" &&
                 cursor.getOffset() >= 2)
@@ -866,14 +866,14 @@ public class TextEditingTargetReformatHelper
                cursor.ensureNewlinePreceeds();
             }
             
-            if (!(cursor.previousToken().getType().contains("comment") ||
+            if (!(cursor.previousToken().getType().contains("comment") || //$NON-NLS-1$
                   cursor.previousToken().getValue().matches(".*\\s+")))
             {
                cursor.ensureWhitespacePreceeds();
             }
             
             String nextValue = cursor.nextSignificantToken().getValue();
-            if (!(nextValue == "{" || nextValue == "if"))
+            if (!(nextValue == "{" || nextValue == "if")) //$NON-NLS-1$
                cursor.ensureNewlineFollows();
             
             continue;
@@ -886,7 +886,7 @@ public class TextEditingTargetReformatHelper
             
             // Prefer newlines after comparison operators within 'if'
             // statements when the enclosed selection is long
-            if (prevSignificantValue == "if")
+            if (prevSignificantValue == "if") //$NON-NLS-1$
             {
                if (accumulatedLength >= 20 &&
                    value == "&&" ||
@@ -933,11 +933,11 @@ public class TextEditingTargetReformatHelper
                   
                   boolean isBinary =
                     (previousCursor.isRightBrace() ||
-                     previousCursor.currentType().indexOf("identifier") != -1 ||
-                     previousCursor.currentType().indexOf("constant") != -1) &&
+                     previousCursor.currentType().indexOf("identifier") != -1 || //$NON-NLS-1$
+                     previousCursor.currentType().indexOf("constant") != -1) && //$NON-NLS-1$
                     (nextCursor.isLeftBrace() ||
-                     nextCursor.currentType().indexOf("operator") == -1 ||
-                     nextCursor.currentType().indexOf("constant") != -1);
+                     nextCursor.currentType().indexOf("operator") == -1 || //$NON-NLS-1$
+                     nextCursor.currentType().indexOf("constant") != -1); //$NON-NLS-1$
                   
                   // Binary operators should have whitespace surrounding.
                   if (isBinary)
@@ -953,7 +953,7 @@ public class TextEditingTargetReformatHelper
                   else
                   {
                      cursor.peek(1).trimWhitespaceFwd();
-                     if (previousCursor.currentType().indexOf("operator") == -1)
+                     if (previousCursor.currentType().indexOf("operator") == -1) //$NON-NLS-1$
                      {
                         cursor.peek(-1).trimWhitespaceBwd();
                      }
@@ -1250,7 +1250,7 @@ public class TextEditingTargetReformatHelper
    }
    
    private static final String VALID_WORD_FOR_ALIGN =
-         "[-+\\w._$@'\"]+";
+         "[-+\\w._$@'\"]+"; //$NON-NLS-1$
    
    private static final Pattern DELIM_PATTERN =
          Pattern.create("(^\\s*" +

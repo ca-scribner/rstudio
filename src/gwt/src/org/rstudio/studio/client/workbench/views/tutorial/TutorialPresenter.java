@@ -94,16 +94,16 @@ public class TutorialPresenter
       public JsObject toJsObject()
       {
          JsObject object = JsObject.createJsObject();
-         object.setString("name", tutorialName_);
-         object.setString("package", packageName_);
+         object.setString("name", tutorialName_); //$NON-NLS-1$
+         object.setString("package", packageName_); //$NON-NLS-1$
          return object;
       }
       
       public static Tutorial fromJsObject(JsObject object)
       {
          return new Tutorial(
-               object.getString("name"),
-               object.getString("package"));
+               object.getString("name"), //$NON-NLS-1$
+               object.getString("package")); //$NON-NLS-1$
       }
       
       private final String tutorialName_;
@@ -157,7 +157,7 @@ public class TutorialPresenter
       if (StringUtil.equals(type, TutorialCommandEvent.TYPE_NAVIGATE))
       {
          JsObject data = event.getData().cast();
-         String url = data.getString("url");
+         String url = data.getString("url"); //$NON-NLS-1$
          display_.openTutorial(url);
       }
       
@@ -165,7 +165,7 @@ public class TutorialPresenter
       else if (StringUtil.equals(type, TutorialCommandEvent.TYPE_STOP))
       {
          JsObject data = event.getData().cast();
-         String url = data.getString("url");
+         String url = data.getString("url"); //$NON-NLS-1$
          tutorialStop(url);
       }
       
@@ -206,8 +206,8 @@ public class TutorialPresenter
          display_.bringToFront();
          
          ShinyApplicationParams params = event.getParams();
-         String tutorialName = params.getMeta().getString("name");
-         String tutorialPackage = params.getMeta().getString("package");
+         String tutorialName = params.getMeta().getString("name"); //$NON-NLS-1$
+         String tutorialPackage = params.getMeta().getString("package"); //$NON-NLS-1$
          String tutorialUrl = DomUtils.makeAbsoluteUrl(params.getUrl());
          
          if (Desktop.hasDesktopFrame())
@@ -326,8 +326,8 @@ public class TutorialPresenter
    @SuppressWarnings("unused")
    private final ShinyDisconnectNotifier disconnectNotifier_;
    
-   public static final String VIEWER_TYPE_TUTORIAL = "tutorial";
+   public static final String VIEWER_TYPE_TUTORIAL = "tutorial"; //$NON-NLS-1$
    
-   public static final String URLS_HOME = "/tutorial/home";
+   public static final String URLS_HOME = "/tutorial/home"; //$NON-NLS-1$
    
 }

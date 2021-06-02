@@ -73,6 +73,7 @@ public class TutorialPane
                           DependencyManager dependencies,
                           TutorialServerOperations server)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Tutorial", events);
 
       globalDisplay_ = globalDisplay;
@@ -148,8 +149,8 @@ public class TutorialPane
          {
             onPopout(
                   url,
-                  response.getString("name"),
-                  response.getString("package"));
+                  response.getString("name"), //$NON-NLS-1$
+                  response.getString("package")); //$NON-NLS-1$
          }
 
          @Override
@@ -169,7 +170,7 @@ public class TutorialPane
       int width = Math.max(800, frame_.getElement().getClientWidth());
       int height = Math.max(800, frame_.getElement().getClientHeight());
 
-      String windowName = "rstudio-tutorial-" + StringUtil.makeRandomId(16);
+      String windowName = "rstudio-tutorial-" + StringUtil.makeRandomId(16); //$NON-NLS-1$
 
       NewWindowOptions options = new NewWindowOptions();
       options.setAppendClientId(false);
@@ -233,9 +234,9 @@ public class TutorialPane
       commands_.tutorialStop().setVisible(false);
       commands_.tutorialStop().setEnabled(false);
 
-      String url = "./tutorial/run" +
-            "?package=" + tutorial.getPackageName() +
-            "&name=" + tutorial.getTutorialName();
+      String url = "./tutorial/run" + //$NON-NLS-1$
+            "?package=" + tutorial.getPackageName() + //$NON-NLS-1$
+            "&name=" + tutorial.getTutorialName(); //$NON-NLS-1$
 
       navigate(url, false);
    }
@@ -284,7 +285,7 @@ public class TutorialPane
    {
       if (URIUtils.isLocalUrl(url))
       {
-         frame_.getElement().removeAttribute("sandbox");
+         frame_.getElement().removeAttribute("sandbox"); //$NON-NLS-1$
       }
       else
       {
@@ -309,7 +310,7 @@ public class TutorialPane
       {
          Element el = els.getItem(i);
 
-         String href = el.getPropertyString("href");
+         String href = el.getPropertyString("href"); //$NON-NLS-1$
          if (href == null)
             continue;
 
@@ -318,7 +319,7 @@ public class TutorialPane
                !href.startsWith(GWT.getHostPageBaseURL());
 
          if (isNonLocalHref)
-            el.setPropertyString("target", "_blank");
+            el.setPropertyString("target", "_blank"); //$NON-NLS-1$
       }
    }
 
@@ -405,8 +406,8 @@ public class TutorialPane
                {
                   handler_.removeHandler();
 
-                  String version = session_.getSessionInfo().getPackageDependencies().getPackage("learnr").getVersion();
-                  server_.isPackageInstalled("learnr", version, new ServerRequestCallback<Boolean>()
+                  String version = session_.getSessionInfo().getPackageDependencies().getPackage("learnr").getVersion(); //$NON-NLS-1$
+                  server_.isPackageInstalled("learnr", version, new ServerRequestCallback<Boolean>() //$NON-NLS-1$
                   {
                      @Override
                      public void onResponseReceived(Boolean installed)
@@ -432,7 +433,7 @@ public class TutorialPane
 
             // fire console event installing learnr
             progress_.onProgress("Installing learnr...");
-            SendToConsoleEvent event = new SendToConsoleEvent("install.packages(\"learnr\")", true);
+            SendToConsoleEvent event = new SendToConsoleEvent("install.packages(\"learnr\")", true); //$NON-NLS-1$
             events_.fireEvent(event);
          }
       };

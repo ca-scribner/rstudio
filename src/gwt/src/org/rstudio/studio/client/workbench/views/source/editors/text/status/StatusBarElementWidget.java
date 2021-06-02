@@ -168,6 +168,6 @@ public class StatusBarElementWidget extends FlowPanel
    private boolean clicksEnabled_ = true;
    private String popupAlignment_ = POPUP_ALIGNMENT_LEFT;
 
-   public final static String POPUP_ALIGNMENT_LEFT = "left";
-   public final static String POPUP_ALIGNMENT_RIGHT = "right";
+   public final static String POPUP_ALIGNMENT_LEFT = "left"; //$NON-NLS-1$
+   public final static String POPUP_ALIGNMENT_RIGHT = "right"; //$NON-NLS-1$
 }

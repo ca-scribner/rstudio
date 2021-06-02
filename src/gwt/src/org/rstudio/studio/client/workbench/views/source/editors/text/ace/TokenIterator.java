@@ -157,7 +157,7 @@ public class TokenIterator extends JavaScriptObject
       
       for (; token != null; token = stepForward())
       {
-         if (token.hasType("comment") || token.valueMatches("\\s*"))
+         if (token.hasType("comment") || token.valueMatches("\\s*")) //$NON-NLS-1$
             continue;
          
          break;

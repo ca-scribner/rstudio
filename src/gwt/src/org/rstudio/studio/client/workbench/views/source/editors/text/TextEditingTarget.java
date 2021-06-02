@@ -206,18 +206,18 @@ public class TextEditingTarget implements
    {
    }
 
-   private static final String NOTEBOOK_TITLE = "notebook_title";
-   private static final String NOTEBOOK_AUTHOR = "notebook_author";
-   private static final String NOTEBOOK_TYPE = "notebook_type";
+   private static final String NOTEBOOK_TITLE = "notebook_title"; //$NON-NLS-1$
+   private static final String NOTEBOOK_AUTHOR = "notebook_author"; //$NON-NLS-1$
+   private static final String NOTEBOOK_TYPE = "notebook_type"; //$NON-NLS-1$
 
-   public final static String DOC_OUTLINE_SIZE    = "docOutlineSize";
-   public final static String DOC_OUTLINE_VISIBLE = "docOutlineVisible";
+   public final static String DOC_OUTLINE_SIZE    = "docOutlineSize"; //$NON-NLS-1$
+   public final static String DOC_OUTLINE_VISIBLE = "docOutlineVisible"; //$NON-NLS-1$
 
-   public static final String RMD_VISUAL_MODE = "rmdVisualMode";
-   public static final String RMD_VISUAL_MODE_WRAP_CONFIGURED = "rmdVisualWrapConfigured";
+   public static final String RMD_VISUAL_MODE = "rmdVisualMode"; //$NON-NLS-1$
+   public static final String RMD_VISUAL_MODE_WRAP_CONFIGURED = "rmdVisualWrapConfigured"; //$NON-NLS-1$
 
-   public static final String SOFT_WRAP_LINES = "softWrapLines";
-   public static final String USE_RAINBOW_PARENS = "useRainbowParens";
+   public static final String SOFT_WRAP_LINES = "softWrapLines"; //$NON-NLS-1$
+   public static final String USE_RAINBOW_PARENS = "useRainbowParens"; //$NON-NLS-1$
 
    private static final MyCommandBinder commandBinder =
          GWT.create(MyCommandBinder.class);
@@ -395,6 +395,7 @@ public class TextEditingTarget implements
             {
                // do not show the error if it is a transient autosave related issue - this can occur fairly frequently
                // when attempting to save files that are being backed up by external software
+               // i18n: This tests against a user-visible text which wont work with i18n (unless they're synced)
                if (message.contains("The process cannot access the file because it is being used by another process") && suppressFileLockError_)
                {
                   if (executeOnSilentFailure_ != null)
@@ -418,12 +419,13 @@ public class TextEditingTarget implements
                {
                   if (isReadOnly)
                   {
+                     // i18n: Concatenation/Message
                      String message = "This source file is read-only " +
                                       "so changes cannot be saved";
                      view_.showWarningBar(message);
 
                      String saveAsPath = file_.getParentPath().completePath(
-                           file_.getStem() + "-copy" + file_.getExtension());
+                           file_.getStem() + "-copy" + file_.getExtension()); //$NON-NLS-1$
                      saveNewFile(
                            saveAsPath,
                            null,
@@ -827,6 +829,7 @@ public class TextEditingTarget implements
                   // removed)
                   if (breakpoint.getState() != Breakpoint.STATE_REMOVING)
                   {
+                     // i18n: Concatenation/Message
                      view_.showWarningBar("Breakpoints can only be set inside "+
                                           "the body of a function. ");
                   }
@@ -1506,6 +1509,7 @@ public class TextEditingTarget implements
          globalDisplay_.showYesNoMessage(
                GlobalDisplay.MSG_QUESTION,
                "Join Edit Session",
+               // i18n: Concatenation/Message
                "You have unsaved changes to " + filename + ", but another " +
                "user is editing the file. Do you want to discard your " +
                "changes and join their edit session, or make your own copy " +
@@ -1593,7 +1597,7 @@ public class TextEditingTarget implements
    public void installTinyTeX()
    {
       Command onInstall = () -> {
-         String code = "tinytex::install_tinytex()";
+         String code = "tinytex::install_tinytex()"; //$NON-NLS-1$
          events_.fireEvent(new SendToConsoleEvent(code, true));
       };
 
@@ -1738,9 +1742,9 @@ public class TextEditingTarget implements
       });
 
       // Load and apply Vim marks (if they exist).
-      if (document.getProperties().hasKey("marks"))
+      if (document.getProperties().hasKey("marks")) //$NON-NLS-1$
       {
-         final String marksSpec = document.getProperties().getString("marks");
+         final String marksSpec = document.getProperties().getString("marks"); //$NON-NLS-1$
          final JsMap<Position> marks = VimMarks.decode(marksSpec);
 
          // Time out the marks setting just to avoid conflict with other
@@ -1838,6 +1842,7 @@ public class TextEditingTarget implements
                   // don't try to set breakpoints in unsaved code
                   if (isNewDoc())
                   {
+                     // i18n: Concatenation/Message
                      view_.showWarningBar("Breakpoints cannot be set until " +
                                           "the file is saved.");
                      return;
@@ -2108,21 +2113,25 @@ public class TextEditingTarget implements
          String message = "";
          if (hasDebugPendingBreakpoints)
          {
+            // i18n: Concatenation/Message
             message = "Breakpoints will be activated when the file or " +
                       "function is finished executing.";
          }
          else if (isPackageFile())
          {
+            // i18n: Concatenation/Message
             message = "Breakpoints will be activated when the package is " +
                       "built and reloaded.";
          }
          else if (hasPackagePendingBreakpoints)
          {
+            // i18n: Concatenation/Message
             message = "Breakpoints will be activated when an updated version " +
                       "of the " + pendingPackageName + " package is loaded";
          }
          else
          {
+            // i18n: Concatenation/Message
             message = "Breakpoints will be activated when this file is " +
                       "sourced.";
          }
@@ -2157,7 +2166,7 @@ public class TextEditingTarget implements
       // inside that directory
       FileSystemItem projectDir = session_.getSessionInfo()
             .getActiveProjectDir();
-      return getPath().startsWith(projectDir.getPath() + "/R");
+      return getPath().startsWith(projectDir.getPath() + "/R"); //$NON-NLS-1$
    }
 
    private boolean isPackageDocumentationFile()
@@ -2176,7 +2185,7 @@ public class TextEditingTarget implements
       FileSystemItem srcFile = FileSystemItem.createFile(getPath());
       FileSystemItem projectDir = session_.getSessionInfo()
             .getActiveProjectDir();
-      if (srcFile.getPath().startsWith(projectDir.getPath() + "/vignettes"))
+      if (srcFile.getPath().startsWith(projectDir.getPath() + "/vignettes")) //$NON-NLS-1$
          return true;
       else if (srcFile.getParentPathString().equals(projectDir.getPath()) &&
                srcFile.getExtension().toLowerCase().equals(".md"))
@@ -2345,7 +2354,8 @@ public class TextEditingTarget implements
 
       if (funcs.length() == 0 && includeNoFunctionsMessage)
       {
-         String type = fileType_.canExecuteChunks() ? "chunks" : "functions";
+         String type = fileType_.canExecuteChunks() ? "chunks" : "functions"; //$NON-NLS-1$
+         // i18n: Concatenation/Message
          MenuItem noFunctions = new MenuItem("(No " + type + " defined)",
                                              false,
                                              (Command) null);
@@ -2378,7 +2388,7 @@ public class TextEditingTarget implements
             addScopeStyle(menuItem, func);
             menu.addItem(menuItem);
 
-            childIndent = indent + "&nbsp;&nbsp;";
+            childIndent = indent + "&nbsp;&nbsp;"; //$NON-NLS-1$
 
             if (defaultFunction != null && defaultMenuItem == null &&
                 func.getLabel() == defaultFunction.getLabel() &&
@@ -2823,7 +2833,8 @@ public class TextEditingTarget implements
       {
          globalDisplay_.showYesNoMessage(GlobalDisplay.MSG_WARNING,
                          getName().getValue() + " - Active Following Session",
-                         "You're actively following another user's cursor " +
+                         // i18n: Concatenation/Message
+                 "You're actively following another user's cursor " +
                          "in '" + getName().getValue() + "'.\n\n" +
                          "If you close this file, you won't see their " +
                          "cursor until they edit another file.",
@@ -2877,7 +2888,9 @@ public class TextEditingTarget implements
 
       globalDisplay_.showYesNoMessage(GlobalDisplay.MSG_WARNING,
                       getName().getValue() + " - Unsaved Changes",
-                      "The document '" + getName().getValue() +
+                      // i18n: Concatenation/Message
+
+              "The document '" + getName().getValue() +
                       "' has unsaved changes.\n\n" +
                       "Do you want to save these changes?",
                       true,
@@ -3124,6 +3137,7 @@ public class TextEditingTarget implements
                         globalDisplay_.showYesNoMessage(
                               MessageDialog.WARNING,
                               "Confirm Change File Type",
+                              // i18n: Concatenation/Message
                               "This file was created as an R script however " +
                               "the file extension you specified will change " +
                               "it into another file type that will no longer " +
@@ -3218,10 +3232,10 @@ public class TextEditingTarget implements
          // auto-append newlines for commonly-used R startup files
          String path = StringUtil.notNull(docUpdateSentinel_.getPath());
          boolean isStartupFile =
-               path.endsWith("/.Rprofile") ||
-               path.endsWith("/.Rprofile.site") ||
-               path.endsWith("/.Renviron") ||
-               path.endsWith("/.Renviron.site");
+               path.endsWith("/.Rprofile") || //$NON-NLS-1$
+               path.endsWith("/.Rprofile.site") || //$NON-NLS-1$
+               path.endsWith("/.Renviron") || //$NON-NLS-1$
+               path.endsWith("/.Renviron.site"); //$NON-NLS-1$
 
          if (autoAppendNewline || isStartupFile || fileType_.isPython())
          {
@@ -3245,7 +3259,7 @@ public class TextEditingTarget implements
 
          // check for a file based canonical setting
          String yaml = YamlFrontMatter.getFrontMatter(docDisplay_);
-         String yamlCanonical = RmdEditorOptions.getMarkdownOption(yaml,  "canonical");
+         String yamlCanonical = RmdEditorOptions.getMarkdownOption(yaml,  "canonical"); //$NON-NLS-1$
          if (!yamlCanonical.isEmpty())
             canonical = YamlTree.isTrue(yamlCanonical);
 
@@ -3321,7 +3335,7 @@ public class TextEditingTarget implements
 
          if (fileType_.isR())
          {
-            fsi = FileSystemItem.createDir(pkg.completePath("R"));
+            fsi = FileSystemItem.createDir(pkg.completePath("R")); //$NON-NLS-1$
          }
          else if (fileType_.isC() && si.getHasPackageSrcDir())
          {
@@ -3334,7 +3348,7 @@ public class TextEditingTarget implements
          else if ((fileType_.isRnw() || fileType_.isRmd()) &&
                    si.getHasPackageVignetteDir())
          {
-            fsi = FileSystemItem.createDir(pkg.completePath("vignettes"));
+            fsi = FileSystemItem.createDir(pkg.completePath("vignettes")); //$NON-NLS-1$
          }
       }
 
@@ -3548,6 +3562,7 @@ public class TextEditingTarget implements
       {
          if (!display.getSelectionValue().isEmpty())
          {
+            // i18n: Concatenation/Message
             String message = "No matches for '" + display.getSelectionValue() + "'";
             view_.getStatusBar().showMessage(message, 1000);
          }
@@ -3766,6 +3781,7 @@ public class TextEditingTarget implements
          String caption = "Reopen with Encoding";
 
          String message =
+               // i18n: Concatenation/Message
                "This document has unsaved changes. These changes will be " +
                "discarded when re-opening the document.\n\n" +
                "Would you like to proceed?";
@@ -3931,6 +3947,7 @@ public class TextEditingTarget implements
 
       String initialSelection = display.getSelectionValue();
       final String refactoringName = "Extract local variable";
+      // i18n: Concatenation/Message
       final String pleaseSelectCodeMessage = "Please select the code to " +
                                              "extract into a variable.";
       if (checkSelectionAndAlert(refactoringName,
@@ -3991,6 +4008,7 @@ public class TextEditingTarget implements
    {
       globalDisplay_.showMessage(MessageDisplay.MSG_WARNING,
                                  "Command Not Available",
+                                 // i18n: Concatenation/Message
                                  "The "+ command + " command is " +
                                  "only valid for R code chunks.");
    }
@@ -4017,6 +4035,7 @@ public class TextEditingTarget implements
 
       String initialSelection = display.getSelectionValue();
       final String refactoringName = "Extract Function";
+      // i18n: Concatenation/Message
       final String pleaseSelectCodeMessage = "Please select the code to " +
                                              "extract into a function.";
       if (checkSelectionAndAlert(refactoringName,
@@ -4056,7 +4075,7 @@ public class TextEditingTarget implements
                                  + indentation
                                  + input.trim()
                                  + " <- "
-                                 + "function(" + args + ") {\n"
+                                 + "function(" + args + ") {\n" //$NON-NLS-1$
                                  + StringUtil.indent(code, "  ")
                                  + "\n"
                                  + indentation
@@ -4526,6 +4545,7 @@ public class TextEditingTarget implements
       if (yaml == null)
       {
          globalDisplay_.showErrorMessage("Edit Format Failed",
+               // i18n: Concatenation/Message
                "Can't find the YAML front matter for this document. Make " +
                "sure the front matter is enclosed by lines containing only " +
                "three dashes: ---.");
@@ -4538,6 +4558,7 @@ public class TextEditingTarget implements
          {
             String errCaption = "Edit Format Failed";
             String errMsg =
+               // i18n: Concatenation/Message
                "The YAML front matter in this document could not be " +
                "successfully parsed. This parse error needs to be " +
                "resolved before format options can be edited.";
@@ -4581,6 +4602,7 @@ public class TextEditingTarget implements
          // we don't expect this to happen since we disable the dialog
          // entry point when we can't find an associated template
          globalDisplay_.showErrorMessage("Edit Format Failed",
+               // i18n: Concatenation/Message
                "Couldn't determine the format options from the YAML front " +
                "matter. Make sure the YAML defines a supported output " +
                "format in its 'output' field.");
@@ -4745,7 +4767,7 @@ public class TextEditingTarget implements
             {
                if (i == 0)
                   isNotebook = true;
-               formatList.add(0, "Notebook");
+               formatList.add(0, "Notebook"); // $NON-NLS-1$
                valueList.add(0, format);
                extensionList.add(0, ".nb.html");
                continue;
@@ -4844,7 +4866,7 @@ public class TextEditingTarget implements
 
       if (selection.isEmpty())
       {
-         selection = selection.growToIncludeLines("^\\s*" + commentPrefix + ".*$");
+         selection = selection.growToIncludeLines("^\\s*" + commentPrefix + ".*$"); //$NON-NLS-1$
       }
       else
       {
@@ -5541,31 +5563,31 @@ public class TextEditingTarget implements
    @Handler
    void onInsertChunkR()
    {
-      onInsertChunk("```{r}\n\n```\n", 1, 0);
+      onInsertChunk("```{r}\n\n```\n", 1, 0); //$NON-NLS-1$
    }
 
    @Handler
    void onInsertChunkBash()
    {
-      onInsertChunk("```{bash}\n\n```\n", 1, 0);
+      onInsertChunk("```{bash}\n\n```\n", 1, 0); //$NON-NLS-1$
    }
 
    @Handler
    void onInsertChunkPython()
    {
-      onInsertChunk("```{python}\n\n```\n", 1, 0);
+      onInsertChunk("```{python}\n\n```\n", 1, 0); //$NON-NLS-1$
    }
 
    @Handler
    void onInsertChunkRCPP()
    {
-      onInsertChunk("```{Rcpp}\n\n```\n", 1, 0);
+      onInsertChunk("```{Rcpp}\n\n```\n", 1, 0); //$NON-NLS-1$
    }
 
    @Handler
    void onInsertChunkStan()
    {
-      onInsertChunk("```{stan output.var=}\n\n```\n", 0, 20);
+      onInsertChunk("```{stan output.var=}\n\n```\n", 0, 20); //$NON-NLS-1$
    }
 
    @Handler
@@ -5578,11 +5600,11 @@ public class TextEditingTarget implements
          {
             if (name != null)
             {
-               onInsertChunk("```{sql connection=" + name + "}\n\n```\n", 1, 0);
+               onInsertChunk("```{sql connection=" + name + "}\n\n```\n", 1, 0); //$NON-NLS-1$
             }
             else
             {
-               onInsertChunk("```{sql connection=}\n\n```\n", 0, 19);
+               onInsertChunk("```{sql connection=}\n\n```\n", 0, 19); //$NON-NLS-1$
             }
          }
 
@@ -5590,7 +5612,7 @@ public class TextEditingTarget implements
          public void onError(ServerError error)
          {
             Debug.logError(error);
-            onInsertChunk("```{sql connection=}\n\n```\n", 0, 19);
+            onInsertChunk("```{sql connection=}\n\n```\n", 0, 19); //$NON-NLS-1$
          }
       });
    }
@@ -5603,10 +5625,10 @@ public class TextEditingTarget implements
 
          if (setupScope == null && !visualMode_.isActivated())
          {
-            onInsertChunk("```{r setup}\nlibrary(r2d3)\n```\n\n```{d3 data=}\n\n```\n", 4, 12);
+            onInsertChunk("```{r setup}\nlibrary(r2d3)\n```\n\n```{d3 data=}\n\n```\n", 4, 12); //$NON-NLS-1$
          }
          else {
-            onInsertChunk("```{d3 data=}\n\n```\n", 0, 12);
+            onInsertChunk("```{d3 data=}\n\n```\n", 0, 12); //$NON-NLS-1$
          }
       }
    }
@@ -5837,9 +5859,9 @@ public class TextEditingTarget implements
                         public void execute()
                         {
                            // compute the language for this chunk
-                           String language = "R";
+                           String language = "R"; //$NON-NLS-1$
                            if (DocumentMode.isPositionInPythonMode(docDisplay_, positionFinal))
-                              language = "Python";
+                              language = "Python"; //$NON-NLS-1$
 
                            events_.fireEvent(new SendToConsoleEvent(code, language, true));
                         }
@@ -5953,6 +5975,7 @@ public class TextEditingTarget implements
          name = "No name";
 
       StringBuilder status = new StringBuilder();
+      // i18n: Message built from multiple pieces
       status.append("Row ").append(pos.getRow() + 1).append(" Column ").append(pos.getColumn() + 1);
       status.append(" Scope ").append(scope);
       status.append(" File type ").append(fileType_.getLabel());
@@ -5973,7 +5996,7 @@ public class TextEditingTarget implements
       // NOTE: We might want to include 'Rscript' but such chunks are typically
       // intended to be run in their own process so it might not make sense to
       // collect those here.
-      return engine.equals("r");
+      return engine.equals("r"); //$NON-NLS-1$
    }
 
    private boolean isExecutableChunk(final Scope chunk)
@@ -6026,9 +6049,9 @@ public class TextEditingTarget implements
                String code = scopeHelper_.getSweaveChunkText(chunk);
 
                // compute the language for this chunk
-               String language = "R";
+               String language = "R"; //$NON-NLS-1$
                if (DocumentMode.isPositionInPythonMode(docDisplay_, chunk.getBodyStart()))
-                  language = "Python";
+                  language = "Python"; //$NON-NLS-1$
 
                events_.fireEvent(new SendToConsoleEvent(code, language, true));
             }
@@ -6146,6 +6169,7 @@ public class TextEditingTarget implements
          globalDisplay_.showMessage(
                MessageDialog.WARNING,
                "Source File Not Saved",
+               // i18n: Concatenation/Message
                "The currently active source file is not saved so doesn't " +
                "have a directory to change into.");
       }
@@ -6304,7 +6328,7 @@ public class TextEditingTarget implements
                public void onResponseReceived(Void response)
                {
                   consoleDispatcher_.executeSourceCommand(
-                        "~/.active-rstudio-document",
+                        "~/.active-rstudio-document", //$NON-NLS-1$
                         fileType_,
                         "UTF-8",
                         activeCodeIsAscii(),
@@ -6369,7 +6393,7 @@ public class TextEditingTarget implements
                "Executing Python",
                "Sourcing Python scripts",
                () -> {
-                  String command = "reticulate::source_python('" + getPath() + "')";
+                  String command = "reticulate::source_python('" + getPath() + "')"; //$NON-NLS-1$
                   events_.fireEvent(new SendToConsoleEvent(command, true));
                });
       });
@@ -6480,6 +6504,7 @@ public class TextEditingTarget implements
          globalDisplay_.showMessage(
                MessageDisplay.MSG_WARNING,
                "Unable to Preview",
+               // i18n: Concatenation/Message
                "R Presentations require the knitr package " +
                "(version 1.2 or higher)");
          return;
@@ -6932,7 +6957,7 @@ public class TextEditingTarget implements
                      if (paramsFile != null)
                      {
                         // special "none" value means no parameters
-                        if (paramsFile.equals("none"))
+                        if (paramsFile.equals("none")) //$NON-NLS-1$
                         {
                            new RMarkdownNoParamsDialog().showModal();
                         }
@@ -6957,7 +6982,7 @@ public class TextEditingTarget implements
             // determine the cache path (use relative path if possible)
             String path = docUpdateSentinel_.getPath();
             FileSystemItem fsi = FileSystemItem.createFile(path);
-            path = fsi.getParentPath().completePath(fsi.getStem() + "_cache");
+            path = fsi.getParentPath().completePath(fsi.getStem() + "_cache"); //$NON-NLS-1$
             String relativePath = FileSystemItem.createFile(path).getPathRelativeTo(
                 workbenchContext_.getCurrentWorkingDir());
             if (relativePath != null)
@@ -6967,6 +6992,7 @@ public class TextEditingTarget implements
             globalDisplay_.showYesNoMessage(
                MessageDialog.QUESTION,
                "Clear Knitr Cache",
+               // i18n: Concatenation/Message
                "Clearing the Knitr cache will delete the cache " +
                "directory for " + docPath + ". " +
                "\n\nAre you sure you want to clear the cache now?",
@@ -6975,9 +7001,9 @@ public class TextEditingTarget implements
                   @Override
                   public void execute()
                   {
-                     String code = "unlink(" +
+                     String code = "unlink(" + //$NON-NLS-1$
                                    ConsoleDispatcher.escapedPath(docPath) +
-                                   ", recursive = TRUE)";
+                                   ", recursive = TRUE)"; //$NON-NLS-1$
                      events_.fireEvent(new SendToConsoleEvent(code, true));
                   }
                },
@@ -7010,6 +7036,7 @@ public class TextEditingTarget implements
             globalDisplay_.showYesNoMessage(
                MessageDialog.QUESTION,
                "Clear Prerendered Output",
+               // i18n: Concatenation/Message
                "This will remove all previously generated output " +
                "for " + docPath + " (html, prerendered data, knitr cache, etc.)." +
                "\n\nAre you sure you want to clear the output now?",
@@ -7018,7 +7045,7 @@ public class TextEditingTarget implements
                   @Override
                   public void execute()
                   {
-                     String code = "rmarkdown::shiny_prerendered_clean(" +
+                     String code = "rmarkdown::shiny_prerendered_clean(" + //$NON-NLS-1$
                                    ConsoleDispatcher.escapedPath(docPath) +
                                    ")";
                      events_.fireEvent(new SendToConsoleEvent(code, true));
@@ -7359,6 +7386,7 @@ public class TextEditingTarget implements
       {
          globalDisplay_.showErrorMessage(
                "Invalid Filename",
+               // i18n: Concatenation/Message
                "The file '" + file.getName() + "' cannot be compiled to " +
                "a PDF because TeX does not understand paths with spaces. " +
                "If you rename the file to remove spaces then " +
@@ -7485,6 +7513,7 @@ public class TextEditingTarget implements
                      globalDisplay_.showYesNoMessage(
                            GlobalDisplay.MSG_WARNING,
                            "File Deleted",
+                           // i18n: Concatenation/Message
                            "The file " +
                            StringUtil.notNull(docUpdateSentinel_.getPath()) +
                            " has been deleted or moved. " +
@@ -7541,6 +7570,7 @@ public class TextEditingTarget implements
                         globalDisplay_.showYesNoMessage(
                               GlobalDisplay.MSG_WARNING,
                               "File Changed",
+                              // i18n: Concatenation/Message
                               "The file " + name_.getValue() + " has changed " +
                               "on disk. Do you want to reload the file from " +
                               "disk and discard your unsaved changes?",
@@ -7666,8 +7696,8 @@ public class TextEditingTarget implements
          return false;
 
       String[] requiresHardTabs = new String[] {
-            "Makefile", "Makefile.in", "Makefile.win",
-            "Makevars", "Makevars.in", "Makevars.win"
+            "Makefile", "Makefile.in", "Makefile.win", //$NON-NLS-1$
+            "Makevars", "Makevars.in", "Makevars.win" //$NON-NLS-1$
       };
 
       for (String file : requiresHardTabs)
@@ -8070,6 +8100,7 @@ public class TextEditingTarget implements
                            globalDisplay_.showYesNoMessage(
                               GlobalDisplay.MSG_WARNING,
                               "Install Shinytest Dependencies",
+                              // i18n: Concatenation/Message
                               "The package shinytest requires additional components to run.\n\n" +
                               "Install additional components?",
                               new Operation()
@@ -8100,7 +8131,7 @@ public class TextEditingTarget implements
    @Handler
    void onTestTestthatFile()
    {
-      final String buildCommand = "test-file";
+      final String buildCommand = "test-file"; //$NON-NLS-1$
 
       checkTestPackageDependencies(
          new Command()
@@ -8138,7 +8169,7 @@ public class TextEditingTarget implements
    @Handler
    void onTestShinytestFile()
    {
-      final String buildCommand = "test-shiny-file";
+      final String buildCommand = "test-shiny-file"; //$NON-NLS-1$
 
       checkTestPackageDependencies(
          new Command()
@@ -8189,7 +8220,7 @@ public class TextEditingTarget implements
                   shinyAppPath = docUpdateSentinel_.getPath();
                }
 
-               String code = "shinytest::recordTest(\"" + shinyAppPath.replace("\"", "\\\"") + "\")";
+               String code = "shinytest::recordTest(\"" + shinyAppPath.replace("\"", "\\\"") + "\")"; //$NON-NLS-1$
                events_.fireEvent(new SendToConsoleEvent(code, true));
             }
          },
@@ -8206,7 +8237,7 @@ public class TextEditingTarget implements
             @Override
             public void execute()
             {
-               server_.startBuild("test-shiny", FilePathUtils.dirFromFile(docUpdateSentinel_.getPath()),
+               server_.startBuild("test-shiny", FilePathUtils.dirFromFile(docUpdateSentinel_.getPath()), //$NON-NLS-1$
                   new SimpleRequestCallback<Boolean>() {
                   @Override
                   public void onResponseReceived(Boolean response)
@@ -8247,7 +8278,7 @@ public class TextEditingTarget implements
                checkTestPackageDependencies(() ->
                {
                   String testName = FilePathUtils.fileNameSansExtension(testFile);
-                  String code = "shinytest::viewTestDiff(\"" +
+                  String code = "shinytest::viewTestDiff(\"" + //$NON-NLS-1$
                         results.appDir + "\", \"" + testName + "\")";
                   events_.fireEvent(new SendToConsoleEvent(code, true));
                }, false);
@@ -8556,6 +8587,7 @@ public class TextEditingTarget implements
          globalDisplay_.showYesNoMessage(
                  GlobalDisplay.MSG_WARNING,
                  refactoringName_,
+                 // i18n: Concatenation/Message
                  "The selected code could not be " +
                  "parsed.\n\n" +
                  "Are you sure you want to continue?",

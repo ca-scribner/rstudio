@@ -826,6 +826,7 @@ public class TerminalSession extends XTermWidget
 
    public void showZombieMessage()
    {
+      // i18n: Are these for users or developers?
       writeln("[Process completed]");
       accept("[Exit code: ");
       if (procInfo_.getExitCode() != null)

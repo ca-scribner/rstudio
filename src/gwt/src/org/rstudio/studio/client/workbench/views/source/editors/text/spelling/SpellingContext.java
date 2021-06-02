@@ -108,5 +108,5 @@ public abstract class SpellingContext implements TypoSpellChecker.Context
 
    private ArrayList<HandlerRegistration> releaseOnDismiss_ = new ArrayList<>();
 
-   private final static String IGNORED_WORDS = "ignored_words";
+   private final static String IGNORED_WORDS = "ignored_words"; //$NON-NLS-1$
 }

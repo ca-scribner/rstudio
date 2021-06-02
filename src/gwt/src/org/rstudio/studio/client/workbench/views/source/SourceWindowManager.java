@@ -274,7 +274,7 @@ public class SourceWindowManager implements PopoutDocEvent.Handler,
 
    public static String getSourceWindowId()
    {
-      return sourceWindowId(Window.Location.getParameter("view"));
+      return sourceWindowId(Window.Location.getParameter("view")); //$NON-NLS-1$
    }
 
    public String getLastFocusedSourceWindowId()
@@ -992,7 +992,7 @@ public class SourceWindowManager implements PopoutDocEvent.Handler,
 
    private String createSourceWindowId()
    {
-      return "w" + StringUtil.makeRandomId(12);
+      return "w" + StringUtil.makeRandomId(12); //$NON-NLS-1$
    }
 
    private static String sourceWindowId(String input)
@@ -1205,6 +1205,7 @@ public class SourceWindowManager implements PopoutDocEvent.Handler,
                public void onError(ServerError error)
                {
                   display_.showErrorMessage("Can't Move Doc",
+                        // i18n: Concatenation/Message
                         "The document could not be " +
                         "moved to a different window: \n" +
                         error.getMessage());
@@ -1444,5 +1445,5 @@ public class SourceWindowManager implements PopoutDocEvent.Handler,
    private String mostRecentSourceWindow_ = "";
    private boolean mainWindowFocused_ = true;
 
-   public final static String SOURCE_WINDOW_ID = "source_window_id";
+   public final static String SOURCE_WINDOW_ID = "source_window_id"; //$NON-NLS-1$
 }

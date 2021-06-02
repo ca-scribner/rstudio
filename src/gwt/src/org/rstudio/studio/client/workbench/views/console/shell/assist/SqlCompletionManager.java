@@ -125,7 +125,7 @@ public class SqlCompletionManager extends CompletionManagerBase
          if (it.bwdToMatchingToken())
             continue;
          
-         if (it.getCurrentToken().typeEquals("keyword"))
+         if (it.getCurrentToken().typeEquals("keyword")) //$NON-NLS-1$
             return it.getCurrentToken().getValue().toLowerCase();
       }
       
@@ -137,7 +137,7 @@ public class SqlCompletionManager extends CompletionManagerBase
    {
       // check for a SQL keyword that commonly precedes a table name
       String keyword = null;
-      for (String candidate : new String[] { "from", "into", "join", "update", "drop" })
+      for (String candidate : new String[] { "from", "into", "join", "update", "drop" }) //$NON-NLS-1$
       {
          if (consumeKeyword(it, candidate))
          {
@@ -200,7 +200,7 @@ public class SqlCompletionManager extends CompletionManagerBase
             break;
          
          // continue parsing if we find a comma
-         if (clone.getCurrentToken().valueMatches("\\s*,\\s*"))
+         if (clone.getCurrentToken().valueMatches("\\s*,\\s*")) //$NON-NLS-1$
          {
             if (!clone.moveToNextSignificantToken())
                break;
@@ -267,10 +267,10 @@ public class SqlCompletionManager extends CompletionManagerBase
          String chunkHeader = docDisplay_.getLine(row);
          
          Map<String, String> chunkOptions = RChunkHeaderParser.parse(chunkHeader);
-         if (!chunkOptions.containsKey("connection"))
+         if (!chunkOptions.containsKey("connection")) //$NON-NLS-1$
             return null;
          
-         return chunkOptions.get("connection");
+         return chunkOptions.get("connection"); //$NON-NLS-1$
       }
    }
    
@@ -308,5 +308,5 @@ public class SqlCompletionManager extends CompletionManagerBase
       return sqlIdentifierValue(it.getCurrentToken());
    }
    
-   private static final Pattern RE_SQL_PREVIEW = Pattern.create("^-{2,}\\s*!preview\\s+conn\\s*=\\s*(.*)$", "");
+   private static final Pattern RE_SQL_PREVIEW = Pattern.create("^-{2,}\\s*!preview\\s+conn\\s*=\\s*(.*)$", ""); //$NON-NLS-1$
 }

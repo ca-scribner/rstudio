@@ -40,7 +40,7 @@ public class TextEditingTargetRHelper
    {
       TextEditingTargetCommentHeaderHelper customSource = new TextEditingTargetCommentHeaderHelper(
          docDisplay_.getCode(),
-         "source",
+         "source", //$NON-NLS-1$
          "#"
       );
       

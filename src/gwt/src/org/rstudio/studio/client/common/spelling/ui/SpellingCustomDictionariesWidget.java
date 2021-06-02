@@ -67,7 +67,7 @@ public class SpellingCustomDictionariesWidget extends Composite
       dictionariesPanel.add(buttonPanel);
       
       panel.add(new LabelWithHelp("Custom dictionaries:",
-            "custom_dictionaries",
+            "custom_dictionaries", //$NON-NLS-1$
             "Help on custom spelling dictionaries",
             listBox_));
       panel.add(dictionariesPanel);
@@ -109,7 +109,8 @@ public class SpellingCustomDictionariesWidget extends Composite
          fileDialogs_.openFile(
             "Add Custom Dictionary (*.dic)", 
             fileSystemContext_, 
-            FileSystemItem.home(), 
+            FileSystemItem.home(),
+            // i18n: ?
             "Dictionaries (*.dic)",
             new ProgressOperationWithInput<FileSystemItem>() {
 
@@ -146,7 +147,8 @@ public class SpellingCustomDictionariesWidget extends Composite
             final String dictionary = listBox_.getValue(index);
             globalDisplay_.showYesNoMessage(
                   MessageDialog.WARNING, 
-                  "Confirm Remove", 
+                  "Confirm Remove",
+                  // i18n: Concatenation/Message
                   "Are you sure you want to remove the " + dictionary + 
                   " custom dictionary?",
                   new Operation() {

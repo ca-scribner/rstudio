@@ -450,6 +450,7 @@ public class TerminalList implements Iterable<String>,
    {
       StringBuilder dump = new StringBuilder();
 
+      // i18n: These messages could be awkward in i18n.  Combine them somehow?
       dump.append("Terminal List Count: ");
       dump.append(terminalCount());
       dump.append("\n");

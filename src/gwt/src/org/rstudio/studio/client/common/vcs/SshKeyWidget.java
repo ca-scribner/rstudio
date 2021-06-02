@@ -150,6 +150,7 @@ public class SshKeyWidget extends Composite
          @Override
          public void onError(ServerError error)
          {
+            // i18n: Concatenation/Message
             String msg = "Error attempting to read key '" + keyPath + "' (" +
                          error.getUserMessage() + ")";
             progressIndicator_.onError(msg);
@@ -185,5 +186,6 @@ public class SshKeyWidget extends Composite
    private ProgressIndicator progressIndicator_;
    private String rsaSshKeyPath_;
 
+   // i18n: Enumerator, user facing text, or both?
    private static final String NONE = "(None)";
 }

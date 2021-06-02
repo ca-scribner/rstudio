@@ -46,7 +46,7 @@ public class TextEditingTargetSqlHelper
    {
       TextEditingTargetCommentHeaderHelper previewSource = new TextEditingTargetCommentHeaderHelper(
          docDisplay_.getCode(),
-         "preview",
+         "preview", //$NON-NLS-1$
          "--"
       );
       

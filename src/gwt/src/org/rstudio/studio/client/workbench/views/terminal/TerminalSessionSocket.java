@@ -165,23 +165,23 @@ public class TerminalSessionSocket
 
          // For desktop IDE, talk directly to the websocket, anything else, go
          // through the server via the /p proxy.
-         String urlSuffix = consoleProcess_.getProcessInfo().getChannelId() + "/terminal/" +
+         String urlSuffix = consoleProcess_.getProcessInfo().getChannelId() + "/terminal/" + //$NON-NLS-1$
                consoleProcess_.getProcessInfo().getHandle() + "/";
          String url;
          if (Desktop.isDesktop())
          {
-            url = "ws://127.0.0.1:" + urlSuffix;
+            url = "ws://127.0.0.1:" + urlSuffix; //$NON-NLS-1$
          }
          else
          {
             url = GWT.getHostPageBaseURL();
-            if (url.startsWith("https:"))
+            if (url.startsWith("https:")) //$NON-NLS-1$
             {
-               url = "wss:" + url.substring(6) + "p/" + urlSuffix;
+               url = "wss:" + url.substring(6) + "p/" + urlSuffix; //$NON-NLS-1$
             }
-            else if (url.startsWith("http:"))
+            else if (url.startsWith("http:")) //$NON-NLS-1$
             {
-               url = "ws:" + url.substring(5) + "p/" + urlSuffix;
+               url = "ws:" + url.substring(5) + "p/" + urlSuffix; //$NON-NLS-1$
             }
             else
             {
@@ -428,9 +428,10 @@ public class TerminalSessionSocket
    private final TerminalDiagnostics diagnostic_ = new TerminalDiagnostics();
 
    // RegEx to match common password prompts
+   // i18n: Does this need i18n?
    private static final String PASSWORD_REGEX = "(?:password:)|(?:passphrase:)";
 
-   public static final Pattern PASSWORD_PATTERN = Pattern.create(PASSWORD_REGEX, "im");
+   public static final Pattern PASSWORD_PATTERN = Pattern.create(PASSWORD_REGEX, "im"); //$NON-NLS-1$
 
    private final Timer keepAliveTimer_;
    private final int webSocketPingInterval_;

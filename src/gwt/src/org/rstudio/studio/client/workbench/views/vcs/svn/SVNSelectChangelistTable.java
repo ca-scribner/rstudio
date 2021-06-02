@@ -128,7 +128,7 @@ public class SVNSelectChangelistTable extends SVNChangelistTable
          }
       });
       table_.addColumn(commitColumn_, "Commit");
-      table_.setColumnWidth(commitColumn_, "46px");
+      table_.setColumnWidth(commitColumn_, "46px"); //$NON-NLS-1$
 
       super.configureTable();
    }

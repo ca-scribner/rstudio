@@ -53,6 +53,7 @@ public class TestsOutputTab
                          EventBus events,
                          final Session session)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Tests", shim);
       shim_ = shim;
 

@@ -32,7 +32,7 @@ public class TerminalDiagnostics
    public String getLog()
    {
       if (diagnostic_ == null || diagnostic_.length() == 0)
-         return("<none>\n");
+         return("<none>\n"); //$NON-NLS-1$
       else
          return diagnostic_.toString();
    }

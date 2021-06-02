@@ -35,6 +35,7 @@ public class SourceCppOutputPane extends WorkbenchPane
    @Inject
    public SourceCppOutputPane()
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Source Cpp");
       compilePanel_ = new CompilePanel(new CompileOutputBufferWithHighlight());
       ensureWidget();

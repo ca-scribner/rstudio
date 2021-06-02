@@ -83,7 +83,7 @@ public class SpellingPreferencesPane extends PreferencesPane
       add(realtimeSpellcheckingCheckbox_);
 
       blacklistWarning_ = new Label("Real time spell-checking currently unavailable for this dictionary");
-      blacklistWarning_.getElement().getStyle().setColor("red");
+      blacklistWarning_.getElement().getStyle().setColor("red"); //$NON-NLS-1$
       blacklistWarning_.setVisible(!canRealtime);
 
       add(blacklistWarning_);

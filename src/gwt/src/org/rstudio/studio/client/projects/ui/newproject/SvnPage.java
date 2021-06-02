@@ -56,7 +56,7 @@ public class SvnPage extends VersionControlPage
       url = url.trim();
       
       // Suppress if it is "trunk"
-      if (url.equals("trunk"))
+      if (url.equals("trunk")) //$NON-NLS-1$
          url = "";
       
       return url;

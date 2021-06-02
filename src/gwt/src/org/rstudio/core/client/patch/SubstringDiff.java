@@ -28,9 +28,9 @@ public class SubstringDiff
       try
       {
          JsObject diff = diffImpl(origVal, newVal);
-         replacement_  = diff.getString("replacement");
-         offset_       = diff.getInteger("offset");
-         length_       = diff.getInteger("length");
+         replacement_  = diff.getString("replacement"); //$NON-NLS-1$
+         offset_       = diff.getInteger("offset"); //$NON-NLS-1$
+         length_       = diff.getInteger("length"); //$NON-NLS-1$
          valid_        = true;
         
       }

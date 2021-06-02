@@ -31,7 +31,7 @@ public class TexCapabilities extends JavaScriptObject
    public final boolean isRnwWeaveAvailable(RnwWeave rnwWeave)
    {
       return isPackageInstalledNative(
-                    rnwWeave.getPackageName().toLowerCase() + "_installed");
+                    rnwWeave.getPackageName().toLowerCase() + "_installed"); //$NON-NLS-1$
    }
    
    private final native boolean isPackageInstalledNative(String attrib) /*-{

@@ -146,6 +146,7 @@ public class StatusBarWidget extends Composite
       else
          scopeIcon_.setVisible(scope_.getContentsVisible());
 
+      // i18n: Enumerator, user facing text, or both?
       if (type == StatusBar.SCOPE_CLASS)
       {
          scopeIcon_.setResource(new ImageResource2x(CodeIcons.INSTANCE.clazz2x()));

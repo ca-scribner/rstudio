@@ -51,27 +51,27 @@ public final class StaticDataResourceGenerator extends AbstractResourceGenerator
 
     SourceWriter sw = new StringSourceWriter();
     // Write the expression to create the subtype.
-    sw.println("new " + StaticDataResource.class.getName() + "() {");
+    sw.println("new " + StaticDataResource.class.getName() + "() {"); //$NON-NLS-1$
     sw.indent();
 
     // Convenience when examining the generated code.
     sw.println("// " + resource.toExternalForm());
 
-    sw.println("public String getUrl() {");
+    sw.println("public String getUrl() {"); //$NON-NLS-1$
     sw.indent();
-    sw.println("return " + outputUrlExpression + ";");
+    sw.println("return " + outputUrlExpression + ";"); //$NON-NLS-1$
     sw.outdent();
     sw.println("}");
 
-    sw.println("public com.google.gwt.safehtml.shared.SafeUri getSafeUri() {");
+    sw.println("public com.google.gwt.safehtml.shared.SafeUri getSafeUri() {"); //$NON-NLS-1$
     sw.indent();
-    sw.println("return new org.rstudio.core.client.SafeUriStringImpl(" + outputUrlExpression + ");");
+    sw.println("return new org.rstudio.core.client.SafeUriStringImpl(" + outputUrlExpression + ");"); //$NON-NLS-1$
     sw.outdent();
     sw.println("}");
 
-    sw.println("public String getName() {");
+    sw.println("public String getName() {"); //$NON-NLS-1$
     sw.indent();
-    sw.println("return \"" + method.getName() + "\";");
+    sw.println("return \"" + method.getName() + "\";"); //$NON-NLS-1$
     sw.outdent();
     sw.println("}");
 

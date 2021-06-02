@@ -202,19 +202,19 @@ public class SourceDocument extends JavaScriptObject
       return extendedType != null && extendedType == SourceDocument.XT_R_CUSTOM_SOURCE;
    }
    
-   public final static String XT_RMARKDOWN_PREFIX = "rmarkdown-";
-   public final static String XT_RMARKDOWN_DOCUMENT = "rmarkdown-document";
-   public final static String XT_RMARKDOWN_NOTEBOOK = "rmarkdown-notebook";
-   public final static String XT_SHINY_PREFIX = "shiny-";
-   public final static String XT_SHINY_DIR = "shiny-dir";
-   public final static String XT_SHINY_SINGLE_FILE = "shiny-single-file";
-   public final static String XT_SHINY_SINGLE_EXE = "shiny-single-executable";
-   public final static String XT_SHINY_DOCUMENT = "shiny-document";
-   public final static String XT_TEST_PREFIX = "test-";
-   public final static String XT_TEST_TESTTHAT = "test-testthat";
-   public final static String XT_TEST_SHINYTEST = "test-shinytest";
-   public final static String XT_JS_PREVIEWABLE = "js-previewable";
-   public final static String XT_SQL_PREVIEWABLE = "sql-previewable";
-   public final static String XT_PLUMBER_API = "plumber-api";
-   public final static String XT_R_CUSTOM_SOURCE = "r-custom-source";
+   public final static String XT_RMARKDOWN_PREFIX = "rmarkdown-"; //$NON-NLS-1$
+   public final static String XT_RMARKDOWN_DOCUMENT = "rmarkdown-document"; //$NON-NLS-1$
+   public final static String XT_RMARKDOWN_NOTEBOOK = "rmarkdown-notebook"; //$NON-NLS-1$
+   public final static String XT_SHINY_PREFIX = "shiny-"; //$NON-NLS-1$
+   public final static String XT_SHINY_DIR = "shiny-dir"; //$NON-NLS-1$
+   public final static String XT_SHINY_SINGLE_FILE = "shiny-single-file"; //$NON-NLS-1$
+   public final static String XT_SHINY_SINGLE_EXE = "shiny-single-executable"; //$NON-NLS-1$
+   public final static String XT_SHINY_DOCUMENT = "shiny-document"; //$NON-NLS-1$
+   public final static String XT_TEST_PREFIX = "test-"; //$NON-NLS-1$
+   public final static String XT_TEST_TESTTHAT = "test-testthat"; //$NON-NLS-1$
+   public final static String XT_TEST_SHINYTEST = "test-shinytest"; //$NON-NLS-1$
+   public final static String XT_JS_PREVIEWABLE = "js-previewable"; //$NON-NLS-1$
+   public final static String XT_SQL_PREVIEWABLE = "sql-previewable"; //$NON-NLS-1$
+   public final static String XT_PLUMBER_API = "plumber-api"; //$NON-NLS-1$
+   public final static String XT_R_CUSTOM_SOURCE = "r-custom-source"; //$NON-NLS-1$
 }

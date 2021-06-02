@@ -57,6 +57,6 @@ public class TerminalSocketPacket
       return "";
    }
 
-   private static final String keepAlivePrefix = "b";
-   private static final String textPrefix = "a";
+   private static final String keepAlivePrefix = "b"; //$NON-NLS-1$
+   private static final String textPrefix = "a"; //$NON-NLS-1$
 }

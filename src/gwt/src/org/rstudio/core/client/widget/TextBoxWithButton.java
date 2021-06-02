@@ -266,5 +266,6 @@ public class TextBoxWithButton extends Composite
    private String useDefaultValue_;
    private String uniqueId_;
    
+   // i18n: Enumerator, user facing text, or both?
    private static final String USE_DEFAULT_PREFIX = "[Use Default]";
 }

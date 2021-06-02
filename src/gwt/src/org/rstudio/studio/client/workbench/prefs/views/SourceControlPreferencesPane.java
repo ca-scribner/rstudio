@@ -70,6 +70,8 @@ public class SourceControlPreferencesPane extends PreferencesPane
          {
             manageControlVisibility();
 
+            // i18n: Concatenation/Message
+            // i18n: Is Enable/Disable an enumerator or constant?
             globalDisplay.showMessage(
                MessageDialog.INFO,
                (event.getValue() ? "Enable" : "Disable") + " Version Control",
@@ -89,6 +91,7 @@ public class SourceControlPreferencesPane extends PreferencesPane
                String gitExePath = gitExePathChooser_.getText();
                if (!gitExePath.endsWith("git.exe"))
                {
+                  // i18n: Concatenation/Message
                   String message = "The program '" + gitExePath + "'" +
                      " is unlikely to be a valid git executable.\n" +
                      "Please select a git executable called 'git.exe'.";
@@ -136,7 +139,7 @@ public class SourceControlPreferencesPane extends PreferencesPane
          addTextBoxChooser(terminalPathLabel_, terminalPathChooser_);
 
       // ssh key widget
-      sshKeyWidget_ = new SshKeyWidget(server, "330px");
+      sshKeyWidget_ = new SshKeyWidget(server, "330px"); //$NON-NLS-1$
       sshKeyWidget_.addStyleName(res_.styles().sshKeyWidget());
       nudgeRight(sshKeyWidget_);
       add(sshKeyWidget_);

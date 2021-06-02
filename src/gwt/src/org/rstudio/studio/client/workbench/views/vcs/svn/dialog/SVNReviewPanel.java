@@ -65,31 +65,31 @@ public class SVNReviewPanel extends ResizeComposite implements Display
 {
    interface Resources extends ClientBundle
    {
-      @Source("SVNReviewPanel.css")
+      @Source("SVNReviewPanel.css") //$NON-NLS-1$
       Styles styles();
 
       @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
-      @Source("../../dialog/images/toolbarTile.png")
+      @Source("../../dialog/images/toolbarTile.png") //$NON-NLS-1$
       ImageResource toolbarTile();
 
-      @Source("../../dialog/images/stageAllFiles_2x.png")
+      @Source("../../dialog/images/stageAllFiles_2x.png") //$NON-NLS-1$
       ImageResource stageAllFiles2x();
 
-      @Source("../../dialog/images/discard_2x.png")
+      @Source("../../dialog/images/discard_2x.png") //$NON-NLS-1$
       ImageResource discard2x();
 
-      @Source("../../dialog/images/stage_2x.png")
+      @Source("../../dialog/images/stage_2x.png") //$NON-NLS-1$
       ImageResource stage2x();
 
-      @Source("../../dialog/images/splitterTileV.png")
+      @Source("../../dialog/images/splitterTileV.png") //$NON-NLS-1$
       @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
       ImageResource splitterTileV();
 
-      @Source("../../dialog/images/splitterTileH.png")
+      @Source("../../dialog/images/splitterTileH.png") //$NON-NLS-1$
       @ImageOptions(repeatStyle = RepeatStyle.Vertical)
       ImageResource splitterTileH();
 
-      @Source("../../dialog/images/blankFileIcon_2x.png")
+      @Source("../../dialog/images/blankFileIcon_2x.png") //$NON-NLS-1$
       ImageResource blankFileIcon2x();
    }
 

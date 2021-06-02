@@ -224,7 +224,7 @@ public class TextEditingTargetRMarkdownHelper
           });
    }
 
-   final String NOTEBOOK_FORMAT = "notebook_format";
+   final String NOTEBOOK_FORMAT = "notebook_format"; //$NON-NLS-1$
 
    private void renderNotebookv2WithDialog(final DocUpdateSentinel sourceDoc)
    {
@@ -325,6 +325,7 @@ public class TextEditingTargetRMarkdownHelper
                                final String workingDir,
                                final String viewerType)
    {
+      // i18n: Enumerator, user facing text, or both?
       withRMarkdownPackage(type == RmdOutput.TYPE_NOTEBOOK ?
                               "R Notebook" :
                               "R Markdown",
@@ -437,7 +438,7 @@ public class TextEditingTargetRMarkdownHelper
          public void onResponseReceived(RmdYamlResult yamlResult)
          {
             YamlTree yamlTree = new YamlTree(yamlResult.getYaml());
-
+            // i18n: Are items in this method enumerators or something that is translated elsewhere?
             // quote fields
             quoteField(yamlTree, "title");
             quoteField(yamlTree, "author");
@@ -647,6 +648,7 @@ public class TextEditingTargetRMarkdownHelper
             // the file exists--offer to clean it up and continue.
             globalDisplay_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
                   "Overwrite " + (template.createDir() ? "Directory" : "File"),
+                  // i18n: Concatenation/Message
                   targetFile + " exists. Overwrite it?", false,
                   new Operation()
                   {
@@ -670,7 +672,7 @@ public class TextEditingTargetRMarkdownHelper
    public String convertYamlToShinyDoc(String yaml)
    {
       YamlTree yamlTree = new YamlTree(yaml);
-      yamlTree.addYamlValue(null, "runtime", "shiny");
+      yamlTree.addYamlValue(null, "runtime", "shiny"); //$NON-NLS-1$
 
       return yamlTree.toString();
    }
@@ -810,6 +812,7 @@ public class TextEditingTargetRMarkdownHelper
             public void onError(ServerError error)
             {
                globalDisplay_.showErrorMessage("Template Creation Failed",
+                     // i18n: Concatenation/Message
                      "Failed to load content from the template at " +
                      template.getTemplatePath() + ": " + error.getMessage());
             }
@@ -883,7 +886,7 @@ public class TextEditingTargetRMarkdownHelper
                         FileSystemItem targetFile =
                                           FileSystemItem.createFile(file);
                         consoleDispatcher_.executeCommandWithFileEncoding(
-                                             "knit_with_parameters",
+                                             "knit_with_parameters", //$NON-NLS-1$
                                              targetFile.getPath(),
                                              encoding,
                                              contentKnownToBeAscii);
@@ -948,6 +951,7 @@ public class TextEditingTargetRMarkdownHelper
             public void onError(ServerError error)
             {
                globalDisplay_.showErrorMessage("File Remove Failed",
+                     // i18n: Concatenation/Message
                      "Couldn't remove " + oldFile.getPath());
             }
          });
@@ -982,6 +986,7 @@ public class TextEditingTargetRMarkdownHelper
                public void onError(ServerError error)
                {
                   progress.onError(
+                        // i18n: Concatenation/Message
                         "Couldn't create a template from " +
                         template.getTemplatePath() + " at " + target + ".\n\n" +
                         error.getMessage());
@@ -1098,6 +1103,7 @@ public class TextEditingTargetRMarkdownHelper
                                         String feature,
                                         String requiredVersion)
    {
+      // i18n: Concatenation/Message
       display.showWarningBar(feature + " requires the " +
                              "knitr package (version " + requiredVersion +
                              " or higher)");
@@ -1117,7 +1123,7 @@ public class TextEditingTargetRMarkdownHelper
 
    private boolean useRMarkdownV2(String contents)
    {
-      return !contents.contains("<!-- rmarkdown v1 -->") &&
+      return !contents.contains("<!-- rmarkdown v1 -->") && //$NON-NLS-1$
               session_.getSessionInfo().getRMarkdownPackageAvailable();
    }
 

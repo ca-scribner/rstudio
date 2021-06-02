@@ -75,12 +75,12 @@ public class SourceItem extends JavaScriptObject
    
    public final boolean hasXRef()
    {
-      return getMetadata().hasKey("xref");
+      return getMetadata().hasKey("xref"); //$NON-NLS-1$
    }
    
    public final XRef getXRef()
    {
-      return getMetadata().getObject("xref").cast();
+      return getMetadata().getObject("xref").cast(); //$NON-NLS-1$
    }
 
    public final CodeNavigationTarget toCodeNavigationTarget()

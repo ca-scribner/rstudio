@@ -65,8 +65,10 @@ public class PublishDocServicePage
          }
       }
       WizardPage<RSConnectPublishInput, RSConnectPublishResult> rpubsPage  =
-            new PublishRPubsPage("RPubs", "RPubs is a free service from " + 
-         "RStudio for sharing documents on the web.");
+            new PublishRPubsPage("RPubs",
+               // i18n: Concatenation/Message
+               "RPubs is a free service from " +
+               "RStudio for sharing documents on the web.");
 
       // make Rpubs the top selection for now since RStudioConnect is in beta
       pages.add(rpubsPage);

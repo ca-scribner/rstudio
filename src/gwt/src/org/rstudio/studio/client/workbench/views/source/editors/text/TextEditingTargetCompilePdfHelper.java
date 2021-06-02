@@ -117,7 +117,7 @@ public class TextEditingTargetCompilePdfHelper
          if (!hasConcordanceDirective(docDisplay_.getCode()))
          {    
             InputEditorSelection doc = docDisplay_.search(
-                                          "\\\\begin{document}",
+                                          "\\\\begin{document}", //$NON-NLS-1$
                                           false,   // backwards
                                           true,    // wrap
                                           false,   // case sensitive
@@ -128,7 +128,7 @@ public class TextEditingTargetCompilePdfHelper
             if (doc != null)
             {  
                InputEditorPosition pos = doc.getEnd().moveToNextLine();
-               docDisplay_.insertCode(pos, "\\SweaveOpts{concordance=TRUE}\n");
+               docDisplay_.insertCode(pos, "\\SweaveOpts{concordance=TRUE}\n"); //$NON-NLS-1$
             }
          }
       }
@@ -154,6 +154,7 @@ public class TextEditingTargetCompilePdfHelper
             {
                // show warning and bail 
                display.showWarningBar(
+                  // i18n: Concatenation/Message
                   "Unknown LaTeX program type '" + latexProgramDirective + 
                   "' specified (valid types are " + 
                   latexProgramRegistry_.getPrintableTypeNames() +  ")");
@@ -176,7 +177,8 @@ public class TextEditingTargetCompilePdfHelper
             {
                // show warning and bail 
                display.showWarningBar(
-                  "Unknown Rnw weave method '" + rnwWeaveDirective.getName() + 
+                  // i18n: Concatenation/Message
+                  "Unknown Rnw weave method '" + rnwWeaveDirective.getName() +
                   "' specified (valid types are " + 
                   rnwWeaveRegistry_.getPrintableTypeNames() +  ")");
                
@@ -215,9 +217,11 @@ public class TextEditingTargetCompilePdfHelper
                {
                   String warning;
                   if (Desktop.isDesktop())
+                     // i18n: Concatenation/Message
                      warning = "No LaTeX installation detected. Please install " +
                                "LaTeX before compiling.";
                   else
+                     // i18n: Concatenation/Message
                      warning = "This server does not have LaTeX installed. You " +
                                "may not be able to compile.";
                   display.showTexInstallationMissingWarning(warning);
@@ -234,7 +238,8 @@ public class TextEditingTargetCompilePdfHelper
                      forContext = "Rnw files";
                   
                   display.showWarningBar(
-                     fRnwWeave.getName() + " is configured to weave " + 
+                     // i18n: Concatenation/Message
+                     fRnwWeave.getName() + " is configured to weave " +
                      forContext + " " + "however the " + 
                      fRnwWeave.getPackageName() + " package is not installed.");
                }
@@ -292,7 +297,7 @@ public class TextEditingTargetCompilePdfHelper
    public RnwWeave getActiveRnwWeave()
    {
       if (docDisplay_.getFileType().canKnitToHTML())
-         return rnwWeaveRegistry_.findTypeIgnoreCase("knitr");
+         return rnwWeaveRegistry_.findTypeIgnoreCase("knitr"); //$NON-NLS-1$
 
       RnwWeave weave = null;
       ArrayList<TexMagicComment> magicComments = 
@@ -352,7 +357,7 @@ public class TextEditingTargetCompilePdfHelper
    {
       if (docDisplay_.getFileType().canKnitToHTML() || 
           docDisplay_.getFileType().isRpres())
-         return "knitr";
+         return "knitr"; //$NON-NLS-1$
 
       RnwWeaveDirective rnwWeaveDirective = detectRnwWeaveDirective(
                          TexMagicComment.parseComments(docDisplay_.getCode()));
@@ -378,7 +383,7 @@ public class TextEditingTargetCompilePdfHelper
          {
             continue;
          }
-         else if (line.startsWith("\\SweaveOpts"))
+         else if (line.startsWith("\\SweaveOpts")) //$NON-NLS-1$
          {
             Match match = concordancePattern_.match(line, 0);
             if (match != null)
@@ -408,8 +413,8 @@ public class TextEditingTargetCompilePdfHelper
    {
       for (TexMagicComment comment : magicComments)
       {
-         if (comment.getScope().equalsIgnoreCase("rnw") &&
-             comment.getVariable().equalsIgnoreCase("driver"))
+         if (comment.getScope().equalsIgnoreCase("rnw") && //$NON-NLS-1$
+             comment.getVariable().equalsIgnoreCase("driver")) //$NON-NLS-1$
          {
             return comment.getValue();
          }
@@ -423,9 +428,9 @@ public class TextEditingTargetCompilePdfHelper
    {
       for (TexMagicComment comment : magicComments)
       {
-         if (comment.getScope().equalsIgnoreCase("tex") &&
-             (comment.getVariable().equalsIgnoreCase("program") ||
-              comment.getVariable().equalsIgnoreCase("ts-program")))
+         if (comment.getScope().equalsIgnoreCase("tex") && //$NON-NLS-1$
+             (comment.getVariable().equalsIgnoreCase("program") || //$NON-NLS-1$
+              comment.getVariable().equalsIgnoreCase("ts-program"))) //$NON-NLS-1$
          { 
             return comment.getValue();
          }
@@ -439,8 +444,8 @@ public class TextEditingTargetCompilePdfHelper
       for (TexMagicComment comment : magicComments)
       {
          String scope = comment.getScope().toLowerCase();
-         if ((scope.equals("rnw") || scope.equals("tex")) &&
-             comment.getVariable().equalsIgnoreCase("root"))
+         if ((scope.equals("rnw") || scope.equals("tex")) && //$NON-NLS-1$
+             comment.getVariable().equalsIgnoreCase("root")) //$NON-NLS-1$
          {
             return comment.getValue();
          }

@@ -42,4 +42,9 @@
     <item name='org.rstudio.core.client.StringUtil java.lang.String shortPathName(org.rstudio.core.client.files.FileSystemItem, java.lang.String, int) 1'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
+    <item name='org.rstudio.core.client.StringUtilTests'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
 </root>

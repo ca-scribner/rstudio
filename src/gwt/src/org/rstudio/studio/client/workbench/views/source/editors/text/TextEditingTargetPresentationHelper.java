@@ -120,7 +120,7 @@ public class TextEditingTargetPresentationHelper
                
                StringBuilder indentBuilder = new StringBuilder();
                for (int level=0; level<item.getIndent(); level++)
-                  indentBuilder.append("&nbsp;&nbsp;");
+                  indentBuilder.append("&nbsp;&nbsp;"); //$NON-NLS-1$
                
                SafeHtmlBuilder labelBuilder = new SafeHtmlBuilder();
                labelBuilder.appendHtmlConstant(indentBuilder.toString());
@@ -174,7 +174,7 @@ public class TextEditingTargetPresentationHelper
       int currentSlide = 0;
       Position navPos = null;
       Position pos = Position.create(0, 0);
-      while ((pos = editor.search(pos, "^\\={3,}\\s*$")) != null)
+      while ((pos = editor.search(pos, "^\\={3,}\\s*$")) != null) //$NON-NLS-1$
       { 
          if (currentSlide++ == slideIndex)
          {
@@ -207,6 +207,6 @@ public class TextEditingTargetPresentationHelper
    private final DocDisplay docDisplay_;
    private PresentationServerOperations server_;
    
-   private static final String SLIDE_REGEX = "^\\={3,}\\s*$";
+   private static final String SLIDE_REGEX = "^\\={3,}\\s*$"; //$NON-NLS-1$
    private static final Pattern SLIDE_PATTERN = Pattern.create(SLIDE_REGEX);
 }

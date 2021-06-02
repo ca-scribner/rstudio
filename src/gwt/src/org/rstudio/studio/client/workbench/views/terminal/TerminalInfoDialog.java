@@ -32,7 +32,7 @@ import org.rstudio.studio.client.workbench.prefs.model.UserPrefs;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-
+// i18n: This has some messages, specially formatted strings, etc.  Not sure how best to handle i18n formatting
 public class TerminalInfoDialog extends ModalDialogBase
 {
 

@@ -116,7 +116,7 @@ public class SVNPresenter extends BaseVcsPresenter
                                           items);
 
       // open the window
-      satelliteManager_.openSatellite("review_changes",
+      satelliteManager_.openSatellite("review_changes", //$NON-NLS-1$
                                       params,
                                       new Size(1000,1200));
    }
@@ -204,6 +204,7 @@ public class SVNPresenter extends BaseVcsPresenter
       {
          globalDisplay_.showMessage(MessageDialog.INFO,
                                     "No Changes to File",
+                                    // i18n: Concatenation/Message
                                     "There are no changes to the file \"" +
                                     file.getName() + "\" to diff.");
       }

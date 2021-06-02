@@ -63,7 +63,7 @@ public class TextEditingTargetChunks
    @Override
    public void onScopeTreeReady(ScopeTreeReadyEvent event)
    {
-      if (target_.getDocDisplay().getModeId() == "mode/rmarkdown")
+      if (target_.getDocDisplay().getModeId() == "mode/rmarkdown") //$NON-NLS-1$
          syncWidgets(false);
    }
 
@@ -92,7 +92,7 @@ public class TextEditingTargetChunks
    public void onEditorModeChanged(EditorModeChangedEvent event)
    {
       // clean up all chunks when moving out of rmarkdown mode
-      if (event.getMode() != "mode/rmarkdown")
+      if (event.getMode() != "mode/rmarkdown") //$NON-NLS-1$
          removeAllToolbars();
       else 
          syncWidgets(true);
@@ -305,7 +305,7 @@ public class TextEditingTargetChunks
       Map<String, String> options = RChunkHeaderParser.parse(header);
       
       // check runnable engine
-      String engine = StringUtil.stringValue(options.get("engine"));
+      String engine = StringUtil.stringValue(options.get("engine")); //$NON-NLS-1$
       return isExecutableKnitrEngine(engine);
    }
    
@@ -320,8 +320,8 @@ public class TextEditingTargetChunks
       {
          // when executing chunks in the R console, only R and Python chunks are
          // executable
-         return engine.equalsIgnoreCase("r") ||
-                engine.equalsIgnoreCase("python");
+         return engine.equalsIgnoreCase("r") || //$NON-NLS-1$
+                engine.equalsIgnoreCase("python"); //$NON-NLS-1$
       }
    }
    

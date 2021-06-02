@@ -220,6 +220,7 @@ public class SVNCommitDialog extends ModalDialogBase
       {
          globalDisplay_.showMessage(GlobalDisplay.MSG_WARNING,
                                     "No Items Selected",
+                                    // i18n: Concatenation/Message
                                     "Please select one or more items to " +
                                     "commit.",
                                     message_);
@@ -231,6 +232,7 @@ public class SVNCommitDialog extends ModalDialogBase
       {
          globalDisplay_.showMessage(GlobalDisplay.MSG_WARNING,
                                     "Message Required",
+                                    // i18n: Concatenation/Message?  Not sure what message_ is
                                     "Please provide a commit message.",
                                     message_);
          return false;
@@ -267,6 +269,6 @@ public class SVNCommitDialog extends ModalDialogBase
    private static String commitDraft_;
    private static StringStateValue commitDraftStateValue_;
 
-   private static final String MODULE_SVN = "svn";
+   private static final String MODULE_SVN = "svn"; //$NON-NLS-1$
    private static final String KEY_COMMIT_MESSAGE = "commitMessage";
 }

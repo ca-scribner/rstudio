@@ -84,10 +84,10 @@ public class TutorialCommandEvent extends CrossWindowEvent<TutorialCommandEvent.
 
    public static final Type<Handler> TYPE = new Type<>();
 
-   public static final String TYPE_STARTED = "started";
-   public static final String TYPE_STOP = "stop";
-   public static final String TYPE_NAVIGATE = "navigate";
-   public static final String TYPE_INDEXING_COMPLETED = "indexing_completed";
-   public static final String TYPE_LAUNCH_DEFAULT_TUTORIAL = "launch_default_tutorial";
+   public static final String TYPE_STARTED = "started"; //$NON-NLS-1$
+   public static final String TYPE_STOP = "stop"; //$NON-NLS-1$
+   public static final String TYPE_NAVIGATE = "navigate"; //$NON-NLS-1$
+   public static final String TYPE_INDEXING_COMPLETED = "indexing_completed"; //$NON-NLS-1$
+   public static final String TYPE_LAUNCH_DEFAULT_TUTORIAL = "launch_default_tutorial"; //$NON-NLS-1$
 
 }

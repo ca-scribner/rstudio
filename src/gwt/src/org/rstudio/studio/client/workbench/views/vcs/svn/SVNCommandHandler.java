@@ -43,7 +43,7 @@ import org.rstudio.studio.client.workbench.views.vcs.svn.model.SVNState;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Command;
-
+// i18n: Are these parsing SVN's language (and thus should not be translated) or setting language that hits a user?
 public class SVNCommandHandler
 {
    public interface Binder extends CommandBinder<Commands, SVNCommandHandler>

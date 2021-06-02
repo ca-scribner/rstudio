@@ -369,7 +369,7 @@ public class Synctex implements CompilePdfStartedEvent.Handler,
 
    private void fixupSynctexCommandDescription(AppCommand command)
    {
-      String desc = command.getDesc().replace("Ctrl+", "Cmd+");
+      String desc = command.getDesc().replace("Ctrl+", "Cmd+"); //$NON-NLS-1$
       command.setDesc(desc);
    }
 

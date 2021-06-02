@@ -27,7 +27,8 @@ public class TextEditingTargetLatexFormatMenu extends ToolbarPopupMenu
    {
       editor_ = editor;
       prefs_ = prefs;
-      
+
+      // i18n: What is user/enumerator in this section?
       addItem(createLatexMenu("Section", "section*", true));
       addItem(createLatexMenu("Subsection", "subsection*", true));
       addItem(createLatexMenu("Sub-Subsection", "subsubsection*", true));
@@ -139,12 +140,12 @@ public class TextEditingTargetLatexFormatMenu extends ToolbarPopupMenu
                indent.append('\t');
             }
            
-            String item = indent.toString() + "\\item";
+            String item = indent.toString() + "\\item"; //$NON-NLS-1$
             String itemElement = item + (isDescription ? "[]" : " ");
             
-            String code = "\\begin{" + type + "}\n";
+            String code = "\\begin{" + type + "}\n"; //$NON-NLS-1$
             code += itemElement;
-            code += "\n\\end{" + type + "}\n";
+            code += "\n\\end{" + type + "}\n"; //$NON-NLS-1$
             
             
             editor_.insertCode(code, false);

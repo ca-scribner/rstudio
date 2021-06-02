@@ -479,6 +479,7 @@ public class TextEditingTargetWidget
       userPrefs_.sourceWithEcho().addValueChangeHandler(
             event -> {
                if (event.getValue())
+                  // i18n: Concatenation/Message
                   sourceButton_.setTitle(SOURCE_BUTTON_TITLE + " (with echo)");
                else
                   sourceButton_.setTitle(SOURCE_BUTTON_TITLE);
@@ -731,6 +732,7 @@ public class TextEditingTargetWidget
       boolean visible = target_.getPreferredOutlineWidgetVisibility();
       toggleVisualModeOutlineButton_.setLatched(visible);
       String title = commands_.toggleDocumentOutline().getTooltip();
+      // i18n?  Does this react to things that will be translated?
       title = visible ? title.replace("Show ", "Hide ") : title.replace("Hide ", "Show ");
       toggleVisualModeOutlineButton_.setTitle(title);
    }
@@ -861,6 +863,7 @@ public class TextEditingTargetWidget
       sourceOnSave_.setVisible(canSourceOnSave);
       srcOnSaveLabel_.setVisible(canSourceOnSave);
       if (fileType.isRd() || fileType.isJS() || canPreviewFromR || fileType.isSql())
+         // i18n: Concatenation/Message
          srcOnSaveLabel_.setText(fileType.getPreviewButtonText() + " on Save");
       else
          srcOnSaveLabel_.setText("Source on Save");
@@ -1103,6 +1106,7 @@ public class TextEditingTargetWidget
          // function that just accepts the list (since the user has already been
          // prompted here in the editor)
          RStudioGinjector.INSTANCE.getDependencyManager().withDependencies(
+            // i18n: Concatenation/Message
                "Install " + scriptName + " dependencies",
                (String dependencies, CommandWithArg<Boolean> result) -> result.execute(true),
                deps, false, null);
@@ -1314,6 +1318,7 @@ public class TextEditingTargetWidget
       {
          String ext = extensions.get(i);
          ImageResource img = ext != null ?
+               // i18n for next two?
                fileTypeRegistry_.getIconForFilename("output." + ext).getImageResource() :
                fileTypeRegistry_.getIconForFilename("Makefile").getImageResource();
          final String valueName = values.get(i);
@@ -1401,8 +1406,9 @@ public class TextEditingTargetWidget
       }
 
       knitCommandText_ = "Run " + docType;
-      knitDocumentButton_.setTitle("View the current " + docType.toLowerCase() +
-            " with Shiny (" +
+      knitDocumentButton_.setTitle(
+         // i18n: Concatenation/Message
+         "View the current " + docType.toLowerCase() + " with Shiny (" +
             DomUtils.htmlToText(
                   commands_.knitDocument().getShortcutPrettyHtml()) + ")");
       knitDocumentButton_.setText(knitCommandText_);
@@ -1944,6 +1950,7 @@ public class TextEditingTargetWidget
 
    private String shinyAppState_ = ShinyApplicationParams.STATE_STOPPED;
    private String plumberAPIState_ = PlumberAPIParams.STATE_STOPPED;
+   // i18n: I think these hit users and need i18n?
    private String sourceCommandText_ = "Source";
    private String knitCommandText_ = "Knit";
    private String previewCommandText_ = "Preview";

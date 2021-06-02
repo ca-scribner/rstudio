@@ -59,7 +59,7 @@ public class SVNSelectChangelistTablePresenter extends SVNChangelistTablePresent
                   });
                   return;
                }
-               if (object.getStatus() == "!")
+               if (object.getStatus() == "!") //$NON-NLS-1$
                {
                   server.svnDelete(toArray(object.getPath()),
                                    new SimpleRequestCallback<ProcessResult>()
@@ -74,11 +74,12 @@ public class SVNSelectChangelistTablePresenter extends SVNChangelistTablePresent
                                    });
                   return;
                }
-               if (object.getStatus() == "C")
+               if (object.getStatus() == "C") //$NON-NLS-1$
                {
                   globalDisplay.showYesNoMessage(
                         GlobalDisplay.MSG_WARNING,
                         "File Conflict",
+                        // i18n: Concatenation/Message
                         "This file has a conflict. Would you like to mark it " +
                         "as resolved now?",
                         new Operation()
@@ -122,7 +123,7 @@ public class SVNSelectChangelistTablePresenter extends SVNChangelistTablePresent
    @Override
    protected boolean rejectItem(StatusAndPath item)
    {
-      return super.rejectItem(item) || "X".equals(item.getStatus());
+      return super.rejectItem(item) || "X".equals(item.getStatus()); //$NON-NLS-1$
    }
 
    public void clearSelection()

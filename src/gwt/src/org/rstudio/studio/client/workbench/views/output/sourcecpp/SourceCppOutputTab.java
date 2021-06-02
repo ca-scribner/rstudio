@@ -42,6 +42,7 @@ public class SourceCppOutputTab extends DelayLoadWorkbenchTab<SourceCppOutputPre
    @Inject
    public SourceCppOutputTab(Shim shim, Commands commands, EventBus events)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Source Cpp", shim);
       GWT.<Binder>create(Binder.class).bind(commands, shim);
 

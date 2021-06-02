@@ -263,7 +263,7 @@ public class TokenCursor extends JavaScriptObject
       TokenCursor clone = cloneCursor();
       do
       {
-         if (clone.peekBwd(1).valueEquals("function"))
+         if (clone.peekBwd(1).valueEquals("function")) //$NON-NLS-1$
             return true;
       } while (clone.findOpeningBracket("(", false));
       return false;

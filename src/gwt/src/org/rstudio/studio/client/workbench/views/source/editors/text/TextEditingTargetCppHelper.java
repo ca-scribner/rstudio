@@ -67,6 +67,7 @@ public class TextEditingTargetCppHelper
                if (!capabilities.getCanBuild())
                {
                   warningBar.showWarningBar(
+                     // i18n: Concatenation/Message
                      "The tools required to build C/C++ code for R " +
                      "are not currently installed");
                   
@@ -88,6 +89,7 @@ public class TextEditingTargetCppHelper
                   if (editingTarget.search("Rcpp\\:\\:export") != null)
                   {
                      warningBar.showWarningBar(
+                        // i18n: Concatenation/Message
                         "The Rcpp package (version 0.10.1 or higher) is not " +
                         "currently installed");
                   }

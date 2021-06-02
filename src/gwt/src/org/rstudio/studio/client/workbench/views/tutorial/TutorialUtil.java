@@ -24,8 +24,8 @@ public class TutorialUtil
    {
       String host = GWT.getHostPageBaseURL();
       return
-            url.startsWith(host + "p/") ||
-            url.startsWith(host + "p6/") ||
+            url.startsWith(host + "p/") || //$NON-NLS-1$
+            url.startsWith(host + "p6/") || //$NON-NLS-1$
             !url.startsWith(host);
    }
 }

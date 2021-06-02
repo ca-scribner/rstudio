@@ -60,7 +60,7 @@ public class SVNChangelistTable extends ChangelistTable
                               b.getChangelist());
                }
             });
-            table_.addColumn(changelistColumn_, "Changelist");
+            table_.addColumn(changelistColumn_, "Changelist"); //$NON-NLS-1$
          }
       }
    }

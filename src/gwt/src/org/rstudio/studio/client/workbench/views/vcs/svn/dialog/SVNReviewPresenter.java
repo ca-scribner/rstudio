@@ -282,6 +282,7 @@ public class SVNReviewPresenter implements ReviewPresenter
             globalDisplay.showYesNoMessage(
                   GlobalDisplay.MSG_WARNING,
                   "Discard All",
+                  // i18n: Concatenation/Message
                   which + " changes in this file will be " +
                   "lost.\n\nAre you sure you want to continue?",
                   new Operation()
@@ -513,8 +514,8 @@ public class SVNReviewPresenter implements ReviewPresenter
    private String currentFilename_;
    private SVNState svnState_;
    private boolean initialized_;
-   private static final String MODULE_SVN = "vcs_svn";
-   private static final String KEY_CONTEXT_LINES = "context_lines";
+   private static final String MODULE_SVN = "vcs_svn"; //$NON-NLS-1$
+   private static final String KEY_CONTEXT_LINES = "context_lines"; //$NON-NLS-1$
 
    private final HashSet<String> undiffableStatuses_ = new HashSet<>();
 

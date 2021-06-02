@@ -76,7 +76,7 @@ public class TextEditingTargetThemeHelper
       
       Element editorContainer = editingWidget.getElement();
       Element[] aceContentElements =
-            DomUtils.getElementsByClassName(editorContainer, "ace_scroller");
+            DomUtils.getElementsByClassName(editorContainer, "ace_scroller"); //$NON-NLS-1$
       
       int n = aceContentElements.length;
       if (editingTarget.isVisualModeActivated())

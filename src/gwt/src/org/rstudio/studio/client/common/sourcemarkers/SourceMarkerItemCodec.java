@@ -85,6 +85,7 @@ public class SourceMarkerItemCodec
       TableCellElement tdLine = Document.get().createTDElement();
       tdLine.setClassName(resources_.styles().lineCell());
       if (entry.getLine() >= 0)
+         // i18n: ?
          tdLine.setInnerText("Line " + entry.getLine());
       tr.appendChild(tdLine);
 
@@ -203,9 +204,9 @@ public class SourceMarkerItemCodec
    private boolean showFileHeaders_;
    private String fileHeaderBasePath_ = null;
 
-   private static final String DATA_PATH = "data-path";
-   private static final String DATA_LINE = "data-line";
-   private static final String DATA_COLUMN = "data-column";
-   private static final String LOG_PATH = "log-path";
-   private static final String LOG_LINE = "log-line";
+   private static final String DATA_PATH = "data-path"; //$NON-NLS-1$
+   private static final String DATA_LINE = "data-line"; //$NON-NLS-1$
+   private static final String DATA_COLUMN = "data-column"; //$NON-NLS-1$
+   private static final String LOG_PATH = "log-path"; //$NON-NLS-1$
+   private static final String LOG_LINE = "log-line"; //$NON-NLS-1$
 }
