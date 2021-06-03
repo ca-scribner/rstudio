@@ -180,6 +180,7 @@ public class UserPrefs extends UserPrefsComputed
    {
       display_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
          "Confirm Clear Preferences",
+         // i18n: Concatenation/Message
          "Are you sure you want to clear your preferences? All RStudio settings " +
          "will be restored to their defaults, and your R session will be " +
          "restarted.",
@@ -194,6 +195,7 @@ public class UserPrefs extends UserPrefsComputed
                   display_.showMessage(
                         GlobalDisplay.MSG_INFO,
                         "Preferences Cleared",
+                        // i18n: Concatenation/Message
                         "Your preferences have been cleared, and your R session " +
                         "will now be restarted. A backup copy of your preferences " +
                         "can be found at: \n\n" + path,
@@ -241,6 +243,7 @@ public class UserPrefs extends UserPrefsComputed
    private void setScreenReaderMenuState(boolean checked)
    {
       commands_.toggleScreenReaderSupport().setChecked(checked);
+      // i18n: Concatenation/Message
       commands_.toggleScreenReaderSupport().setMenuLabel(checked ?
             origScreenReaderLabel_ + " (enabled)" :
             origScreenReaderLabel_ + " (disabled)");
@@ -255,6 +258,7 @@ public class UserPrefs extends UserPrefsComputed
          Timers.singleShot(AriaLiveService.STARTUP_ANNOUNCEMENT_DELAY, () ->
          {
             String shortcut = commands_.toggleScreenReaderSupport().getShortcutRaw();
+            // i18n: Concatenation/Message
             ariaLive_.announce(AriaLiveService.SCREEN_READER_NOT_ENABLED,
                   "Warning: screen reader mode not enabled. Turn on using shortcut " + shortcut + ".",
                   Timing.IMMEDIATE, Severity.ALERT);
@@ -285,6 +289,7 @@ public class UserPrefs extends UserPrefsComputed
    {
       display_.showYesNoMessage(GlobalDisplay.MSG_QUESTION,
             "Confirm Toggle Screen Reader Support",
+            // i18n: Concatenation/Message
             "Are you sure you want to " + (enableScreenReader().getValue() ? "disable" : "enable") + " " +
             "screen reader support? The application will reload to apply the change.",
             false,

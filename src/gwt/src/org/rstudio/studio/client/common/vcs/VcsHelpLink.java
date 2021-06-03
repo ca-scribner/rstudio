@@ -21,6 +21,7 @@ public class VcsHelpLink extends HelpLink
 {
    public VcsHelpLink()
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Using Version Control with RStudio", "using_version_control");
    }
 }

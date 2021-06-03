@@ -121,8 +121,8 @@ public class VisualModePanmirrorFormat
             }
             else
             {
-               format.pandocMode = "markdown";
-               format.pandocExtensions = "+autolink_bare_uris+tex_math_single_backslash";
+               format.pandocMode = "markdown"; //$NON-NLS-1$
+               format.pandocExtensions = "+autolink_bare_uris+tex_math_single_backslash"; //$NON-NLS-1$
                if (formatComment.extensions != null)
                   format.pandocExtensions += formatComment.extensions;
             }
@@ -208,6 +208,7 @@ public class VisualModePanmirrorFormat
       }
       else if (hasVcsConflictMarkers())
       {
+         // i18n: Concatenation/Message
          invalid = "Version control conflict markers detected. " + 
                    "Please resolve them before editing in visual mode.";
       }
@@ -237,8 +238,8 @@ public class VisualModePanmirrorFormat
       PanmirrorRmdExtensions rmdExtensions = new PanmirrorRmdExtensions();
       if (config.rmdExtensions != null)
       {
-         rmdExtensions.bookdownXRefUI = config.rmdExtensions.contains("+bookdown_cross_references");
-         rmdExtensions.blogdownMathInCode = config.rmdExtensions.contains("+tex_math_dollars_in_code");
+         rmdExtensions.bookdownXRefUI = config.rmdExtensions.contains("+bookdown_cross_references"); //$NON-NLS-1$
+         rmdExtensions.blogdownMathInCode = config.rmdExtensions.contains("+tex_math_dollars_in_code"); //$NON-NLS-1$
       }
       return rmdExtensions;
    }
@@ -252,12 +253,12 @@ public class VisualModePanmirrorFormat
   
    private boolean isHugodownDocument()
    {
-      return getOutputFormats().contains("hugodown::md_document");
+      return getOutputFormats().contains("hugodown::md_document"); //$NON-NLS-1$
    }
    
    private boolean isGitHubDocument()
    {
-      return getOutputFormats().contains("github_document") || isGitREADME();
+      return getOutputFormats().contains("github_document") || isGitREADME(); //$NON-NLS-1$
    }
    
    private boolean isGitREADME()
@@ -271,13 +272,13 @@ public class VisualModePanmirrorFormat
    
    private boolean isGitRepo()
    {
-      return sessionInfo_.getVcsName().equalsIgnoreCase("git");
+      return sessionInfo_.getVcsName().equalsIgnoreCase("git"); //$NON-NLS-1$
    }
    
    private boolean isDistillDocument()
    {
       return (sessionInfo_.getIsDistillProject() && isDocInProject()) ||
-             getOutputFormats().contains("distill::distill_article");
+             getOutputFormats().contains("distill::distill_article"); //$NON-NLS-1$
    }
    
    private boolean isXaringanDocument()
@@ -285,7 +286,7 @@ public class VisualModePanmirrorFormat
       List<String> formats = getOutputFormats();
       for (String format : formats)
       {
-         if (format.startsWith("xaringan"))
+         if (format.startsWith("xaringan")) //$NON-NLS-1$
             return true;
       }
       return false;
@@ -304,7 +305,7 @@ public class VisualModePanmirrorFormat
       List<String> formats = getOutputFormats();
       for (String format : formats) 
       {
-         boolean isBookdown = format.startsWith("bookdown::") && format.endsWith("2");
+         boolean isBookdown = format.startsWith("bookdown::") && format.endsWith("2"); //$NON-NLS-1$
          if (isBookdown)
             return true;
       }
@@ -314,7 +315,7 @@ public class VisualModePanmirrorFormat
    private boolean hasBlogdownMathInCode(PanmirrorPandocFormatConfig config, String[] docTypes)
    {
       if (alternateMarkdownEngine(docTypes) != null && getBlogdownConfig().rmd_extensions != null)
-         return getBlogdownConfig().rmd_extensions.contains("+tex_math_dollars_in_code") &&
+         return getBlogdownConfig().rmd_extensions.contains("+tex_math_dollars_in_code") && //$NON-NLS-1$
                 !this.disableBlogdownMathInCode(config);
       else
          return false;
@@ -323,7 +324,7 @@ public class VisualModePanmirrorFormat
    private boolean disableBlogdownMathInCode(PanmirrorPandocFormatConfig config)
    {
       return config.rmdExtensions != null && 
-             config.rmdExtensions.contains("-tex_math_dollars_in_code");
+             config.rmdExtensions.contains("-tex_math_dollars_in_code"); //$NON-NLS-1$
    }
    
    private boolean hasVcsConflictMarkers()
@@ -380,12 +381,12 @@ public class VisualModePanmirrorFormat
          // other valid ways of having a hugo document
          else if (isHugodownDocument() || hasHugoDocType(docTypes))
          {
-            return new Pair<>("goldmark", "");
+            return new Pair<>("goldmark", ""); //$NON-NLS-1$
          }
          // github document
          else if (isGitHubDocument())
          {
-            return new Pair<>("gfm", "");
+            return new Pair<>("gfm", ""); //$NON-NLS-1$
          }
       }
    
@@ -426,5 +427,5 @@ public class VisualModePanmirrorFormat
    private final TextEditingTarget.Display view_;
 
    private final static Pattern VCS_CONFLICT_PATTERN = 
-         Pattern.create("^[\\+\\-]?([\\<\\>|=])\\1{6}.*?$", "gm");
+         Pattern.create("^[\\+\\-]?([\\<\\>|=])\\1{6}.*?$", "gm"); //$NON-NLS-1$
 }

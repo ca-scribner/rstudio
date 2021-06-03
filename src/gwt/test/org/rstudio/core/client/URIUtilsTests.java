@@ -28,13 +28,13 @@ public class URIUtilsTests extends GWTTestCase
    public void testLocalUrls()
    {
       // local URLs
-      assertTrue(URIUtils.isLocalUrl("http://localhost:9432/"));
-      assertTrue(URIUtils.isLocalUrl("path/to/file.html"));
-      assertTrue(URIUtils.isLocalUrl("https://127.0.0.1/"));
+      assertTrue(URIUtils.isLocalUrl("http://localhost:9432/")); //$NON-NLS-1$
+      assertTrue(URIUtils.isLocalUrl("path/to/file.html")); //$NON-NLS-1$
+      assertTrue(URIUtils.isLocalUrl("https://127.0.0.1/")); //$NON-NLS-1$
 
       // remote URLs
-      assertFalse(URIUtils.isLocalUrl("https://example.com/"));
-      assertFalse(URIUtils.isLocalUrl("http://8.8.8.8/"));
-      assertFalse(URIUtils.isLocalUrl("http://eightyseven:8787/"));
+      assertFalse(URIUtils.isLocalUrl("https://example.com/")); //$NON-NLS-1$
+      assertFalse(URIUtils.isLocalUrl("http://8.8.8.8/")); //$NON-NLS-1$
+      assertFalse(URIUtils.isLocalUrl("http://eightyseven:8787/")); //$NON-NLS-1$
    }
 }

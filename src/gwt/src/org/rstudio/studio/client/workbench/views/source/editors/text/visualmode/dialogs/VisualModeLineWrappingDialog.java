@@ -79,15 +79,18 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
       mainWidget_ = new VerticalPanel();
      
       mainWidget_.addStyleName(RES.styles().confirmLineWrappingDialog());
-      
+
+      // i18n: Enumerator, user facing text, or both?
       String current = isProjectConfig ? "project default" : "global default";
-      
+
+      // i18n: Concatenation/Message
       Label mismatch = new Label(
          "Line wrapping in this document differs from the " + 
          current + ":"
       );
       mainWidget_.add(mismatch);
-      
+
+      // i18n: Concatenation/Message
       SafeHtmlBuilder builder = new SafeHtmlBuilder();
       builder.appendHtmlConstant("<ul>");
       builder.appendHtmlConstant("<li style=\"margin-bottom: 10px;\">");
@@ -115,7 +118,7 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
       Label choiceLabel = new Label("Select how you'd like to handle line wrapping below:");
       mainWidget_.add(choiceLabel);
          
-      
+      // i18n: Concatenation/Message
       chkConfigureFile_ = lineWrappingRadio( 
          "Use " + detectedLineWrapping + "-based line wrapping for this document"
       );
@@ -124,7 +127,8 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
       
       numFileColumn_ = createColumnInput(defaultColumnBreak);
       mainWidget_.add(numFileColumn_);
-      
+
+      // i18n: Concatenation/Message
       chkConfigureProject_= lineWrappingRadio(
          "Use " + detectedLineWrapping + "-based line wrapping for this project"
       );
@@ -135,7 +139,8 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
          mainWidget_.add(chkConfigureProject_);
          mainWidget_.add(numProjectColumn_);
       }
-      
+
+      // i18n: Concatenation/Message
       chkConfigureNone_ = lineWrappingRadio(
          "Use the current " + (isProjectConfig ? "project" : "global") + " default line wrapping for this document"
       );
@@ -144,7 +149,7 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
       
       HelpLink lineWrappingHelp = new HelpLink(
          "Learn more about visual mode line wrapping options",
-         "visual_markdown_editing-line-wrapping",
+         "visual_markdown_editing-line-wrapping", //$NON-NLS-1$
          false
       );
       lineWrappingHelp.addStyleName(RES.styles().lineWrappingHelp());
@@ -199,7 +204,7 @@ public class VisualModeLineWrappingDialog extends ModalDialog<VisualModeLineWrap
   
    private RadioButton lineWrappingRadio(String caption)
    {
-      final String kRadioGroup = "DDFEDF81-87F7-45E8-B5FC-E021FC41FC69";
+      final String kRadioGroup = "DDFEDF81-87F7-45E8-B5FC-E021FC41FC69"; //$NON-NLS-1$
       RadioButton radio = new RadioButton(kRadioGroup, caption);
       radio.addStyleName(RES.styles().lineWrappingRadio());
       return radio;

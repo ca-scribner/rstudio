@@ -170,7 +170,8 @@ public class ZoteroLibrariesWidget extends Composite
          public void onResponseReceived(JavaScriptObject response)
          {     
             PanmirrorZoteroResult result = response.cast();
-            if (result.getStatus().equals("ok"))
+            // i18n: what is this testing on?  Is the source translated?
+            if (result.getStatus().equals("ok")) //$NON-NLS-1$
             {
                JsArrayString librariesJs = result.getMessage().cast();
                ArrayList<String> libraries = JsArrayUtil.fromJsArrayString(librariesJs);

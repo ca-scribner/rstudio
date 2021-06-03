@@ -51,7 +51,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> runRprofileOnResume()
    {
       return bool(
-         "run_rprofile_on_resume",
+         "run_rprofile_on_resume", //$NON-NLS-1$
          _constants.runRprofileOnResumeTitle(), 
          _constants.runRprofileOnResumeDescription(), 
          false);
@@ -63,7 +63,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> saveWorkspace()
    {
       return enumeration(
-         "save_workspace",
+         "save_workspace", //$NON-NLS-1$
          _constants.saveWorkspaceTitle(), 
          _constants.saveWorkspaceDescription(), 
          new String[] {
@@ -73,7 +73,8 @@ public class UserPrefsAccessor extends Prefs
          },
          "ask");
    }
-
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these.  See surroundSelection below which does this properly
    public final static String SAVE_WORKSPACE_ALWAYS = "always";
    public final static String SAVE_WORKSPACE_NEVER = "never";
    public final static String SAVE_WORKSPACE_ASK = "ask";
@@ -84,7 +85,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> loadWorkspace()
    {
       return bool(
-         "load_workspace",
+         "load_workspace", //$NON-NLS-1$
          _constants.loadWorkspaceTitle(), 
          _constants.loadWorkspaceDescription(), 
          true);
@@ -96,7 +97,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> initialWorkingDirectory()
    {
       return string(
-         "initial_working_directory",
+         "initial_working_directory", //$NON-NLS-1$
          _constants.initialWorkingDirectoryTitle(), 
          _constants.initialWorkingDirectoryDescription(), 
          "");
@@ -108,7 +109,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<CranMirror> cranMirror()
    {
       return object(
-         "cran_mirror",
+         "cran_mirror", //$NON-NLS-1$
          _constants.cranMirrorTitle(), 
          _constants.cranMirrorDescription(), 
          null);
@@ -150,9 +151,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> bioconductorMirrorName()
    {
       return string(
-         "bioconductor_mirror_name",
+         "bioconductor_mirror_name", //$NON-NLS-1$
          _constants.bioconductorMirrorNameTitle(), 
          _constants.bioconductorMirrorNameDescription(), 
+         // i18n: Enumerator, user facing text, or both?
          "Seattle (USA)");
    }
 
@@ -162,10 +164,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> bioconductorMirrorUrl()
    {
       return string(
-         "bioconductor_mirror_url",
+         "bioconductor_mirror_url", //$NON-NLS-1$
          _constants.bioconductorMirrorUrlTitle(), 
          _constants.bioconductorMirrorUrlDescription(), 
-         "http://www.bioconductor.org");
+         "http://www.bioconductor.org"); //$NON-NLS-1$
    }
 
    /**
@@ -174,7 +176,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> alwaysSaveHistory()
    {
       return bool(
-         "always_save_history",
+         "always_save_history", //$NON-NLS-1$
          _constants.alwaysSaveHistoryTitle(), 
          _constants.alwaysSaveHistoryDescription(), 
          true);
@@ -186,7 +188,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> removeHistoryDuplicates()
    {
       return bool(
-         "remove_history_duplicates",
+         "remove_history_duplicates", //$NON-NLS-1$
          _constants.removeHistoryDuplicatesTitle(), 
          _constants.removeHistoryDuplicatesDescription(), 
          false);
@@ -198,7 +200,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showLastDotValue()
    {
       return bool(
-         "show_last_dot_value",
+         "show_last_dot_value", //$NON-NLS-1$
          _constants.showLastDotValueTitle(), 
          _constants.showLastDotValueDescription(), 
          false);
@@ -210,7 +212,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> lineEndingConversion()
    {
       return enumeration(
-         "line_ending_conversion",
+         "line_ending_conversion", //$NON-NLS-1$
          _constants.lineEndingConversionTitle(), 
          _constants.lineEndingConversionDescription(), 
          new String[] {
@@ -223,6 +225,8 @@ public class UserPrefsAccessor extends Prefs
          "native");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String LINE_ENDING_CONVERSION_DEFAULT = "default";
    public final static String LINE_ENDING_CONVERSION_WINDOWS = "windows";
    public final static String LINE_ENDING_CONVERSION_POSIX = "posix";
@@ -235,7 +239,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useNewlinesInMakefiles()
    {
       return bool(
-         "use_newlines_in_makefiles",
+         "use_newlines_in_makefiles", //$NON-NLS-1$
          _constants.useNewlinesInMakefilesTitle(), 
          _constants.useNewlinesInMakefilesDescription(), 
          true);
@@ -247,7 +251,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> windowsTerminalShell()
    {
       return enumeration(
-         "windows_terminal_shell",
+         "windows_terminal_shell", //$NON-NLS-1$
          _constants.windowsTerminalShellTitle(), 
          _constants.windowsTerminalShellDescription(), 
          new String[] {
@@ -263,6 +267,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String WINDOWS_TERMINAL_SHELL_DEFAULT = "default";
    public final static String WINDOWS_TERMINAL_SHELL_WIN_GIT_BASH = "win-git-bash";
    public final static String WINDOWS_TERMINAL_SHELL_WIN_WSL_BASH = "win-wsl-bash";
@@ -278,7 +284,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> posixTerminalShell()
    {
       return enumeration(
-         "posix_terminal_shell",
+         "posix_terminal_shell", //$NON-NLS-1$
          _constants.posixTerminalShellTitle(), 
          _constants.posixTerminalShellDescription(), 
          new String[] {
@@ -291,6 +297,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String POSIX_TERMINAL_SHELL_DEFAULT = "default";
    public final static String POSIX_TERMINAL_SHELL_BASH = "bash";
    public final static String POSIX_TERMINAL_SHELL_ZSH = "zsh";
@@ -303,7 +311,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> customShellCommand()
    {
       return string(
-         "custom_shell_command",
+         "custom_shell_command", //$NON-NLS-1$
          _constants.customShellCommandTitle(), 
          _constants.customShellCommandDescription(), 
          "");
@@ -315,7 +323,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> customShellOptions()
    {
       return string(
-         "custom_shell_options",
+         "custom_shell_options", //$NON-NLS-1$
          _constants.customShellOptionsTitle(), 
          _constants.customShellOptionsDescription(), 
          "");
@@ -327,7 +335,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showLineNumbers()
    {
       return bool(
-         "show_line_numbers",
+         "show_line_numbers", //$NON-NLS-1$
          _constants.showLineNumbersTitle(), 
          _constants.showLineNumbersDescription(), 
          true);
@@ -339,7 +347,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> highlightSelectedWord()
    {
       return bool(
-         "highlight_selected_word",
+         "highlight_selected_word", //$NON-NLS-1$
          _constants.highlightSelectedWordTitle(), 
          _constants.highlightSelectedWordDescription(), 
          true);
@@ -363,7 +371,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Panes> panes()
    {
       return object(
-         "panes",
+         "panes", //$NON-NLS-1$
          _constants.panesTitle(), 
          _constants.panesDescription(), 
          null);
@@ -371,8 +379,9 @@ public class UserPrefsAccessor extends Prefs
 
    public static class Panes extends JavaScriptObject
    {
-      protected Panes() {} 
+      protected Panes() {}
 
+      // i18n: Enumerator, user facing text, or both?
       public final static String QUADRANTS_SOURCE = "Source";
       public final static String QUADRANTS_CONSOLE = "Console";
       public final static String QUADRANTS_TABSET1 = "TabSet1";
@@ -415,7 +424,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> allowSourceColumns()
    {
       return bool(
-         "allow_source_columns",
+         "allow_source_columns", //$NON-NLS-1$
          _constants.allowSourceColumnsTitle(), 
          _constants.allowSourceColumnsDescription(), 
          true);
@@ -427,7 +436,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useSpacesForTab()
    {
       return bool(
-         "use_spaces_for_tab",
+         "use_spaces_for_tab", //$NON-NLS-1$
          _constants.useSpacesForTabTitle(), 
          _constants.useSpacesForTabDescription(), 
          true);
@@ -439,7 +448,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> numSpacesForTab()
    {
       return integer(
-         "num_spaces_for_tab",
+         "num_spaces_for_tab", //$NON-NLS-1$
          _constants.numSpacesForTabTitle(), 
          _constants.numSpacesForTabDescription(), 
          2);
@@ -451,7 +460,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoDetectIndentation()
    {
       return bool(
-         "auto_detect_indentation",
+         "auto_detect_indentation", //$NON-NLS-1$
          _constants.autoDetectIndentationTitle(), 
          _constants.autoDetectIndentationDescription(), 
          true);
@@ -463,7 +472,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showMargin()
    {
       return bool(
-         "show_margin",
+         "show_margin", //$NON-NLS-1$
          _constants.showMarginTitle(), 
          _constants.showMarginDescription(), 
          true);
@@ -475,7 +484,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> blinkingCursor()
    {
       return bool(
-         "blinking_cursor",
+         "blinking_cursor", //$NON-NLS-1$
          _constants.blinkingCursorTitle(), 
          _constants.blinkingCursorDescription(), 
          true);
@@ -487,7 +496,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> marginColumn()
    {
       return integer(
-         "margin_column",
+         "margin_column", //$NON-NLS-1$
          _constants.marginColumnTitle(), 
          _constants.marginColumnDescription(), 
          80);
@@ -523,7 +532,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> continueCommentsOnNewline()
    {
       return bool(
-         "continue_comments_on_newline",
+         "continue_comments_on_newline", //$NON-NLS-1$
          _constants.continueCommentsOnNewlineTitle(), 
          _constants.continueCommentsOnNewlineDescription(), 
          false);
@@ -535,7 +544,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> highlightWebLink()
    {
       return bool(
-         "highlight_web_link",
+         "highlight_web_link", //$NON-NLS-1$
          _constants.highlightWebLinkTitle(), 
          _constants.highlightWebLinkDescription(), 
          true);
@@ -547,7 +556,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> editorKeybindings()
    {
       return enumeration(
-         "editor_keybindings",
+         "editor_keybindings", //$NON-NLS-1$
          _constants.editorKeybindingsTitle(), 
          _constants.editorKeybindingsDescription(), 
          new String[] {
@@ -565,6 +574,8 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String EDITOR_KEYBINDINGS_DEFAULT = "default";
    public final static String EDITOR_KEYBINDINGS_VIM = "vim";
    public final static String EDITOR_KEYBINDINGS_EMACS = "emacs";
@@ -576,7 +587,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> insertMatching()
    {
       return bool(
-         "insert_matching",
+         "insert_matching", //$NON-NLS-1$
          _constants.insertMatchingTitle(), 
          _constants.insertMatchingDescription(), 
          true);
@@ -588,7 +599,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> insertSpacesAroundEquals()
    {
       return bool(
-         "insert_spaces_around_equals",
+         "insert_spaces_around_equals", //$NON-NLS-1$
          _constants.insertSpacesAroundEqualsTitle(), 
          _constants.insertSpacesAroundEqualsDescription(), 
          true);
@@ -600,7 +611,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> insertParensAfterFunctionCompletion()
    {
       return bool(
-         "insert_parens_after_function_completion",
+         "insert_parens_after_function_completion", //$NON-NLS-1$
          _constants.insertParensAfterFunctionCompletionTitle(), 
          _constants.insertParensAfterFunctionCompletionDescription(), 
          true);
@@ -612,7 +623,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> tabMultilineCompletion()
    {
       return bool(
-         "tab_multiline_completion",
+         "tab_multiline_completion", //$NON-NLS-1$
          _constants.tabMultilineCompletionTitle(), 
          _constants.tabMultilineCompletionDescription(), 
          false);
@@ -624,7 +635,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> tabCompletion()
    {
       return bool(
-         "tab_completion",
+         "tab_completion", //$NON-NLS-1$
          _constants.tabCompletionTitle(), 
          _constants.tabCompletionDescription(), 
          true);
@@ -636,7 +647,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showHelpTooltipOnIdle()
    {
       return bool(
-         "show_help_tooltip_on_idle",
+         "show_help_tooltip_on_idle", //$NON-NLS-1$
          _constants.showHelpTooltipOnIdleTitle(), 
          _constants.showHelpTooltipOnIdleDescription(), 
          false);
@@ -648,7 +659,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> surroundSelection()
    {
       return enumeration(
-         "surround_selection",
+         "surround_selection", //$NON-NLS-1$
          _constants.surroundSelectionTitle(), 
          _constants.surroundSelectionDescription(), 
          new String[] {
@@ -664,6 +675,9 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these. **No, I think these are the internal values, and the enumeration
+   //       defines the user facing text separately (the last list of strings)
    public final static String SURROUND_SELECTION_NEVER = "never";
    public final static String SURROUND_SELECTION_QUOTES = "quotes";
    public final static String SURROUND_SELECTION_QUOTES_AND_BRACKETS = "quotes_and_brackets";
@@ -674,7 +688,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> enableSnippets()
    {
       return bool(
-         "enable_snippets",
+         "enable_snippets", //$NON-NLS-1$
          _constants.enableSnippetsTitle(), 
          _constants.enableSnippetsDescription(), 
          true);
@@ -686,7 +700,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> codeCompletion()
    {
       return enumeration(
-         "code_completion",
+         "code_completion", //$NON-NLS-1$
          _constants.codeCompletionTitle(), 
          _constants.codeCompletionDescription(), 
          new String[] {
@@ -704,6 +718,7 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  I think this is ok as is?
    public final static String CODE_COMPLETION_ALWAYS = "always";
    public final static String CODE_COMPLETION_NEVER = "never";
    public final static String CODE_COMPLETION_TRIGGERED = "triggered";
@@ -715,7 +730,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> codeCompletionOther()
    {
       return enumeration(
-         "code_completion_other",
+         "code_completion_other", //$NON-NLS-1$
          _constants.codeCompletionOtherTitle(), 
          _constants.codeCompletionOtherDescription(), 
          new String[] {
@@ -731,6 +746,7 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  I think this is ok as is?
    public final static String CODE_COMPLETION_OTHER_ALWAYS = "always";
    public final static String CODE_COMPLETION_OTHER_TRIGGERED = "triggered";
    public final static String CODE_COMPLETION_OTHER_MANUAL = "manual";
@@ -741,7 +757,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> consoleCodeCompletion()
    {
       return bool(
-         "console_code_completion",
+         "console_code_completion", //$NON-NLS-1$
          _constants.consoleCodeCompletionTitle(), 
          _constants.consoleCodeCompletionDescription(), 
          true);
@@ -753,7 +769,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> codeCompletionDelay()
    {
       return integer(
-         "code_completion_delay",
+         "code_completion_delay", //$NON-NLS-1$
          _constants.codeCompletionDelayTitle(), 
          _constants.codeCompletionDelayDescription(), 
          250);
@@ -765,7 +781,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> codeCompletionCharacters()
    {
       return integer(
-         "code_completion_characters",
+         "code_completion_characters", //$NON-NLS-1$
          _constants.codeCompletionCharactersTitle(), 
          _constants.codeCompletionCharactersDescription(), 
          3);
@@ -777,7 +793,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showFunctionSignatureTooltips()
    {
       return bool(
-         "show_function_signature_tooltips",
+         "show_function_signature_tooltips", //$NON-NLS-1$
          _constants.showFunctionSignatureTooltipsTitle(), 
          _constants.showFunctionSignatureTooltipsDescription(), 
          true);
@@ -789,7 +805,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showDiagnosticsR()
    {
       return bool(
-         "show_diagnostics_r",
+         "show_diagnostics_r", //$NON-NLS-1$
          _constants.showDiagnosticsRTitle(), 
          _constants.showDiagnosticsRDescription(), 
          true);
@@ -801,7 +817,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showDiagnosticsCpp()
    {
       return bool(
-         "show_diagnostics_cpp",
+         "show_diagnostics_cpp", //$NON-NLS-1$
          _constants.showDiagnosticsCppTitle(), 
          _constants.showDiagnosticsCppDescription(), 
          true);
@@ -813,7 +829,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showDiagnosticsOther()
    {
       return bool(
-         "show_diagnostics_other",
+         "show_diagnostics_other", //$NON-NLS-1$
          _constants.showDiagnosticsOtherTitle(), 
          _constants.showDiagnosticsOtherDescription(), 
          false);
@@ -825,7 +841,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> styleDiagnostics()
    {
       return bool(
-         "style_diagnostics",
+         "style_diagnostics", //$NON-NLS-1$
          _constants.styleDiagnosticsTitle(), 
          _constants.styleDiagnosticsDescription(), 
          false);
@@ -837,7 +853,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> diagnosticsOnSave()
    {
       return bool(
-         "diagnostics_on_save",
+         "diagnostics_on_save", //$NON-NLS-1$
          _constants.diagnosticsOnSaveTitle(), 
          _constants.diagnosticsOnSaveDescription(), 
          true);
@@ -849,7 +865,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> backgroundDiagnostics()
    {
       return bool(
-         "background_diagnostics",
+         "background_diagnostics", //$NON-NLS-1$
          _constants.backgroundDiagnosticsTitle(), 
          _constants.backgroundDiagnosticsDescription(), 
          true);
@@ -861,7 +877,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> backgroundDiagnosticsDelayMs()
    {
       return integer(
-         "background_diagnostics_delay_ms",
+         "background_diagnostics_delay_ms", //$NON-NLS-1$
          _constants.backgroundDiagnosticsDelayMsTitle(), 
          _constants.backgroundDiagnosticsDelayMsDescription(), 
          2000);
@@ -873,7 +889,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> diagnosticsInRFunctionCalls()
    {
       return bool(
-         "diagnostics_in_r_function_calls",
+         "diagnostics_in_r_function_calls", //$NON-NLS-1$
          _constants.diagnosticsInRFunctionCallsTitle(), 
          _constants.diagnosticsInRFunctionCallsDescription(), 
          true);
@@ -885,7 +901,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> checkArgumentsToRFunctionCalls()
    {
       return bool(
-         "check_arguments_to_r_function_calls",
+         "check_arguments_to_r_function_calls", //$NON-NLS-1$
          _constants.checkArgumentsToRFunctionCallsTitle(), 
          _constants.checkArgumentsToRFunctionCallsDescription(), 
          false);
@@ -897,7 +913,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> checkUnexpectedAssignmentInFunctionCall()
    {
       return bool(
-         "check_unexpected_assignment_in_function_call",
+         "check_unexpected_assignment_in_function_call", //$NON-NLS-1$
          _constants.checkUnexpectedAssignmentInFunctionCallTitle(), 
          _constants.checkUnexpectedAssignmentInFunctionCallDescription(), 
          false);
@@ -909,7 +925,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> warnIfNoSuchVariableInScope()
    {
       return bool(
-         "warn_if_no_such_variable_in_scope",
+         "warn_if_no_such_variable_in_scope", //$NON-NLS-1$
          _constants.warnIfNoSuchVariableInScopeTitle(), 
          _constants.warnIfNoSuchVariableInScopeDescription(), 
          false);
@@ -921,7 +937,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> warnVariableDefinedButNotUsed()
    {
       return bool(
-         "warn_variable_defined_but_not_used",
+         "warn_variable_defined_but_not_used", //$NON-NLS-1$
          _constants.warnVariableDefinedButNotUsedTitle(), 
          _constants.warnVariableDefinedButNotUsedDescription(), 
          false);
@@ -933,7 +949,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoDiscoverPackageDependencies()
    {
       return bool(
-         "auto_discover_package_dependencies",
+         "auto_discover_package_dependencies", //$NON-NLS-1$
          _constants.autoDiscoverPackageDependenciesTitle(), 
          _constants.autoDiscoverPackageDependenciesDescription(), 
          true);
@@ -945,7 +961,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoAppendNewline()
    {
       return bool(
-         "auto_append_newline",
+         "auto_append_newline", //$NON-NLS-1$
          _constants.autoAppendNewlineTitle(), 
          _constants.autoAppendNewlineDescription(), 
          false);
@@ -957,7 +973,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> stripTrailingWhitespace()
    {
       return bool(
-         "strip_trailing_whitespace",
+         "strip_trailing_whitespace", //$NON-NLS-1$
          _constants.stripTrailingWhitespaceTitle(), 
          _constants.stripTrailingWhitespaceDescription(), 
          false);
@@ -969,7 +985,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> restoreSourceDocumentCursorPosition()
    {
       return bool(
-         "restore_source_document_cursor_position",
+         "restore_source_document_cursor_position", //$NON-NLS-1$
          _constants.restoreSourceDocumentCursorPositionTitle(), 
          _constants.restoreSourceDocumentCursorPositionDescription(), 
          true);
@@ -981,7 +997,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> reindentOnPaste()
    {
       return bool(
-         "reindent_on_paste",
+         "reindent_on_paste", //$NON-NLS-1$
          _constants.reindentOnPasteTitle(), 
          _constants.reindentOnPasteDescription(), 
          true);
@@ -993,7 +1009,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> verticallyAlignArgumentsIndent()
    {
       return bool(
-         "vertically_align_arguments_indent",
+         "vertically_align_arguments_indent", //$NON-NLS-1$
          _constants.verticallyAlignArgumentsIndentTitle(), 
          _constants.verticallyAlignArgumentsIndentDescription(), 
          true);
@@ -1005,7 +1021,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> softWrapRFiles()
    {
       return bool(
-         "soft_wrap_r_files",
+         "soft_wrap_r_files", //$NON-NLS-1$
          _constants.softWrapRFilesTitle(), 
          _constants.softWrapRFilesDescription(), 
          false);
@@ -1017,7 +1033,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> softWrapRmdFiles()
    {
       return bool(
-         "soft_wrap_rmd_files",
+         "soft_wrap_rmd_files", //$NON-NLS-1$
          _constants.softWrapRmdFilesTitle(), 
          _constants.softWrapRmdFilesDescription(), 
          true);
@@ -1029,7 +1045,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> focusConsoleAfterExec()
    {
       return bool(
-         "focus_console_after_exec",
+         "focus_console_after_exec", //$NON-NLS-1$
          _constants.focusConsoleAfterExecTitle(), 
          _constants.focusConsoleAfterExecDescription(), 
          false);
@@ -1041,7 +1057,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> foldStyle()
    {
       return enumeration(
-         "fold_style",
+         "fold_style", //$NON-NLS-1$
          _constants.foldStyleTitle(), 
          _constants.foldStyleDescription(), 
          new String[] {
@@ -1055,6 +1071,7 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  I think this is ok as is?
    public final static String FOLD_STYLE_BEGIN_ONLY = "begin-only";
    public final static String FOLD_STYLE_BEGIN_AND_END = "begin-and-end";
 
@@ -1064,7 +1081,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> saveBeforeSourcing()
    {
       return bool(
-         "save_before_sourcing",
+         "save_before_sourcing", //$NON-NLS-1$
          _constants.saveBeforeSourcingTitle(), 
          _constants.saveBeforeSourcingDescription(), 
          true);
@@ -1076,7 +1093,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> syntaxColorConsole()
    {
       return bool(
-         "syntax_color_console",
+         "syntax_color_console", //$NON-NLS-1$
          _constants.syntaxColorConsoleTitle(), 
          _constants.syntaxColorConsoleDescription(), 
          false);
@@ -1088,7 +1105,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> highlightConsoleErrors()
    {
       return bool(
-         "highlight_console_errors",
+         "highlight_console_errors", //$NON-NLS-1$
          _constants.highlightConsoleErrorsTitle(), 
          _constants.highlightConsoleErrorsDescription(), 
          true);
@@ -1100,7 +1117,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> scrollPastEndOfDocument()
    {
       return bool(
-         "scroll_past_end_of_document",
+         "scroll_past_end_of_document", //$NON-NLS-1$
          _constants.scrollPastEndOfDocumentTitle(), 
          _constants.scrollPastEndOfDocumentDescription(), 
          false);
@@ -1112,7 +1129,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> highlightRFunctionCalls()
    {
       return bool(
-         "highlight_r_function_calls",
+         "highlight_r_function_calls", // $NON-NLS-1$
          _constants.highlightRFunctionCallsTitle(), 
          _constants.highlightRFunctionCallsDescription(), 
          false);
@@ -1124,7 +1141,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> rainbowParentheses()
    {
       return bool(
-         "rainbow_parentheses",
+         "rainbow_parentheses", // $NON-NLS-1$
          _constants.rainbowParenthesesTitle(), 
          _constants.rainbowParenthesesDescription(), 
          false);
@@ -1136,7 +1153,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> consoleLineLengthLimit()
    {
       return integer(
-         "console_line_length_limit",
+         "console_line_length_limit", // $NON-NLS-1$
          _constants.consoleLineLengthLimitTitle(), 
          _constants.consoleLineLengthLimitDescription(), 
          1000);
@@ -1148,7 +1165,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> consoleMaxLines()
    {
       return integer(
-         "console_max_lines",
+         "console_max_lines", // $NON-NLS-1$
          _constants.consoleMaxLinesTitle(), 
          _constants.consoleMaxLinesDescription(), 
          1000);
@@ -1160,7 +1177,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> ansiConsoleMode()
    {
       return enumeration(
-         "ansi_console_mode",
+         "ansi_console_mode", // $NON-NLS-1$
          _constants.ansiConsoleModeTitle(), 
          _constants.ansiConsoleModeDescription(), 
          new String[] {
@@ -1171,6 +1188,8 @@ public class UserPrefsAccessor extends Prefs
          "on");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String ANSI_CONSOLE_MODE_OFF = "off";
    public final static String ANSI_CONSOLE_MODE_ON = "on";
    public final static String ANSI_CONSOLE_MODE_STRIP = "strip";
@@ -1181,7 +1200,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> limitVisibleConsole()
    {
       return bool(
-         "limit_visible_console",
+         "limit_visible_console", // $NON-NLS-1$
          _constants.limitVisibleConsoleTitle(), 
          _constants.limitVisibleConsoleDescription(), 
          true);
@@ -1193,7 +1212,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showInlineToolbarForRCodeChunks()
    {
       return bool(
-         "show_inline_toolbar_for_r_code_chunks",
+         "show_inline_toolbar_for_r_code_chunks", // $NON-NLS-1$
          _constants.showInlineToolbarForRCodeChunksTitle(), 
          _constants.showInlineToolbarForRCodeChunksDescription(), 
          true);
@@ -1205,7 +1224,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> highlightCodeChunks()
    {
       return bool(
-         "highlight_code_chunks",
+         "highlight_code_chunks", // $NON-NLS-1$
          _constants.highlightCodeChunksTitle(), 
          _constants.highlightCodeChunksDescription(), 
          true);
@@ -1217,7 +1236,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> saveFilesBeforeBuild()
    {
       return bool(
-         "save_files_before_build",
+         "save_files_before_build", // $NON-NLS-1$
          _constants.saveFilesBeforeBuildTitle(), 
          _constants.saveFilesBeforeBuildDescription(), 
          false);
@@ -1229,7 +1248,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Double> fontSizePoints()
    {
       return dbl(
-         "font_size_points",
+         "font_size_points", //$NON-NLS-1$
          _constants.fontSizePointsTitle(), 
          _constants.fontSizePointsDescription(), 
          10.0);
@@ -1241,7 +1260,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Double> helpFontSizePoints()
    {
       return dbl(
-         "help_font_size_points",
+         "help_font_size_points", //$NON-NLS-1$
          _constants.helpFontSizePointsTitle(), 
          _constants.helpFontSizePointsDescription(), 
          10.0);
@@ -1253,9 +1272,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> editorTheme()
    {
       return string(
-         "editor_theme",
+         "editor_theme", // $NON-NLS-1$
          _constants.editorThemeTitle(), 
-         _constants.editorThemeDescription(), 
+         _constants.editorThemeDescription(),
+         // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?)
          "Textmate (default)");
    }
 
@@ -1265,7 +1285,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> serverEditorFontEnabled()
    {
       return bool(
-         "server_editor_font_enabled",
+         "server_editor_font_enabled", // $NON-NLS-1$
          _constants.serverEditorFontEnabledTitle(), 
          _constants.serverEditorFontEnabledDescription(), 
          false);
@@ -1277,9 +1297,11 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> serverEditorFont()
    {
       return string(
-         "server_editor_font",
+         "server_editor_font", // $NON-NLS-1$
          _constants.serverEditorFontTitle(), 
-         _constants.serverEditorFontDescription(), 
+         _constants.serverEditorFontDescription(),
+         // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).
+         //       Really only matters if "" is not the default
          "");
    }
 
@@ -1289,7 +1311,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> defaultEncoding()
    {
       return string(
-         "default_encoding",
+         "default_encoding", // $NON-NLS-1$
          _constants.defaultEncodingTitle(), 
          _constants.defaultEncodingDescription(), 
          "");
@@ -1301,7 +1323,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> toolbarVisible()
    {
       return bool(
-         "toolbar_visible",
+         "toolbar_visible", // $NON-NLS-1$
          _constants.toolbarVisibleTitle(), 
          _constants.toolbarVisibleDescription(), 
          true);
@@ -1313,9 +1335,11 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> defaultProjectLocation()
    {
       return string(
-         "default_project_location",
+         "default_project_location", // $NON-NLS-1$
          _constants.defaultProjectLocationTitle(), 
-         _constants.defaultProjectLocationDescription(), 
+         _constants.defaultProjectLocationDescription(),
+         // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  
+         //       Only matters if default "" is changed
          "");
    }
 
@@ -1325,7 +1349,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> sourceWithEcho()
    {
       return bool(
-         "source_with_echo",
+         "source_with_echo", // $NON-NLS-1$
          _constants.sourceWithEchoTitle(), 
          _constants.sourceWithEchoDescription(), 
          false);
@@ -1337,7 +1361,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> newProjectGitInit()
    {
       return bool(
-         "new_project_git_init",
+         "new_project_git_init", // $NON-NLS-1$
          _constants.newProjectGitInitTitle(), 
          _constants.newProjectGitInitDescription(), 
          false);
@@ -1349,10 +1373,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> defaultSweaveEngine()
    {
       return string(
-         "default_sweave_engine",
+         "default_sweave_engine", // $NON-NLS-1$
          _constants.defaultSweaveEngineTitle(), 
          _constants.defaultSweaveEngineDescription(), 
-         "Sweave");
+         "Sweave"); //$NON-NLS-1$
    }
 
    /**
@@ -1361,10 +1385,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> defaultLatexProgram()
    {
       return string(
-         "default_latex_program",
+         "default_latex_program", // $NON-NLS-1$
          _constants.defaultLatexProgramTitle(), 
          _constants.defaultLatexProgramDescription(), 
-         "pdfLaTeX");
+         "pdfLaTeX"); //$NON-NLS-1$
    }
 
    /**
@@ -1373,7 +1397,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useRoxygen()
    {
       return bool(
-         "use_roxygen",
+         "use_roxygen", // $NON-NLS-1$
          _constants.useRoxygenTitle(), 
          _constants.useRoxygenDescription(), 
          false);
@@ -1385,7 +1409,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useDataimport()
    {
       return bool(
-         "use_dataimport",
+         "use_dataimport", // $NON-NLS-1$
          _constants.useDataimportTitle(), 
          _constants.useDataimportDescription(), 
          true);
@@ -1397,7 +1421,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> pdfPreviewer()
    {
       return enumeration(
-         "pdf_previewer",
+         "pdf_previewer", // $NON-NLS-1$
          _constants.pdfPreviewerTitle(), 
          _constants.pdfPreviewerDescription(), 
          new String[] {
@@ -1410,6 +1434,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String PDF_PREVIEWER_NONE = "none";
    public final static String PDF_PREVIEWER_DEFAULT = "default";
    public final static String PDF_PREVIEWER_RSTUDIO = "rstudio";
@@ -1422,7 +1448,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> alwaysEnableRnwConcordance()
    {
       return bool(
-         "always_enable_rnw_concordance",
+         "always_enable_rnw_concordance", // $NON-NLS-1$
          _constants.alwaysEnableRnwConcordanceTitle(), 
          _constants.alwaysEnableRnwConcordanceDescription(), 
          true);
@@ -1434,7 +1460,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> insertNumberedLatexSections()
    {
       return bool(
-         "insert_numbered_latex_sections",
+         "insert_numbered_latex_sections", // $NON-NLS-1$
          _constants.insertNumberedLatexSectionsTitle(), 
          _constants.insertNumberedLatexSectionsDescription(), 
          false);
@@ -1446,7 +1472,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> spellingDictionaryLanguage()
    {
       return string(
-         "spelling_dictionary_language",
+         "spelling_dictionary_language", // $NON-NLS-1$
          _constants.spellingDictionaryLanguageTitle(), 
          _constants.spellingDictionaryLanguageDescription(), 
          "en_US");
@@ -1458,7 +1484,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> spellingCustomDictionaries()
    {
       return object(
-         "spelling_custom_dictionaries",
+         "spelling_custom_dictionaries", //$NON-NLS-1$
          _constants.spellingCustomDictionariesTitle(), 
          _constants.spellingCustomDictionariesDescription(), 
          JsArrayUtil.createStringArray());
@@ -1470,7 +1496,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> documentLoadLintDelay()
    {
       return integer(
-         "document_load_lint_delay",
+         "document_load_lint_delay", // $NON-NLS-1$
          _constants.documentLoadLintDelayTitle(), 
          _constants.documentLoadLintDelayDescription(), 
          5000);
@@ -1482,7 +1508,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> ignoreUppercaseWords()
    {
       return bool(
-         "ignore_uppercase_words",
+         "ignore_uppercase_words", // $NON-NLS-1$
          _constants.ignoreUppercaseWordsTitle(), 
          _constants.ignoreUppercaseWordsDescription(), 
          true);
@@ -1494,7 +1520,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> ignoreWordsWithNumbers()
    {
       return bool(
-         "ignore_words_with_numbers",
+         "ignore_words_with_numbers", // $NON-NLS-1$
          _constants.ignoreWordsWithNumbersTitle(), 
          _constants.ignoreWordsWithNumbersDescription(), 
          true);
@@ -1506,7 +1532,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> maxSpellcheckWords()
    {
       return integer(
-         "max_spellcheck_words",
+         "max_spellcheck_words", // $NON-NLS-1$
          _constants.maxSpellcheckWordsTitle(), 
          _constants.maxSpellcheckWordsDescription(), 
          500);
@@ -1518,7 +1544,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> maxSpellcheckPrefetch()
    {
       return integer(
-         "max_spellcheck_prefetch",
+         "max_spellcheck_prefetch", // $NON-NLS-1$
          _constants.maxSpellcheckPrefetchTitle(), 
          _constants.maxSpellcheckPrefetchDescription(), 
          20);
@@ -1530,7 +1556,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> realTimeSpellchecking()
    {
       return bool(
-         "real_time_spellchecking",
+         "real_time_spellchecking", // $NON-NLS-1$
          _constants.realTimeSpellcheckingTitle(), 
          _constants.realTimeSpellcheckingDescription(), 
          true);
@@ -1542,7 +1568,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> navigateToBuildError()
    {
       return bool(
-         "navigate_to_build_error",
+         "navigate_to_build_error", // $NON-NLS-1$
          _constants.navigateToBuildErrorTitle(), 
          _constants.navigateToBuildErrorDescription(), 
          true);
@@ -1554,7 +1580,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> packagesPaneEnabled()
    {
       return bool(
-         "packages_pane_enabled",
+         "packages_pane_enabled", // $NON-NLS-1$
          _constants.packagesPaneEnabledTitle(), 
          _constants.packagesPaneEnabledDescription(), 
          true);
@@ -1566,7 +1592,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useRcppTemplate()
    {
       return bool(
-         "use_rcpp_template",
+         "use_rcpp_template", // $NON-NLS-1$
          _constants.useRcppTemplateTitle(), 
          _constants.useRcppTemplateDescription(), 
          true);
@@ -1578,7 +1604,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> restoreSourceDocuments()
    {
       return bool(
-         "restore_source_documents",
+         "restore_source_documents", // $NON-NLS-1$
          _constants.restoreSourceDocumentsTitle(), 
          _constants.restoreSourceDocumentsDescription(), 
          true);
@@ -1590,7 +1616,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> handleErrorsInUserCodeOnly()
    {
       return bool(
-         "handle_errors_in_user_code_only",
+         "handle_errors_in_user_code_only", // $NON-NLS-1$
          _constants.handleErrorsInUserCodeOnlyTitle(), 
          _constants.handleErrorsInUserCodeOnlyDescription(), 
          true);
@@ -1602,7 +1628,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoExpandErrorTracebacks()
    {
       return bool(
-         "auto_expand_error_tracebacks",
+         "auto_expand_error_tracebacks", // $NON-NLS-1$
          _constants.autoExpandErrorTracebacksTitle(), 
          _constants.autoExpandErrorTracebacksDescription(), 
          false);
@@ -1614,7 +1640,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> checkForUpdates()
    {
       return bool(
-         "check_for_updates",
+         "check_for_updates", // $NON-NLS-1$
          _constants.checkForUpdatesTitle(), 
          _constants.checkForUpdatesDescription(), 
          true);
@@ -1626,7 +1652,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showInternalFunctions()
    {
       return bool(
-         "show_internal_functions",
+         "show_internal_functions", // $NON-NLS-1$
          _constants.showInternalFunctionsTitle(), 
          _constants.showInternalFunctionsDescription(), 
          false);
@@ -1638,7 +1664,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> shinyViewerType()
    {
       return enumeration(
-         "shiny_viewer_type",
+         "shiny_viewer_type", // $NON-NLS-1$
          _constants.shinyViewerTypeTitle(), 
          _constants.shinyViewerTypeDescription(), 
          new String[] {
@@ -1650,7 +1676,8 @@ public class UserPrefsAccessor extends Prefs
          },
          "window");
    }
-
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String SHINY_VIEWER_TYPE_USER = "user";
    public final static String SHINY_VIEWER_TYPE_NONE = "none";
    public final static String SHINY_VIEWER_TYPE_PANE = "pane";
@@ -1663,7 +1690,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> shinyBackgroundJobs()
    {
       return bool(
-         "shiny_background_jobs",
+         "shiny_background_jobs", // $NON-NLS-1$
          _constants.shinyBackgroundJobsTitle(), 
          _constants.shinyBackgroundJobsDescription(), 
          false);
@@ -1675,7 +1702,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> plumberViewerType()
    {
       return enumeration(
-         "plumber_viewer_type",
+         "plumber_viewer_type", // $NON-NLS-1$
          _constants.plumberViewerTypeTitle(), 
          _constants.plumberViewerTypeDescription(), 
          new String[] {
@@ -1687,7 +1714,8 @@ public class UserPrefsAccessor extends Prefs
          },
          "window");
    }
-
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String PLUMBER_VIEWER_TYPE_USER = "user";
    public final static String PLUMBER_VIEWER_TYPE_NONE = "none";
    public final static String PLUMBER_VIEWER_TYPE_PANE = "pane";
@@ -1700,7 +1728,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> documentAuthor()
    {
       return string(
-         "document_author",
+         "document_author", // $NON-NLS-1$
          _constants.documentAuthorTitle(), 
          _constants.documentAuthorDescription(), 
          "");
@@ -1712,7 +1740,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> rmdPreferredTemplatePath()
    {
       return string(
-         "rmd_preferred_template_path",
+         "rmd_preferred_template_path", // $NON-NLS-1$
          _constants.rmdPreferredTemplatePathTitle(), 
          _constants.rmdPreferredTemplatePathDescription(), 
          "");
@@ -1724,7 +1752,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> rmdViewerType()
    {
       return enumeration(
-         "rmd_viewer_type",
+         "rmd_viewer_type", // $NON-NLS-1$
          _constants.rmdViewerTypeTitle(), 
          _constants.rmdViewerTypeDescription(), 
          new String[] {
@@ -1734,7 +1762,8 @@ public class UserPrefsAccessor extends Prefs
          },
          "window");
    }
-
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String RMD_VIEWER_TYPE_WINDOW = "window";
    public final static String RMD_VIEWER_TYPE_PANE = "pane";
    public final static String RMD_VIEWER_TYPE_NONE = "none";
@@ -1745,7 +1774,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showPublishDiagnostics()
    {
       return bool(
-         "show_publish_diagnostics",
+         "show_publish_diagnostics", // $NON-NLS-1$
          _constants.showPublishDiagnosticsTitle(), 
          _constants.showPublishDiagnosticsDescription(), 
          false);
@@ -1757,7 +1786,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> publishCheckCertificates()
    {
       return bool(
-         "publish_check_certificates",
+         "publish_check_certificates", // $NON-NLS-1$
          _constants.publishCheckCertificatesTitle(), 
          _constants.publishCheckCertificatesDescription(), 
          true);
@@ -1769,7 +1798,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> usePublishCaBundle()
    {
       return bool(
-         "use_publish_ca_bundle",
+         "use_publish_ca_bundle", // $NON-NLS-1$
          _constants.usePublishCaBundleTitle(), 
          _constants.usePublishCaBundleDescription(), 
          false);
@@ -1781,7 +1810,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> publishCaBundle()
    {
       return string(
-         "publish_ca_bundle",
+         "publish_ca_bundle", // $NON-NLS-1$
          _constants.publishCaBundleTitle(), 
          _constants.publishCaBundleDescription(), 
          "");
@@ -1793,7 +1822,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> rmdChunkOutputInline()
    {
       return bool(
-         "rmd_chunk_output_inline",
+         "rmd_chunk_output_inline", // $NON-NLS-1$
          _constants.rmdChunkOutputInlineTitle(), 
          _constants.rmdChunkOutputInlineDescription(), 
          true);
@@ -1805,7 +1834,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showDocOutlineRmd()
    {
       return bool(
-         "show_doc_outline_rmd",
+         "show_doc_outline_rmd", // $NON-NLS-1$
          _constants.showDocOutlineRmdTitle(), 
          _constants.showDocOutlineRmdDescription(), 
          false);
@@ -1817,7 +1846,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoRunSetupChunk()
    {
       return bool(
-         "auto_run_setup_chunk",
+         "auto_run_setup_chunk", // $NON-NLS-1$
          _constants.autoRunSetupChunkTitle(), 
          _constants.autoRunSetupChunkDescription(), 
          true);
@@ -1829,7 +1858,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> hideConsoleOnChunkExecute()
    {
       return bool(
-         "hide_console_on_chunk_execute",
+         "hide_console_on_chunk_execute", // $NON-NLS-1$
          _constants.hideConsoleOnChunkExecuteTitle(), 
          _constants.hideConsoleOnChunkExecuteDescription(), 
          true);
@@ -1841,7 +1870,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> executionBehavior()
    {
       return enumeration(
-         "execution_behavior",
+         "execution_behavior", // $NON-NLS-1$
          _constants.executionBehaviorTitle(), 
          _constants.executionBehaviorDescription(), 
          new String[] {
@@ -1857,6 +1886,8 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String EXECUTION_BEHAVIOR_LINE = "line";
    public final static String EXECUTION_BEHAVIOR_STATEMENT = "statement";
    public final static String EXECUTION_BEHAVIOR_PARAGRAPH = "paragraph";
@@ -1867,7 +1898,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showTerminalTab()
    {
       return bool(
-         "show_terminal_tab",
+         "show_terminal_tab", // $NON-NLS-1$
          _constants.showTerminalTabTitle(), 
          _constants.showTerminalTabDescription(), 
          true);
@@ -1879,7 +1910,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> terminalLocalEcho()
    {
       return bool(
-         "terminal_local_echo",
+         "terminal_local_echo", // $NON-NLS-1$
          _constants.terminalLocalEchoTitle(), 
          _constants.terminalLocalEchoDescription(), 
          true);
@@ -1891,7 +1922,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> terminalWebsockets()
    {
       return bool(
-         "terminal_websockets",
+         "terminal_websockets", // $NON-NLS-1$
          _constants.terminalWebsocketsTitle(), 
          _constants.terminalWebsocketsDescription(), 
          true);
@@ -1903,7 +1934,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> terminalCloseBehavior()
    {
       return enumeration(
-         "terminal_close_behavior",
+         "terminal_close_behavior", // $NON-NLS-1$
          _constants.terminalCloseBehaviorTitle(), 
          _constants.terminalCloseBehaviorDescription(), 
          new String[] {
@@ -1914,6 +1945,8 @@ public class UserPrefsAccessor extends Prefs
          "always");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String TERMINAL_CLOSE_BEHAVIOR_ALWAYS = "always";
    public final static String TERMINAL_CLOSE_BEHAVIOR_CLEAN = "clean";
    public final static String TERMINAL_CLOSE_BEHAVIOR_NEVER = "never";
@@ -1924,7 +1957,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> terminalTrackEnvironment()
    {
       return bool(
-         "terminal_track_environment",
+         "terminal_track_environment", // $NON-NLS-1$
          _constants.terminalTrackEnvironmentTitle(), 
          _constants.terminalTrackEnvironmentDescription(), 
          true);
@@ -1936,7 +1969,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> terminalBellStyle()
    {
       return enumeration(
-         "terminal_bell_style",
+         "terminal_bell_style", // $NON-NLS-1$
          _constants.terminalBellStyleTitle(), 
          _constants.terminalBellStyleDescription(), 
          new String[] {
@@ -1946,6 +1979,8 @@ public class UserPrefsAccessor extends Prefs
          "sound");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String TERMINAL_BELL_STYLE_NONE = "none";
    public final static String TERMINAL_BELL_STYLE_SOUND = "sound";
 
@@ -1955,7 +1990,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> terminalRenderer()
    {
       return enumeration(
-         "terminal_renderer",
+         "terminal_renderer", // $NON-NLS-1$
          _constants.terminalRendererTitle(), 
          _constants.terminalRendererDescription(), 
          new String[] {
@@ -1965,6 +2000,8 @@ public class UserPrefsAccessor extends Prefs
          "canvas");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String TERMINAL_RENDERER_CANVAS = "canvas";
    public final static String TERMINAL_RENDERER_DOM = "dom";
 
@@ -1974,7 +2011,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> terminalWeblinks()
    {
       return bool(
-         "terminal_weblinks",
+         "terminal_weblinks", // $NON-NLS-1$
          _constants.terminalWeblinksTitle(), 
          _constants.terminalWeblinksDescription(), 
          true);
@@ -1986,7 +2023,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showRmdRenderCommand()
    {
       return bool(
-         "show_rmd_render_command",
+         "show_rmd_render_command", // $NON-NLS-1$
          _constants.showRmdRenderCommandTitle(), 
          _constants.showRmdRenderCommandDescription(), 
          false);
@@ -1998,7 +2035,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> enableTextDrag()
    {
       return bool(
-         "enable_text_drag",
+         "enable_text_drag", // $NON-NLS-1$
          _constants.enableTextDragTitle(), 
          _constants.enableTextDragDescription(), 
          true);
@@ -2010,7 +2047,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showHiddenFiles()
    {
       return bool(
-         "show_hidden_files",
+         "show_hidden_files", // $NON-NLS-1$
          _constants.showHiddenFilesTitle(), 
          _constants.showHiddenFilesDescription(), 
          false);
@@ -2022,10 +2059,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> alwaysShownFiles()
    {
       return object(
-         "always_shown_files",
+         "always_shown_files", //$NON-NLS-1$
          _constants.alwaysShownFilesTitle(), 
          _constants.alwaysShownFilesDescription(), 
-         JsArrayUtil.createStringArray(".build.yml", ".gitlab-ci.yml", ".travis.yml"));
+         JsArrayUtil.createStringArray(".build.yml", ".gitlab-ci.yml", ".travis.yml")); //$NON-NLS-1$
    }
 
    /**
@@ -2034,7 +2071,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> alwaysShownExtensions()
    {
       return object(
-         "always_shown_extensions",
+         "always_shown_extensions", //$NON-NLS-1$
          _constants.alwaysShownExtensionsTitle(), 
          _constants.alwaysShownExtensionsDescription(), 
          JsArrayUtil.createStringArray(".circleci", ".gitattributes", ".github", ".gitignore", ".httr-oauth", ".r", ".rbuildignore", ".rdata", ".renvignore", ".renviron", ".rhistory", ".rprofile", ".ruserdata"));
@@ -2046,7 +2083,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> sortFileNamesNaturally()
    {
       return bool(
-         "sort_file_names_naturally",
+         "sort_file_names_naturally", // $NON-NLS-1$
          _constants.sortFileNamesNaturallyTitle(), 
          _constants.sortFileNamesNaturallyDescription(), 
          true);
@@ -2058,7 +2095,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> jobsTabVisibility()
    {
       return enumeration(
-         "jobs_tab_visibility",
+         "jobs_tab_visibility", // $NON-NLS-1$
          _constants.jobsTabVisibilityTitle(), 
          _constants.jobsTabVisibilityDescription(), 
          new String[] {
@@ -2069,6 +2106,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String JOBS_TAB_VISIBILITY_CLOSED = "closed";
    public final static String JOBS_TAB_VISIBILITY_SHOWN = "shown";
    public final static String JOBS_TAB_VISIBILITY_DEFAULT = "default";
@@ -2079,7 +2118,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showLauncherJobsTab()
    {
       return bool(
-         "show_launcher_jobs_tab",
+         "show_launcher_jobs_tab", // $NON-NLS-1$
          _constants.showLauncherJobsTabTitle(), 
          _constants.showLauncherJobsTabDescription(), 
          true);
@@ -2091,7 +2130,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> launcherJobsSort()
    {
       return enumeration(
-         "launcher_jobs_sort",
+         "launcher_jobs_sort", // $NON-NLS-1$
          _constants.launcherJobsSortTitle(), 
          _constants.launcherJobsSortDescription(), 
          new String[] {
@@ -2100,7 +2139,8 @@ public class UserPrefsAccessor extends Prefs
          },
          "recorded");
    }
-
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String LAUNCHER_JOBS_SORT_RECORDED = "recorded";
    public final static String LAUNCHER_JOBS_SORT_STATE = "state";
 
@@ -2110,7 +2150,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> busyDetection()
    {
       return enumeration(
-         "busy_detection",
+         "busy_detection", // $NON-NLS-1$
          _constants.busyDetectionTitle(), 
          _constants.busyDetectionDescription(), 
          new String[] {
@@ -2121,6 +2161,8 @@ public class UserPrefsAccessor extends Prefs
          "always");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String BUSY_DETECTION_ALWAYS = "always";
    public final static String BUSY_DETECTION_NEVER = "never";
    public final static String BUSY_DETECTION_WHITELIST = "whitelist";
@@ -2131,9 +2173,11 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> busyWhitelist()
    {
       return object(
-         "busy_whitelist",
+         "busy_whitelist", //$NON-NLS-1$
          _constants.busyWhitelistTitle(), 
-         _constants.busyWhitelistDescription(), 
+         _constants.busyWhitelistDescription(),
+         // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+         //       above defaultValue must match these
          JsArrayUtil.createStringArray("tmux", "screen"));
    }
 
@@ -2143,7 +2187,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> knitWorkingDir()
    {
       return enumeration(
-         "knit_working_dir",
+         "knit_working_dir", // $NON-NLS-1$
          _constants.knitWorkingDirTitle(), 
          _constants.knitWorkingDirDescription(), 
          new String[] {
@@ -2154,6 +2198,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String KNIT_WORKING_DIR_DEFAULT = "default";
    public final static String KNIT_WORKING_DIR_CURRENT = "current";
    public final static String KNIT_WORKING_DIR_PROJECT = "project";
@@ -2164,7 +2210,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> docOutlineShow()
    {
       return enumeration(
-         "doc_outline_show",
+         "doc_outline_show", // $NON-NLS-1$
          _constants.docOutlineShowTitle(), 
          _constants.docOutlineShowDescription(), 
          new String[] {
@@ -2175,6 +2221,8 @@ public class UserPrefsAccessor extends Prefs
          "sections_only");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String DOC_OUTLINE_SHOW_SECTIONS_ONLY = "sections_only";
    public final static String DOC_OUTLINE_SHOW_SECTIONS_AND_CHUNKS = "sections_and_chunks";
    public final static String DOC_OUTLINE_SHOW_ALL = "all";
@@ -2185,7 +2233,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> latexPreviewOnCursorIdle()
    {
       return enumeration(
-         "latex_preview_on_cursor_idle",
+         "latex_preview_on_cursor_idle", // $NON-NLS-1$
          _constants.latexPreviewOnCursorIdleTitle(), 
          _constants.latexPreviewOnCursorIdleDescription(), 
          new String[] {
@@ -2196,6 +2244,8 @@ public class UserPrefsAccessor extends Prefs
          "always");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String LATEX_PREVIEW_ON_CURSOR_IDLE_NEVER = "never";
    public final static String LATEX_PREVIEW_ON_CURSOR_IDLE_INLINE_ONLY = "inline_only";
    public final static String LATEX_PREVIEW_ON_CURSOR_IDLE_ALWAYS = "always";
@@ -2206,7 +2256,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> wrapTabNavigation()
    {
       return bool(
-         "wrap_tab_navigation",
+         "wrap_tab_navigation", // $NON-NLS-1$
          _constants.wrapTabNavigationTitle(), 
          _constants.wrapTabNavigationDescription(), 
          true);
@@ -2218,7 +2268,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> globalTheme()
    {
       return enumeration(
-         "global_theme",
+         "global_theme", // $NON-NLS-1$
          _constants.globalThemeTitle(), 
          _constants.globalThemeDescription(), 
          new String[] {
@@ -2229,6 +2279,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String GLOBAL_THEME_CLASSIC = "classic";
    public final static String GLOBAL_THEME_DEFAULT = "default";
    public final static String GLOBAL_THEME_ALTERNATE = "alternate";
@@ -2239,7 +2291,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> gitDiffIgnoreWhitespace()
    {
       return bool(
-         "git_diff_ignore_whitespace",
+         "git_diff_ignore_whitespace", // $NON-NLS-1$
          _constants.gitDiffIgnoreWhitespaceTitle(), 
          _constants.gitDiffIgnoreWhitespaceDescription(), 
          false);
@@ -2251,7 +2303,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> consoleDoubleClickSelect()
    {
       return bool(
-         "console_double_click_select",
+         "console_double_click_select", // $NON-NLS-1$
          _constants.consoleDoubleClickSelectTitle(), 
          _constants.consoleDoubleClickSelectDescription(), 
          false);
@@ -2263,7 +2315,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> newProjGitInit()
    {
       return bool(
-         "new_proj_git_init",
+         "new_proj_git_init", // $NON-NLS-1$
          _constants.newProjGitInitTitle(), 
          _constants.newProjGitInitDescription(), 
          false);
@@ -2275,7 +2327,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> rootDocument()
    {
       return string(
-         "root_document",
+         "root_document", // $NON-NLS-1$
          _constants.rootDocumentTitle(), 
          _constants.rootDocumentDescription(), 
          "");
@@ -2287,7 +2339,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> showUserHomePage()
    {
       return enumeration(
-         "show_user_home_page",
+         "show_user_home_page", // $NON-NLS-1$
          _constants.showUserHomePageTitle(), 
          _constants.showUserHomePageDescription(), 
          new String[] {
@@ -2298,6 +2350,8 @@ public class UserPrefsAccessor extends Prefs
          "sessions");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String SHOW_USER_HOME_PAGE_ALWAYS = "always";
    public final static String SHOW_USER_HOME_PAGE_NEVER = "never";
    public final static String SHOW_USER_HOME_PAGE_SESSIONS = "sessions";
@@ -2308,7 +2362,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> reuseSessionsForProjectLinks()
    {
       return bool(
-         "reuse_sessions_for_project_links",
+         "reuse_sessions_for_project_links", // $NON-NLS-1$
          _constants.reuseSessionsForProjectLinksTitle(), 
          _constants.reuseSessionsForProjectLinksDescription(), 
          false);
@@ -2320,7 +2374,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> vcsEnabled()
    {
       return bool(
-         "vcs_enabled",
+         "vcs_enabled", // $NON-NLS-1$
          _constants.vcsEnabledTitle(), 
          _constants.vcsEnabledDescription(), 
          true);
@@ -2332,7 +2386,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> vcsAutorefresh()
    {
       return bool(
-         "vcs_autorefresh",
+         "vcs_autorefresh", // $NON-NLS-1$
          _constants.vcsAutorefreshTitle(), 
          _constants.vcsAutorefreshDescription(), 
          true);
@@ -2344,7 +2398,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> gitExePath()
    {
       return string(
-         "git_exe_path",
+         "git_exe_path", // $NON-NLS-1$
          _constants.gitExePathTitle(), 
          _constants.gitExePathDescription(), 
          "");
@@ -2356,7 +2410,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> svnExePath()
    {
       return string(
-         "svn_exe_path",
+         "svn_exe_path", // $NON-NLS-1$
          _constants.svnExePathTitle(), 
          _constants.svnExePathDescription(), 
          "");
@@ -2368,7 +2422,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> terminalPath()
    {
       return string(
-         "terminal_path",
+         "terminal_path", // $NON-NLS-1$
          _constants.terminalPathTitle(), 
          _constants.terminalPathDescription(), 
          "");
@@ -2380,7 +2434,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> rsaKeyPath()
    {
       return string(
-         "rsa_key_path",
+         "rsa_key_path", // $NON-NLS-1$
          _constants.rsaKeyPathTitle(), 
          _constants.rsaKeyPathDescription(), 
          "");
@@ -2392,7 +2446,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useDevtools()
    {
       return bool(
-         "use_devtools",
+         "use_devtools", // $NON-NLS-1$
          _constants.useDevtoolsTitle(), 
          _constants.useDevtoolsDescription(), 
          true);
@@ -2404,7 +2458,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useInternet2()
    {
       return bool(
-         "use_internet2",
+         "use_internet2", // $NON-NLS-1$
          _constants.useInternet2Title(), 
          _constants.useInternet2Description(), 
          true);
@@ -2416,7 +2470,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useSecureDownload()
    {
       return bool(
-         "use_secure_download",
+         "use_secure_download", // $NON-NLS-1$
          _constants.useSecureDownloadTitle(), 
          _constants.useSecureDownloadDescription(), 
          true);
@@ -2428,7 +2482,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> cleanupAfterRCmdCheck()
    {
       return bool(
-         "cleanup_after_r_cmd_check",
+         "cleanup_after_r_cmd_check", // $NON-NLS-1$
          _constants.cleanupAfterRCmdCheckTitle(), 
          _constants.cleanupAfterRCmdCheckDescription(), 
          true);
@@ -2440,7 +2494,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> viewDirAfterRCmdCheck()
    {
       return bool(
-         "view_dir_after_r_cmd_check",
+         "view_dir_after_r_cmd_check", // $NON-NLS-1$
          _constants.viewDirAfterRCmdCheckTitle(), 
          _constants.viewDirAfterRCmdCheckDescription(), 
          false);
@@ -2452,7 +2506,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> hideObjectFiles()
    {
       return bool(
-         "hide_object_files",
+         "hide_object_files", // $NON-NLS-1$
          _constants.hideObjectFilesTitle(), 
          _constants.hideObjectFilesDescription(), 
          true);
@@ -2464,7 +2518,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> restoreLastProject()
    {
       return bool(
-         "restore_last_project",
+         "restore_last_project", // $NON-NLS-1$
          _constants.restoreLastProjectTitle(), 
          _constants.restoreLastProjectDescription(), 
          true);
@@ -2476,7 +2530,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> projectSafeStartupSeconds()
    {
       return integer(
-         "project_safe_startup_seconds",
+         "project_safe_startup_seconds", // $NON-NLS-1$
          _constants.projectSafeStartupSecondsTitle(), 
          _constants.projectSafeStartupSecondsDescription(), 
          30);
@@ -2488,7 +2542,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> useTinytex()
    {
       return bool(
-         "use_tinytex",
+         "use_tinytex", // $NON-NLS-1$
          _constants.useTinytexTitle(), 
          _constants.useTinytexDescription(), 
          false);
@@ -2500,7 +2554,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> cleanTexi2dviOutput()
    {
       return bool(
-         "clean_texi2dvi_output",
+         "clean_texi2dvi_output", // $NON-NLS-1$
          _constants.cleanTexi2dviOutputTitle(), 
          _constants.cleanTexi2dviOutputDescription(), 
          true);
@@ -2512,7 +2566,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> latexShellEscape()
    {
       return bool(
-         "latex_shell_escape",
+         "latex_shell_escape", // $NON-NLS-1$
          _constants.latexShellEscapeTitle(), 
          _constants.latexShellEscapeDescription(), 
          false);
@@ -2524,7 +2578,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> restoreProjectRVersion()
    {
       return bool(
-         "restore_project_r_version",
+         "restore_project_r_version", // $NON-NLS-1$
          _constants.restoreProjectRVersionTitle(), 
          _constants.restoreProjectRVersionDescription(), 
          true);
@@ -2536,7 +2590,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> clangVerbose()
    {
       return integer(
-         "clang_verbose",
+         "clang_verbose", // $NON-NLS-1$
          _constants.clangVerboseTitle(), 
          _constants.clangVerboseDescription(), 
          0);
@@ -2548,7 +2602,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> submitCrashReports()
    {
       return bool(
-         "submit_crash_reports",
+         "submit_crash_reports", // $NON-NLS-1$
          _constants.submitCrashReportsTitle(), 
          _constants.submitCrashReportsDescription(), 
          true);
@@ -2560,7 +2614,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<DefaultRVersion> defaultRVersion()
    {
       return object(
-         "default_r_version",
+         "default_r_version", //$NON-NLS-1$
          _constants.defaultRVersionTitle(), 
          _constants.defaultRVersionDescription(), 
          null);
@@ -2590,7 +2644,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> dataViewerMaxColumns()
    {
       return integer(
-         "data_viewer_max_columns",
+         "data_viewer_max_columns", // $NON-NLS-1$
          _constants.dataViewerMaxColumnsTitle(), 
          _constants.dataViewerMaxColumnsDescription(), 
          50);
@@ -2602,7 +2656,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> enableScreenReader()
    {
       return bool(
-         "enable_screen_reader",
+         "enable_screen_reader", // $NON-NLS-1$
          _constants.enableScreenReaderTitle(), 
          _constants.enableScreenReaderDescription(), 
          false);
@@ -2614,7 +2668,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> typingStatusDelayMs()
    {
       return integer(
-         "typing_status_delay_ms",
+         "typing_status_delay_ms", // $NON-NLS-1$
          _constants.typingStatusDelayMsTitle(), 
          _constants.typingStatusDelayMsDescription(), 
          2000);
@@ -2626,7 +2680,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> reducedMotion()
    {
       return bool(
-         "reduced_motion",
+         "reduced_motion", // $NON-NLS-1$
          _constants.reducedMotionTitle(), 
          _constants.reducedMotionDescription(), 
          false);
@@ -2638,7 +2692,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> tabKeyMoveFocus()
    {
       return bool(
-         "tab_key_move_focus",
+         "tab_key_move_focus", // $NON-NLS-1$
          _constants.tabKeyMoveFocusTitle(), 
          _constants.tabKeyMoveFocusDescription(), 
          false);
@@ -2650,7 +2704,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> findPanelLegacyTabSequence()
    {
       return bool(
-         "find_panel_legacy_tab_sequence",
+         "find_panel_legacy_tab_sequence", // $NON-NLS-1$
          _constants.findPanelLegacyTabSequenceTitle(), 
          _constants.findPanelLegacyTabSequenceDescription(), 
          false);
@@ -2662,7 +2716,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showFocusRectangles()
    {
       return bool(
-         "show_focus_rectangles",
+         "show_focus_rectangles", // $NON-NLS-1$
          _constants.showFocusRectanglesTitle(), 
          _constants.showFocusRectanglesDescription(), 
          true);
@@ -2674,7 +2728,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showPanelFocusRectangle()
    {
       return bool(
-         "show_panel_focus_rectangle",
+         "show_panel_focus_rectangle", // $NON-NLS-1$
          _constants.showPanelFocusRectangleTitle(), 
          _constants.showPanelFocusRectangleDescription(), 
          false);
@@ -2686,7 +2740,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> autoSaveOnIdle()
    {
       return enumeration(
-         "auto_save_on_idle",
+         "auto_save_on_idle", // $NON-NLS-1$
          _constants.autoSaveOnIdleTitle(), 
          _constants.autoSaveOnIdleDescription(), 
          new String[] {
@@ -2702,6 +2756,8 @@ public class UserPrefsAccessor extends Prefs
          });
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String AUTO_SAVE_ON_IDLE_COMMIT = "commit";
    public final static String AUTO_SAVE_ON_IDLE_BACKUP = "backup";
    public final static String AUTO_SAVE_ON_IDLE_NONE = "none";
@@ -2712,7 +2768,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> autoSaveIdleMs()
    {
       return integer(
-         "auto_save_idle_ms",
+         "auto_save_idle_ms", // $NON-NLS-1$
          _constants.autoSaveIdleMsTitle(), 
          _constants.autoSaveIdleMsDescription(), 
          1000);
@@ -2724,7 +2780,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> autoSaveOnBlur()
    {
       return bool(
-         "auto_save_on_blur",
+         "auto_save_on_blur", // $NON-NLS-1$
          _constants.autoSaveOnBlurTitle(), 
          _constants.autoSaveOnBlurDescription(), 
          false);
@@ -2736,7 +2792,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> terminalInitialDirectory()
    {
       return enumeration(
-         "terminal_initial_directory",
+         "terminal_initial_directory", // $NON-NLS-1$
          _constants.terminalInitialDirectoryTitle(), 
          _constants.terminalInitialDirectoryDescription(), 
          new String[] {
@@ -2747,6 +2803,8 @@ public class UserPrefsAccessor extends Prefs
          "project");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String TERMINAL_INITIAL_DIRECTORY_PROJECT = "project";
    public final static String TERMINAL_INITIAL_DIRECTORY_CURRENT = "current";
    public final static String TERMINAL_INITIAL_DIRECTORY_HOME = "home";
@@ -2757,7 +2815,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> fullProjectPathInWindowTitle()
    {
       return bool(
-         "full_project_path_in_window_title",
+         "full_project_path_in_window_title", // $NON-NLS-1$
          _constants.fullProjectPathInWindowTitleTitle(), 
          _constants.fullProjectPathInWindowTitleDescription(), 
          false);
@@ -2769,7 +2827,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> visualMarkdownEditingIsDefault()
    {
       return bool(
-         "visual_markdown_editing_is_default",
+         "visual_markdown_editing_is_default", // $NON-NLS-1$
          _constants.visualMarkdownEditingIsDefaultTitle(), 
          _constants.visualMarkdownEditingIsDefaultDescription(), 
          false);
@@ -2781,7 +2839,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> visualMarkdownEditingListSpacing()
    {
       return enumeration(
-         "visual_markdown_editing_list_spacing",
+         "visual_markdown_editing_list_spacing", // $NON-NLS-1$
          _constants.visualMarkdownEditingListSpacingTitle(), 
          _constants.visualMarkdownEditingListSpacingDescription(), 
          new String[] {
@@ -2791,6 +2849,8 @@ public class UserPrefsAccessor extends Prefs
          "spaced");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String VISUAL_MARKDOWN_EDITING_LIST_SPACING_TIGHT = "tight";
    public final static String VISUAL_MARKDOWN_EDITING_LIST_SPACING_SPACED = "spaced";
 
@@ -2800,7 +2860,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> visualMarkdownEditingWrap()
    {
       return enumeration(
-         "visual_markdown_editing_wrap",
+         "visual_markdown_editing_wrap", // $NON-NLS-1$
          _constants.visualMarkdownEditingWrapTitle(), 
          _constants.visualMarkdownEditingWrapDescription(), 
          new String[] {
@@ -2811,6 +2871,8 @@ public class UserPrefsAccessor extends Prefs
          "none");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String VISUAL_MARKDOWN_EDITING_WRAP_NONE = "none";
    public final static String VISUAL_MARKDOWN_EDITING_WRAP_COLUMN = "column";
    public final static String VISUAL_MARKDOWN_EDITING_WRAP_SENTENCE = "sentence";
@@ -2821,7 +2883,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> visualMarkdownEditingWrapAtColumn()
    {
       return integer(
-         "visual_markdown_editing_wrap_at_column",
+         "visual_markdown_editing_wrap_at_column", // $NON-NLS-1$
          _constants.visualMarkdownEditingWrapAtColumnTitle(), 
          _constants.visualMarkdownEditingWrapAtColumnDescription(), 
          72);
@@ -2833,7 +2895,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> visualMarkdownEditingReferencesLocation()
    {
       return enumeration(
-         "visual_markdown_editing_references_location",
+         "visual_markdown_editing_references_location", // $NON-NLS-1$
          _constants.visualMarkdownEditingReferencesLocationTitle(), 
          _constants.visualMarkdownEditingReferencesLocationDescription(), 
          new String[] {
@@ -2844,6 +2906,8 @@ public class UserPrefsAccessor extends Prefs
          "block");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String VISUAL_MARKDOWN_EDITING_REFERENCES_LOCATION_BLOCK = "block";
    public final static String VISUAL_MARKDOWN_EDITING_REFERENCES_LOCATION_SECTION = "section";
    public final static String VISUAL_MARKDOWN_EDITING_REFERENCES_LOCATION_DOCUMENT = "document";
@@ -2854,7 +2918,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> visualMarkdownEditingCanonical()
    {
       return bool(
-         "visual_markdown_editing_canonical",
+         "visual_markdown_editing_canonical", // $NON-NLS-1$
          _constants.visualMarkdownEditingCanonicalTitle(), 
          _constants.visualMarkdownEditingCanonicalDescription(), 
          false);
@@ -2866,7 +2930,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> visualMarkdownEditingMaxContentWidth()
    {
       return integer(
-         "visual_markdown_editing_max_content_width",
+         "visual_markdown_editing_max_content_width", // $NON-NLS-1$
          _constants.visualMarkdownEditingMaxContentWidthTitle(), 
          _constants.visualMarkdownEditingMaxContentWidthDescription(), 
          700);
@@ -2878,7 +2942,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> visualMarkdownEditingShowDocOutline()
    {
       return bool(
-         "visual_markdown_editing_show_doc_outline",
+         "visual_markdown_editing_show_doc_outline", // $NON-NLS-1$
          _constants.visualMarkdownEditingShowDocOutlineTitle(), 
          _constants.visualMarkdownEditingShowDocOutlineDescription(), 
          true);
@@ -2890,7 +2954,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> visualMarkdownEditingShowMargin()
    {
       return bool(
-         "visual_markdown_editing_show_margin",
+         "visual_markdown_editing_show_margin", // $NON-NLS-1$
          _constants.visualMarkdownEditingShowMarginTitle(), 
          _constants.visualMarkdownEditingShowMarginDescription(), 
          false);
@@ -2902,7 +2966,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> visualMarkdownEditingFontSizePoints()
    {
       return integer(
-         "visual_markdown_editing_font_size_points",
+         "visual_markdown_editing_font_size_points", // $NON-NLS-1$
          _constants.visualMarkdownEditingFontSizePointsTitle(), 
          _constants.visualMarkdownEditingFontSizePointsDescription(), 
          0);
@@ -2914,7 +2978,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> visualMarkdownCodeEditor()
    {
       return enumeration(
-         "visual_markdown_code_editor",
+         "visual_markdown_code_editor", // $NON-NLS-1$
          _constants.visualMarkdownCodeEditorTitle(), 
          _constants.visualMarkdownCodeEditorDescription(), 
          new String[] {
@@ -2924,6 +2988,8 @@ public class UserPrefsAccessor extends Prefs
          "ace");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String VISUAL_MARKDOWN_CODE_EDITOR_ACE = "ace";
    public final static String VISUAL_MARKDOWN_CODE_EDITOR_CODEMIRROR = "codemirror";
 
@@ -2933,7 +2999,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> zoteroLibraries()
    {
       return object(
-         "zotero_libraries",
+         "zotero_libraries", // $NON-NLS-1$
          _constants.zoteroLibrariesTitle(), 
          _constants.zoteroLibrariesDescription(), 
          JsArrayUtil.createStringArray("My Library"));
@@ -2945,7 +3011,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> emojiSkintone()
    {
       return enumeration(
-         "emoji_skintone",
+         "emoji_skintone", // $NON-NLS-1$
          _constants.emojiSkintoneTitle(), 
          _constants.emojiSkintoneDescription(), 
          new String[] {
@@ -2960,6 +3026,8 @@ public class UserPrefsAccessor extends Prefs
          "(None)");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String EMOJI_SKINTONE__NONE_ = "(None)";
    public final static String EMOJI_SKINTONE__DEFAULT_ = "(Default)";
    public final static String EMOJI_SKINTONE_LIGHT = "Light";
@@ -2974,7 +3042,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> disabledAriaLiveAnnouncements()
    {
       return object(
-         "disabled_aria_live_announcements",
+         "disabled_aria_live_announcements", // $NON-NLS-1$
          _constants.disabledAriaLiveAnnouncementsTitle(), 
          _constants.disabledAriaLiveAnnouncementsDescription(), 
          JsArrayUtil.createStringArray());
@@ -2986,7 +3054,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> screenreaderConsoleAnnounceLimit()
    {
       return integer(
-         "screenreader_console_announce_limit",
+         "screenreader_console_announce_limit", // $NON-NLS-1$
          _constants.screenreaderConsoleAnnounceLimitTitle(), 
          _constants.screenreaderConsoleAnnounceLimitDescription(), 
          25);
@@ -2998,7 +3066,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> fileMonitorIgnoredComponents()
    {
       return object(
-         "file_monitor_ignored_components",
+         "file_monitor_ignored_components", // $NON-NLS-1$
          _constants.fileMonitorIgnoredComponentsTitle(), 
          _constants.fileMonitorIgnoredComponentsDescription(), 
          JsArrayUtil.createStringArray());
@@ -3010,7 +3078,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> installPkgDepsIndividually()
    {
       return bool(
-         "install_pkg_deps_individually",
+         "install_pkg_deps_individually", // $NON-NLS-1$
          _constants.installPkgDepsIndividuallyTitle(), 
          _constants.installPkgDepsIndividuallyDescription(), 
          true);
@@ -3022,7 +3090,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> graphicsBackend()
    {
       return enumeration(
-         "graphics_backend",
+         "graphics_backend", // $NON-NLS-1$
          _constants.graphicsBackendTitle(), 
          _constants.graphicsBackendDescription(), 
          new String[] {
@@ -3036,6 +3104,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String GRAPHICS_BACKEND_DEFAULT = "default";
    public final static String GRAPHICS_BACKEND_CAIRO = "cairo";
    public final static String GRAPHICS_BACKEND_CAIRO_PNG = "cairo-png";
@@ -3049,7 +3119,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> graphicsAntialiasing()
    {
       return enumeration(
-         "graphics_antialiasing",
+         "graphics_antialiasing", // $NON-NLS-1$
          _constants.graphicsAntialiasingTitle(), 
          _constants.graphicsAntialiasingDescription(), 
          new String[] {
@@ -3061,6 +3131,8 @@ public class UserPrefsAccessor extends Prefs
          "default");
    }
 
+   // i18n: Enumerator, user facing text, or both?  Might be both (probably somewhere tests for these?).  Also note
+   //       above defaultValue must match these
    public final static String GRAPHICS_ANTIALIASING_DEFAULT = "default";
    public final static String GRAPHICS_ANTIALIASING_NONE = "none";
    public final static String GRAPHICS_ANTIALIASING_GRAY = "gray";
@@ -3072,9 +3144,10 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<JsArrayString> browserFixedWidthFonts()
    {
       return object(
-         "browser_fixed_width_fonts",
+         "browser_fixed_width_fonts", // $NON-NLS-1$
          _constants.browserFixedWidthFontsTitle(), 
-         _constants.browserFixedWidthFontsDescription(), 
+         _constants.browserFixedWidthFontsDescription(),
+         // i18n: Is this user facing?  Also, for non-English, what happens here?
          JsArrayUtil.createStringArray("Andale Mono", "Bitstream Vera Sans Mono", "Cascadia Code", "Consolas", "Courier New", "Courier", "DejaVu Sans Mono", "Droid Sans Mono", "Fira Code", "Hack", "IBM Plex Mono", "Inconsolata", "JetBrains Mono", "Lucida Console", "Lucida Sans Typewriter", "Menlo", "Monaco", "Monoid", "Operator Mono", "Pragmata", "SF Mono", "Source Code Pro", "Vera Sans Mono", "Victor Mono", "Ubuntu Mono"));
    }
 
@@ -3084,7 +3157,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> pythonType()
    {
       return string(
-         "python_type",
+         "python_type", // $NON-NLS-1$
          _constants.pythonTypeTitle(), 
          _constants.pythonTypeDescription(), 
          "");
@@ -3096,7 +3169,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> pythonVersion()
    {
       return string(
-         "python_version",
+         "python_version", // $NON-NLS-1$
          _constants.pythonVersionTitle(), 
          _constants.pythonVersionDescription(), 
          "");
@@ -3108,7 +3181,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<String> pythonPath()
    {
       return string(
-         "python_path",
+         "python_path", // $NON-NLS-1$
          _constants.pythonPathTitle(), 
          _constants.pythonPathDescription(), 
          "");
@@ -3120,7 +3193,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> saveRetryTimeout()
    {
       return integer(
-         "save_retry_timeout",
+         "save_retry_timeout", // $NON-NLS-1$
          _constants.saveRetryTimeoutTitle(), 
          _constants.saveRetryTimeoutDescription(), 
          15);
@@ -3132,7 +3205,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> insertNativePipeOperator()
    {
       return bool(
-         "insert_native_pipe_operator",
+         "insert_native_pipe_operator", // $NON-NLS-1$
          _constants.insertNativePipeOperatorTitle(), 
          _constants.insertNativePipeOperatorDescription(), 
          false);
@@ -3144,7 +3217,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> commandPaletteMru()
    {
       return bool(
-         "command_palette_mru",
+         "command_palette_mru", // $NON-NLS-1$
          _constants.commandPaletteMruTitle(), 
          _constants.commandPaletteMruDescription(), 
          true);
@@ -3156,7 +3229,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Boolean> showMemoryUsage()
    {
       return bool(
-         "show_memory_usage",
+         "show_memory_usage", // $NON-NLS-1$
          _constants.showMemoryUsageTitle(), 
          _constants.showMemoryUsageDescription(), 
          true);
@@ -3168,7 +3241,7 @@ public class UserPrefsAccessor extends Prefs
    public PrefValue<Integer> memoryQueryIntervalSeconds()
    {
       return integer(
-         "memory_query_interval_seconds",
+         "memory_query_interval_seconds", // $NON-NLS-1$
          _constants.memoryQueryIntervalSecondsTitle(), 
          _constants.memoryQueryIntervalSecondsDescription(), 
          10);
@@ -3176,448 +3249,448 @@ public class UserPrefsAccessor extends Prefs
 
    public void syncPrefs(String layer, JsObject source)
    {
-      if (source.hasKey("run_rprofile_on_resume"))
-         runRprofileOnResume().setValue(layer, source.getBool("run_rprofile_on_resume"));
-      if (source.hasKey("save_workspace"))
-         saveWorkspace().setValue(layer, source.getString("save_workspace"));
-      if (source.hasKey("load_workspace"))
-         loadWorkspace().setValue(layer, source.getBool("load_workspace"));
-      if (source.hasKey("initial_working_directory"))
-         initialWorkingDirectory().setValue(layer, source.getString("initial_working_directory"));
-      if (source.hasKey("cran_mirror"))
-         cranMirror().setValue(layer, source.getObject("cran_mirror"));
-      if (source.hasKey("bioconductor_mirror_name"))
-         bioconductorMirrorName().setValue(layer, source.getString("bioconductor_mirror_name"));
-      if (source.hasKey("bioconductor_mirror_url"))
-         bioconductorMirrorUrl().setValue(layer, source.getString("bioconductor_mirror_url"));
-      if (source.hasKey("always_save_history"))
-         alwaysSaveHistory().setValue(layer, source.getBool("always_save_history"));
-      if (source.hasKey("remove_history_duplicates"))
-         removeHistoryDuplicates().setValue(layer, source.getBool("remove_history_duplicates"));
-      if (source.hasKey("show_last_dot_value"))
-         showLastDotValue().setValue(layer, source.getBool("show_last_dot_value"));
-      if (source.hasKey("line_ending_conversion"))
-         lineEndingConversion().setValue(layer, source.getString("line_ending_conversion"));
-      if (source.hasKey("use_newlines_in_makefiles"))
-         useNewlinesInMakefiles().setValue(layer, source.getBool("use_newlines_in_makefiles"));
-      if (source.hasKey("windows_terminal_shell"))
-         windowsTerminalShell().setValue(layer, source.getString("windows_terminal_shell"));
-      if (source.hasKey("posix_terminal_shell"))
-         posixTerminalShell().setValue(layer, source.getString("posix_terminal_shell"));
-      if (source.hasKey("custom_shell_command"))
-         customShellCommand().setValue(layer, source.getString("custom_shell_command"));
-      if (source.hasKey("custom_shell_options"))
-         customShellOptions().setValue(layer, source.getString("custom_shell_options"));
-      if (source.hasKey("show_line_numbers"))
-         showLineNumbers().setValue(layer, source.getBool("show_line_numbers"));
-      if (source.hasKey("highlight_selected_word"))
-         highlightSelectedWord().setValue(layer, source.getBool("highlight_selected_word"));
-      if (source.hasKey("highlight_selected_line"))
-         highlightSelectedLine().setValue(layer, source.getBool("highlight_selected_line"));
-      if (source.hasKey("panes"))
-         panes().setValue(layer, source.getObject("panes"));
-      if (source.hasKey("allow_source_columns"))
-         allowSourceColumns().setValue(layer, source.getBool("allow_source_columns"));
-      if (source.hasKey("use_spaces_for_tab"))
-         useSpacesForTab().setValue(layer, source.getBool("use_spaces_for_tab"));
-      if (source.hasKey("num_spaces_for_tab"))
-         numSpacesForTab().setValue(layer, source.getInteger("num_spaces_for_tab"));
-      if (source.hasKey("auto_detect_indentation"))
-         autoDetectIndentation().setValue(layer, source.getBool("auto_detect_indentation"));
-      if (source.hasKey("show_margin"))
-         showMargin().setValue(layer, source.getBool("show_margin"));
-      if (source.hasKey("blinking_cursor"))
-         blinkingCursor().setValue(layer, source.getBool("blinking_cursor"));
-      if (source.hasKey("margin_column"))
-         marginColumn().setValue(layer, source.getInteger("margin_column"));
-      if (source.hasKey("show_invisibles"))
-         showInvisibles().setValue(layer, source.getBool("show_invisibles"));
-      if (source.hasKey("show_indent_guides"))
-         showIndentGuides().setValue(layer, source.getBool("show_indent_guides"));
-      if (source.hasKey("continue_comments_on_newline"))
-         continueCommentsOnNewline().setValue(layer, source.getBool("continue_comments_on_newline"));
-      if (source.hasKey("highlight_web_link"))
-         highlightWebLink().setValue(layer, source.getBool("highlight_web_link"));
-      if (source.hasKey("editor_keybindings"))
-         editorKeybindings().setValue(layer, source.getString("editor_keybindings"));
-      if (source.hasKey("insert_matching"))
-         insertMatching().setValue(layer, source.getBool("insert_matching"));
-      if (source.hasKey("insert_spaces_around_equals"))
-         insertSpacesAroundEquals().setValue(layer, source.getBool("insert_spaces_around_equals"));
-      if (source.hasKey("insert_parens_after_function_completion"))
-         insertParensAfterFunctionCompletion().setValue(layer, source.getBool("insert_parens_after_function_completion"));
-      if (source.hasKey("tab_multiline_completion"))
-         tabMultilineCompletion().setValue(layer, source.getBool("tab_multiline_completion"));
-      if (source.hasKey("tab_completion"))
-         tabCompletion().setValue(layer, source.getBool("tab_completion"));
-      if (source.hasKey("show_help_tooltip_on_idle"))
-         showHelpTooltipOnIdle().setValue(layer, source.getBool("show_help_tooltip_on_idle"));
-      if (source.hasKey("surround_selection"))
-         surroundSelection().setValue(layer, source.getString("surround_selection"));
-      if (source.hasKey("enable_snippets"))
-         enableSnippets().setValue(layer, source.getBool("enable_snippets"));
-      if (source.hasKey("code_completion"))
-         codeCompletion().setValue(layer, source.getString("code_completion"));
-      if (source.hasKey("code_completion_other"))
-         codeCompletionOther().setValue(layer, source.getString("code_completion_other"));
-      if (source.hasKey("console_code_completion"))
-         consoleCodeCompletion().setValue(layer, source.getBool("console_code_completion"));
-      if (source.hasKey("code_completion_delay"))
-         codeCompletionDelay().setValue(layer, source.getInteger("code_completion_delay"));
-      if (source.hasKey("code_completion_characters"))
-         codeCompletionCharacters().setValue(layer, source.getInteger("code_completion_characters"));
-      if (source.hasKey("show_function_signature_tooltips"))
-         showFunctionSignatureTooltips().setValue(layer, source.getBool("show_function_signature_tooltips"));
-      if (source.hasKey("show_diagnostics_r"))
-         showDiagnosticsR().setValue(layer, source.getBool("show_diagnostics_r"));
-      if (source.hasKey("show_diagnostics_cpp"))
-         showDiagnosticsCpp().setValue(layer, source.getBool("show_diagnostics_cpp"));
-      if (source.hasKey("show_diagnostics_other"))
-         showDiagnosticsOther().setValue(layer, source.getBool("show_diagnostics_other"));
-      if (source.hasKey("style_diagnostics"))
-         styleDiagnostics().setValue(layer, source.getBool("style_diagnostics"));
-      if (source.hasKey("diagnostics_on_save"))
-         diagnosticsOnSave().setValue(layer, source.getBool("diagnostics_on_save"));
-      if (source.hasKey("background_diagnostics"))
-         backgroundDiagnostics().setValue(layer, source.getBool("background_diagnostics"));
-      if (source.hasKey("background_diagnostics_delay_ms"))
-         backgroundDiagnosticsDelayMs().setValue(layer, source.getInteger("background_diagnostics_delay_ms"));
-      if (source.hasKey("diagnostics_in_r_function_calls"))
-         diagnosticsInRFunctionCalls().setValue(layer, source.getBool("diagnostics_in_r_function_calls"));
-      if (source.hasKey("check_arguments_to_r_function_calls"))
-         checkArgumentsToRFunctionCalls().setValue(layer, source.getBool("check_arguments_to_r_function_calls"));
-      if (source.hasKey("check_unexpected_assignment_in_function_call"))
-         checkUnexpectedAssignmentInFunctionCall().setValue(layer, source.getBool("check_unexpected_assignment_in_function_call"));
-      if (source.hasKey("warn_if_no_such_variable_in_scope"))
-         warnIfNoSuchVariableInScope().setValue(layer, source.getBool("warn_if_no_such_variable_in_scope"));
-      if (source.hasKey("warn_variable_defined_but_not_used"))
-         warnVariableDefinedButNotUsed().setValue(layer, source.getBool("warn_variable_defined_but_not_used"));
-      if (source.hasKey("auto_discover_package_dependencies"))
-         autoDiscoverPackageDependencies().setValue(layer, source.getBool("auto_discover_package_dependencies"));
-      if (source.hasKey("auto_append_newline"))
-         autoAppendNewline().setValue(layer, source.getBool("auto_append_newline"));
-      if (source.hasKey("strip_trailing_whitespace"))
-         stripTrailingWhitespace().setValue(layer, source.getBool("strip_trailing_whitespace"));
-      if (source.hasKey("restore_source_document_cursor_position"))
-         restoreSourceDocumentCursorPosition().setValue(layer, source.getBool("restore_source_document_cursor_position"));
-      if (source.hasKey("reindent_on_paste"))
-         reindentOnPaste().setValue(layer, source.getBool("reindent_on_paste"));
-      if (source.hasKey("vertically_align_arguments_indent"))
-         verticallyAlignArgumentsIndent().setValue(layer, source.getBool("vertically_align_arguments_indent"));
-      if (source.hasKey("soft_wrap_r_files"))
-         softWrapRFiles().setValue(layer, source.getBool("soft_wrap_r_files"));
-      if (source.hasKey("soft_wrap_rmd_files"))
-         softWrapRmdFiles().setValue(layer, source.getBool("soft_wrap_rmd_files"));
-      if (source.hasKey("focus_console_after_exec"))
-         focusConsoleAfterExec().setValue(layer, source.getBool("focus_console_after_exec"));
-      if (source.hasKey("fold_style"))
-         foldStyle().setValue(layer, source.getString("fold_style"));
-      if (source.hasKey("save_before_sourcing"))
-         saveBeforeSourcing().setValue(layer, source.getBool("save_before_sourcing"));
-      if (source.hasKey("syntax_color_console"))
-         syntaxColorConsole().setValue(layer, source.getBool("syntax_color_console"));
-      if (source.hasKey("highlight_console_errors"))
-         highlightConsoleErrors().setValue(layer, source.getBool("highlight_console_errors"));
-      if (source.hasKey("scroll_past_end_of_document"))
-         scrollPastEndOfDocument().setValue(layer, source.getBool("scroll_past_end_of_document"));
-      if (source.hasKey("highlight_r_function_calls"))
-         highlightRFunctionCalls().setValue(layer, source.getBool("highlight_r_function_calls"));
-      if (source.hasKey("rainbow_parentheses"))
-         rainbowParentheses().setValue(layer, source.getBool("rainbow_parentheses"));
-      if (source.hasKey("console_line_length_limit"))
-         consoleLineLengthLimit().setValue(layer, source.getInteger("console_line_length_limit"));
-      if (source.hasKey("console_max_lines"))
-         consoleMaxLines().setValue(layer, source.getInteger("console_max_lines"));
-      if (source.hasKey("ansi_console_mode"))
-         ansiConsoleMode().setValue(layer, source.getString("ansi_console_mode"));
-      if (source.hasKey("limit_visible_console"))
-         limitVisibleConsole().setValue(layer, source.getBool("limit_visible_console"));
-      if (source.hasKey("show_inline_toolbar_for_r_code_chunks"))
-         showInlineToolbarForRCodeChunks().setValue(layer, source.getBool("show_inline_toolbar_for_r_code_chunks"));
-      if (source.hasKey("highlight_code_chunks"))
-         highlightCodeChunks().setValue(layer, source.getBool("highlight_code_chunks"));
-      if (source.hasKey("save_files_before_build"))
-         saveFilesBeforeBuild().setValue(layer, source.getBool("save_files_before_build"));
-      if (source.hasKey("font_size_points"))
-         fontSizePoints().setValue(layer, source.getDbl("font_size_points"));
-      if (source.hasKey("help_font_size_points"))
-         helpFontSizePoints().setValue(layer, source.getDbl("help_font_size_points"));
-      if (source.hasKey("editor_theme"))
-         editorTheme().setValue(layer, source.getString("editor_theme"));
-      if (source.hasKey("server_editor_font_enabled"))
-         serverEditorFontEnabled().setValue(layer, source.getBool("server_editor_font_enabled"));
-      if (source.hasKey("server_editor_font"))
-         serverEditorFont().setValue(layer, source.getString("server_editor_font"));
-      if (source.hasKey("default_encoding"))
-         defaultEncoding().setValue(layer, source.getString("default_encoding"));
-      if (source.hasKey("toolbar_visible"))
-         toolbarVisible().setValue(layer, source.getBool("toolbar_visible"));
-      if (source.hasKey("default_project_location"))
-         defaultProjectLocation().setValue(layer, source.getString("default_project_location"));
-      if (source.hasKey("source_with_echo"))
-         sourceWithEcho().setValue(layer, source.getBool("source_with_echo"));
-      if (source.hasKey("new_project_git_init"))
-         newProjectGitInit().setValue(layer, source.getBool("new_project_git_init"));
-      if (source.hasKey("default_sweave_engine"))
-         defaultSweaveEngine().setValue(layer, source.getString("default_sweave_engine"));
-      if (source.hasKey("default_latex_program"))
-         defaultLatexProgram().setValue(layer, source.getString("default_latex_program"));
-      if (source.hasKey("use_roxygen"))
-         useRoxygen().setValue(layer, source.getBool("use_roxygen"));
-      if (source.hasKey("use_dataimport"))
-         useDataimport().setValue(layer, source.getBool("use_dataimport"));
-      if (source.hasKey("pdf_previewer"))
-         pdfPreviewer().setValue(layer, source.getString("pdf_previewer"));
-      if (source.hasKey("always_enable_rnw_concordance"))
-         alwaysEnableRnwConcordance().setValue(layer, source.getBool("always_enable_rnw_concordance"));
-      if (source.hasKey("insert_numbered_latex_sections"))
-         insertNumberedLatexSections().setValue(layer, source.getBool("insert_numbered_latex_sections"));
-      if (source.hasKey("spelling_dictionary_language"))
-         spellingDictionaryLanguage().setValue(layer, source.getString("spelling_dictionary_language"));
-      if (source.hasKey("spelling_custom_dictionaries"))
-         spellingCustomDictionaries().setValue(layer, source.getObject("spelling_custom_dictionaries"));
-      if (source.hasKey("document_load_lint_delay"))
-         documentLoadLintDelay().setValue(layer, source.getInteger("document_load_lint_delay"));
-      if (source.hasKey("ignore_uppercase_words"))
-         ignoreUppercaseWords().setValue(layer, source.getBool("ignore_uppercase_words"));
-      if (source.hasKey("ignore_words_with_numbers"))
-         ignoreWordsWithNumbers().setValue(layer, source.getBool("ignore_words_with_numbers"));
-      if (source.hasKey("max_spellcheck_words"))
-         maxSpellcheckWords().setValue(layer, source.getInteger("max_spellcheck_words"));
-      if (source.hasKey("max_spellcheck_prefetch"))
-         maxSpellcheckPrefetch().setValue(layer, source.getInteger("max_spellcheck_prefetch"));
-      if (source.hasKey("real_time_spellchecking"))
-         realTimeSpellchecking().setValue(layer, source.getBool("real_time_spellchecking"));
-      if (source.hasKey("navigate_to_build_error"))
-         navigateToBuildError().setValue(layer, source.getBool("navigate_to_build_error"));
-      if (source.hasKey("packages_pane_enabled"))
-         packagesPaneEnabled().setValue(layer, source.getBool("packages_pane_enabled"));
-      if (source.hasKey("use_rcpp_template"))
-         useRcppTemplate().setValue(layer, source.getBool("use_rcpp_template"));
-      if (source.hasKey("restore_source_documents"))
-         restoreSourceDocuments().setValue(layer, source.getBool("restore_source_documents"));
-      if (source.hasKey("handle_errors_in_user_code_only"))
-         handleErrorsInUserCodeOnly().setValue(layer, source.getBool("handle_errors_in_user_code_only"));
-      if (source.hasKey("auto_expand_error_tracebacks"))
-         autoExpandErrorTracebacks().setValue(layer, source.getBool("auto_expand_error_tracebacks"));
-      if (source.hasKey("check_for_updates"))
-         checkForUpdates().setValue(layer, source.getBool("check_for_updates"));
-      if (source.hasKey("show_internal_functions"))
-         showInternalFunctions().setValue(layer, source.getBool("show_internal_functions"));
-      if (source.hasKey("shiny_viewer_type"))
-         shinyViewerType().setValue(layer, source.getString("shiny_viewer_type"));
-      if (source.hasKey("shiny_background_jobs"))
-         shinyBackgroundJobs().setValue(layer, source.getBool("shiny_background_jobs"));
-      if (source.hasKey("plumber_viewer_type"))
-         plumberViewerType().setValue(layer, source.getString("plumber_viewer_type"));
-      if (source.hasKey("document_author"))
-         documentAuthor().setValue(layer, source.getString("document_author"));
-      if (source.hasKey("rmd_preferred_template_path"))
-         rmdPreferredTemplatePath().setValue(layer, source.getString("rmd_preferred_template_path"));
-      if (source.hasKey("rmd_viewer_type"))
-         rmdViewerType().setValue(layer, source.getString("rmd_viewer_type"));
-      if (source.hasKey("show_publish_diagnostics"))
-         showPublishDiagnostics().setValue(layer, source.getBool("show_publish_diagnostics"));
-      if (source.hasKey("publish_check_certificates"))
-         publishCheckCertificates().setValue(layer, source.getBool("publish_check_certificates"));
-      if (source.hasKey("use_publish_ca_bundle"))
-         usePublishCaBundle().setValue(layer, source.getBool("use_publish_ca_bundle"));
-      if (source.hasKey("publish_ca_bundle"))
-         publishCaBundle().setValue(layer, source.getString("publish_ca_bundle"));
-      if (source.hasKey("rmd_chunk_output_inline"))
-         rmdChunkOutputInline().setValue(layer, source.getBool("rmd_chunk_output_inline"));
-      if (source.hasKey("show_doc_outline_rmd"))
-         showDocOutlineRmd().setValue(layer, source.getBool("show_doc_outline_rmd"));
-      if (source.hasKey("auto_run_setup_chunk"))
-         autoRunSetupChunk().setValue(layer, source.getBool("auto_run_setup_chunk"));
-      if (source.hasKey("hide_console_on_chunk_execute"))
-         hideConsoleOnChunkExecute().setValue(layer, source.getBool("hide_console_on_chunk_execute"));
-      if (source.hasKey("execution_behavior"))
-         executionBehavior().setValue(layer, source.getString("execution_behavior"));
-      if (source.hasKey("show_terminal_tab"))
-         showTerminalTab().setValue(layer, source.getBool("show_terminal_tab"));
-      if (source.hasKey("terminal_local_echo"))
-         terminalLocalEcho().setValue(layer, source.getBool("terminal_local_echo"));
-      if (source.hasKey("terminal_websockets"))
-         terminalWebsockets().setValue(layer, source.getBool("terminal_websockets"));
-      if (source.hasKey("terminal_close_behavior"))
-         terminalCloseBehavior().setValue(layer, source.getString("terminal_close_behavior"));
-      if (source.hasKey("terminal_track_environment"))
-         terminalTrackEnvironment().setValue(layer, source.getBool("terminal_track_environment"));
-      if (source.hasKey("terminal_bell_style"))
-         terminalBellStyle().setValue(layer, source.getString("terminal_bell_style"));
-      if (source.hasKey("terminal_renderer"))
-         terminalRenderer().setValue(layer, source.getString("terminal_renderer"));
-      if (source.hasKey("terminal_weblinks"))
-         terminalWeblinks().setValue(layer, source.getBool("terminal_weblinks"));
-      if (source.hasKey("show_rmd_render_command"))
-         showRmdRenderCommand().setValue(layer, source.getBool("show_rmd_render_command"));
-      if (source.hasKey("enable_text_drag"))
-         enableTextDrag().setValue(layer, source.getBool("enable_text_drag"));
-      if (source.hasKey("show_hidden_files"))
-         showHiddenFiles().setValue(layer, source.getBool("show_hidden_files"));
-      if (source.hasKey("always_shown_files"))
-         alwaysShownFiles().setValue(layer, source.getObject("always_shown_files"));
-      if (source.hasKey("always_shown_extensions"))
-         alwaysShownExtensions().setValue(layer, source.getObject("always_shown_extensions"));
-      if (source.hasKey("sort_file_names_naturally"))
-         sortFileNamesNaturally().setValue(layer, source.getBool("sort_file_names_naturally"));
-      if (source.hasKey("jobs_tab_visibility"))
-         jobsTabVisibility().setValue(layer, source.getString("jobs_tab_visibility"));
-      if (source.hasKey("show_launcher_jobs_tab"))
-         showLauncherJobsTab().setValue(layer, source.getBool("show_launcher_jobs_tab"));
-      if (source.hasKey("launcher_jobs_sort"))
-         launcherJobsSort().setValue(layer, source.getString("launcher_jobs_sort"));
-      if (source.hasKey("busy_detection"))
-         busyDetection().setValue(layer, source.getString("busy_detection"));
-      if (source.hasKey("busy_whitelist"))
-         busyWhitelist().setValue(layer, source.getObject("busy_whitelist"));
-      if (source.hasKey("knit_working_dir"))
-         knitWorkingDir().setValue(layer, source.getString("knit_working_dir"));
-      if (source.hasKey("doc_outline_show"))
-         docOutlineShow().setValue(layer, source.getString("doc_outline_show"));
-      if (source.hasKey("latex_preview_on_cursor_idle"))
-         latexPreviewOnCursorIdle().setValue(layer, source.getString("latex_preview_on_cursor_idle"));
-      if (source.hasKey("wrap_tab_navigation"))
-         wrapTabNavigation().setValue(layer, source.getBool("wrap_tab_navigation"));
-      if (source.hasKey("global_theme"))
-         globalTheme().setValue(layer, source.getString("global_theme"));
-      if (source.hasKey("git_diff_ignore_whitespace"))
-         gitDiffIgnoreWhitespace().setValue(layer, source.getBool("git_diff_ignore_whitespace"));
-      if (source.hasKey("console_double_click_select"))
-         consoleDoubleClickSelect().setValue(layer, source.getBool("console_double_click_select"));
-      if (source.hasKey("new_proj_git_init"))
-         newProjGitInit().setValue(layer, source.getBool("new_proj_git_init"));
-      if (source.hasKey("root_document"))
-         rootDocument().setValue(layer, source.getString("root_document"));
-      if (source.hasKey("show_user_home_page"))
-         showUserHomePage().setValue(layer, source.getString("show_user_home_page"));
-      if (source.hasKey("reuse_sessions_for_project_links"))
-         reuseSessionsForProjectLinks().setValue(layer, source.getBool("reuse_sessions_for_project_links"));
-      if (source.hasKey("vcs_enabled"))
-         vcsEnabled().setValue(layer, source.getBool("vcs_enabled"));
-      if (source.hasKey("vcs_autorefresh"))
-         vcsAutorefresh().setValue(layer, source.getBool("vcs_autorefresh"));
-      if (source.hasKey("git_exe_path"))
-         gitExePath().setValue(layer, source.getString("git_exe_path"));
-      if (source.hasKey("svn_exe_path"))
-         svnExePath().setValue(layer, source.getString("svn_exe_path"));
-      if (source.hasKey("terminal_path"))
-         terminalPath().setValue(layer, source.getString("terminal_path"));
-      if (source.hasKey("rsa_key_path"))
-         rsaKeyPath().setValue(layer, source.getString("rsa_key_path"));
-      if (source.hasKey("use_devtools"))
-         useDevtools().setValue(layer, source.getBool("use_devtools"));
-      if (source.hasKey("use_internet2"))
-         useInternet2().setValue(layer, source.getBool("use_internet2"));
-      if (source.hasKey("use_secure_download"))
-         useSecureDownload().setValue(layer, source.getBool("use_secure_download"));
-      if (source.hasKey("cleanup_after_r_cmd_check"))
-         cleanupAfterRCmdCheck().setValue(layer, source.getBool("cleanup_after_r_cmd_check"));
-      if (source.hasKey("view_dir_after_r_cmd_check"))
-         viewDirAfterRCmdCheck().setValue(layer, source.getBool("view_dir_after_r_cmd_check"));
-      if (source.hasKey("hide_object_files"))
-         hideObjectFiles().setValue(layer, source.getBool("hide_object_files"));
-      if (source.hasKey("restore_last_project"))
-         restoreLastProject().setValue(layer, source.getBool("restore_last_project"));
-      if (source.hasKey("project_safe_startup_seconds"))
-         projectSafeStartupSeconds().setValue(layer, source.getInteger("project_safe_startup_seconds"));
-      if (source.hasKey("use_tinytex"))
-         useTinytex().setValue(layer, source.getBool("use_tinytex"));
-      if (source.hasKey("clean_texi2dvi_output"))
-         cleanTexi2dviOutput().setValue(layer, source.getBool("clean_texi2dvi_output"));
-      if (source.hasKey("latex_shell_escape"))
-         latexShellEscape().setValue(layer, source.getBool("latex_shell_escape"));
-      if (source.hasKey("restore_project_r_version"))
-         restoreProjectRVersion().setValue(layer, source.getBool("restore_project_r_version"));
-      if (source.hasKey("clang_verbose"))
-         clangVerbose().setValue(layer, source.getInteger("clang_verbose"));
-      if (source.hasKey("submit_crash_reports"))
-         submitCrashReports().setValue(layer, source.getBool("submit_crash_reports"));
-      if (source.hasKey("default_r_version"))
-         defaultRVersion().setValue(layer, source.getObject("default_r_version"));
-      if (source.hasKey("data_viewer_max_columns"))
-         dataViewerMaxColumns().setValue(layer, source.getInteger("data_viewer_max_columns"));
-      if (source.hasKey("enable_screen_reader"))
-         enableScreenReader().setValue(layer, source.getBool("enable_screen_reader"));
-      if (source.hasKey("typing_status_delay_ms"))
-         typingStatusDelayMs().setValue(layer, source.getInteger("typing_status_delay_ms"));
-      if (source.hasKey("reduced_motion"))
-         reducedMotion().setValue(layer, source.getBool("reduced_motion"));
-      if (source.hasKey("tab_key_move_focus"))
-         tabKeyMoveFocus().setValue(layer, source.getBool("tab_key_move_focus"));
-      if (source.hasKey("find_panel_legacy_tab_sequence"))
-         findPanelLegacyTabSequence().setValue(layer, source.getBool("find_panel_legacy_tab_sequence"));
-      if (source.hasKey("show_focus_rectangles"))
-         showFocusRectangles().setValue(layer, source.getBool("show_focus_rectangles"));
-      if (source.hasKey("show_panel_focus_rectangle"))
-         showPanelFocusRectangle().setValue(layer, source.getBool("show_panel_focus_rectangle"));
-      if (source.hasKey("auto_save_on_idle"))
-         autoSaveOnIdle().setValue(layer, source.getString("auto_save_on_idle"));
-      if (source.hasKey("auto_save_idle_ms"))
-         autoSaveIdleMs().setValue(layer, source.getInteger("auto_save_idle_ms"));
-      if (source.hasKey("auto_save_on_blur"))
-         autoSaveOnBlur().setValue(layer, source.getBool("auto_save_on_blur"));
-      if (source.hasKey("terminal_initial_directory"))
-         terminalInitialDirectory().setValue(layer, source.getString("terminal_initial_directory"));
-      if (source.hasKey("full_project_path_in_window_title"))
-         fullProjectPathInWindowTitle().setValue(layer, source.getBool("full_project_path_in_window_title"));
-      if (source.hasKey("visual_markdown_editing_is_default"))
-         visualMarkdownEditingIsDefault().setValue(layer, source.getBool("visual_markdown_editing_is_default"));
-      if (source.hasKey("visual_markdown_editing_list_spacing"))
-         visualMarkdownEditingListSpacing().setValue(layer, source.getString("visual_markdown_editing_list_spacing"));
-      if (source.hasKey("visual_markdown_editing_wrap"))
-         visualMarkdownEditingWrap().setValue(layer, source.getString("visual_markdown_editing_wrap"));
-      if (source.hasKey("visual_markdown_editing_wrap_at_column"))
-         visualMarkdownEditingWrapAtColumn().setValue(layer, source.getInteger("visual_markdown_editing_wrap_at_column"));
-      if (source.hasKey("visual_markdown_editing_references_location"))
-         visualMarkdownEditingReferencesLocation().setValue(layer, source.getString("visual_markdown_editing_references_location"));
-      if (source.hasKey("visual_markdown_editing_canonical"))
-         visualMarkdownEditingCanonical().setValue(layer, source.getBool("visual_markdown_editing_canonical"));
-      if (source.hasKey("visual_markdown_editing_max_content_width"))
-         visualMarkdownEditingMaxContentWidth().setValue(layer, source.getInteger("visual_markdown_editing_max_content_width"));
-      if (source.hasKey("visual_markdown_editing_show_doc_outline"))
-         visualMarkdownEditingShowDocOutline().setValue(layer, source.getBool("visual_markdown_editing_show_doc_outline"));
-      if (source.hasKey("visual_markdown_editing_show_margin"))
-         visualMarkdownEditingShowMargin().setValue(layer, source.getBool("visual_markdown_editing_show_margin"));
-      if (source.hasKey("visual_markdown_editing_font_size_points"))
-         visualMarkdownEditingFontSizePoints().setValue(layer, source.getInteger("visual_markdown_editing_font_size_points"));
-      if (source.hasKey("visual_markdown_code_editor"))
-         visualMarkdownCodeEditor().setValue(layer, source.getString("visual_markdown_code_editor"));
-      if (source.hasKey("zotero_libraries"))
-         zoteroLibraries().setValue(layer, source.getObject("zotero_libraries"));
-      if (source.hasKey("emoji_skintone"))
-         emojiSkintone().setValue(layer, source.getString("emoji_skintone"));
-      if (source.hasKey("disabled_aria_live_announcements"))
-         disabledAriaLiveAnnouncements().setValue(layer, source.getObject("disabled_aria_live_announcements"));
-      if (source.hasKey("screenreader_console_announce_limit"))
-         screenreaderConsoleAnnounceLimit().setValue(layer, source.getInteger("screenreader_console_announce_limit"));
-      if (source.hasKey("file_monitor_ignored_components"))
-         fileMonitorIgnoredComponents().setValue(layer, source.getObject("file_monitor_ignored_components"));
-      if (source.hasKey("install_pkg_deps_individually"))
-         installPkgDepsIndividually().setValue(layer, source.getBool("install_pkg_deps_individually"));
-      if (source.hasKey("graphics_backend"))
-         graphicsBackend().setValue(layer, source.getString("graphics_backend"));
-      if (source.hasKey("graphics_antialiasing"))
-         graphicsAntialiasing().setValue(layer, source.getString("graphics_antialiasing"));
-      if (source.hasKey("browser_fixed_width_fonts"))
-         browserFixedWidthFonts().setValue(layer, source.getObject("browser_fixed_width_fonts"));
-      if (source.hasKey("python_type"))
-         pythonType().setValue(layer, source.getString("python_type"));
-      if (source.hasKey("python_version"))
-         pythonVersion().setValue(layer, source.getString("python_version"));
-      if (source.hasKey("python_path"))
-         pythonPath().setValue(layer, source.getString("python_path"));
-      if (source.hasKey("save_retry_timeout"))
-         saveRetryTimeout().setValue(layer, source.getInteger("save_retry_timeout"));
-      if (source.hasKey("insert_native_pipe_operator"))
-         insertNativePipeOperator().setValue(layer, source.getBool("insert_native_pipe_operator"));
-      if (source.hasKey("command_palette_mru"))
-         commandPaletteMru().setValue(layer, source.getBool("command_palette_mru"));
-      if (source.hasKey("show_memory_usage"))
-         showMemoryUsage().setValue(layer, source.getBool("show_memory_usage"));
-      if (source.hasKey("memory_query_interval_seconds"))
-         memoryQueryIntervalSeconds().setValue(layer, source.getInteger("memory_query_interval_seconds"));
+      if (source.hasKey("run_rprofile_on_resume")) //$NON-NLS-1$
+         runRprofileOnResume().setValue(layer, source.getBool("run_rprofile_on_resume")); //$NON-NLS-1$
+      if (source.hasKey("save_workspace")) //$NON-NLS-1$
+         saveWorkspace().setValue(layer, source.getString("save_workspace")); //$NON-NLS-1$
+      if (source.hasKey("load_workspace")) //$NON-NLS-1$
+         loadWorkspace().setValue(layer, source.getBool("load_workspace")); //$NON-NLS-1$
+      if (source.hasKey("initial_working_directory")) //$NON-NLS-1$
+         initialWorkingDirectory().setValue(layer, source.getString("initial_working_directory")); //$NON-NLS-1$
+      if (source.hasKey("cran_mirror")) //$NON-NLS-1$
+         cranMirror().setValue(layer, source.getObject("cran_mirror")); //$NON-NLS-1$
+      if (source.hasKey("bioconductor_mirror_name")) //$NON-NLS-1$
+         bioconductorMirrorName().setValue(layer, source.getString("bioconductor_mirror_name")); //$NON-NLS-1$
+      if (source.hasKey("bioconductor_mirror_url")) //$NON-NLS-1$
+         bioconductorMirrorUrl().setValue(layer, source.getString("bioconductor_mirror_url")); //$NON-NLS-1$
+      if (source.hasKey("always_save_history")) //$NON-NLS-1$
+         alwaysSaveHistory().setValue(layer, source.getBool("always_save_history")); //$NON-NLS-1$
+      if (source.hasKey("remove_history_duplicates")) //$NON-NLS-1$
+         removeHistoryDuplicates().setValue(layer, source.getBool("remove_history_duplicates")); //$NON-NLS-1$
+      if (source.hasKey("show_last_dot_value")) //$NON-NLS-1$
+         showLastDotValue().setValue(layer, source.getBool("show_last_dot_value")); //$NON-NLS-1$
+      if (source.hasKey("line_ending_conversion")) //$NON-NLS-1$
+         lineEndingConversion().setValue(layer, source.getString("line_ending_conversion")); //$NON-NLS-1$
+      if (source.hasKey("use_newlines_in_makefiles")) //$NON-NLS-1$
+         useNewlinesInMakefiles().setValue(layer, source.getBool("use_newlines_in_makefiles")); //$NON-NLS-1$
+      if (source.hasKey("windows_terminal_shell")) //$NON-NLS-1$
+         windowsTerminalShell().setValue(layer, source.getString("windows_terminal_shell")); //$NON-NLS-1$
+      if (source.hasKey("posix_terminal_shell")) //$NON-NLS-1$
+         posixTerminalShell().setValue(layer, source.getString("posix_terminal_shell")); //$NON-NLS-1$
+      if (source.hasKey("custom_shell_command")) //$NON-NLS-1$
+         customShellCommand().setValue(layer, source.getString("custom_shell_command")); //$NON-NLS-1$
+      if (source.hasKey("custom_shell_options")) //$NON-NLS-1$
+         customShellOptions().setValue(layer, source.getString("custom_shell_options")); //$NON-NLS-1$
+      if (source.hasKey("show_line_numbers")) //$NON-NLS-1$
+         showLineNumbers().setValue(layer, source.getBool("show_line_numbers")); //$NON-NLS-1$
+      if (source.hasKey("highlight_selected_word")) //$NON-NLS-1$
+         highlightSelectedWord().setValue(layer, source.getBool("highlight_selected_word")); //$NON-NLS-1$
+      if (source.hasKey("highlight_selected_line")) //$NON-NLS-1$
+         highlightSelectedLine().setValue(layer, source.getBool("highlight_selected_line")); //$NON-NLS-1$
+      if (source.hasKey("panes")) //$NON-NLS-1$
+         panes().setValue(layer, source.getObject("panes")); //$NON-NLS-1$
+      if (source.hasKey("allow_source_columns")) //$NON-NLS-1$
+         allowSourceColumns().setValue(layer, source.getBool("allow_source_columns")); //$NON-NLS-1$
+      if (source.hasKey("use_spaces_for_tab")) //$NON-NLS-1$
+         useSpacesForTab().setValue(layer, source.getBool("use_spaces_for_tab")); //$NON-NLS-1$
+      if (source.hasKey("num_spaces_for_tab")) //$NON-NLS-1$
+         numSpacesForTab().setValue(layer, source.getInteger("num_spaces_for_tab")); //$NON-NLS-1$
+      if (source.hasKey("auto_detect_indentation")) //$NON-NLS-1$
+         autoDetectIndentation().setValue(layer, source.getBool("auto_detect_indentation")); //$NON-NLS-1$
+      if (source.hasKey("show_margin")) //$NON-NLS-1$
+         showMargin().setValue(layer, source.getBool("show_margin")); //$NON-NLS-1$
+      if (source.hasKey("blinking_cursor")) //$NON-NLS-1$
+         blinkingCursor().setValue(layer, source.getBool("blinking_cursor")); //$NON-NLS-1$
+      if (source.hasKey("margin_column")) //$NON-NLS-1$
+         marginColumn().setValue(layer, source.getInteger("margin_column")); //$NON-NLS-1$
+      if (source.hasKey("show_invisibles")) //$NON-NLS-1$
+         showInvisibles().setValue(layer, source.getBool("show_invisibles")); //$NON-NLS-1$
+      if (source.hasKey("show_indent_guides")) //$NON-NLS-1$
+         showIndentGuides().setValue(layer, source.getBool("show_indent_guides")); //$NON-NLS-1$
+      if (source.hasKey("continue_comments_on_newline")) //$NON-NLS-1$
+         continueCommentsOnNewline().setValue(layer, source.getBool("continue_comments_on_newline")); //$NON-NLS-1$
+      if (source.hasKey("highlight_web_link")) //$NON-NLS-1$
+         highlightWebLink().setValue(layer, source.getBool("highlight_web_link")); //$NON-NLS-1$
+      if (source.hasKey("editor_keybindings")) //$NON-NLS-1$
+         editorKeybindings().setValue(layer, source.getString("editor_keybindings")); //$NON-NLS-1$
+      if (source.hasKey("insert_matching")) //$NON-NLS-1$
+         insertMatching().setValue(layer, source.getBool("insert_matching")); //$NON-NLS-1$
+      if (source.hasKey("insert_spaces_around_equals")) //$NON-NLS-1$
+         insertSpacesAroundEquals().setValue(layer, source.getBool("insert_spaces_around_equals")); //$NON-NLS-1$
+      if (source.hasKey("insert_parens_after_function_completion")) //$NON-NLS-1$
+         insertParensAfterFunctionCompletion().setValue(layer, source.getBool("insert_parens_after_function_completion")); //$NON-NLS-1$
+      if (source.hasKey("tab_multiline_completion")) //$NON-NLS-1$
+         tabMultilineCompletion().setValue(layer, source.getBool("tab_multiline_completion")); //$NON-NLS-1$
+      if (source.hasKey("tab_completion")) //$NON-NLS-1$
+         tabCompletion().setValue(layer, source.getBool("tab_completion")); //$NON-NLS-1$
+      if (source.hasKey("show_help_tooltip_on_idle")) //$NON-NLS-1$
+         showHelpTooltipOnIdle().setValue(layer, source.getBool("show_help_tooltip_on_idle")); //$NON-NLS-1$
+      if (source.hasKey("surround_selection")) //$NON-NLS-1$
+         surroundSelection().setValue(layer, source.getString("surround_selection")); //$NON-NLS-1$
+      if (source.hasKey("enable_snippets")) //$NON-NLS-1$
+         enableSnippets().setValue(layer, source.getBool("enable_snippets")); //$NON-NLS-1$
+      if (source.hasKey("code_completion")) //$NON-NLS-1$
+         codeCompletion().setValue(layer, source.getString("code_completion")); //$NON-NLS-1$
+      if (source.hasKey("code_completion_other")) //$NON-NLS-1$
+         codeCompletionOther().setValue(layer, source.getString("code_completion_other")); //$NON-NLS-1$
+      if (source.hasKey("console_code_completion")) //$NON-NLS-1$
+         consoleCodeCompletion().setValue(layer, source.getBool("console_code_completion")); //$NON-NLS-1$
+      if (source.hasKey("code_completion_delay")) //$NON-NLS-1$
+         codeCompletionDelay().setValue(layer, source.getInteger("code_completion_delay")); //$NON-NLS-1$
+      if (source.hasKey("code_completion_characters")) //$NON-NLS-1$
+         codeCompletionCharacters().setValue(layer, source.getInteger("code_completion_characters")); //$NON-NLS-1$
+      if (source.hasKey("show_function_signature_tooltips")) //$NON-NLS-1$
+         showFunctionSignatureTooltips().setValue(layer, source.getBool("show_function_signature_tooltips")); //$NON-NLS-1$
+      if (source.hasKey("show_diagnostics_r")) //$NON-NLS-1$
+         showDiagnosticsR().setValue(layer, source.getBool("show_diagnostics_r")); //$NON-NLS-1$
+      if (source.hasKey("show_diagnostics_cpp")) //$NON-NLS-1$
+         showDiagnosticsCpp().setValue(layer, source.getBool("show_diagnostics_cpp")); //$NON-NLS-1$
+      if (source.hasKey("show_diagnostics_other")) //$NON-NLS-1$
+         showDiagnosticsOther().setValue(layer, source.getBool("show_diagnostics_other")); //$NON-NLS-1$
+      if (source.hasKey("style_diagnostics")) //$NON-NLS-1$
+         styleDiagnostics().setValue(layer, source.getBool("style_diagnostics")); //$NON-NLS-1$
+      if (source.hasKey("diagnostics_on_save")) //$NON-NLS-1$
+         diagnosticsOnSave().setValue(layer, source.getBool("diagnostics_on_save")); //$NON-NLS-1$
+      if (source.hasKey("background_diagnostics")) //$NON-NLS-1$
+         backgroundDiagnostics().setValue(layer, source.getBool("background_diagnostics")); //$NON-NLS-1$
+      if (source.hasKey("background_diagnostics_delay_ms")) //$NON-NLS-1$
+         backgroundDiagnosticsDelayMs().setValue(layer, source.getInteger("background_diagnostics_delay_ms")); //$NON-NLS-1$
+      if (source.hasKey("diagnostics_in_r_function_calls")) //$NON-NLS-1$
+         diagnosticsInRFunctionCalls().setValue(layer, source.getBool("diagnostics_in_r_function_calls")); //$NON-NLS-1$
+      if (source.hasKey("check_arguments_to_r_function_calls")) //$NON-NLS-1$
+         checkArgumentsToRFunctionCalls().setValue(layer, source.getBool("check_arguments_to_r_function_calls")); //$NON-NLS-1$
+      if (source.hasKey("check_unexpected_assignment_in_function_call")) //$NON-NLS-1$
+         checkUnexpectedAssignmentInFunctionCall().setValue(layer, source.getBool("check_unexpected_assignment_in_function_call")); //$NON-NLS-1$
+      if (source.hasKey("warn_if_no_such_variable_in_scope")) //$NON-NLS-1$
+         warnIfNoSuchVariableInScope().setValue(layer, source.getBool("warn_if_no_such_variable_in_scope")); //$NON-NLS-1$
+      if (source.hasKey("warn_variable_defined_but_not_used")) //$NON-NLS-1$
+         warnVariableDefinedButNotUsed().setValue(layer, source.getBool("warn_variable_defined_but_not_used")); //$NON-NLS-1$
+      if (source.hasKey("auto_discover_package_dependencies")) //$NON-NLS-1$
+         autoDiscoverPackageDependencies().setValue(layer, source.getBool("auto_discover_package_dependencies")); //$NON-NLS-1$
+      if (source.hasKey("auto_append_newline")) //$NON-NLS-1$
+         autoAppendNewline().setValue(layer, source.getBool("auto_append_newline")); //$NON-NLS-1$
+      if (source.hasKey("strip_trailing_whitespace")) //$NON-NLS-1$
+         stripTrailingWhitespace().setValue(layer, source.getBool("strip_trailing_whitespace")); //$NON-NLS-1$
+      if (source.hasKey("restore_source_document_cursor_position")) //$NON-NLS-1$
+         restoreSourceDocumentCursorPosition().setValue(layer, source.getBool("restore_source_document_cursor_position")); //$NON-NLS-1$
+      if (source.hasKey("reindent_on_paste")) //$NON-NLS-1$
+         reindentOnPaste().setValue(layer, source.getBool("reindent_on_paste")); //$NON-NLS-1$
+      if (source.hasKey("vertically_align_arguments_indent")) //$NON-NLS-1$
+         verticallyAlignArgumentsIndent().setValue(layer, source.getBool("vertically_align_arguments_indent")); //$NON-NLS-1$
+      if (source.hasKey("soft_wrap_r_files")) //$NON-NLS-1$
+         softWrapRFiles().setValue(layer, source.getBool("soft_wrap_r_files")); //$NON-NLS-1$
+      if (source.hasKey("soft_wrap_rmd_files")) //$NON-NLS-1$
+         softWrapRmdFiles().setValue(layer, source.getBool("soft_wrap_rmd_files")); //$NON-NLS-1$
+      if (source.hasKey("focus_console_after_exec")) //$NON-NLS-1$
+         focusConsoleAfterExec().setValue(layer, source.getBool("focus_console_after_exec")); //$NON-NLS-1$
+      if (source.hasKey("fold_style")) //$NON-NLS-1$
+         foldStyle().setValue(layer, source.getString("fold_style")); //$NON-NLS-1$
+      if (source.hasKey("save_before_sourcing")) //$NON-NLS-1$
+         saveBeforeSourcing().setValue(layer, source.getBool("save_before_sourcing")); //$NON-NLS-1$
+      if (source.hasKey("syntax_color_console")) //$NON-NLS-1$
+         syntaxColorConsole().setValue(layer, source.getBool("syntax_color_console")); //$NON-NLS-1$
+      if (source.hasKey("highlight_console_errors")) //$NON-NLS-1$
+         highlightConsoleErrors().setValue(layer, source.getBool("highlight_console_errors")); //$NON-NLS-1$
+      if (source.hasKey("scroll_past_end_of_document")) //$NON-NLS-1$
+         scrollPastEndOfDocument().setValue(layer, source.getBool("scroll_past_end_of_document")); //$NON-NLS-1$
+      if (source.hasKey("highlight_r_function_calls")) //$NON-NLS-1$
+         highlightRFunctionCalls().setValue(layer, source.getBool("highlight_r_function_calls")); //$NON-NLS-1$
+      if (source.hasKey("rainbow_parentheses")) //$NON-NLS-1$
+         rainbowParentheses().setValue(layer, source.getBool("rainbow_parentheses")); //$NON-NLS-1$
+      if (source.hasKey("console_line_length_limit")) //$NON-NLS-1$
+         consoleLineLengthLimit().setValue(layer, source.getInteger("console_line_length_limit")); //$NON-NLS-1$
+      if (source.hasKey("console_max_lines")) //$NON-NLS-1$
+         consoleMaxLines().setValue(layer, source.getInteger("console_max_lines")); //$NON-NLS-1$
+      if (source.hasKey("ansi_console_mode")) //$NON-NLS-1$
+         ansiConsoleMode().setValue(layer, source.getString("ansi_console_mode")); //$NON-NLS-1$
+      if (source.hasKey("limit_visible_console")) //$NON-NLS-1$
+         limitVisibleConsole().setValue(layer, source.getBool("limit_visible_console")); //$NON-NLS-1$
+      if (source.hasKey("show_inline_toolbar_for_r_code_chunks")) //$NON-NLS-1$
+         showInlineToolbarForRCodeChunks().setValue(layer, source.getBool("show_inline_toolbar_for_r_code_chunks")); //$NON-NLS-1$
+      if (source.hasKey("highlight_code_chunks")) //$NON-NLS-1$
+         highlightCodeChunks().setValue(layer, source.getBool("highlight_code_chunks")); //$NON-NLS-1$
+      if (source.hasKey("save_files_before_build")) //$NON-NLS-1$
+         saveFilesBeforeBuild().setValue(layer, source.getBool("save_files_before_build")); //$NON-NLS-1$
+      if (source.hasKey("font_size_points")) //$NON-NLS-1$
+         fontSizePoints().setValue(layer, source.getDbl("font_size_points")); //$NON-NLS-1$
+      if (source.hasKey("help_font_size_points")) //$NON-NLS-1$
+         helpFontSizePoints().setValue(layer, source.getDbl("help_font_size_points")); //$NON-NLS-1$
+      if (source.hasKey("editor_theme")) //$NON-NLS-1$
+         editorTheme().setValue(layer, source.getString("editor_theme")); //$NON-NLS-1$
+      if (source.hasKey("server_editor_font_enabled")) //$NON-NLS-1$
+         serverEditorFontEnabled().setValue(layer, source.getBool("server_editor_font_enabled")); //$NON-NLS-1$
+      if (source.hasKey("server_editor_font")) //$NON-NLS-1$
+         serverEditorFont().setValue(layer, source.getString("server_editor_font")); //$NON-NLS-1$
+      if (source.hasKey("default_encoding")) //$NON-NLS-1$
+         defaultEncoding().setValue(layer, source.getString("default_encoding")); //$NON-NLS-1$
+      if (source.hasKey("toolbar_visible")) //$NON-NLS-1$
+         toolbarVisible().setValue(layer, source.getBool("toolbar_visible")); //$NON-NLS-1$
+      if (source.hasKey("default_project_location")) //$NON-NLS-1$
+         defaultProjectLocation().setValue(layer, source.getString("default_project_location")); //$NON-NLS-1$
+      if (source.hasKey("source_with_echo")) //$NON-NLS-1$
+         sourceWithEcho().setValue(layer, source.getBool("source_with_echo")); //$NON-NLS-1$
+      if (source.hasKey("new_project_git_init")) //$NON-NLS-1$
+         newProjectGitInit().setValue(layer, source.getBool("new_project_git_init")); //$NON-NLS-1$
+      if (source.hasKey("default_sweave_engine")) //$NON-NLS-1$
+         defaultSweaveEngine().setValue(layer, source.getString("default_sweave_engine")); //$NON-NLS-1$
+      if (source.hasKey("default_latex_program")) //$NON-NLS-1$
+         defaultLatexProgram().setValue(layer, source.getString("default_latex_program")); //$NON-NLS-1$
+      if (source.hasKey("use_roxygen")) //$NON-NLS-1$
+         useRoxygen().setValue(layer, source.getBool("use_roxygen")); //$NON-NLS-1$
+      if (source.hasKey("use_dataimport")) //$NON-NLS-1$
+         useDataimport().setValue(layer, source.getBool("use_dataimport")); //$NON-NLS-1$
+      if (source.hasKey("pdf_previewer")) //$NON-NLS-1$
+         pdfPreviewer().setValue(layer, source.getString("pdf_previewer")); //$NON-NLS-1$
+      if (source.hasKey("always_enable_rnw_concordance")) //$NON-NLS-1$
+         alwaysEnableRnwConcordance().setValue(layer, source.getBool("always_enable_rnw_concordance")); //$NON-NLS-1$
+      if (source.hasKey("insert_numbered_latex_sections")) //$NON-NLS-1$
+         insertNumberedLatexSections().setValue(layer, source.getBool("insert_numbered_latex_sections")); //$NON-NLS-1$
+      if (source.hasKey("spelling_dictionary_language")) //$NON-NLS-1$
+         spellingDictionaryLanguage().setValue(layer, source.getString("spelling_dictionary_language")); //$NON-NLS-1$
+      if (source.hasKey("spelling_custom_dictionaries")) //$NON-NLS-1$
+         spellingCustomDictionaries().setValue(layer, source.getObject("spelling_custom_dictionaries")); //$NON-NLS-1$
+      if (source.hasKey("document_load_lint_delay")) //$NON-NLS-1$
+         documentLoadLintDelay().setValue(layer, source.getInteger("document_load_lint_delay")); //$NON-NLS-1$
+      if (source.hasKey("ignore_uppercase_words")) //$NON-NLS-1$
+         ignoreUppercaseWords().setValue(layer, source.getBool("ignore_uppercase_words")); //$NON-NLS-1$
+      if (source.hasKey("ignore_words_with_numbers")) //$NON-NLS-1$
+         ignoreWordsWithNumbers().setValue(layer, source.getBool("ignore_words_with_numbers")); //$NON-NLS-1$
+      if (source.hasKey("max_spellcheck_words")) //$NON-NLS-1$
+         maxSpellcheckWords().setValue(layer, source.getInteger("max_spellcheck_words")); //$NON-NLS-1$
+      if (source.hasKey("max_spellcheck_prefetch")) //$NON-NLS-1$
+         maxSpellcheckPrefetch().setValue(layer, source.getInteger("max_spellcheck_prefetch")); //$NON-NLS-1$
+      if (source.hasKey("real_time_spellchecking")) //$NON-NLS-1$
+         realTimeSpellchecking().setValue(layer, source.getBool("real_time_spellchecking")); //$NON-NLS-1$
+      if (source.hasKey("navigate_to_build_error")) //$NON-NLS-1$
+         navigateToBuildError().setValue(layer, source.getBool("navigate_to_build_error")); //$NON-NLS-1$
+      if (source.hasKey("packages_pane_enabled")) //$NON-NLS-1$
+         packagesPaneEnabled().setValue(layer, source.getBool("packages_pane_enabled")); //$NON-NLS-1$
+      if (source.hasKey("use_rcpp_template")) //$NON-NLS-1$
+         useRcppTemplate().setValue(layer, source.getBool("use_rcpp_template")); //$NON-NLS-1$
+      if (source.hasKey("restore_source_documents")) //$NON-NLS-1$
+         restoreSourceDocuments().setValue(layer, source.getBool("restore_source_documents")); //$NON-NLS-1$
+      if (source.hasKey("handle_errors_in_user_code_only")) //$NON-NLS-1$
+         handleErrorsInUserCodeOnly().setValue(layer, source.getBool("handle_errors_in_user_code_only")); //$NON-NLS-1$
+      if (source.hasKey("auto_expand_error_tracebacks")) //$NON-NLS-1$
+         autoExpandErrorTracebacks().setValue(layer, source.getBool("auto_expand_error_tracebacks")); //$NON-NLS-1$
+      if (source.hasKey("check_for_updates")) //$NON-NLS-1$
+         checkForUpdates().setValue(layer, source.getBool("check_for_updates")); //$NON-NLS-1$
+      if (source.hasKey("show_internal_functions")) //$NON-NLS-1$
+         showInternalFunctions().setValue(layer, source.getBool("show_internal_functions")); //$NON-NLS-1$
+      if (source.hasKey("shiny_viewer_type")) //$NON-NLS-1$
+         shinyViewerType().setValue(layer, source.getString("shiny_viewer_type")); //$NON-NLS-1$
+      if (source.hasKey("shiny_background_jobs")) //$NON-NLS-1$
+         shinyBackgroundJobs().setValue(layer, source.getBool("shiny_background_jobs")); //$NON-NLS-1$
+      if (source.hasKey("plumber_viewer_type")) //$NON-NLS-1$
+         plumberViewerType().setValue(layer, source.getString("plumber_viewer_type")); //$NON-NLS-1$
+      if (source.hasKey("document_author")) //$NON-NLS-1$
+         documentAuthor().setValue(layer, source.getString("document_author")); //$NON-NLS-1$
+      if (source.hasKey("rmd_preferred_template_path")) //$NON-NLS-1$
+         rmdPreferredTemplatePath().setValue(layer, source.getString("rmd_preferred_template_path")); //$NON-NLS-1$
+      if (source.hasKey("rmd_viewer_type")) //$NON-NLS-1$
+         rmdViewerType().setValue(layer, source.getString("rmd_viewer_type")); //$NON-NLS-1$
+      if (source.hasKey("show_publish_diagnostics")) //$NON-NLS-1$
+         showPublishDiagnostics().setValue(layer, source.getBool("show_publish_diagnostics")); //$NON-NLS-1$
+      if (source.hasKey("publish_check_certificates")) //$NON-NLS-1$
+         publishCheckCertificates().setValue(layer, source.getBool("publish_check_certificates")); //$NON-NLS-1$
+      if (source.hasKey("use_publish_ca_bundle")) //$NON-NLS-1$
+         usePublishCaBundle().setValue(layer, source.getBool("use_publish_ca_bundle")); //$NON-NLS-1$
+      if (source.hasKey("publish_ca_bundle")) //$NON-NLS-1$
+         publishCaBundle().setValue(layer, source.getString("publish_ca_bundle")); //$NON-NLS-1$
+      if (source.hasKey("rmd_chunk_output_inline")) //$NON-NLS-1$
+         rmdChunkOutputInline().setValue(layer, source.getBool("rmd_chunk_output_inline")); //$NON-NLS-1$
+      if (source.hasKey("show_doc_outline_rmd")) //$NON-NLS-1$
+         showDocOutlineRmd().setValue(layer, source.getBool("show_doc_outline_rmd")); //$NON-NLS-1$
+      if (source.hasKey("auto_run_setup_chunk")) //$NON-NLS-1$
+         autoRunSetupChunk().setValue(layer, source.getBool("auto_run_setup_chunk")); //$NON-NLS-1$
+      if (source.hasKey("hide_console_on_chunk_execute")) //$NON-NLS-1$
+         hideConsoleOnChunkExecute().setValue(layer, source.getBool("hide_console_on_chunk_execute")); //$NON-NLS-1$
+      if (source.hasKey("execution_behavior")) //$NON-NLS-1$
+         executionBehavior().setValue(layer, source.getString("execution_behavior")); //$NON-NLS-1$
+      if (source.hasKey("show_terminal_tab")) //$NON-NLS-1$
+         showTerminalTab().setValue(layer, source.getBool("show_terminal_tab")); //$NON-NLS-1$
+      if (source.hasKey("terminal_local_echo")) //$NON-NLS-1$
+         terminalLocalEcho().setValue(layer, source.getBool("terminal_local_echo")); //$NON-NLS-1$
+      if (source.hasKey("terminal_websockets")) //$NON-NLS-1$
+         terminalWebsockets().setValue(layer, source.getBool("terminal_websockets")); //$NON-NLS-1$
+      if (source.hasKey("terminal_close_behavior")) //$NON-NLS-1$
+         terminalCloseBehavior().setValue(layer, source.getString("terminal_close_behavior")); //$NON-NLS-1$
+      if (source.hasKey("terminal_track_environment")) //$NON-NLS-1$
+         terminalTrackEnvironment().setValue(layer, source.getBool("terminal_track_environment")); //$NON-NLS-1$
+      if (source.hasKey("terminal_bell_style")) //$NON-NLS-1$
+         terminalBellStyle().setValue(layer, source.getString("terminal_bell_style")); //$NON-NLS-1$
+      if (source.hasKey("terminal_renderer")) //$NON-NLS-1$
+         terminalRenderer().setValue(layer, source.getString("terminal_renderer")); //$NON-NLS-1$
+      if (source.hasKey("terminal_weblinks")) //$NON-NLS-1$
+         terminalWeblinks().setValue(layer, source.getBool("terminal_weblinks")); //$NON-NLS-1$
+      if (source.hasKey("show_rmd_render_command")) //$NON-NLS-1$
+         showRmdRenderCommand().setValue(layer, source.getBool("show_rmd_render_command")); //$NON-NLS-1$
+      if (source.hasKey("enable_text_drag")) //$NON-NLS-1$
+         enableTextDrag().setValue(layer, source.getBool("enable_text_drag")); //$NON-NLS-1$
+      if (source.hasKey("show_hidden_files")) //$NON-NLS-1$
+         showHiddenFiles().setValue(layer, source.getBool("show_hidden_files")); //$NON-NLS-1$
+      if (source.hasKey("always_shown_files")) //$NON-NLS-1$
+         alwaysShownFiles().setValue(layer, source.getObject("always_shown_files")); //$NON-NLS-1$
+      if (source.hasKey("always_shown_extensions")) //$NON-NLS-1$
+         alwaysShownExtensions().setValue(layer, source.getObject("always_shown_extensions")); //$NON-NLS-1$
+      if (source.hasKey("sort_file_names_naturally")) //$NON-NLS-1$
+         sortFileNamesNaturally().setValue(layer, source.getBool("sort_file_names_naturally")); //$NON-NLS-1$
+      if (source.hasKey("jobs_tab_visibility")) //$NON-NLS-1$
+         jobsTabVisibility().setValue(layer, source.getString("jobs_tab_visibility")); //$NON-NLS-1$
+      if (source.hasKey("show_launcher_jobs_tab")) //$NON-NLS-1$
+         showLauncherJobsTab().setValue(layer, source.getBool("show_launcher_jobs_tab")); //$NON-NLS-1$
+      if (source.hasKey("launcher_jobs_sort")) //$NON-NLS-1$
+         launcherJobsSort().setValue(layer, source.getString("launcher_jobs_sort")); //$NON-NLS-1$
+      if (source.hasKey("busy_detection")) //$NON-NLS-1$
+         busyDetection().setValue(layer, source.getString("busy_detection")); //$NON-NLS-1$
+      if (source.hasKey("busy_whitelist")) //$NON-NLS-1$
+         busyWhitelist().setValue(layer, source.getObject("busy_whitelist")); //$NON-NLS-1$
+      if (source.hasKey("knit_working_dir")) //$NON-NLS-1$
+         knitWorkingDir().setValue(layer, source.getString("knit_working_dir")); //$NON-NLS-1$
+      if (source.hasKey("doc_outline_show")) //$NON-NLS-1$
+         docOutlineShow().setValue(layer, source.getString("doc_outline_show")); //$NON-NLS-1$
+      if (source.hasKey("latex_preview_on_cursor_idle")) //$NON-NLS-1$
+         latexPreviewOnCursorIdle().setValue(layer, source.getString("latex_preview_on_cursor_idle")); //$NON-NLS-1$
+      if (source.hasKey("wrap_tab_navigation")) //$NON-NLS-1$
+         wrapTabNavigation().setValue(layer, source.getBool("wrap_tab_navigation")); //$NON-NLS-1$
+      if (source.hasKey("global_theme")) //$NON-NLS-1$
+         globalTheme().setValue(layer, source.getString("global_theme")); //$NON-NLS-1$
+      if (source.hasKey("git_diff_ignore_whitespace")) //$NON-NLS-1$
+         gitDiffIgnoreWhitespace().setValue(layer, source.getBool("git_diff_ignore_whitespace")); //$NON-NLS-1$
+      if (source.hasKey("console_double_click_select")) //$NON-NLS-1$
+         consoleDoubleClickSelect().setValue(layer, source.getBool("console_double_click_select")); //$NON-NLS-1$
+      if (source.hasKey("new_proj_git_init")) //$NON-NLS-1$
+         newProjGitInit().setValue(layer, source.getBool("new_proj_git_init")); //$NON-NLS-1$
+      if (source.hasKey("root_document")) //$NON-NLS-1$
+         rootDocument().setValue(layer, source.getString("root_document")); //$NON-NLS-1$
+      if (source.hasKey("show_user_home_page")) //$NON-NLS-1$
+         showUserHomePage().setValue(layer, source.getString("show_user_home_page")); //$NON-NLS-1$
+      if (source.hasKey("reuse_sessions_for_project_links")) //$NON-NLS-1$
+         reuseSessionsForProjectLinks().setValue(layer, source.getBool("reuse_sessions_for_project_links")); //$NON-NLS-1$
+      if (source.hasKey("vcs_enabled")) //$NON-NLS-1$
+         vcsEnabled().setValue(layer, source.getBool("vcs_enabled")); //$NON-NLS-1$
+      if (source.hasKey("vcs_autorefresh")) //$NON-NLS-1$
+         vcsAutorefresh().setValue(layer, source.getBool("vcs_autorefresh")); //$NON-NLS-1$
+      if (source.hasKey("git_exe_path")) //$NON-NLS-1$
+         gitExePath().setValue(layer, source.getString("git_exe_path")); //$NON-NLS-1$
+      if (source.hasKey("svn_exe_path")) //$NON-NLS-1$
+         svnExePath().setValue(layer, source.getString("svn_exe_path")); //$NON-NLS-1$
+      if (source.hasKey("terminal_path")) //$NON-NLS-1$
+         terminalPath().setValue(layer, source.getString("terminal_path")); //$NON-NLS-1$
+      if (source.hasKey("rsa_key_path")) //$NON-NLS-1$
+         rsaKeyPath().setValue(layer, source.getString("rsa_key_path")); //$NON-NLS-1$
+      if (source.hasKey("use_devtools")) //$NON-NLS-1$
+         useDevtools().setValue(layer, source.getBool("use_devtools")); //$NON-NLS-1$
+      if (source.hasKey("use_internet2")) //$NON-NLS-1$
+         useInternet2().setValue(layer, source.getBool("use_internet2")); //$NON-NLS-1$
+      if (source.hasKey("use_secure_download")) //$NON-NLS-1$
+         useSecureDownload().setValue(layer, source.getBool("use_secure_download")); //$NON-NLS-1$
+      if (source.hasKey("cleanup_after_r_cmd_check")) //$NON-NLS-1$
+         cleanupAfterRCmdCheck().setValue(layer, source.getBool("cleanup_after_r_cmd_check")); //$NON-NLS-1$
+      if (source.hasKey("view_dir_after_r_cmd_check")) //$NON-NLS-1$
+         viewDirAfterRCmdCheck().setValue(layer, source.getBool("view_dir_after_r_cmd_check")); //$NON-NLS-1$
+      if (source.hasKey("hide_object_files")) //$NON-NLS-1$
+         hideObjectFiles().setValue(layer, source.getBool("hide_object_files")); //$NON-NLS-1$
+      if (source.hasKey("restore_last_project")) //$NON-NLS-1$
+         restoreLastProject().setValue(layer, source.getBool("restore_last_project")); //$NON-NLS-1$
+      if (source.hasKey("project_safe_startup_seconds")) //$NON-NLS-1$
+         projectSafeStartupSeconds().setValue(layer, source.getInteger("project_safe_startup_seconds")); //$NON-NLS-1$
+      if (source.hasKey("use_tinytex")) //$NON-NLS-1$
+         useTinytex().setValue(layer, source.getBool("use_tinytex")); //$NON-NLS-1$
+      if (source.hasKey("clean_texi2dvi_output")) //$NON-NLS-1$
+         cleanTexi2dviOutput().setValue(layer, source.getBool("clean_texi2dvi_output")); //$NON-NLS-1$
+      if (source.hasKey("latex_shell_escape")) //$NON-NLS-1$
+         latexShellEscape().setValue(layer, source.getBool("latex_shell_escape")); //$NON-NLS-1$
+      if (source.hasKey("restore_project_r_version")) //$NON-NLS-1$
+         restoreProjectRVersion().setValue(layer, source.getBool("restore_project_r_version")); //$NON-NLS-1$
+      if (source.hasKey("clang_verbose")) //$NON-NLS-1$
+         clangVerbose().setValue(layer, source.getInteger("clang_verbose")); //$NON-NLS-1$
+      if (source.hasKey("submit_crash_reports")) //$NON-NLS-1$
+         submitCrashReports().setValue(layer, source.getBool("submit_crash_reports")); //$NON-NLS-1$
+      if (source.hasKey("default_r_version")) //$NON-NLS-1$
+         defaultRVersion().setValue(layer, source.getObject("default_r_version")); //$NON-NLS-1$
+      if (source.hasKey("data_viewer_max_columns")) //$NON-NLS-1$
+         dataViewerMaxColumns().setValue(layer, source.getInteger("data_viewer_max_columns")); //$NON-NLS-1$
+      if (source.hasKey("enable_screen_reader")) //$NON-NLS-1$
+         enableScreenReader().setValue(layer, source.getBool("enable_screen_reader")); //$NON-NLS-1$
+      if (source.hasKey("typing_status_delay_ms")) //$NON-NLS-1$
+         typingStatusDelayMs().setValue(layer, source.getInteger("typing_status_delay_ms")); //$NON-NLS-1$
+      if (source.hasKey("reduced_motion")) //$NON-NLS-1$
+         reducedMotion().setValue(layer, source.getBool("reduced_motion")); //$NON-NLS-1$
+      if (source.hasKey("tab_key_move_focus")) //$NON-NLS-1$
+         tabKeyMoveFocus().setValue(layer, source.getBool("tab_key_move_focus")); //$NON-NLS-1$
+      if (source.hasKey("find_panel_legacy_tab_sequence")) //$NON-NLS-1$
+         findPanelLegacyTabSequence().setValue(layer, source.getBool("find_panel_legacy_tab_sequence")); //$NON-NLS-1$
+      if (source.hasKey("show_focus_rectangles")) //$NON-NLS-1$
+         showFocusRectangles().setValue(layer, source.getBool("show_focus_rectangles")); //$NON-NLS-1$
+      if (source.hasKey("show_panel_focus_rectangle")) //$NON-NLS-1$
+         showPanelFocusRectangle().setValue(layer, source.getBool("show_panel_focus_rectangle")); //$NON-NLS-1$
+      if (source.hasKey("auto_save_on_idle")) //$NON-NLS-1$
+         autoSaveOnIdle().setValue(layer, source.getString("auto_save_on_idle")); //$NON-NLS-1$
+      if (source.hasKey("auto_save_idle_ms")) //$NON-NLS-1$
+         autoSaveIdleMs().setValue(layer, source.getInteger("auto_save_idle_ms")); //$NON-NLS-1$
+      if (source.hasKey("auto_save_on_blur")) //$NON-NLS-1$
+         autoSaveOnBlur().setValue(layer, source.getBool("auto_save_on_blur")); //$NON-NLS-1$
+      if (source.hasKey("terminal_initial_directory")) //$NON-NLS-1$
+         terminalInitialDirectory().setValue(layer, source.getString("terminal_initial_directory")); //$NON-NLS-1$
+      if (source.hasKey("full_project_path_in_window_title")) //$NON-NLS-1$
+         fullProjectPathInWindowTitle().setValue(layer, source.getBool("full_project_path_in_window_title")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_is_default")) //$NON-NLS-1$
+         visualMarkdownEditingIsDefault().setValue(layer, source.getBool("visual_markdown_editing_is_default")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_list_spacing")) //$NON-NLS-1$
+         visualMarkdownEditingListSpacing().setValue(layer, source.getString("visual_markdown_editing_list_spacing")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_wrap")) //$NON-NLS-1$
+         visualMarkdownEditingWrap().setValue(layer, source.getString("visual_markdown_editing_wrap")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_wrap_at_column")) //$NON-NLS-1$
+         visualMarkdownEditingWrapAtColumn().setValue(layer, source.getInteger("visual_markdown_editing_wrap_at_column")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_references_location")) //$NON-NLS-1$
+         visualMarkdownEditingReferencesLocation().setValue(layer, source.getString("visual_markdown_editing_references_location")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_canonical")) //$NON-NLS-1$
+         visualMarkdownEditingCanonical().setValue(layer, source.getBool("visual_markdown_editing_canonical")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_max_content_width")) //$NON-NLS-1$
+         visualMarkdownEditingMaxContentWidth().setValue(layer, source.getInteger("visual_markdown_editing_max_content_width")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_show_doc_outline")) //$NON-NLS-1$
+         visualMarkdownEditingShowDocOutline().setValue(layer, source.getBool("visual_markdown_editing_show_doc_outline")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_show_margin")) //$NON-NLS-1$
+         visualMarkdownEditingShowMargin().setValue(layer, source.getBool("visual_markdown_editing_show_margin")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_editing_font_size_points")) //$NON-NLS-1$
+         visualMarkdownEditingFontSizePoints().setValue(layer, source.getInteger("visual_markdown_editing_font_size_points")); //$NON-NLS-1$
+      if (source.hasKey("visual_markdown_code_editor")) //$NON-NLS-1$
+         visualMarkdownCodeEditor().setValue(layer, source.getString("visual_markdown_code_editor")); //$NON-NLS-1$
+      if (source.hasKey("zotero_libraries")) //$NON-NLS-1$
+         zoteroLibraries().setValue(layer, source.getObject("zotero_libraries")); //$NON-NLS-1$
+      if (source.hasKey("emoji_skintone")) //$NON-NLS-1$
+         emojiSkintone().setValue(layer, source.getString("emoji_skintone")); //$NON-NLS-1$
+      if (source.hasKey("disabled_aria_live_announcements")) //$NON-NLS-1$
+         disabledAriaLiveAnnouncements().setValue(layer, source.getObject("disabled_aria_live_announcements")); //$NON-NLS-1$
+      if (source.hasKey("screenreader_console_announce_limit")) //$NON-NLS-1$
+         screenreaderConsoleAnnounceLimit().setValue(layer, source.getInteger("screenreader_console_announce_limit")); //$NON-NLS-1$
+      if (source.hasKey("file_monitor_ignored_components")) //$NON-NLS-1$
+         fileMonitorIgnoredComponents().setValue(layer, source.getObject("file_monitor_ignored_components")); //$NON-NLS-1$
+      if (source.hasKey("install_pkg_deps_individually")) //$NON-NLS-1$
+         installPkgDepsIndividually().setValue(layer, source.getBool("install_pkg_deps_individually")); //$NON-NLS-1$
+      if (source.hasKey("graphics_backend")) //$NON-NLS-1$
+         graphicsBackend().setValue(layer, source.getString("graphics_backend")); //$NON-NLS-1$
+      if (source.hasKey("graphics_antialiasing")) //$NON-NLS-1$
+         graphicsAntialiasing().setValue(layer, source.getString("graphics_antialiasing")); //$NON-NLS-1$
+      if (source.hasKey("browser_fixed_width_fonts")) //$NON-NLS-1$
+         browserFixedWidthFonts().setValue(layer, source.getObject("browser_fixed_width_fonts")); //$NON-NLS-1$
+      if (source.hasKey("python_type")) //$NON-NLS-1$
+         pythonType().setValue(layer, source.getString("python_type")); //$NON-NLS-1$
+      if (source.hasKey("python_version")) //$NON-NLS-1$
+         pythonVersion().setValue(layer, source.getString("python_version")); //$NON-NLS-1$
+      if (source.hasKey("python_path")) //$NON-NLS-1$
+         pythonPath().setValue(layer, source.getString("python_path")); //$NON-NLS-1$
+      if (source.hasKey("save_retry_timeout")) //$NON-NLS-1$
+         saveRetryTimeout().setValue(layer, source.getInteger("save_retry_timeout")); //$NON-NLS-1$
+      if (source.hasKey("insert_native_pipe_operator")) //$NON-NLS-1$
+         insertNativePipeOperator().setValue(layer, source.getBool("insert_native_pipe_operator")); //$NON-NLS-1$
+      if (source.hasKey("command_palette_mru")) //$NON-NLS-1$
+         commandPaletteMru().setValue(layer, source.getBool("command_palette_mru")); //$NON-NLS-1$
+      if (source.hasKey("show_memory_usage")) //$NON-NLS-1$
+         showMemoryUsage().setValue(layer, source.getBool("show_memory_usage")); //$NON-NLS-1$
+      if (source.hasKey("memory_query_interval_seconds")) //$NON-NLS-1$
+         memoryQueryIntervalSeconds().setValue(layer, source.getInteger("memory_query_interval_seconds")); //$NON-NLS-1$
    }
    public List<PrefValue<?>> allPrefs()
    {

@@ -1,5 +1,20 @@
 <root>
+    <item name='org.rstudio.core.client.js.JsObject T getObject(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.js.JsObject boolean hasKey(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.js.JsObject java.lang.Boolean getBool(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.js.JsObject java.lang.Integer getInteger(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
     <item name='org.rstudio.core.client.js.JsObject java.lang.String getAsString(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.core.client.js.JsObject java.lang.String getString(java.lang.String) 0'>
         <annotation name='org.jetbrains.annotations.NonNls'/>
     </item>
     <item name='org.rstudio.core.client.js.JsObject void setBoolean(java.lang.String, java.lang.Boolean) 0'>

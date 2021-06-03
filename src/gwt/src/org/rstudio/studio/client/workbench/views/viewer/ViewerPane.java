@@ -56,6 +56,7 @@ public class ViewerPane extends WorkbenchPane implements ViewerPresenter.Display
                      ViewerServerOperations server,
                      HtmlMessageListener htmlMessageListener)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Viewer", events);
       commands_ = commands;
       globalDisplay_ = globalDisplay;
@@ -67,6 +68,7 @@ public class ViewerPane extends WorkbenchPane implements ViewerPresenter.Display
    @Override
    protected Toolbar createMainToolbar()
    {
+      // i18n: Enumerator, user facing text, or both?
       toolbar_ = new Toolbar("Viewer Tab");
 
       // add html widget buttons
@@ -313,7 +315,7 @@ public class ViewerPane extends WorkbenchPane implements ViewerPresenter.Display
       {
          if (URIUtils.isLocalUrl(url))
          {
-            frame_.getElement().removeAttribute("sandbox");
+            frame_.getElement().removeAttribute("sandbox"); //$NON-NLS-1$
          }
          else
          {
@@ -327,15 +329,15 @@ public class ViewerPane extends WorkbenchPane implements ViewerPresenter.Display
           !useRawURL)
       {
          String viewerUrl = URIUtils.addQueryParam(unmodifiedUrl_,
-                                                   "viewer_pane",
+                                                   "viewer_pane", //$NON-NLS-1$
                                                    "1");
 
          viewerUrl = URIUtils.addQueryParam(viewerUrl,
-                                            "capabilities",
+                                            "capabilities", //$NON-NLS-1$
                                             String.valueOf(1 << Capabilities.OpenFile.ordinal()));
 
          viewerUrl = URIUtils.addQueryParam(viewerUrl,
-                                            "host",
+                                            "host", //$NON-NLS-1$
                                             htmlMessageListener_.getOriginDomain());
 
          frame_.setUrl(viewerUrl);

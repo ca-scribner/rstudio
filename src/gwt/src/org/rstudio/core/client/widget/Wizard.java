@@ -505,7 +505,7 @@ public class Wizard<I,T> extends ModalDialog<T>
    private void resetOkButtonCaption()
    {
       setOkButtonCaption(okCaption_);
-      setOkButtonId(ElementIds.idFromLabel(okCaption_) + "_wizard_confirm");
+      setOkButtonId(ElementIds.idFromLabel(okCaption_) + "_wizard_confirm"); //$NON-NLS-1$
    }
  
    private boolean pageIsFinal(WizardPage<I, T> page)

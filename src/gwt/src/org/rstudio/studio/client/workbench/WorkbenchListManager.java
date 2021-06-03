@@ -105,6 +105,7 @@ public class WorkbenchListManager
       ListContext context = listContexts_.get(name);
       if (context == null)
       {
+         // i18n: Concatenation/Message.  Is this for developers only?
          Debug.logWarning("Unknown workbench list: " + name);
          return;
       }
@@ -182,10 +183,10 @@ public class WorkbenchListManager
    private final Session session_;
    private final WorkbenchListsServerOperations server_;
 
-   private static final String FILE_MRU = "file_mru";
-   private static final String PROJECT_MRU = "project_mru";
-   private static final String PLOT_PUBLISH_MRU = "plot_publish_mru";
-   private static final String COMMAND_PALETTE_MRU = "command_palette_mru";
-   private static final String HELP_HISTORY = "help_history_links";
-   private static final String USER_DICTIONARY = "user_dictionary";
+   private static final String FILE_MRU = "file_mru"; //$NON-NLS-1$
+   private static final String PROJECT_MRU = "project_mru"; //$NON-NLS-1$
+   private static final String PLOT_PUBLISH_MRU = "plot_publish_mru"; //$NON-NLS-1$
+   private static final String COMMAND_PALETTE_MRU = "command_palette_mru"; //$NON-NLS-1$
+   private static final String HELP_HISTORY = "help_history_links"; //$NON-NLS-1$
+   private static final String USER_DICTIONARY = "user_dictionary"; //$NON-NLS-1$
 }

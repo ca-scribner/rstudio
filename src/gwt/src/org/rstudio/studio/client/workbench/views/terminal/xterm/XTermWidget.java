@@ -102,7 +102,7 @@ public class XTermWidget extends Widget
             }
             terminal_.open(getElement());
             terminal_.focus();
-            terminal_.addClass("ace_editor");
+            terminal_.addClass("ace_editor"); //$NON-NLS-1$
             terminal_.addClass(FontSizer.getNormalFontSizeClass());
 
             // Previous versions of xterm.js used 'terminal' css class for styling, and we
@@ -111,7 +111,7 @@ public class XTermWidget extends Widget
             // element. This causes our styles (which are still in the css so we can get them
             // at runtime and pass to the API) to bleed through when using DOM-based renderer.
             // Fix by removing the unnecessary 'terminal' class.
-            terminal_.removeClass("terminal");
+            terminal_.removeClass("terminal"); //$NON-NLS-1$
 
             // Handle keystrokes from the xterm and dispatch them
             addDataEventHandler(data -> fireEvent(new TerminalDataInputEvent(data)));
@@ -122,6 +122,7 @@ public class XTermWidget extends Widget
             // Allow tab key to move focus out of terminal?
             terminal_.attachCustomKeyEventHandler(keyboardEvent ->
             {
+               // i18n: Enumerator, user facing text, or both?
                return !(tabMovesFocus_ && StringUtil.equals(keyboardEvent.key, "Tab"));
             });
 
@@ -363,9 +364,9 @@ public class XTermWidget extends Widget
     */
    public void showPrimaryBuffer()
    {
-      terminal_.write("\u001b[?1047l", null); // show primary buffer
-      terminal_.write("\u001b[m", null); // reset all visual attributes
-      terminal_.write("\u001b[?9l", null); // reset mouse mode
+      terminal_.write("\u001b[?1047l", null); // show primary buffer //$NON-NLS-1$
+      terminal_.write("\u001b[m", null); // reset all visual attributes //$NON-NLS-1$
+      terminal_.write("\u001b[?9l", null); // reset mouse mode //$NON-NLS-1$
    }
 
    /**
@@ -373,7 +374,7 @@ public class XTermWidget extends Widget
     */
    public void showAltBuffer()
    {
-      terminal_.write("\u001b[?1047h", null); // show alt buffer
+      terminal_.write("\u001b[?1047h", null); // show alt buffer //$NON-NLS-1$
    }
 
    /**
@@ -421,7 +422,7 @@ public class XTermWidget extends Widget
    public void updateTheme(XTermTheme theme)
    {
       if (terminalEmulatorLoaded())
-         terminal_.setOption("theme", Js.cast(theme));
+         terminal_.setOption("theme", Js.cast(theme)); //$NON-NLS-1$
    }
 
    public void updateOption(String option, boolean value)
@@ -472,8 +473,8 @@ public class XTermWidget extends Widget
    }
 
    // XTerm.js buffer modes
-   public static final String NORMAL_BUFFER = "normal";
-   public static final String ALT_BUFFER = "alternate";
+   public static final String NORMAL_BUFFER = "normal"; //$NON-NLS-1$
+   public static final String ALT_BUFFER = "alternate"; //$NON-NLS-1$
 
    private static final int RESIZE_DELAY = 50;
 
@@ -498,5 +499,5 @@ public class XTermWidget extends Widget
    private boolean showWebLinks_;
    private final ArrayList<XTermDisposable> xtermEventUnsubscribe_ = new ArrayList<>();
 
-   private final static String XTERM_CLASS = "xterm-rstudio";
+   private final static String XTERM_CLASS = "xterm-rstudio"; //$NON-NLS-1$
 }

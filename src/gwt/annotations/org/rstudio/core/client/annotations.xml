@@ -47,4 +47,9 @@
             <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
         </annotation>
     </item>
+    <item name='org.rstudio.core.client.VirtualConsoleTests'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="{&quot;HardCodedStringLiteral&quot;, &quot;RedundantSuppression&quot;}"/>
+        </annotation>
+    </item>
 </root>

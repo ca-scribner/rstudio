@@ -154,7 +154,7 @@ public class VisualModeConfirm
       {    
          // no prompt if they already have a config set in the file
          String yaml = YamlFrontMatter.getFrontMatter(docDisplay_);
-         String yamlWrap = RmdEditorOptions.getMarkdownOption(yaml,  "wrap");
+         String yamlWrap = RmdEditorOptions.getMarkdownOption(yaml,  "wrap"); //$NON-NLS-1$
          if (!yamlWrap.isEmpty())
             return false;
          

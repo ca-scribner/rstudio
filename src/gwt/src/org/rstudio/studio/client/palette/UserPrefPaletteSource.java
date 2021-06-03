@@ -66,6 +66,7 @@ public class UserPrefPaletteSource implements CommandPaletteEntryProvider
       PrefValue<?> val = prefs_.getPrefValue(id);
       if (val == null)
       {
+         // i18n: user facing or for developers?
          Debug.logWarning("Unknown preference requested by command palette: '" + id + "'");
          return null;
       }

@@ -27,7 +27,7 @@ public class ViewerPanePreviewer implements ExportPlotPreviewer
 {
    public ViewerPanePreviewer(String url)
    {
-      url_ = URIUtils.addQueryParam(url, "viewer_export", "1");
+      url_ = URIUtils.addQueryParam(url, "viewer_export", "1"); //$NON-NLS-1$
    }
 
    @Override

@@ -27,8 +27,8 @@ public class YamlFrontMatter
    {
       // front matter can end with ... rather than ---; see spec:
       // http://www.yaml.org/spec/1.2/spec.html#id2760395
-      RegExp frontMatterBegin = RegExp.compile("^---\\s*$", "gm");
-      RegExp frontMatterEnd = RegExp.compile("^(---|\\.\\.\\.)\\s*$", "gm");
+      RegExp frontMatterBegin = RegExp.compile("^---\\s*$", "gm"); //$NON-NLS-1$
+      RegExp frontMatterEnd = RegExp.compile("^(---|\\.\\.\\.)\\s*$", "gm"); //$NON-NLS-1$
       Position begin = null;
       Position end = null;
       
@@ -76,7 +76,7 @@ public class YamlFrontMatter
       Range range = getFrontMatterRange(display);
       if (range == null)
       {
-         return "output: html_document\n";
+         return "output: html_document\n"; //$NON-NLS-1$
       } 
       else
       {

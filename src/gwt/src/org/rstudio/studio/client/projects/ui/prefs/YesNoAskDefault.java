@@ -4,6 +4,7 @@ import com.google.gwt.user.client.ui.ListBox;
 
 class YesNoAskDefault extends ListBox
 {
+   // i18n: Enumerator, user facing text, or both?
    static final String USE_DEFAULT = "(Default)";
    static final String YES = "Yes";
    static final int YES_VALUE = 1;

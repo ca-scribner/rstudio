@@ -155,6 +155,7 @@ public class UnsavedChangesDialog extends ModalDialog<UnsavedChangesDialog.Resul
       // main widget
       VerticalPanel panel = new VerticalPanel();
       Label captionLabel = new Label(
+         // i18n: Concatenation/Message
          targets_.size() == 1 ?
             "The following file has unsaved changes:" :
             "The following " + targets_.size() + " files have unsaved changes:");

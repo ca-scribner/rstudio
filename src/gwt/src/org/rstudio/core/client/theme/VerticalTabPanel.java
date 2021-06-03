@@ -40,12 +40,12 @@ public class VerticalTabPanel extends VerticalPanel
 
    public static String getTabPanelId(String basePanelId)
    {
-      return basePanelId + "_panel";
+      return basePanelId + "_panel"; //$NON-NLS-1$
    }
 
    public static String getTabId(String basePanelId)
    {
-      return basePanelId + "_tab";
+      return basePanelId + "_tab"; //$NON-NLS-1$
    }
 
    /* ID used to generate both tab and panel ids */

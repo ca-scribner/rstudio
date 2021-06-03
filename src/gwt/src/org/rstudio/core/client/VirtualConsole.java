@@ -172,7 +172,7 @@ public class VirtualConsole
    private String debugDumpClassEntry(Entry<Integer, ClassRange> entry)
    {
       if (entry == null)
-         return("[null]");
+         return("[null]"); //$NON-NLS-1$
       else
          return("[" + entry.getKey() + "]=" + entry.getValue().debugDump());
    }
@@ -183,6 +183,7 @@ public class VirtualConsole
    @SuppressWarnings("unused")
    private void debugDumpClassMap(String name, Map<Integer, ClassRange> map)
    {
+      // i18n: Are these developer prints or do they reach typical users?
       Debug.logToConsole("Dumping " + name);
       if (map == null)
          Debug.logToConsole("null");
@@ -761,8 +762,8 @@ public class VirtualConsole
 
       public String debugDump()
       {
-         return "start=" + start + ", length=" + length + ", clazz=[" + clazz +
-               "], text=[" + text() + "]";
+         return "start=" + start + ", length=" + length + ", clazz=[" + clazz + //$NON-NLS-1$
+               "], text=[" + text() + "]"; //$NON-NLS-1$
       }
 
       public final String clazz;

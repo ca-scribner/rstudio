@@ -64,11 +64,11 @@ public class XTermTheme
    {
       // extract terminal selection color from existing theme, and add alpha
       JsArrayString classes = JsArrayString.createArray().cast();
-      classes.push("terminal");
-      classes.push("xterm-selection");
+      classes.push("terminal"); //$NON-NLS-1$
+      classes.push("xterm-selection"); //$NON-NLS-1$
       classes.push("");
       ColorUtil.RGBColor solidSelectionColor = ColorUtil.RGBColor.fromCss(
-            DomUtils.extractCssValue(classes, "background-color"));
+            DomUtils.extractCssValue(classes, "background-color")); //$NON-NLS-1$
       ColorUtil.RGBColor selectionColor = new ColorUtil.RGBColor(
             solidSelectionColor.red(),
             solidSelectionColor.green(),
@@ -76,37 +76,37 @@ public class XTermTheme
             XTERM_SELECTION_ALPHA);
 
       return create(
-            DomUtils.extractCssValue("terminal", "background-color"),
-            DomUtils.extractCssValue("terminal", "color"),
+            DomUtils.extractCssValue("terminal", "background-color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("terminal", "color"), //$NON-NLS-1$
 
-            DomUtils.extractCssValue("ace_cursor", "color"),
-            DomUtils.extractCssValue("ace_editor", "color"),
+            DomUtils.extractCssValue("ace_cursor", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("ace_editor", "color"), //$NON-NLS-1$
 
             selectionColor.asRgb(),
 
-            DomUtils.extractCssValue("xtermColor0", "color"),
-            DomUtils.extractCssValue("xtermColor1", "color"),
-            DomUtils.extractCssValue("xtermColor2", "color"),
-            DomUtils.extractCssValue("xtermColor3", "color"),
-            DomUtils.extractCssValue("xtermColor4", "color"),
-            DomUtils.extractCssValue("xtermColor5", "color"),
-            DomUtils.extractCssValue("xtermColor6", "color"),
-            DomUtils.extractCssValue("xtermColor7", "color"),
+            DomUtils.extractCssValue("xtermColor0", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor1", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor2", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor3", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor4", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor5", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor6", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor7", "color"), //$NON-NLS-1$
 
-            DomUtils.extractCssValue("xtermColor8", "color"),
-            DomUtils.extractCssValue("xtermColor9", "color"),
-            DomUtils.extractCssValue("xtermColor10", "color"),
-            DomUtils.extractCssValue("xtermColor11", "color"),
-            DomUtils.extractCssValue("xtermColor12", "color"),
-            DomUtils.extractCssValue("xtermColor13", "color"),
-            DomUtils.extractCssValue("xtermColor14", "color"),
-            DomUtils.extractCssValue("xtermColor15", "color")
+            DomUtils.extractCssValue("xtermColor8", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor9", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor10", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor11", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor12", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor13", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor14", "color"), //$NON-NLS-1$
+            DomUtils.extractCssValue("xtermColor15", "color") //$NON-NLS-1$
       );
    }
 
    @JsOverlay public static String getFontFamily()
    {
-      return DomUtils.extractCssValue("ace_editor", "font-family");
+      return DomUtils.extractCssValue("ace_editor", "font-family"); //$NON-NLS-1$
    }
 
    @JsOverlay private static boolean doubleEqualish(double d1, double d2)

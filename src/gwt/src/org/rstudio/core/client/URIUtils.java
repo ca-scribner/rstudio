@@ -58,6 +58,6 @@ public class URIUtils
       
       // extract host and see if it's on the whitelist of loopback hosts
       String host = StringUtil.getHostFromUrl(absolute);
-      return host.equals("localhost") || host.equals("127.0.0.1") || host.equals("::1");
+      return host.equals("localhost") || host.equals("127.0.0.1") || host.equals("::1"); //$NON-NLS-1$
    }
 }

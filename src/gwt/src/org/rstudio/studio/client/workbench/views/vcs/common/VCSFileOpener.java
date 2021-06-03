@@ -91,7 +91,7 @@ public class VCSFileOpener
       {
          // NOTE: renames need some extra processing
          String path = item.getRawPath();
-         if (StringUtil.equals(item.getStatus(), "R "))
+         if (StringUtil.equals(item.getStatus(), "R ")) //$NON-NLS-1$
          {
             String[] parts = path.split(" -> ");
             if (parts.length == 2)

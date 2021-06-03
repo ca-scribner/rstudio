@@ -61,6 +61,7 @@ public class UserPrefPaletteItem extends BasePaletteItem<UserPrefPaletteEntry>
    @Override
    public boolean matchesSearch(String[] keywords)
    {
+      // i18n: Is this trying to match user facing text?
       return super.labelMatchesSearch("setting " + val_.getTitle(), keywords);
    }
 

@@ -40,7 +40,7 @@ public class Websocket {
 
     public Websocket(String url) {
         this.url = url;
-        this.varName = "gwtws-" + counter++;
+        this.varName = "gwtws-" + counter++; //$NON-NLS-1$
     }
 
     private native void _close(String s) /*-{

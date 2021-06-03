@@ -346,8 +346,8 @@ public class YamlTree
    
    public static boolean isTrue(String value)
    {
-      return value == "y"    || value == "yes" || 
-             value == "true" || value == "on";
+      return value == "y"    || value == "yes" || //$NON-NLS-1$
+             value == "true" || value == "on"; //$NON-NLS-1$
    }
    
    private YamlTreeNode createYamlTree(String yaml)

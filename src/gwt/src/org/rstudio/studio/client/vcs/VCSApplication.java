@@ -41,5 +41,5 @@ public class VCSApplication extends SatelliteApplication
       super(NAME, view, satellite, pAceThemes, pUserPrefs, uncaughtExHandler, commands);
    }
 
-   public final static String NAME = "review_changes";
+   public final static String NAME = "review_changes"; //$NON-NLS-1$
 }

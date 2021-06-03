@@ -103,7 +103,8 @@ public class ZoteroApiKeyWidget extends Composite
                }
                else
                {
-                  display.showMessage(MessageDisplay.MSG_WARNING, "Zotero", 
+                  display.showMessage(MessageDisplay.MSG_WARNING, "Zotero",
+                                      // i18n: Concatenation/Message
                                       "Unable to verify Zotero API key.\n\n" +
                                       "You should verify that your API key is still valid, " +
                                       "and if necessary create a new key.");

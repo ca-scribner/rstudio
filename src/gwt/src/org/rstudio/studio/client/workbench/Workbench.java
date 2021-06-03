@@ -280,6 +280,7 @@ public class Workbench implements BusyEvent.Handler,
       // always show warning if the user is over quota
       if (quotaStatus.isOverQuota())
       {
+         // i18n: Concatenation/Message
          long over = quotaStatus.getUsed() - quotaStatus.getQuota();
          StringBuilder msg = new StringBuilder();
          msg.append("You are ");
@@ -295,6 +296,7 @@ public class Workbench implements BusyEvent.Handler,
       // than one time per instantiation of the application)
       else if (quotaStatus.isNearQuota() && !nearQuotaWarningShown_)
       {
+         // i18n: Concatenation/Message
          StringBuilder msg = new StringBuilder();
          msg.append("You are nearly over your ");
          msg.append(StringUtil.formatFileSize(quotaStatus.getQuota()));
@@ -588,6 +590,7 @@ public class Workbench implements BusyEvent.Handler,
       boolean shouldPrompt = session_.getSessionInfo().getPromptForCrashHandlerPermission();
       if (shouldPrompt)
       {
+         // i18n: Concatenation/Message
          String message =
                "May we upload crash reports to RStudio automatically?\n\nCrash reports don't include " +
                "any personal information, except for IP addresses which are used to determine how many users " +

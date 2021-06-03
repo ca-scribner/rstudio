@@ -242,7 +242,7 @@ public class VisualModePanmirrorContext
             if (unresolvedUris.length() > 0)
             {
                FileSystemItem resourceDir = FileSystemItem.createDir(uiContext.getDefaultResourceDir.get());
-               String imagesDir = resourceDir.completePath("images");
+               String imagesDir = resourceDir.completePath("images"); //$NON-NLS-1$
                server_.rmdImportImages(unresolvedUris, imagesDir, new SimpleRequestCallback<JsArrayString>() {
                   @Override
                   public void onResponseReceived(JsArrayString importedUris)

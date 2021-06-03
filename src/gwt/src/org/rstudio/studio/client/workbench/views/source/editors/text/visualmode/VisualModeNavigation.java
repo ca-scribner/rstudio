@@ -124,7 +124,7 @@ public class VisualModeNavigation
      
    private EventBus events_;
    
-   private final static String kPanmirrorContext = "panmirror";
+   private final static String kPanmirrorContext = "panmirror"; //$NON-NLS-1$
    private final static int kRowLength = 50;
    
    

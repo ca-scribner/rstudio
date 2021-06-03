@@ -50,12 +50,13 @@ public class VisualModeChunkRowState extends ChunkRowExecState
       // elements), but we can rely on word wrapping since we enforce it in the
       // visual editor.
       Element[] lines = DomUtils.getElementsByClassName(
-            editor.asWidget().getElement(), "ace_line_group");
+            editor.asWidget().getElement(), "ace_line_group"); //$NON-NLS-1$
       
       if (row > lines.length)
       {
          // Very unlikely, but ensure we aren't trying to walk off the end of
          // the array
+         // i18n: Does this ever hit users or for debugging?  If users, this is a message
          Debug.logWarning("Can't draw execution state on line " + row + " of " + lines.length);
       }
       else
@@ -138,10 +139,10 @@ public class VisualModeChunkRowState extends ChunkRowExecState
       return "";
    }
    
-   public final static String LINE_QUEUED_CLASS   = "visual_chunk-queued-line";
-   public final static String LINE_EXECUTED_CLASS = "visual_chunk-executed-line";
-   public final static String LINE_RESTING_CLASS  = "visual_chunk-resting-line";
-   public final static String LINE_ERROR_CLASS    = "visual_chunk-error-line";
+   public final static String LINE_QUEUED_CLASS   = "visual_chunk-queued-line"; //$NON-NLS-1$
+   public final static String LINE_EXECUTED_CLASS = "visual_chunk-executed-line"; //$NON-NLS-1$
+   public final static String LINE_RESTING_CLASS  = "visual_chunk-resting-line"; //$NON-NLS-1$
+   public final static String LINE_ERROR_CLASS    = "visual_chunk-error-line"; //$NON-NLS-1$
 
    private Timer restingTimer_ = new Timer()
    {

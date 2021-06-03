@@ -182,5 +182,5 @@ public class VirtualScrollerManager
    private static boolean initialized_ = false;
    private static boolean loading_ = false;
 
-   private static final String scrollerAttribute_ = "scroller_id";
+   private static final String scrollerAttribute_ = "scroller_id"; //$NON-NLS-1$
 }

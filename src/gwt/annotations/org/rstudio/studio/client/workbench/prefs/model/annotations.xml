@@ -1,0 +1,11 @@
+<root>
+    <item name='org.rstudio.studio.client.workbench.prefs.model.Prefs org.rstudio.studio.client.workbench.prefs.model.Prefs.PrefValue&lt;java.lang.Boolean&gt; bool(java.lang.String, java.lang.String, java.lang.String, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.prefs.model.Prefs org.rstudio.studio.client.workbench.prefs.model.Prefs.PrefValue&lt;java.lang.Integer&gt; integer(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+    <item name='org.rstudio.studio.client.workbench.prefs.model.Prefs org.rstudio.studio.client.workbench.prefs.model.Prefs.PrefValue&lt;java.lang.String&gt; enumeration(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[]) 0'>
+        <annotation name='org.jetbrains.annotations.NonNls'/>
+    </item>
+</root>

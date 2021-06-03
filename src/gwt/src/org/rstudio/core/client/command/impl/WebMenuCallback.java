@@ -51,7 +51,7 @@ public class WebMenuCallback implements MenuCallback
          public void onAttachOrDetach(AttachEvent event)
          {
             ElementPredicate callback = (Element el) -> {
-               return el.getParentElement().getTagName().toLowerCase().contentEquals("body");
+               return el.getParentElement().getTagName().toLowerCase().contentEquals("body"); //$NON-NLS-1$
             };
 
             Element popupEl = DomUtils.findParentElement(newMenu.getElement(), callback);

@@ -74,6 +74,7 @@ public abstract class WorkbenchPane extends ToolbarPane
          A11y.showFocusOutline(el);
       }
       else
+         // i18n: Concatenation/Message.  Is this for devs only?
          Debug.logWarning("Could not set focus, no focusable element on " + title_ + " pane");
    }
 

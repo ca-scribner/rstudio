@@ -22,12 +22,12 @@ public interface XTermResources extends ClientBundle
 {
    XTermResources INSTANCE = GWT.create(XTermResources.class);
 
-   @Source("xterm.js")
+   @Source("xterm.js") //$NON-NLS-1$
    StaticDataResource xtermjs();
 
-   @Source("fit.js")
+   @Source("fit.js") //$NON-NLS-1$
    StaticDataResource xtermfitjs();
 
-   @Source("web-links.js")
+   @Source("web-links.js") //$NON-NLS-1$
    StaticDataResource xtermweblinksjs();
 }

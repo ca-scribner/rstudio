@@ -52,8 +52,9 @@ public class VisualModeChunks implements ChunkDefinition.Provider
       chunks.createChunkEditor = (type, index, callbacks) ->
       {
          // only know how to create ace instances right now
-         if (!type.equals("ace"))
+         if (!type.equals("ace")) //$NON-NLS-1$
          {
+            // i18n: Concatenation/Message.  Also, does this hit users?
             Debug.logToConsole("Unknown chunk editor type: " + type);
             return null;
          }

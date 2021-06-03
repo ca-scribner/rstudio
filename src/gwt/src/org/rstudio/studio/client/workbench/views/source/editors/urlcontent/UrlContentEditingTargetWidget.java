@@ -36,7 +36,7 @@ public class UrlContentEditingTargetWidget extends Composite
    {
       commands_ = commands;
 
-      frame_ = new RStudioThemedFrame(title, url, true, "allow-same-origin", null, null, false, true);
+      frame_ = new RStudioThemedFrame(title, url, true, "allow-same-origin", null, null, false, true); //$NON-NLS-1$
       frame_.setSize("100%", "100%");
 
       column_ = column;

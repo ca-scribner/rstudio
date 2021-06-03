@@ -42,7 +42,7 @@ public class UnifiedEmitter
 {
    public UnifiedEmitter(String relPath)
    {
-      this("a/" + relPath , "b/" + relPath);
+      this("a/" + relPath , "b/" + relPath); //$NON-NLS-1$
    }
 
    public UnifiedEmitter(String fileA, String fileB)

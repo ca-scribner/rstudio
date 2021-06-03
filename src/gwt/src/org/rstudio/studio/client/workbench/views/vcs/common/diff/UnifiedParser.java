@@ -187,7 +187,7 @@ public class UnifiedParser implements DiffParser
 
    private boolean isNewFileLine(String nextLine)
    {
-      return nextLine.startsWith("diff ") || nextLine.startsWith("Index: ");
+      return nextLine.startsWith("diff ") || nextLine.startsWith("Index: "); //$NON-NLS-1$
    }
 
    private boolean[] complement(boolean[] array)

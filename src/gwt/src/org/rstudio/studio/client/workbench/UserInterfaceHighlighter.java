@@ -362,7 +362,7 @@ public class UserInterfaceHighlighter
          }
          
          Style style = highlightEl.getStyle();
-         if (style.getVisibility() != "visible")
+         if (style.getVisibility() != "visible") //$NON-NLS-1$
             style.setVisibility(Visibility.VISIBLE);
          
          DOMRect bounds = ElementEx.getBoundingClientRect(monitoredEl);

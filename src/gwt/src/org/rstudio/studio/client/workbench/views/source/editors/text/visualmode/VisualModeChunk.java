@@ -486,6 +486,8 @@ public class VisualModeChunk
    
    private void setMode(AceEditor editor, String mode)
    {
+      // i18n: Some of these are standard languages, but some look like they might be translatable.  Needs to see where
+      //       this is used and make sure none are accidentally translated (or, make everything translated if needed)
       switch(mode)
       {
       case "r":

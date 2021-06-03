@@ -64,7 +64,7 @@ public class TypoSpellChecker
       
       public void send()
       {
-         String path = GWT.getHostPageBaseURL() + "dictionaries/" + language_ + "/" + language_;
+         String path = GWT.getHostPageBaseURL() + "dictionaries/" + language_ + "/" + language_; //$NON-NLS-1$
 
          final Mutable<String> aff = new Mutable<>();
          final Mutable<String> dic = new Mutable<>();
@@ -92,12 +92,12 @@ public class TypoSpellChecker
          };
 
          alive_ = true;
-         makeRequest(path, "aff", (String response) -> {
+         makeRequest(path, "aff", (String response) -> { //$NON-NLS-1$
             aff.set(response);
             onReady.execute();
          });
 
-         makeRequest(path, "dic", (String response) -> {
+         makeRequest(path, "dic", (String response) -> { //$NON-NLS-1$
             dic.set(response);
             onReady.execute();
          });
@@ -108,7 +108,7 @@ public class TypoSpellChecker
                                String suffix,
                                final CommandWithArg<String> callback)
       {
-         String logName = language_ + "_" + suffix + "_request";
+         String logName = language_ + "_" + suffix + "_request"; //$NON-NLS-1$
          final RequestLogEntry logEntry = RequestLog.log(logName, "");
 
          try
@@ -174,10 +174,10 @@ public class TypoSpellChecker
 
    interface Resources extends ClientBundle
    {
-      @Source("./typo.min.js")
+      @Source("./typo.min.js") //$NON-NLS-1$
       TextResource typoJsCode();
 
-      @Source("./domain_specific_words.csv")
+      @Source("./domain_specific_words.csv") //$NON-NLS-1$
       TextResource domainSpecificWords();
    }
 
@@ -517,7 +517,7 @@ public class TypoSpellChecker
       severe issues with. This is being tracked to be fixed in issue #6041 as
       soon as possible so this can then be removed.
     */
-   private final static String[] realtimeDictBlacklist = {"lt_LT", "lt_LT_new", "pt_BR", "it_IT"};
+   private final static String[] realtimeDictBlacklist = {"lt_LT", "lt_LT_new", "pt_BR", "it_IT"}; //$NON-NLS-1$
    public static boolean canRealtimeSpellcheckDict(String dict)
    {
       boolean exists = false;

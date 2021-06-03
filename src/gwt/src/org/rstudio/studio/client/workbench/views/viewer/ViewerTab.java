@@ -37,6 +37,7 @@ public class ViewerTab extends DelayLoadWorkbenchTab<ViewerPresenter>
    @Inject
    public ViewerTab(Shim shim, Session session, EventBus eventBus)
    {
+      // i18n: Enumerator, user facing text, or both?
       super("Viewer", shim);
       session_ = session;
 

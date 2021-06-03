@@ -54,12 +54,12 @@ public class UnifiedParserTest extends TestCase
 
    public void testNextChunk() throws Exception
    {
-      testFile("diff1");
+      testFile("diff1"); //$NON-NLS-1$
    }
 
    public void testNextChunk2() throws Exception
    {
-      testFile("diff2");
+      testFile("diff2"); //$NON-NLS-1$
    }
 
    private void testFile(String testName) throws Exception

@@ -584,14 +584,17 @@ public class VisualMode implements VisualModeEditorSync,
                               PanmirrorPandocFormat format = panmirror_.getPandocFormat();
                               if (result.unrecognized.length > 0) 
                               {
+                                 // i18n: Concatenation/Message
                                  view_.showWarningBar("Unrecognized Pandoc token(s); " + String.join(", ", result.unrecognized));
                               } 
                               else if (format.warnings.invalidFormat.length() > 0)
                               {
+                                 // i18n: Concatenation/Message
                                  view_.showWarningBar("Invalid Pandoc format: " + format.warnings.invalidFormat);
                               }
                               else if (format.warnings.invalidOptions.length > 0)
                               {
+                                 // i18n: Concatenation/Message
                                  view_.showWarningBar("Unsupported extensions for markdown mode: " + String.join(", ", format.warnings.invalidOptions));;
                               }
                            });         
@@ -680,7 +683,7 @@ public class VisualMode implements VisualModeEditorSync,
    public int getContentWidth()
    {
       Element[] elements = DomUtils.getElementsByClassName(panmirror_.getElement(), 
-            "pm-content");
+            "pm-content"); //$NON-NLS-1$
       if (elements.length < 1)
       {
          // if no root node, use the entire surface
@@ -1069,7 +1072,7 @@ public class VisualMode implements VisualModeEditorSync,
          
          // Add non-breaking spaces to indent to the level of the item
          label.appendHtmlConstant(
-               StringUtil.repeat("&nbsp;&nbsp;", item.level));
+               StringUtil.repeat("&nbsp;&nbsp;", item.level)); //$NON-NLS-1$
          
          // Make headings bold
          if (StringUtil.equals(item.type, PanmirrorOutlineItemType.Heading))
@@ -1079,7 +1082,7 @@ public class VisualMode implements VisualModeEditorSync,
          
          if (StringUtil.equals(item.type, PanmirrorOutlineItemType.RmdChunk))
          {
-            label.appendEscaped("Chunk " + item.sequence);
+            label.appendEscaped("Chunk " + item.sequence); //$NON-NLS-1$
             if (!StringUtil.equals(item.title, PanmirrorOutlineItemType.RmdChunk))
             {
                label.appendEscaped(": " + item.title);
@@ -1391,6 +1394,7 @@ public class VisualMode implements VisualModeEditorSync,
          else if (StringUtil.equals(item.type, PanmirrorOutlineItemType.RmdChunk))
          {
             type = StatusBar.SCOPE_CHUNK;
+            // i18n: Concatenation/Message
             title = "Chunk " + item.sequence;
             if (!StringUtil.equals(item.title, PanmirrorOutlineItemType.RmdChunk))
             {
@@ -1725,7 +1729,7 @@ public class VisualMode implements VisualModeEditorSync,
       // (it ends up attempting to apply the "focus-visible" class b/c ProseMirror
       // is contentEditable, and that triggers a dom mutation event for ProseMirror,
       // which in turn causes us to lose table selections)
-      options.className = "focus-visible";
+      options.className = "focus-visible"; //$NON-NLS-1$
       
       return options;
    }
@@ -1758,7 +1762,7 @@ public class VisualMode implements VisualModeEditorSync,
    private boolean hasSourceCapsule(String markdown)
    {
       // (note that this constant is also defined in rmd_chunk-capsule.ts)
-      final String kRmdBlockCapsuleType = "f3175f2a-e8a0-4436-be12-b33925b6d220".toLowerCase();
+      final String kRmdBlockCapsuleType = "f3175f2a-e8a0-4436-be12-b33925b6d220".toLowerCase(); //$NON-NLS-1$
       return markdown.contains(kRmdBlockCapsuleType);
    }
    
@@ -1793,6 +1797,8 @@ public class VisualMode implements VisualModeEditorSync,
       // outline but not the other?)
       if (chunkScopes.size() != chunkItems.size())
       {
+         // i18n: Concatenation/Message
+         // i18n: Does this reach users?
          Debug.logWarning(chunkScopes.size() + " chunks in scope tree, but " + 
                   chunkItems.size() + " chunks in visual editor.");
          return;

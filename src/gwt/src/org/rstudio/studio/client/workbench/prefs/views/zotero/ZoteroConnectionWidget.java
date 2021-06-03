@@ -37,6 +37,7 @@ public class ZoteroConnectionWidget extends Composite
       HorizontalPanel panel = new HorizontalPanel();
       
       ArrayList<String> options = new ArrayList<>();
+      // i18n: Enumerator, user facing text, or both?
       options.add("(None)");
       if (!webOnly())
          options.add("Local");

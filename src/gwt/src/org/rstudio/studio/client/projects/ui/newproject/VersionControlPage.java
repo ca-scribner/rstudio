@@ -70,6 +70,7 @@ public abstract class VersionControlPage extends NewProjectWizardPage
          
          if (Desktop.isDesktop())
          {
+            // i18n: Concatenation/Message
             HTML msg = new HTML(
                "<p>" + getTitle() + " was not detected " +
                "on the system path.</p>" +
@@ -85,12 +86,14 @@ public abstract class VersionControlPage extends NewProjectWizardPage
             verticalPanel.add(msg);
             
             HelpLink vcsHelpLink = new VcsHelpLink();
+            // i18n: Concatenation/Message
             vcsHelpLink.setCaption("Using " + getTitle() + " with RStudio");
             vcsHelpLink.addStyleName(styles.vcsHelpLink());
             verticalPanel.add(vcsHelpLink);
          }
          else
          {
+            // i18n: Concatenation/Message
             HTML msg = new HTML(
                   "<p>An installation of " + getTitle() + " was not detected " +
                   "on this system.</p>" +
@@ -101,7 +104,8 @@ public abstract class VersionControlPage extends NewProjectWizardPage
                
                verticalPanel.add(msg);
          }
-         
+
+         // i18n: Concatenation/Message
          MessageDialog dlg = new MessageDialog(MessageDialog.INFO,
                                                getTitle() + " Not Found",
                                                verticalPanel);
@@ -235,6 +239,7 @@ public abstract class VersionControlPage extends NewProjectWizardPage
         globalDisplay_.showMessage(
                MessageDialog.WARNING,
                "Error",
+               // i18n: Concatenation/Message
                "You must specify a repository URL and " +
                "directory to create the new project within.",
                txtRepoUrl_);

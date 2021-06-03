@@ -332,17 +332,18 @@ public class WebApplicationHeader extends Composite
       int modifiers = BrowseCap.hasMetaKey() ? KeyboardShortcut.META : KeyboardShortcut.CTRL;
 
       setCommandShortcut(commands.undoDummy(),            "z", 'Z', modifiers);
-      setCommandShortcut(commands.redoDummy(),            "Z", 'Z', modifiers | KeyboardShortcut.SHIFT);
+      setCommandShortcut(commands.redoDummy(),            "Z", 'Z', modifiers | KeyboardShortcut.SHIFT); //$NON-NLS-1$
 
-      setCommandShortcut(commands.cutDummy(),             "x", 'X', modifiers);
-      setCommandShortcut(commands.copyDummy(),            "c", 'C', modifiers);
-      setCommandShortcut(commands.pasteDummy(),           "v", 'V', modifiers);
-      setCommandShortcut(commands.pasteWithIndentDummy(), "v", 'V', modifiers | KeyboardShortcut.SHIFT);
+      setCommandShortcut(commands.cutDummy(),             "x", 'X', modifiers); //$NON-NLS-1$
+      setCommandShortcut(commands.copyDummy(),            "c", 'C', modifiers); //$NON-NLS-1$
+      setCommandShortcut(commands.pasteDummy(),           "v", 'V', modifiers); //$NON-NLS-1$
+      setCommandShortcut(commands.pasteWithIndentDummy(), "v", 'V', modifiers | KeyboardShortcut.SHIFT); //$NON-NLS-1$
 
       CommandHandler useKeyboardNotification = new CommandHandler()
       {
          public void onCommand(AppCommand command)
          {
+            // i18n: Concatenation/Message
             MessageDialogLabel label = new MessageDialogLabel();
             label.setHtml("Your browser does not allow access to your<br/>" +
                           "computer's clipboard. As a result you must<br/>" +
@@ -365,11 +366,11 @@ public class WebApplicationHeader extends Composite
          private String makeRow(AppCommand cmd)
          {
             String textAlign = BrowseCap.hasMetaKey()
-                               ? "text-align: right"
+                               ? "text-align: right" //$NON-NLS-1$
                                : "";
-            return "<tr><td>" + cmd.getMenuLabel(false) + "</td>" +
-                   "<td style='padding-left: 12px; " + textAlign + "'>"
-                   + cmd.getShortcutPrettyHtml() + "</td></tr>";
+            return "<tr><td>" + cmd.getMenuLabel(false) + "</td>" + //$NON-NLS-1$
+                   "<td style='padding-left: 12px; " + textAlign + "'>" //$NON-NLS-1$
+                   + cmd.getShortcutPrettyHtml() + "</td></tr>"; //$NON-NLS-1$
          }
       };
 

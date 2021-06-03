@@ -91,7 +91,7 @@ public class WizardPageSelector<I,T> extends Composite
          LayoutPanel layoutPanel = new LayoutPanel();
          layoutPanel.addStyleName(styles.wizardPageSelectorItem());
          layoutPanel.getElement().setId(
-               ElementIds.idFromLabel(pageInfo.getTitle() + "_wizard_page"));
+               ElementIds.idFromLabel(pageInfo.getTitle() + "_wizard_page")); //$NON-NLS-1$
          Roles.getButtonRole().set(layoutPanel.getElement());
          layoutPanel.getElement().setTabIndex(0);
          
