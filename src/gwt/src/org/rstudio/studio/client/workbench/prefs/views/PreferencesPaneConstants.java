@@ -43,11 +43,11 @@ public interface PreferencesPaneConstants extends com.google.gwt.i18n.client.Con
   String Editing_displayPanel();
 
   /**
-   * Translated "@enModify Keyboard Shortcuts...".
+   * Translated "Modify Keyboard Shortcuts...".
    * 
-   * @return translated "@enModify Keyboard Shortcuts..."
+   * @return translated "Modify Keyboard Shortcuts..."
    */
-  @DefaultStringValue("@enModify Keyboard Shortcuts...")
+  @DefaultStringValue("Modify Keyboard Shortcuts...")
   @Key("Editing_editShortcuts")
   String Editing_editShortcuts();
 

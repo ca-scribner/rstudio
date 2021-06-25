@@ -31,7 +31,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
-import org.rstudio.studio.client.workbench.prefs.model.UserPrefsAccessorConstants;
 
 
 /**
