@@ -7,7 +7,7 @@ public interface PaneLayoutPreferencesPaneConstants extends com.google.gwt.i18n.
      *
      * @return translated "Choose the layout of the panels in RStudio by selecting from the controls in"
      */
-    @DefaultStringValue("Choose the layout of the panels in RStudio by selecting from the controls in")
+    @DefaultStringValue("Choose the layout of the panels in RStudio by selecting from the controls in ")
     @Key("paneLayoutText")
     String paneLayoutText();
 

@@ -55,14 +55,16 @@ import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Label;
 import com.google.inject.Inject;
 
-public class GeneralPreferencesPane extends PreferencesPane {
+public class GeneralPreferencesPane extends PreferencesPane
+{
     @Inject
     public GeneralPreferencesPane(RemoteFileSystemContext fsContext,
                                   FileDialogs fileDialogs,
                                   UserPrefs prefs,
                                   Session session,
                                   GlobalDisplay globalDisplay,
-                                  WorkbenchContext context) {
+                                  WorkbenchContext context)
+    {
         fsContext_ = fsContext;
         fileDialogs_ = fileDialogs;
         prefs_ = prefs;
@@ -72,7 +74,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         VerticalTabPanel basic = new VerticalTabPanel(ElementIds.GENERAL_BASIC_PREFS);
 
         basic.add(headerLabel(constants_.rSessionsTitle()));
-        if (BrowseCap.isWindowsDesktop()) {
+        if (BrowseCap.isWindowsDesktop())
+        {
             rVersion_ = new TextBoxWithButton(
                     constants_.rVersionTitle(),
                     "",
@@ -80,12 +83,15 @@ public class GeneralPreferencesPane extends PreferencesPane {
                     null,
                     ElementIds.TextBoxButtonId.R_VERSION,
                     true,
-                    new ClickHandler() {
+                    new ClickHandler()
+                    {
                         @Override
-                        public void onClick(ClickEvent event) {
+                        public void onClick(ClickEvent event)
+                        {
                             Desktop.getFrame().chooseRVersion(ver ->
                             {
-                                if (!StringUtil.isNullOrEmpty(ver)) {
+                                if (!StringUtil.isNullOrEmpty(ver))
+                                {
                                     rVersion_.setText(ver);
 
                                     globalDisplay.showMessage(MessageDialog.INFO,
@@ -105,7 +111,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
             spaced(rVersion_);
             basic.add(rVersion_);
         }
-        if (versionsInfo.isMultiVersion()) {
+        if (versionsInfo.isMultiVersion())
+        {
             rServerRVersion_ = new RVersionSelectWidget(
                     versionsInfo.getAvailableRVersions());
             basic.add(tight(rServerRVersion_));
@@ -183,7 +190,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         // provide check for updates option in desktop mode when not
         // already globally disabled
         if (Desktop.isDesktop() &&
-                !session.getSessionInfo().getDisableCheckForUpdates()) {
+                !session.getSessionInfo().getDisableCheckForUpdates())
+        {
             basic.add(checkboxPref(constants_.otherNotifyMeLabel(),
                     prefs_.checkForUpdates(), true /*defaultSpaced*/));
         }
@@ -191,7 +199,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         // crash reporting - only show in desktop mode
         enableCrashReporting_ = checkboxPref(constants_.otherSendReportsLabel(),
                 prefs_.submitCrashReports());
-        if (Desktop.isDesktop()) {
+        if (Desktop.isDesktop())
+        {
             lessSpaced(enableCrashReporting_);
             enableCrashReporting_.setEnabled(session.getSessionInfo().getCrashHandlerSettingsModifiable());
             basic.add(enableCrashReporting_);
@@ -205,13 +214,13 @@ public class GeneralPreferencesPane extends PreferencesPane {
 
         graphicsAntialias_ = new SelectWidget(
                 constants_.graphicsAntialiasingLabel(),
-                new String[]{
+                new String[] {
                         constants_.antialiasingDefaultOption(),
                         constants_.antialiasingNoneOption(),
                         constants_.antialiasingGrayOption(),
                         constants_.antialiasingSubpixelOption()
                 },
-                new String[]{
+                new String[] {
                         UserPrefs.GRAPHICS_ANTIALIASING_DEFAULT,
                         UserPrefs.GRAPHICS_ANTIALIASING_NONE,
                         UserPrefs.GRAPHICS_ANTIALIASING_GRAY,
@@ -227,12 +236,12 @@ public class GeneralPreferencesPane extends PreferencesPane {
 
         showServerHomePage_ = new SelectWidget(
                 constants_.serverHomePageLabel(),
-                new String[]{
+                new String[] {
                         constants_.serverHomePageActiveSessionsOption(),
                         constants_.serverHomePageAlwaysOption(),
                         constants_.serverHomePageNeverOption()
                 },
-                new String[]{
+                new String[] {
                         constants_.serverHomePageSessions(),
                         constants_.serverHomePageAlways(),
                         constants_.serverHomePageNever()
@@ -245,15 +254,18 @@ public class GeneralPreferencesPane extends PreferencesPane {
         lessSpaced(reuseSessionsForProjectLinks_);
         boolean firstHeader = true;
 
-        if (!Desktop.hasDesktopFrame()) {
+        if (!Desktop.hasDesktopFrame())
+        {
             if (session_.getSessionInfo().getShowUserHomePage() ||
-                    session_.getSessionInfo().getMultiSession()) {
+                    session_.getSessionInfo().getMultiSession())
+            {
                 Label homePageLabel = headerLabel(constants_.desktopCaption());
                 spacedBefore(homePageLabel);
                 advanced.add(homePageLabel);
                 firstHeader = false;
             }
-            if (session_.getSessionInfo().getShowUserHomePage()) {
+            if (session_.getSessionInfo().getShowUserHomePage())
+            {
                 tight(showServerHomePage_);
                 advanced.add(showServerHomePage_);
             }
@@ -262,7 +274,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         }
 
         Label debuggingLabel = headerLabel(constants_.advancedDebuggingCaption());
-        if (!firstHeader) {
+        if (!firstHeader)
+        {
             spacedBefore(debuggingLabel);
             firstHeader = false;
         }
@@ -271,15 +284,17 @@ public class GeneralPreferencesPane extends PreferencesPane {
                 constants_.advancedDebuggingLabel(),
                 prefs_.handleErrorsInUserCodeOnly()));
 
-        if (Desktop.hasDesktopFrame()) {
+        if (Desktop.hasDesktopFrame())
+        {
             Label osLabel = headerLabel(constants_.advancedOsIntegrationCaption());
             spacedBefore(osLabel);
             advanced.add(osLabel);
 
-            renderingEngineWidget_ = new SelectWidget(constants_.advancedRenderingEngineLabel(), new String[]{});
+            renderingEngineWidget_ = new SelectWidget(constants_.advancedRenderingEngineLabel(), new String[] {});
             renderingEngineWidget_.addChoice(constants_.renderingEngineAutoDetectOption(), ENGINE_AUTO);
             renderingEngineWidget_.addChoice(constants_.renderingEngineDesktopOption(), ENGINE_DESKTOP);
-            if (BrowseCap.isLinuxDesktop()) {
+            if (BrowseCap.isLinuxDesktop())
+            {
                 renderingEngineWidget_.addChoice(constants_.renderingEngineLinuxDesktopOption(), ENGINE_GLES);
             }
             renderingEngineWidget_.addChoice(constants_.renderingEngineSoftwareOption(), ENGINE_SOFTWARE);
@@ -306,7 +321,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
                 useGpuDriverBugWorkarounds_.setValue(!disable);
             });
 
-            if (BrowseCap.isLinuxDesktop()) {
+            if (BrowseCap.isLinuxDesktop())
+            {
                 clipboardMonitoring_ = new CheckBox(constants_.clipboardMonitoringLabel());
                 advanced.add(lessSpaced(clipboardMonitoring_));
                 Desktop.getFrame().getClipboardMonitoring(monitoring ->
@@ -356,7 +372,7 @@ public class GeneralPreferencesPane extends PreferencesPane {
 
         DialogTabLayoutPanel tabPanel = new DialogTabLayoutPanel(constants_.generalTablistLabel());
         tabPanel.setSize("435px", "533px");
-        tabPanel.add(basic, constants_.generalTablListBasicOption(), basic.getBasePanelId());
+        tabPanel.add(basic, "Basic", basic.getBasePanelId());
         tabPanel.add(graphics, constants_.generalTablListGraphicsOption(), graphics.getBasePanelId());
         tabPanel.add(advanced, constants_.generalTabListAdvancedOption(), advanced.getBasePanelId());
         tabPanel.selectTab(0);
@@ -364,7 +380,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
     }
 
     @Override
-    protected void initialize(UserPrefs prefs) {
+    protected void initialize(UserPrefs prefs)
+    {
         boolean isLauncherSession = session_.getSessionInfo().getLauncherSession();
         showServerHomePage_.setEnabled(!isLauncherSession);
 
@@ -381,7 +398,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         reuseSessionsForProjectLinks_.setValue(prefs.reuseSessionsForProjectLinks().getValue());
 
         int saveWorkspaceIndex;
-        switch (prefs.saveWorkspace().getValue()){
+        switch (prefs.saveWorkspace().getValue())
+        {
             case UserPrefs.SAVE_WORKSPACE_NEVER:
                 saveWorkspaceIndex = 1;
                 break;
@@ -422,7 +440,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         if (rServerRVersion_ != null)
             rServerRVersion_.setRVersion(prefs.defaultRVersion().getValue().cast());
 
-        if (rememberRVersionForProjects_ != null) {
+        if (rememberRVersionForProjects_ != null)
+        {
             rememberRVersionForProjects_.setValue(
                     prefs.restoreProjectRVersion().getValue());
         }
@@ -443,12 +462,14 @@ public class GeneralPreferencesPane extends PreferencesPane {
 
 
     @Override
-    public ImageResource getIcon() {
+    public ImageResource getIcon()
+    {
         return new ImageResource2x(PreferencesDialogBaseResources.INSTANCE.iconR2x());
     }
 
     @Override
-    public RestartRequirement onApply(UserPrefs prefs) {
+    public RestartRequirement onApply(UserPrefs prefs)
+    {
         RestartRequirement restartRequirement = super.onApply(prefs);
 
         {
@@ -457,7 +478,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         }
 
         if (clipboardMonitoring_ != null &&
-                desktopMonitoring_ != clipboardMonitoring_.getValue()) {
+                desktopMonitoring_ != clipboardMonitoring_.getValue())
+        {
             // set monitoring property if changed
             restartRequirement.setDesktopRestartRequired(true);
             boolean desktopMonitoring = clipboardMonitoring_.getValue();
@@ -466,13 +488,15 @@ public class GeneralPreferencesPane extends PreferencesPane {
         }
 
         if (fullPathInTitle_ != null &&
-                fullPathInTitle_.getValue() != prefs.fullProjectPathInWindowTitle().getValue()) {
+                fullPathInTitle_.getValue() != prefs.fullProjectPathInWindowTitle().getValue())
+        {
             restartRequirement.setDesktopRestartRequired(true);
             prefs.fullProjectPathInWindowTitle().setGlobalValue(fullPathInTitle_.getValue());
         }
 
         if (renderingEngineWidget_ != null &&
-                !StringUtil.equals(renderingEngineWidget_.getValue(), renderingEngine_)) {
+                !StringUtil.equals(renderingEngineWidget_.getValue(), renderingEngine_))
+        {
             // set desktop renderer when changed
             restartRequirement.setDesktopRestartRequired(true);
             String renderingEngine = renderingEngineWidget_.getValue();
@@ -481,7 +505,8 @@ public class GeneralPreferencesPane extends PreferencesPane {
         }
 
         if (useGpuBlacklist_ != null &&
-                desktopIgnoreGpuBlacklist_ != !useGpuBlacklist_.getValue()) {
+                desktopIgnoreGpuBlacklist_ != !useGpuBlacklist_.getValue())
+        {
             restartRequirement.setDesktopRestartRequired(true);
             boolean ignore = !useGpuBlacklist_.getValue();
             desktopIgnoreGpuBlacklist_ = ignore;
@@ -489,14 +514,16 @@ public class GeneralPreferencesPane extends PreferencesPane {
         }
 
         if (useGpuDriverBugWorkarounds_ != null &&
-                desktopDisableGpuDriverBugWorkarounds_ != !useGpuDriverBugWorkarounds_.getValue()) {
+                desktopDisableGpuDriverBugWorkarounds_ != !useGpuDriverBugWorkarounds_.getValue())
+        {
             restartRequirement.setDesktopRestartRequired(true);
             boolean disable = !useGpuDriverBugWorkarounds_.getValue();
             desktopDisableGpuDriverBugWorkarounds_ = disable;
             Desktop.getFrame().setDisableGpuDriverBugWorkarounds(disable);
         }
 
-        if (saveWorkspace_.isEnabled()) {
+        if (saveWorkspace_.isEnabled())
+        {
             prefs.saveWorkspace().setGlobalValue(saveWorkspace_.getValue());
         }
 
@@ -524,12 +551,14 @@ public class GeneralPreferencesPane extends PreferencesPane {
     }
 
     @Override
-    public String getName() {
+    public String getName()
+    {
         return constants_.generalTablListGraphicsOption();
     }
 
     @SuppressWarnings("unused")
-    private RVersionSpec getDefaultRVersion() {
+    private RVersionSpec getDefaultRVersion()
+    {
         if (rServerRVersion_ != null)
             return rServerRVersion_.getRVersion();
         else
@@ -537,27 +566,29 @@ public class GeneralPreferencesPane extends PreferencesPane {
     }
 
     @SuppressWarnings("unused")
-    private boolean getRestoreProjectRVersion() {
+    private boolean getRestoreProjectRVersion()
+    {
         if (rememberRVersionForProjects_ != null)
             return rememberRVersionForProjects_.getValue();
         else
             return false;
     }
 
-    private void initializeGraphicsBackendWidget() {
-        Map<String, String> valuesToLabelsMap = new HashMap<>();
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_DEFAULT, constants_.graphicsBackEndDefaultOption());
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_QUARTZ, constants_.graphicsBackEndQuartzOption());
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_WINDOWS, constants_.graphicsBackEndWindowsOption());
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_CAIRO, constants_.graphicsBackEndCairoOption());
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_CAIRO_PNG, constants_.graphicsBackEndCairoPNGOption());
-        valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_RAGG, constants_.graphicsBackEndAGGOption());
+    private void initializeGraphicsBackendWidget()
+    {
+      Map<String, String> valuesToLabelsMap = new HashMap<>();
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_DEFAULT, constants_.graphicsBackEndDefaultOption());
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_QUARTZ, constants_.graphicsBackEndQuartzOption());
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_WINDOWS, constants_.graphicsBackEndWindowsOption());
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_CAIRO, constants_.graphicsBackEndCairoOption());
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_CAIRO_PNG, constants_.graphicsBackEndCairoPNGOption());
+      valuesToLabelsMap.put(UserPrefs.GRAPHICS_BACKEND_RAGG, constants_.graphicsBackEndAGGOption());
 
         JsArrayString supportedBackends =
                 session_.getSessionInfo().getGraphicsBackends();
 
         String[] values = new String[supportedBackends.length() + 1];
-        values[0] = constants_.defaultLabel();
+        values[0] = "default";
         for (int i = 0; i < supportedBackends.length(); i++)
             values[i + 1] = supportedBackends.get(i);
 
@@ -571,12 +602,14 @@ public class GeneralPreferencesPane extends PreferencesPane {
         graphicsBackend_.addChangeHandler((ChangeEvent event) ->
         {
             String backend = graphicsBackend_.getValue();
-            if (StringUtil.equals(backend, UserPrefs.GRAPHICS_BACKEND_RAGG)) {
+            if (StringUtil.equals(backend, UserPrefs.GRAPHICS_BACKEND_RAGG))
+            {
                 RStudioGinjector.INSTANCE.getDependencyManager().withRagg(
                         constants_.graphicsBackendUserAction(),
                         (Boolean succeeded) ->
                         {
-                            if (!succeeded) {
+                            if (!succeeded)
+                            {
                                 graphicsBackend_.setValue(UserPrefs.GRAPHICS_BACKEND_DEFAULT);
                             }
                         });
@@ -584,10 +617,10 @@ public class GeneralPreferencesPane extends PreferencesPane {
         });
     }
 
-    private static final String ENGINE_AUTO = "auto";
-    private static final String ENGINE_DESKTOP = "desktop";
-    private static final String ENGINE_GLES = "gles";
-    private static final String ENGINE_SOFTWARE = "software";
+    private static final String ENGINE_AUTO        = "auto";
+    private static final String ENGINE_DESKTOP     = "desktop";
+    private static final String ENGINE_GLES        = "gles";
+    private static final String ENGINE_SOFTWARE    = "software";
 
     private boolean desktopMonitoring_ = false;
     private boolean desktopIgnoreGpuBlacklist_ = false;
@@ -623,4 +656,5 @@ public class GeneralPreferencesPane extends PreferencesPane {
     private final UserPrefs prefs_;
     private final Session session_;
     private final GeneralPreferencesPaneConstants constants_ = GWT.create(GeneralPreferencesPaneConstants.class);
+
 }

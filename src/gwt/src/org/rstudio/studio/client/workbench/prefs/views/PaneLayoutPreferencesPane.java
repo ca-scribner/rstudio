@@ -192,7 +192,7 @@ public class PaneLayoutPreferencesPane extends PreferencesPane
       PaneConfig paneConfig = userPrefs.panes().getGlobalValue().cast();
       additionalColumnCount_ = paneConfig.getAdditionalSourceColumns();
 
-      add(new Label(constants_.paneLayoutText() + " " +
+      add(new Label(constants_.paneLayoutText() +
          constants_.paneLayoutAddText() +
          constants_.paneLayoutRemoveText() +
          constants_.paneLayoutMoveText(),

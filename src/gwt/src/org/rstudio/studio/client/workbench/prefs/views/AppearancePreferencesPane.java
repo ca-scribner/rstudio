@@ -563,7 +563,7 @@ public class AppearancePreferencesPane extends PreferencesPane
    private void showDuplicateThemeError(String themeName, Operation continueOperation)
    {
       StringBuilder msg = new StringBuilder();
-      msg.append(constants_.showDuplicateThemeErrorMessage() + " ")
+      msg.append(constants_.showDuplicateThemeErrorMessage())
          .append(constants_.showDuplicateThemeErrorQuestionMessage())
          .append(themeName)
          .append(constants_.showDuplicateThemeErrorAddThemeMessage());
@@ -581,8 +581,8 @@ public class AppearancePreferencesPane extends PreferencesPane
       StringBuilder msg = new StringBuilder();
       msg.append(constants_.showDuplicateThemeWarningMessage())
          .append(themeName)
-         .append(constants_.showDuplicateThemeExistingMessage() + " ")
-         .append(constants_.showDuplicateThemeQuestionMessage() + " ")
+         .append(constants_.showDuplicateThemeExistingMessage())
+         .append(constants_.showDuplicateThemeQuestionMessage())
          .append(constants_.showDuplicateContinueThemeMessage());
 
       globalDisplay_.showYesNoMessage(

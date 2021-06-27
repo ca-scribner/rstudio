@@ -330,12 +330,12 @@ public class RMarkdownPreferencesPane extends PreferencesPane
          if (value.getValue())
          {
             RStudioGinjector.INSTANCE.getGlobalDisplay().showYesNoMessage(
-               MessageDisplay.MSG_WARNING, 
-               constants_.visualModeCanonicalMessageCaption(),
-                    constants_.visualModeCanonicalPreferenceMessage()+"\n\n" +
+                    MessageDisplay.MSG_WARNING,
+                    constants_.visualModeCanonicalMessageCaption(),
+                    constants_.visualModeCanonicalPreferenceMessage() + "\n\n" +
                             constants_.visualModeCanonicalMessageDesc() +
-               constants_.visualModeCanonicalMessageRewrite()+"\n\n" +
-               constants_.visualModeCanonicalChangeMessage(),
+                            constants_.visualModeCanonicalMessageRewrite() + "\n\n" +
+                            constants_.visualModeCanonicalChangeMessage(),
                false, 
                new Operation() {
                   @Override

@@ -220,11 +220,11 @@ public interface AppearancePreferencesPaneConstants extends com.google.gwt.i18n.
     String cantAddThemeGlobalMessage();
 
     /**
-     * Translated "Unable to remove the theme ".
+     * Translated "Unable to remove the theme '".
      *
-     * @return translated "Unable to remove the theme "
+     * @return translated "Unable to remove the theme '"
      */
-    @DefaultStringValue("Unable to remove the theme ")
+    @DefaultStringValue("Unable to remove the theme '")
     @Key("showCantRemoveThemeDialogMessage")
     String showCantRemoveThemeDialogMessage();
 
@@ -301,11 +301,11 @@ public interface AppearancePreferencesPaneConstants extends com.google.gwt.i18n.
     String showRemoveThemeGlobalMessage();
 
     /**
-     * Translated "There is an existing theme with the same name as the new theme in the current".
+     * Translated "There is an existing theme with the same name as the new theme in the current ".
      *
-     * @return translated "There is an existing theme with the same name as the new theme in the current"
+     * @return translated "There is an existing theme with the same name as the new theme in the current "
      */
-    @DefaultStringValue("There is an existing theme with the same name as the new theme in the current")
+    @DefaultStringValue("There is an existing theme with the same name as the new theme in the current ")
     @Key("showDuplicateThemeErrorMessage")
     String showDuplicateThemeErrorMessage();
 
@@ -314,7 +314,7 @@ public interface AppearancePreferencesPaneConstants extends com.google.gwt.i18n.
      *
      * @return translated "location. Would you like to remove the existing theme, ""
      */
-    @DefaultStringValue("location. Would you like to remove the existing theme, ")
+    @DefaultStringValue("location. Would you like to remove the existing theme, \"")
     @Key("showDuplicateThemeErrorQuestionMessage")
     String showDuplicateThemeErrorQuestionMessage();
 
@@ -346,11 +346,11 @@ public interface AppearancePreferencesPaneConstants extends com.google.gwt.i18n.
     String showDuplicateThemeWarningMessage();
 
     /**
-     * Translated "" in another location. The existing theme will be hidden but not removed.".
+     * Translated "" in another location. The existing theme will be hidden but not removed. ".
      *
-     * @return translated "" in another location. The existing theme will be hidden but not removed."
+     * @return translated "" in another location. The existing theme will be hidden but not removed. "
      */
-    @DefaultStringValue("\" in another location. The existing theme will be hidden but not removed.")
+    @DefaultStringValue("\" in another location. The existing theme will be hidden but not removed. ")
     @Key("showDuplicateThemeExistingMessage")
     String showDuplicateThemeExistingMessage();
 
