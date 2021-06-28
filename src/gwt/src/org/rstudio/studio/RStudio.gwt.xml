@@ -17,6 +17,14 @@
    <inherits name="elemental2.dom.Dom" />
    <inherits name="elemental2.promise.Promise" />
 
+   <!-- i18n -->
+   <inherits name="com.google.gwt.i18n.I18N"/>
+   <set-configuration-property name="locale.useragent" value="Y"/>
+   <set-configuration-property name="locale.searchorder" value="queryparam,cookie,useragent,meta"/>
+   <!-- DEBUG: Note that this normally gets overwritten by RStudioSuperDevMode during development.  -->
+   <extend-property name="locale" values="en,fr"/>
+   <set-property-fallback name="locale" value="en"/>
+
    <!-- Use default GWT style sheet                                -->
    <!--<inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
 

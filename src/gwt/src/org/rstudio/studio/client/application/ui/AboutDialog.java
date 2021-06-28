@@ -15,6 +15,7 @@
 
 package org.rstudio.studio.client.application.ui;
 import com.google.gwt.aria.client.Roles;
+import com.google.gwt.core.client.GWT;
 import org.rstudio.core.client.ElementIds;
 import org.rstudio.core.client.widget.ModalDialogBase;
 import org.rstudio.core.client.widget.ThemedButton;
@@ -28,18 +29,24 @@ import com.google.inject.Inject;
 
 public class AboutDialog extends ModalDialogBase
 {
+   private AboutDialogConstants constants = GWT.create(AboutDialogConstants.class);
+   private AboutDialogMessages messages = GWT.create(AboutDialogMessages.class);
+
    public AboutDialog(ProductInfo info)
    {
       super(Roles.getDialogRole());
       RStudioGinjector.INSTANCE.injectMembers(this);
 
-      setText("About " + editionInfo_.editionName());
-      ThemedButton OKButton = new ThemedButton("OK", (ClickEvent) -> closeDialog());
+//      Modified to test i18n
+//      setText("About " + editionInfo_.editionName());
+      setText(messages.title(editionInfo_.editionName()));
+//      ThemedButton OKButton = new ThemedButton("OK", (ClickEvent) -> closeDialog());
+      ThemedButton OKButton = new ThemedButton(constants.okBtn(), (ClickEvent) -> closeDialog());
       addOkButton(OKButton);
 
       if (editionInfo_.proLicense() && Desktop.hasDesktopFrame())
       {
-         ThemedButton licenseButton = new ThemedButton("Manage License...", (ClickEvent) ->  {
+         ThemedButton licenseButton = new ThemedButton(constants.manageLicenseBtn(), (ClickEvent) ->  {
             closeDialog();
             editionInfo_.showLicense();
          });

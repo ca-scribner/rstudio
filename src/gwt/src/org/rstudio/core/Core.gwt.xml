@@ -12,6 +12,10 @@
    <inherits name="elemental2.dom.Dom" />
    <inherits name="elemental2.promise.Promise" />
 
+<!-- DEBUG: This says "when you see somewhere using ...CommandBundle, generate the
+     CommandBundle's code using ...CommandBundleGenerator (which gets passed some
+     context and has a generate function for the logic etc.).  -->
+
    <generate-with class="org.rstudio.core.rebind.command.CommandBundleGenerator" >
       <when-type-assignable
             class="org.rstudio.core.client.command.CommandBundle"/>

@@ -41,6 +41,10 @@ well as menu structures (for main menu and popup menus).
    <menu id="mainMenu" vertical="false">
       <!--
          Keep ShowMainMenuEvent.Menu enum in sync with top-level main-menu entries (File, Edit...)
+
+         DEBUG: Why is the above comment important?  If I change <menu label="_Files"> it seems to work ok.  I can add
+         a menu too no problem.  But src/org/rstudio/studio/client/workbench/events/ShowMainMenuEvent.java mentions this
+         too so it probably matters?
       -->
       <menu label="_File">
          <menu label="New _File">
@@ -2779,11 +2783,13 @@ well as menu structures (for main menu and popup menus).
         context="import"
         windowMode="main"/>
 
-   <cmd id="importDatasetFromSAV"
-        label="Import Dataset from SAV..."
-        menuLabel="From _SAV..."
-        context="import"
-        windowMode="main"/>
+<!--   This has a duplicate ID to below.  Is that intentional?  Effect seems to be that below overwrites this command-->
+<!--   Commented out for now as i18n cannot translate the same id to two different strings-->
+<!--   <cmd id="importDatasetFromSAV"-->
+<!--        label="Import Dataset from SAV..."-->
+<!--        menuLabel="From _SAV..."-->
+<!--        context="import"-->
+<!--        windowMode="main"/>-->
 
    <cmd id="importDatasetFromSAV"
         label="Import Dataset from SPSS..."

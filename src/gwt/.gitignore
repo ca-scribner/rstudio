@@ -9,3 +9,6 @@ war/
 javac.*
 /*.log
 
+# DEBUG: Local changes to make development easier
+/ant/apache-ant-1.10.9/
+/generatedFiles/
